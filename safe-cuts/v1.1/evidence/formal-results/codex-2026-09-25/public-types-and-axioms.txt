@@ -1,0 +1,251 @@
+info: GeneralTwoRimEndpointSanity.lean:49:0: @exists_sameCutSameMaps : ∀ {nA nB : ℕ} [inst : NeZero nA] [inst_1 : NeZero nB] (A : ReducedConvexPolygon nA)
+  (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h), Nonempty (SameCutSameMapsResult A B hh)
+info: GeneralTwoRimEndpointSanity.lean:50:0: @general_rawCutSurfaceConclusion : ∀ {nA nB : ℕ} [inst : NeZero nA] [inst_1 : NeZero nB] (A : ReducedConvexPolygon nA)
+  (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h), RawCutSurfaceConclusion A B hh
+info: GeneralTwoRimEndpointSanity.lean:51:0: general_setSameCutSameMaps : ∀ (KA KB : Set PhysicalMixedTurnSource.Plane) (hfinA : ∃ S, (convexHull ℝ) ↑S = KA)
+  (hfinB : ∃ S, (convexHull ℝ) ↑S = KB) (hintA : (interior KA).Nonempty) (hintB : (interior KB).Nonempty) {h : ℝ}
+  (hh : 0 < h),
+  have PA := canonicalPresentation KA hfinA hintA;
+  have PB := canonicalPresentation KB hfinB hintB;
+  PA.polygon.body = KA ∧
+    PB.polygon.body = KB ∧
+      PolygonSetReconstruction.physicalBodyOfSets KA KB h =
+          EuclideanPrismatoidCoordinates.physicalPrismatoid PA.polygon PB.polygon h ∧
+        Nonempty (SameCutSameMapsResult PA.polygon PB.polygon hh)
+info: GeneralTwoRimEndpointSanity.lean:52:0: general_setCutSurfaceConclusion : ∀ (KA KB : Set PhysicalMixedTurnSource.Plane) (hfinA : ∃ S, (convexHull ℝ) ↑S = KA)
+  (hfinB : ∃ S, (convexHull ℝ) ↑S = KB) (hintA : (interior KA).Nonempty) (hintB : (interior KB).Nonempty) {h : ℝ}
+  (hh : 0 < h), SetCutSurfaceConclusion KA KB hfinA hfinB hintA hintB hh
+info: GeneralTwoRimEndpointSanity.lean:53:0: @SelectedPositiveRootPolarLift.selectedPositiveDirectMap_full_safe : ∀ {nA nB : ℕ} [inst : NeZero nA]
+  [inst_1 : NeZero nB] (A : ReducedConvexPolygon nA) (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h)
+  (hΔ : 0 < SelectedPositiveRootPolarLift.Δ✝ A B hh),
+  FiniteWitnessClosure.Safe
+    (fun i =>
+      (OriginalFacetCertificates.certificate A B hh
+          ((CyclicCutOrders.order A B
+              (prev ((sourceIndexEquiv A B) (SelectedPositiveRootPolarLift.positiveRoot A B hh hΔ))))
+            i)).domain)
+    fun i => ⇑(arbitraryCutFaceMap A B hh (SelectedPositiveRootPolarLift.positiveRoot A B hh hΔ) i)
+info: GeneralTwoRimEndpointSanity.lean:54:0: @selectedPositiveSameCutSameMaps_U : ∀ {nA nB : ℕ} [inst : NeZero nA] [inst_1 : NeZero nB] (A : ReducedConvexPolygon nA)
+  (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h) (hΔ : 0 < intrinsicDelta A B hh)
+  (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)),
+  (selectedPositiveSameCutSameMaps A B hh hΔ).development.U i =
+    arbitraryCutFaceMap A B hh (SelectedPositiveRootPolarLift.positiveRoot A B hh hΔ) i
+info: GeneralTwoRimEndpointSanity.lean:55:0: @negativeSameCutSameMaps_U : ∀ {nA nB : ℕ} [inst : NeZero nA] [inst_1 : NeZero nB] (A : ReducedConvexPolygon nA)
+  (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h) (hΔ : intrinsicDelta A B hh < 0)
+  (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)),
+  (negativeSameCutSameMaps A B hh hΔ).development.U i = selectedNegativeDirectMap A B hh hΔ i
+info: GeneralTwoRimEndpointSanity.lean:56:0: structure GeneralTwoRimUnfolding.SameCutSameMapsResult {nA nB : ℕ} [NeZero nA] [NeZero nB] (A : ReducedConvexPolygon nA)
+  (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h) : Type
+number of parameters: 8
+fields:
+  GeneralTwoRimUnfolding.SameCutSameMapsResult.e : Fin (CyclicCutOrders.sideCount A B)
+  GeneralTwoRimUnfolding.SameCutSameMapsResult.development : CutSurfaceQuotient.CutSurfaceDevelopment A B hh
+      PhysicalMixedTurnSource.Plane self.e
+  GeneralTwoRimUnfolding.SameCutSameMapsResult.every_positive_trim : ∀ (d : ℝ),
+      0 < d →
+        d < 1 / 2 →
+          (BandGeometryAssembly.DevelopmentOn
+              (fun i =>
+                (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B self.e) i)).chart.toAffineMap)
+              (fun i =>
+                TrimmedFacetWitnesses.heightTrim
+                  (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B self.e) i)).domain
+                  (⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B self.e) i)).height) d)
+              fun i => ⇑(self.development.U i)) ∧
+            FiniteWitnessClosure.Safe
+              (fun i =>
+                TrimmedFacetWitnesses.heightTrim
+                  (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B self.e) i)).domain
+                  (⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B self.e) i)).height) d)
+              fun i => ⇑(self.development.U i)
+constructor:
+  GeneralTwoRimUnfolding.SameCutSameMapsResult.mk {nA nB : ℕ} [NeZero nA] [NeZero nB] {A : ReducedConvexPolygon nA}
+    {B : ReducedConvexPolygon nB} {h : ℝ} {hh : 0 < h} (e : Fin (CyclicCutOrders.sideCount A B))
+    (development : CutSurfaceQuotient.CutSurfaceDevelopment A B hh PhysicalMixedTurnSource.Plane e)
+    (every_positive_trim :
+      ∀ (d : ℝ),
+        0 < d →
+          d < 1 / 2 →
+            (BandGeometryAssembly.DevelopmentOn
+                (fun i =>
+                  (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart.toAffineMap)
+                (fun i =>
+                  TrimmedFacetWitnesses.heightTrim
+                    (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain
+                    (⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).height) d)
+                fun i => ⇑(development.U i)) ∧
+              FiniteWitnessClosure.Safe
+                (fun i =>
+                  TrimmedFacetWitnesses.heightTrim
+                    (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain
+                    (⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).height) d)
+                fun i => ⇑(development.U i)) :
+    SameCutSameMapsResult A B hh
+info: GeneralTwoRimEndpointSanity.lean:57:0: def PhysicalMixedTurnSource.RawCutSurfaceConclusion : {nA nB : ℕ} →
+  [inst : NeZero nA] →
+    [inst_1 : NeZero nB] → ReducedConvexPolygon nA → ReducedConvexPolygon nB → {h : ℝ} → 0 < h → Prop :=
+fun {nA nB} [NeZero nA] [NeZero nB] A B {h} hh =>
+  ∃ e, Nonempty (CutSurfaceQuotient.CutSurfaceDevelopment A B hh PhysicalMixedTurnSource.Plane e)
+info: GeneralTwoRimEndpointSanity.lean:58:0: def PhysicalMixedTurnSource.SetCutSurfaceConclusion : (KA KB : Set PhysicalMixedTurnSource.Plane) →
+  (∃ S, (convexHull ℝ) ↑S = KA) →
+    (∃ S, (convexHull ℝ) ↑S = KB) → (interior KA).Nonempty → (interior KB).Nonempty → {h : ℝ} → 0 < h → Prop :=
+fun KA KB hfinA hfinB hintA hintB {h} hh =>
+  have PA := canonicalPresentation KA hfinA hintA;
+  have PB := canonicalPresentation KB hfinB hintB;
+  PA.polygon.body = KA ∧
+    PB.polygon.body = KB ∧
+      PolygonSetReconstruction.physicalBodyOfSets KA KB h =
+          EuclideanPrismatoidCoordinates.physicalPrismatoid PA.polygon PB.polygon h ∧
+        ∃ e,
+          Nonempty (CutSurfaceQuotient.CutSurfaceDevelopment PA.polygon PB.polygon hh PhysicalMixedTurnSource.Plane e)
+info: GeneralTwoRimEndpointSanity.lean:59:0: structure CutSurfaceQuotient.CutSurfaceDevelopment.{u_1} {nA nB : ℕ} [NeZero nA] [NeZero nB]
+  (A : ReducedConvexPolygon nA) (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h) (Q : Type u_1) [NormedAddCommGroup Q]
+  [InnerProductSpace ℝ Q] (e : Fin (CyclicCutOrders.sideCount A B)) : Type u_1
+number of parameters: 12
+fields:
+  CutSurfaceQuotient.CutSurfaceDevelopment.U : (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)) →
+      ↥(OriginalFacetCertificates.FaceSpace A B h ((CyclicCutOrders.order A B e) i)) →ᵃⁱ[ℝ] Q
+  CutSurfaceQuotient.CutSurfaceDevelopment.developmentOn : BandGeometryAssembly.DevelopmentOn
+      (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart.toAffineMap)
+      (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain) fun i =>
+      ⇑(self.U i)
+  CutSurfaceQuotient.CutSurfaceDevelopment.safe : FiniteWitnessClosure.Safe
+      (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain) fun i =>
+      ⇑(self.U i)
+  CutSurfaceQuotient.CutSurfaceDevelopment.developedMap : CutSurfaceQuotient.CutSurface A B hh e → Q
+  CutSurfaceQuotient.CutSurfaceDevelopment.developedMap_continuous : Continuous self.developedMap
+  CutSurfaceQuotient.CutSurfaceDevelopment.materialMap : CutSurfaceQuotient.CutSurface A B hh e →
+      { p // p ∈ PolyhedralInputBridge.lateralBoundary (OriginalFacetCertificates.halfspaces A B h) }
+  CutSurfaceQuotient.CutSurfaceDevelopment.materialMap_continuous : Continuous self.materialMap
+  CutSurfaceQuotient.CutSurfaceDevelopment.materialMap_surjective : Function.Surjective self.materialMap
+  CutSurfaceQuotient.CutSurfaceDevelopment.face_injective : ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)),
+      Function.Injective (CutSurfaceQuotient.faceInclusion A B hh e i)
+  CutSurfaceQuotient.CutSurfaceDevelopment.developed_face : ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1))
+      (x : CutSurfaceQuotient.FacePiece A B hh e i),
+      self.developedMap (CutSurfaceQuotient.faceInclusion A B hh e i x) = (self.U i) ↑x
+  CutSurfaceQuotient.CutSurfaceDevelopment.material_face : ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1))
+      (x : CutSurfaceQuotient.FacePiece A B hh e i),
+      ↑(self.materialMap (CutSurfaceQuotient.faceInclusion A B hh e i x)) =
+        (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart ↑x
+  CutSurfaceQuotient.CutSurfaceDevelopment.seam_material_eq : ∀ (t : ℝ) (ht : t ∈ Icc 0 1),
+      self.materialMap
+          (CutSurfaceQuotient.faceInclusion A B hh e (Fin.last (CyclicCutOrders.sideCount A B - 1))
+            (CutSurfaceQuotient.seamLast A B hh e t ht)) =
+        self.materialMap (CutSurfaceQuotient.faceInclusion A B hh e 0 (CutSurfaceQuotient.seamFirst A B hh e t ht))
+  CutSurfaceQuotient.CutSurfaceDevelopment.seam_copies_distinct : ∀ (t : ℝ) (ht : t ∈ Icc 0 1),
+      CutSurfaceQuotient.faceInclusion A B hh e (Fin.last (CyclicCutOrders.sideCount A B - 1))
+          (CutSurfaceQuotient.seamLast A B hh e t ht) ≠
+        CutSurfaceQuotient.faceInclusion A B hh e 0 (CutSurfaceQuotient.seamFirst A B hh e t ht)
+  CutSurfaceQuotient.CutSurfaceDevelopment.cut_segment : ⇑(OriginalFacetCertificates.certificate A B hh
+                ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart ''
+          (OriginalFacetCertificates.certificate A B hh
+              ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).domain ∩
+        ⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) 0)).chart ''
+          (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) 0)).domain =
+      ⇑(AffineMap.lineMap
+            ((OriginalFacetCertificates.certificate A B hh
+                  ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart
+              (CyclicCutOrders.cut A B hh e).aL)
+            ((OriginalFacetCertificates.certificate A B hh
+                  ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart
+              (CyclicCutOrders.cut A B hh e).bL)) ''
+        Icc 0 1
+  CutSurfaceQuotient.CutSurfaceDevelopment.lateral_coverage : ⋃ i,
+        ⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart ''
+          (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain =
+      PolyhedralInputBridge.lateralBoundary (OriginalFacetCertificates.halfspaces A B h)
+constructor:
+  CutSurfaceQuotient.CutSurfaceDevelopment.mk.{u_1} {nA nB : ℕ} [NeZero nA] [NeZero nB] {A : ReducedConvexPolygon nA}
+    {B : ReducedConvexPolygon nB} {h : ℝ} {hh : 0 < h} {Q : Type u_1} [NormedAddCommGroup Q] [InnerProductSpace ℝ Q]
+    {e : Fin (CyclicCutOrders.sideCount A B)}
+    (U :
+      (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)) →
+        ↥(OriginalFacetCertificates.FaceSpace A B h ((CyclicCutOrders.order A B e) i)) →ᵃⁱ[ℝ] Q)
+    (developmentOn :
+      BandGeometryAssembly.DevelopmentOn
+        (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart.toAffineMap)
+        (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain) fun i =>
+        ⇑(U i))
+    (safe :
+      FiniteWitnessClosure.Safe
+        (fun i => (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain) fun i =>
+        ⇑(U i))
+    (developedMap : CutSurfaceQuotient.CutSurface A B hh e → Q) (developedMap_continuous : Continuous developedMap)
+    (materialMap :
+      CutSurfaceQuotient.CutSurface A B hh e →
+        { p // p ∈ PolyhedralInputBridge.lateralBoundary (OriginalFacetCertificates.halfspaces A B h) })
+    (materialMap_continuous : Continuous materialMap) (materialMap_surjective : Function.Surjective materialMap)
+    (face_injective :
+      ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)),
+        Function.Injective (CutSurfaceQuotient.faceInclusion A B hh e i))
+    (developed_face :
+      ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)) (x : CutSurfaceQuotient.FacePiece A B hh e i),
+        developedMap (CutSurfaceQuotient.faceInclusion A B hh e i x) = (U i) ↑x)
+    (material_face :
+      ∀ (i : Fin (CyclicCutOrders.sideCount A B - 1 + 1)) (x : CutSurfaceQuotient.FacePiece A B hh e i),
+        ↑(materialMap (CutSurfaceQuotient.faceInclusion A B hh e i x)) =
+          (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart ↑x)
+    (seam_material_eq :
+      ∀ (t : ℝ) (ht : t ∈ Icc 0 1),
+        materialMap
+            (CutSurfaceQuotient.faceInclusion A B hh e (Fin.last (CyclicCutOrders.sideCount A B - 1))
+              (CutSurfaceQuotient.seamLast A B hh e t ht)) =
+          materialMap (CutSurfaceQuotient.faceInclusion A B hh e 0 (CutSurfaceQuotient.seamFirst A B hh e t ht)))
+    (seam_copies_distinct :
+      ∀ (t : ℝ) (ht : t ∈ Icc 0 1),
+        CutSurfaceQuotient.faceInclusion A B hh e (Fin.last (CyclicCutOrders.sideCount A B - 1))
+            (CutSurfaceQuotient.seamLast A B hh e t ht) ≠
+          CutSurfaceQuotient.faceInclusion A B hh e 0 (CutSurfaceQuotient.seamFirst A B hh e t ht))
+    (cut_segment :
+      ⇑(OriginalFacetCertificates.certificate A B hh
+                  ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart ''
+            (OriginalFacetCertificates.certificate A B hh
+                ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).domain ∩
+          ⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) 0)).chart ''
+            (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) 0)).domain =
+        ⇑(AffineMap.lineMap
+              ((OriginalFacetCertificates.certificate A B hh
+                    ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart
+                (CyclicCutOrders.cut A B hh e).aL)
+              ((OriginalFacetCertificates.certificate A B hh
+                    ((CyclicCutOrders.order A B e) (Fin.last (CyclicCutOrders.sideCount A B - 1)))).chart
+                (CyclicCutOrders.cut A B hh e).bL)) ''
+          Icc 0 1)
+    (lateral_coverage :
+      ⋃ i,
+          ⇑(OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).chart ''
+            (OriginalFacetCertificates.certificate A B hh ((CyclicCutOrders.order A B e) i)).domain =
+        PolyhedralInputBridge.lateralBoundary (OriginalFacetCertificates.halfspaces A B h)) :
+    CutSurfaceQuotient.CutSurfaceDevelopment A B hh Q e
+info: GeneralTwoRimEndpointSanity.lean:60:0: def FiniteWitnessClosure.Safe.{u_1, u_2, u_3} : {ι : Type u_1} →
+  {E : ι → Type u_2} → {Q : Type u_3} → [NormedAddCommGroup Q] → ((i : ι) → Set (E i)) → ((i : ι) → E i → Q) → Prop :=
+fun {ι} {E} {Q} [NormedAddCommGroup Q] F U =>
+  ∀ (i j : ι), i ≠ j → Disjoint (interior (U i '' F i)) (interior (U j '' F j))
+info: GeneralTwoRimEndpointSanity.lean:61:0: @selectedPositiveSameCutSameMaps : {nA nB : ℕ} →
+  [inst : NeZero nA] →
+    [inst_1 : NeZero nB] →
+      (A : ReducedConvexPolygon nA) →
+        (B : ReducedConvexPolygon nB) →
+          {h : ℝ} → (hh : 0 < h) → 0 < intrinsicDelta A B hh → SameCutSameMapsResult A B hh
+info: GeneralTwoRimEndpointSanity.lean:62:0: @negativeSameCutSameMaps : {nA nB : ℕ} →
+  [inst : NeZero nA] →
+    [inst_1 : NeZero nB] →
+      (A : ReducedConvexPolygon nA) →
+        (B : ReducedConvexPolygon nB) →
+          {h : ℝ} → (hh : 0 < h) → intrinsicDelta A B hh < 0 → SameCutSameMapsResult A B hh
+info: GeneralTwoRimEndpointSanity.lean:63:0: @exists_sameCutSameMaps_of_delta_zero : ∀ {nA nB : ℕ} [inst : NeZero nA] [inst_1 : NeZero nB]
+  (A : ReducedConvexPolygon nA) (B : ReducedConvexPolygon nB) {h : ℝ} (hh : 0 < h),
+  intrinsicDelta A B hh = 0 → Nonempty (SameCutSameMapsResult A B hh)
+info: GeneralTwoRimEndpointSanity.lean:64:0: 'GeneralTwoRimUnfolding.exists_sameCutSameMaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:65:0: 'GeneralTwoRimUnfolding.general_rawCutSurfaceConclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:66:0: 'GeneralTwoRimUnfolding.general_setSameCutSameMaps' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:67:0: 'GeneralTwoRimUnfolding.general_setCutSurfaceConclusion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:68:0: 'GeneralTwoRimUnfolding.selectedPositiveSameCutSameMaps_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:69:0: 'GeneralTwoRimUnfolding.negativeSameCutSameMaps_U' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:70:0: 'GeneralTwoRimEndpointSanity.shifted_square_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:71:0: 'GeneralTwoRimEndpointSanity.triangle_square_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:72:0: 'GeneralTwoRimEndpointSanity.triangle_square_reversed_general' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: GeneralTwoRimEndpointSanity.lean:73:0: 'GeneralTwoRimEndpointSanity.nonnested_finite_hull_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8982 jobs).

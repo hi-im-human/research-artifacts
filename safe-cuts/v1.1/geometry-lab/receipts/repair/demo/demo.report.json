@@ -1,0 +1,227 @@
+{
+ "evidence": [
+  {
+   "attempt": 4,
+   "claim": "demo.even",
+   "outcome": "pass"
+  },
+  {
+   "attempt": 5,
+   "claim": "demo.nonnegative",
+   "outcome": "pass"
+  },
+  {
+   "attempt": 5,
+   "claim": "demo.prime",
+   "outcome": "unknown"
+  }
+ ],
+ "external_anchor": {
+  "forged_rewrite_against_retained_digest": "rejected: run digest does not match the externally retained digest",
+  "forged_rewrite_unanchored_load": "internally_consistent"
+ },
+ "history": [
+  {
+   "evidence_count": null,
+   "failure": null,
+   "name": "demo.int.source",
+   "schema": "glab.action/2",
+   "seq": 0,
+   "status": "succeeded",
+   "version": 1
+  },
+  {
+   "evidence_count": null,
+   "failure": null,
+   "name": "demo.int.add",
+   "schema": "glab.action/2",
+   "seq": 1,
+   "status": "succeeded",
+   "version": 1
+  },
+  {
+   "evidence_count": null,
+   "failure": {
+    "stage": "validation",
+    "type": "RegistryError"
+   },
+   "name": "demo.int.add",
+   "schema": "glab.action/2",
+   "seq": 2,
+   "status": "rejected",
+   "version": true
+  },
+  {
+   "evidence_count": null,
+   "failure": {
+    "stage": "execution",
+    "type": "ZeroDivisionError"
+   },
+   "name": "demo.int.divide",
+   "schema": "glab.action/2",
+   "seq": 3,
+   "status": "failed",
+   "version": 1
+  },
+  {
+   "evidence_count": 1,
+   "failure": null,
+   "name": "demo.check.even",
+   "schema": "glab.check/1",
+   "seq": 4,
+   "status": "completed",
+   "version": 1
+  },
+  {
+   "evidence_count": 2,
+   "failure": null,
+   "name": "demo.check.profile",
+   "schema": "glab.check/1",
+   "seq": 5,
+   "status": "completed",
+   "version": 1
+  },
+  {
+   "evidence_count": 0,
+   "failure": null,
+   "name": "demo.check.notes",
+   "schema": "glab.check/1",
+   "seq": 6,
+   "status": "completed",
+   "version": 1
+  },
+  {
+   "evidence_count": 0,
+   "failure": {
+    "stage": "execution",
+    "type": "OverflowError"
+   },
+   "name": "demo.check.fragile",
+   "schema": "glab.check/1",
+   "seq": 7,
+   "status": "failed",
+   "version": 1
+  }
+ ],
+ "load": {
+  "anchor": "matched",
+  "authenticated": false,
+  "integrity": "internally_consistent"
+ },
+ "replay": {
+  "actions": [
+   {
+    "name": "demo.int.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 0,
+    "version": 1
+   },
+   {
+    "name": "demo.int.add",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 1,
+    "version": 1
+   },
+   {
+    "name": "demo.int.add",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 2,
+    "version": true
+   },
+   {
+    "name": "demo.int.divide",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 3,
+    "version": 1
+   }
+  ],
+  "checks": [
+   {
+    "name": "demo.check.even",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 4,
+    "version": 1
+   },
+   {
+    "name": "demo.check.profile",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 5,
+    "version": 1
+   },
+   {
+    "name": "demo.check.notes",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 6,
+    "version": 1
+   },
+   {
+    "name": "demo.check.fragile",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 7,
+    "version": 1
+   }
+  ],
+  "environment_match": true,
+  "outcome": "reproduced",
+  "partial_comparison": {
+   "entries": 8,
+   "reproduced": 8
+  },
+  "run_digest_reproduced": true
+ },
+ "run_digest": "sha256:67cbe5c598ff9b3320f75929acc7f2448e2b6fd2d0a426935c41196188c2b991",
+ "summary_after_replay": {
+  "outcome": "unknown",
+  "requirements": [
+   {
+    "claim": "demo.even",
+    "evidence": [
+     "sha256:ef0d22a42983c7c0ce8f297f9a5b4968037f2d9cd78f78139f64fb629e3c2266"
+    ],
+    "invalid": [],
+    "outcome": "pass",
+    "reason": "",
+    "reproduced": true,
+    "required_coverage": "all",
+    "subject": "sha256:5d5aab24ee876f9f7b48cb30ba4f16ba5c8537fbc0090a99062f7c40f9fb98a0"
+   },
+   {
+    "claim": "demo.nonnegative",
+    "evidence": [
+     "sha256:c2212f4cfb308846c2028bedc8b87afe213b45c65b10c1f9cb4bee7d79806189"
+    ],
+    "invalid": [],
+    "outcome": "pass",
+    "reason": "",
+    "reproduced": true,
+    "required_coverage": "all",
+    "subject": "sha256:5d5aab24ee876f9f7b48cb30ba4f16ba5c8537fbc0090a99062f7c40f9fb98a0"
+   },
+   {
+    "claim": "demo.prime",
+    "evidence": [
+     "sha256:1256f8020d615aa1ff2fd2a191815516caa0ceb0f5f89a236e9b764ab4973138"
+    ],
+    "invalid": [],
+    "outcome": "unknown",
+    "reason": "",
+    "reproduced": true,
+    "required_coverage": "all",
+    "subject": "sha256:5d5aab24ee876f9f7b48cb30ba4f16ba5c8537fbc0090a99062f7c40f9fb98a0"
+   }
+  ],
+  "verified": false
+ },
+ "summary_as_loaded": {
+  "outcome": "unknown",
+  "verified": false
+ }
+}

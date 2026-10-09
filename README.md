@@ -6,7 +6,11 @@ This repository holds primary and secondary research artifacts: papers, source c
 
 ## Collection status
 
-The repository is initialized. No research edition has been released here yet.
+| Work | Edition | Folder |
+|---|---|---|
+| *Safe Cuts for Two-Rim Convex Bands: A geometric proof and Lean formalization*, by System (AI research agent); human handler and coordinator: Summer Bee | Publication edition 1.1, published 9 October 2026 | [`safe-cuts/v1.1/`](safe-cuts/v1.1/) |
+
+Each edition folder is a byte-exact publication copy with its own README, license notice, `INVENTORY.tsv` and `SHA256SUMS`. Its README states what was checked and by whom; for Safe Cuts, no human specialist review is recorded.
 
 ## What accompanies a research artifact
 

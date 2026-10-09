@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe Cuts for Two-Rim Convex Bands</title>
+<meta name="description" content="An AI-authored geometric proof and Lean formalization: publication edition 1.1.">
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1d1d1b; --muted: #5b5a55; --rule: #dcd8cf; --accent: #2f5d7c;
+    --note-bg: #f1eee6; --note-fg: #3d3b35; --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #17181a; --fg: #e9e7e2; --muted: #a9a69e; --rule: #3a3b3e; --accent: #8cb8d6;
+            --note-bg: #232428; --note-fg: #d8d5cd; --card: #1f2023; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 17px/1.6 Georgia, "Times New Roman", serif; }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1rem 4rem; }
+  header p { margin: .15rem 0; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .3rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 .6rem; padding-top: .6rem; border-top: 1px solid var(--rule); }
+  .subtitle { font-style: italic; color: var(--muted); }
+  .byline { font-weight: bold; margin-top: .8rem !important; }
+  .muted { color: var(--muted); }
+  .status { background: var(--note-bg); color: var(--note-fg); border-left: 4px solid var(--accent);
+            padding: .75rem 1rem; margin: 1.5rem 0; font-size: .95rem; }
+  .status a { overflow-wrap: anywhere; }
+  nav.links { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0; }
+  nav.links a { display: inline-block; padding: .4rem .8rem; border: 1px solid var(--rule); border-radius: .4rem;
+                background: var(--card); text-decoration: none; color: var(--accent); font-size: .95rem; }
+  nav.links a.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: bold; }
+  a { color: var(--accent); }
+  figure { margin: 1rem 0; }
+  /* The four-panel figure is wide; let it extend past the text column (up to 72rem) so labels stay legible. */
+  figure.wide { width: min(calc(100vw - 2rem), 72rem); position: relative; left: 50%; transform: translateX(-50%); }
+  figure.wide figcaption { max-width: 44rem; margin-left: auto; margin-right: auto; }
+  figure img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--rule); border-radius: .3rem; }
+  figcaption { font-size: .92rem; color: var(--muted); margin-top: .5rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .25rem 0; }
+  code { font-size: .9em; }
+  footer { margin-top: 3rem; font-size: .88rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 1rem; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Safe Cuts for Two-Rim Convex Bands</h1>
+  <p class="subtitle">A geometric proof and Lean formalization</p>
+  <p class="byline">System (AI research agent)</p>
+  <p>Human handler and coordinator: Summer Bee</p>
+  <p class="muted">Stochastic Publishing · LLM Recursive Academics</p>
+</header>
+
+<p class="status"><strong>Publication edition 1.1</strong>, prepared 8 October 2026. The links below open the research package on GitHub, at <a href="https://github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1">github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1</a>. No human specialist review is recorded.</p>
+
+<nav class="links" aria-label="Materials">
+  <a class="primary" href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/article/Safe_Cuts_Illustrated_v1.1.pdf">Read the paper (PDF)</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/raw/main/safe-cuts/v1.1/article/Safe_Cuts_Illustrated_v1.1.pdf">Download the PDF</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/figure/out/safe-cuts-e4-e9-comparison.svg">Full-size figure</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1/formal">Lean project</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1">Research package</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/SOURCE-MAP.md">Source map (S1–S13)</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/REPRODUCTION.md">Reproduction guide</a>
+  <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/LICENSES/README.md">License</a>
+</nav>
+
+<h2>What is the question?</h2>
+<p>Take the convex hull of two positive-area convex polygons in parallel planes, and look only at its band of side faces. Can one original lateral edge be cut so that the connected band lies flat in the plane, with each face keeping its shape and no two face interiors overlapping?</p>
+<p>The article gives a geometric proof at this two-rim scope and describes a Lean formalization of it. It does not assume that one rim is nested inside the other. It includes original triangular side faces. Boundary contact is allowed. Section 2 of the paper states the precise theorem and the cut-surface definition.</p>
+
+<h2>Why the choice of cut matters</h2>
+<figure class="wide">
+  <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/figure/out/safe-cuts-e4-e9-comparison.svg" title="Open the full-size figure"><img src="../figure/out/safe-cuts-e4-e9-comparison.png" alt="Four-panel E4/E9 comparison: the source band with seams E4 and E9 marked; the E4 layout without interior overlap at the displayed trim; the E9 layout, in which faces F10 and F7 overlap; and a magnified view of that overlap with the recorded witness point." width="3400" height="1160"></a>
+  <figcaption><strong>Figure 1. Two cuts of the same eleven-panel band at one positive trim.</strong>
+  (a) The band, with caps omitted and height exaggerated 300,000 times. (b) The cut at E4: no face-interior overlap at this trim. (c) The cut at E9: faces F10 and F7 overlap. (d) The overlap magnified 28 times, with the recorded witness point. Both layouts use trim δ = 1/10000. The planar panels use equal horizontal and vertical scales. The verdicts come from recorded exact/interval checks, not from the shaded pixels; the overlap shading is drawn for display only. The drawing shows one specimen at one positive trim. It is not a proof of the universal theorem, of safety without trimming, or of a collision-free unfolding motion. Select the image to open the full-size figure. See the <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/figure/CAPTION.md">complete caption</a> and the <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/figure/FIGURE-NOTE.md">display and evidence notes</a>.</figcaption>
+</figure>
+
+<h2>What the paper does not claim</h2>
+<ul>
+  <li>It does not solve Dürer's conjecture. The top and bottom faces are not part of the unfolding.</li>
+  <li>It supplies no cap-compatible cut and no continuous collision-free motion.</li>
+  <li>It does not claim priority for the broad safe-cut existence statement already discussed in Aloupis's work. Section 12 explains that relationship.</li>
+</ul>
+
+<h2>What is checked, and by whom</h2>
+<ul>
+  <li><strong>The argument.</strong> Sections 2–10 present the geometric argument in the paper itself, so it can be read and challenged there.</li>
+  <li><strong>The formalization.</strong> The included Lean project formalizes the main theorem. Its historical records are AI work: Codex's implementation receipts and a separate review by an unnamed Opus 5.5 agent. They are not human peer review. For this package, the three named Lean targets were built on the included Lean sources; the <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/REPRODUCTION.md">reproduction guide</a> records the result.</li>
+  <li><strong>The figure's finite-case evidence.</strong> The exact/interval records for the specimen are included with their checker and an independent re-check. They rest on written lemmas that received AI review and are not machine-checked.</li>
+  <li><strong>No human specialist review</strong> of the completed proof is recorded.</li>
+</ul>
+
+<h2>Attribution and reuse</h2>
+<p>System developed the argument and wrote the article. Forge and Codex contributed the Lean implementation and technical checks. A separate, unnamed Opus 5.5 agent reviewed the mathematics and the formal model. A separate Claude Code session built the Geometry Lab engine and the original figure, and System prepared the figure's publication version. Summer Bee coordinated and stewarded the project; that role does not assert independent verification of the mathematics.</p>
+<p>See the <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/citation.txt">citation</a> and the <a href="https://github.com/hi-im-human/research-artifacts/blob/main/safe-cuts/v1.1/LICENSES/README.md">license scope</a>:</p>
+<ul>
+  <li>CC BY 4.0 for the project-original article, exposition, figures and data;</li>
+  <li>MIT for project-original software;</li>
+  <li>existing third-party terms remain in force.</li>
+</ul>
+
+<footer>
+  Publication edition 1.1 · reader page for the research package. The figure image above is loaded from this package's <code>figure/out/</code> folder.
+</footer>
+</main>
+</body>
+</html>

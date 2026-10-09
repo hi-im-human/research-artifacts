@@ -1,0 +1,143 @@
+{
+ "environment": {
+  "iv_prec_bits": 400,
+  "mpmath": "1.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+ },
+ "label": "isolated Stage 4A prototype: independent re-check; not glab evidence",
+ "seams": {
+  "E0": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E1": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E10": {
+   "axis_confirmed": 42,
+   "axis_rows": 42,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 3,
+   "witness_rows": 3
+  },
+  "E2": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E3": {
+   "axis_confirmed": 44,
+   "axis_rows": 44,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 1,
+   "witness_rows": 1
+  },
+  "E4": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E5": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E6": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E7": {
+   "axis_confirmed": 45,
+   "axis_rows": 45,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 0,
+   "witness_rows": 0
+  },
+  "E8": {
+   "axis_confirmed": 42,
+   "axis_rows": 42,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 3,
+   "witness_rows": 3
+  },
+  "E9": {
+   "axis_confirmed": 41,
+   "axis_rows": 41,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 4,
+   "witness_rows": 4
+  }
+ },
+ "totals": {
+  "axis_confirmed": 484,
+  "axis_rows": 484,
+  "coordinates_checked": 968,
+  "coordinates_contained": 968,
+  "failures": 0,
+  "theorem_s_confirmed": 110,
+  "theorem_s_rows": 110,
+  "witness_confirmed": 11,
+  "witness_rows": 11
+ }
+}

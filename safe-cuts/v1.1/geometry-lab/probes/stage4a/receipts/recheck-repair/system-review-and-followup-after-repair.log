@@ -1,0 +1,270 @@
+........................                                                 [100%]
+=================================== PASSES ====================================
+_________________ test_control_genuine_recheck_bundle_passes __________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 41,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 4,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______________ test_A03_zero_axis_cannot_replace_overlap_witness ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 4,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__________ test_A03_missing_all_pair_rows_is_not_a_completed_recheck __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+________ test_A03_truncated_vertex_lists_are_not_complete_box_coverage ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 12,
+ "rejected_seams": 1,
+ "rows_checked": 10,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___________ test_A03_outcome_must_match_verified_certificate_method ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 4,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__________ test_control_smaller_positive_witness_bound_remains_valid __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 41,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 4,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______________ test_R01_inflated_witness_margin_is_not_verified _______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 41,
+ "expected_pairs": 55,
+ "failed_seams": 1,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 3,
+ "witness_confirmed": 3,
+ "witness_rows": 4
+}
+______________ test_control_smaller_distance_bound_remains_valid ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 41,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 4,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______________ test_R01_inflated_distance_bound_is_not_verified _______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 40,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 40,
+ "expected_pairs": 55,
+ "failed_seams": 1,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 4,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+____________ test_R02_bound_but_nonplanar_subject_is_not_verified _____________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_____________ test_control_honest_unknown_row_is_not_safety_pass ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 40,
+ "axis_rows": 40,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "euclidean_bounds_confirmed": 40,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 1,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 4,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+=========================== short test summary info ===========================
+PASSED test_stage4a_review.py::test_control_valid_square_is_source_linked
+PASSED test_stage4a_review.py::test_control_e9_contains_known_overlap
+PASSED test_stage4a_review.py::test_control_genuine_recheck_bundle_passes
+PASSED test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1]
+PASSED test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0]
+PASSED test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2]
+PASSED test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1]
+PASSED test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2]
+PASSED test_stage4a_review.py::test_A02_model_for_safe_seam_cannot_certify_unsafe_spec
+PASSED test_stage4a_review.py::test_control_wrong_source_with_full_evidence_is_refused
+PASSED test_stage4a_review.py::test_A02_dropping_failed_prerequisite_does_not_make_it_pass
+PASSED test_stage4a_review.py::test_A03_zero_axis_cannot_replace_overlap_witness
+PASSED test_stage4a_review.py::test_A03_missing_all_pair_rows_is_not_a_completed_recheck
+PASSED test_stage4a_review.py::test_A03_truncated_vertex_lists_are_not_complete_box_coverage
+PASSED test_stage4a_review.py::test_A03_outcome_must_match_verified_certificate_method
+PASSED test_followup.py::test_control_bypassed_frozen_model_is_rejected_at_issuance
+PASSED test_followup.py::test_control_cached_link_flag_cannot_override_real_evidence
+PASSED test_followup.py::test_control_smaller_positive_witness_bound_remains_valid
+PASSED test_followup.py::test_R01_inflated_witness_margin_is_not_verified
+PASSED test_followup.py::test_control_smaller_distance_bound_remains_valid
+PASSED test_followup.py::test_R01_inflated_distance_bound_is_not_verified
+PASSED test_followup.py::test_control_inconsistent_plane_is_an_actual_failed_precondition
+PASSED test_followup.py::test_R02_bound_but_nonplanar_subject_is_not_verified
+PASSED test_followup.py::test_control_honest_unknown_row_is_not_safety_pass
+24 passed in 1.67s

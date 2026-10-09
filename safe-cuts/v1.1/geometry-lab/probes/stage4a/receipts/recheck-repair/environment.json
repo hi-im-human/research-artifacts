@@ -1,0 +1,22 @@
+{
+ "imported_receipts": "System's receipts are preserved unchanged under <geometry-lab-project>/reviews/stage4a-repair-commit-62/receipts/; everything in this directory is this session's own execution",
+ "label": "Stage 4A re-check repair: execution environments (throwaway ones live outside the repository)",
+ "maintained_venv": "<engine>/.venv, read-only, nothing installed (Python 3.11.9, numpy 2.4.4, pytest 9.1.1)",
+ "recheck_env": {
+  "flags": "-I -B",
+  "mpmath": "1.3.0",
+  "provenance": "same throwaway mpmath-only environment as Stage 4A (92 RECORD-verified files); see ../repair/recheck/environment.json",
+  "python": "3.11.9"
+ },
+ "review_env": {
+  "packages": {
+   "mpmath": "1.3.0",
+   "numpy": "2.4.4",
+   "pluggy": "1.6.0",
+   "pytest": "9.1.1"
+  },
+  "platform": "Windows-10-10.0.26200-SP0",
+  "provenance": "same throwaway review environment as the A01-A03 repair (copied pinned packages, RECORD-verified, no network); see ../repair/review-environment.json",
+  "python": "3.11.9"
+ }
+}

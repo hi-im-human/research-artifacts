@@ -1,0 +1,5 @@
+shifted_box REJECTED 3 ['axis certificate not confirmed', 'mpmath box not inside probe box']
+altered_axis_gap REJECTED 1 ['axis certificate not confirmed']
+moved_witness REJECTED 1 ['witness certificate not confirmed']
+altered_sigma REJECTED 1 ['Theorem S: sides -1,1; recorded sigma equal: False']
+inward_normal_input REJECTED 54 ['Theorem S: sides -1,-1; recorded sigma equal: False', 'Theorem S: sides 1,1; recorded sigma equal: False', 'mpmath box not inside probe box']

@@ -1,0 +1,59 @@
+..FFFFFFFFFFF                                                            [100%]
+================================== FAILURES ===================================
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB0DB2A0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1A97AECF0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB0DA4D0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1A97AECF0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1A97AECF0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1A97AECF0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB0DAC20>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+E   AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+    assert ([{'attempt': 1, 'checker': 'two_rim.check.source', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB1A81E0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+E   AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+    assert ([{'attempt': 1, 'checker': 'two_rim.check.source', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB0DAC20>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+E   AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+    assert ([{'attempt': 1, 'checker': 'two_rim.check.source', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB1A8EE0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.source.height_positive', 'pass'), ('two_rim.source.rims_strictly_convex_clockwise', 'pass'), ('two_rim.source.normalization_accounts_for_input', 'pass')]
+E   AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+    assert ([{'attempt': 3, 'checker': 'two_rim.check.material', 'checker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9...ecker_revision': 'sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84', 'checker_version': 1, ...}] and False)
+     +  where False = any(<generator object assert_not_all_pass.<locals>.<genexpr> at 0x000001E1AB0D9BE0>)
+<engine>\review-cases\stage2-review\test_source_boundary.py:73: AssertionError: [('two_rim.material.identity_hash', 'pass'), ('two_rim.material.facets_match_supporting_plane_oracle', 'pass'), ('two_rim.material.incidence_and_rings', 'pass')]
+=========================== short test summary info ===========================
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[height]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[xy_coordinates]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_face]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_hinge]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_rim_edge]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[cross_cap]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[misalign_cap_edges]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_input_coordinate]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_normalized_coordinate]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[unknown_schema]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_unknown_material_schema_cannot_pass
+11 failed, 2 passed in 0.18s

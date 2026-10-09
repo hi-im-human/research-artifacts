@@ -1,0 +1,7 @@
+{
+  "fixture": "F3_near_degenerate_prism",
+  "provenance": "F1 with one top vertex moved by exactly 10^-20 in y (exact input).",
+  "claimed_features": ["exact source has 5 lateral facets including 2 nearly coplanar triangles", "the perturbation is below float64 resolution", "rotational defect sign not decidable in float64"],
+  "features_established_by": "tests/test_source.py::test_fixture_features (exact oracle facet count) and the checker receipts generator_float_inputs_equal_exact_source=fail, defect_sign_numerically_decided=unknown",
+  "params": {"top": [[2,1],[4,1],[4,"300000000000000000001/100000000000000000000"],[2,3]], "bottom": [[0,0],[2,0],[2,2],[0,2]], "height": "3/2", "input_kind": "cyclic_convex_polygon"}
+}

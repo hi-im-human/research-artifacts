@@ -1,0 +1,566 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+review-cases/stage2-review/test_source_boundary.py::test_control_valid_material_remains_accepted FAILED [  7%]
+review-cases/stage2-review/test_source_boundary.py::test_control_changed_vertex_is_detected FAILED [ 15%]
+review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[height] FAILED [ 23%]
+review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[xy_coordinates] FAILED [ 30%]
+review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_face] FAILED [ 38%]
+review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_hinge] FAILED [ 46%]
+review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_rim_edge] FAILED [ 53%]
+review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[cross_cap] FAILED [ 61%]
+review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[misalign_cap_edges] FAILED [ 69%]
+review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_input_coordinate] FAILED [ 76%]
+review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_normalized_coordinate] FAILED [ 84%]
+review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[unknown_schema] FAILED [ 92%]
+review-cases/stage2-review/test_source_boundary.py::test_D03_unknown_material_schema_cannot_pass FAILED [100%]
+
+================================== FAILURES ===================================
+________________ test_control_valid_material_remains_accepted _________________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1732/test_control_valid_material_re0')
+
+    def test_control_valid_material_remains_accepted(tmp_path):
+        run, reg, source, material = material_run()
+>       claims = checked_material(run, source, material)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+___________________ test_control_changed_vertex_is_detected ___________________
+
+    def test_control_changed_vertex_is_detected():
+        def move(m):
+            m["vertices"][0]["xyz"][0] = "1/3"
+        run, _, source, material = material_run(move)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:91: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+___________ test_D01_material_must_match_its_actual_source[height] ____________
+
+difference = 'height'
+
+    @pytest.mark.parametrize("difference", ["height", "xy_coordinates"])
+    def test_D01_material_must_match_its_actual_source(difference):
+        other = copy.deepcopy(BASE)
+        if difference == "height":
+            other["height"] = "4"
+        else:
+            other["top"] = [[x + 10, y] for x, y in other["top"]]
+            other["bottom"] = [[x + 10, y] for x, y in other["bottom"]]
+        alternate = normalize_source(**other)
+        run, _, source, material = material_run(alternate_source=alternate)
+        actual = run.get(source)["payload"]["normalized"]
+        made = run.get(material)["payload"]
+        assert (made["height"] != actual["height"] or
+                [v["xyz"][:2] for v in made["vertices"] if v["rim"] == "top"] != actual["top"])
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+_______ test_D01_material_must_match_its_actual_source[xy_coordinates] ________
+
+difference = 'xy_coordinates'
+
+    @pytest.mark.parametrize("difference", ["height", "xy_coordinates"])
+    def test_D01_material_must_match_its_actual_source(difference):
+        other = copy.deepcopy(BASE)
+        if difference == "height":
+            other["height"] = "4"
+        else:
+            other["top"] = [[x + 10, y] for x, y in other["top"]]
+            other["bottom"] = [[x + 10, y] for x, y in other["bottom"]]
+        alternate = normalize_source(**other)
+        run, _, source, material = material_run(alternate_source=alternate)
+        actual = run.get(source)["payload"]["normalized"]
+        made = run.get(material)["payload"]
+        assert (made["height"] != actual["height"] or
+                [v["xyz"][:2] for v in made["vertices"] if v["rim"] == "top"] != actual["top"])
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:108: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+__ test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_face] __
+
+mutation = <function duplicate_face at 0x0000023E4E8D9800>
+
+    @pytest.mark.parametrize("mutation", [duplicate_face, duplicate_hinge, duplicate_rim_edge, cross_cap,
+                                           misalign_cap_edges], ids=lambda f: f.__name__)
+    def test_D02_lossy_containers_must_not_hide_invalid_incidence(mutation):
+        run, _, source, material = material_run(mutation)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+_ test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_hinge] __
+
+mutation = <function duplicate_hinge at 0x0000023E4E8D98A0>
+
+    @pytest.mark.parametrize("mutation", [duplicate_face, duplicate_hinge, duplicate_rim_edge, cross_cap,
+                                           misalign_cap_edges], ids=lambda f: f.__name__)
+    def test_D02_lossy_containers_must_not_hide_invalid_incidence(mutation):
+        run, _, source, material = material_run(mutation)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+_ test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_rim_edge] _
+
+mutation = <function duplicate_rim_edge at 0x0000023E4E8D9940>
+
+    @pytest.mark.parametrize("mutation", [duplicate_face, duplicate_hinge, duplicate_rim_edge, cross_cap,
+                                           misalign_cap_edges], ids=lambda f: f.__name__)
+    def test_D02_lossy_containers_must_not_hide_invalid_incidence(mutation):
+        run, _, source, material = material_run(mutation)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+____ test_D02_lossy_containers_must_not_hide_invalid_incidence[cross_cap] _____
+
+mutation = <function cross_cap at 0x0000023E4E8D99E0>
+
+    @pytest.mark.parametrize("mutation", [duplicate_face, duplicate_hinge, duplicate_rim_edge, cross_cap,
+                                           misalign_cap_edges], ids=lambda f: f.__name__)
+    def test_D02_lossy_containers_must_not_hide_invalid_incidence(mutation):
+        run, _, source, material = material_run(mutation)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+_ test_D02_lossy_containers_must_not_hide_invalid_incidence[misalign_cap_edges] _
+
+mutation = <function misalign_cap_edges at 0x0000023E4E8D9A80>
+
+    @pytest.mark.parametrize("mutation", [duplicate_face, duplicate_hinge, duplicate_rim_edge, cross_cap,
+                                           misalign_cap_edges], ids=lambda f: f.__name__)
+    def test_D02_lossy_containers_must_not_hide_invalid_incidence(mutation):
+        run, _, source, material = material_run(mutation)
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:137: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+____ test_D03_source_shape_and_version_are_checked[extra_input_coordinate] ____
+
+mutation = 'extra_input_coordinate'
+
+    @pytest.mark.parametrize("mutation", ["extra_input_coordinate", "extra_normalized_coordinate", "unknown_schema"])
+    def test_D03_source_shape_and_version_are_checked(mutation):
+        reg = new_registry()
+        payload = normalize_source(**copy.deepcopy(BASE))
+        if mutation == "extra_input_coordinate":
+            payload["input"]["top"][0].append(99)
+        elif mutation == "extra_normalized_coordinate":
+            payload["normalized"]["top"][0].append("99")
+        else:
+            payload["schema"] = "two_rim.source/99"
+        reg.register_action(ActionSpec("review.source.malformed", 1, None, {}, "review-commit-37",
+                                       lambda s, p, seed: StateDraft("two_rim.source", payload, "exact")))
+        run = Run(reg)
+        made = run.apply("review.source.malformed", 1, {})
+        assert made["status"] == "succeeded"
+>       assert_not_all_pass(run.check("two_rim.check.source", 1, made["output"], {}))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+_ test_D03_source_shape_and_version_are_checked[extra_normalized_coordinate] __
+
+mutation = 'extra_normalized_coordinate'
+
+    @pytest.mark.parametrize("mutation", ["extra_input_coordinate", "extra_normalized_coordinate", "unknown_schema"])
+    def test_D03_source_shape_and_version_are_checked(mutation):
+        reg = new_registry()
+        payload = normalize_source(**copy.deepcopy(BASE))
+        if mutation == "extra_input_coordinate":
+            payload["input"]["top"][0].append(99)
+        elif mutation == "extra_normalized_coordinate":
+            payload["normalized"]["top"][0].append("99")
+        else:
+            payload["schema"] = "two_rim.source/99"
+        reg.register_action(ActionSpec("review.source.malformed", 1, None, {}, "review-commit-37",
+                                       lambda s, p, seed: StateDraft("two_rim.source", payload, "exact")))
+        run = Run(reg)
+        made = run.apply("review.source.malformed", 1, {})
+        assert made["status"] == "succeeded"
+>       assert_not_all_pass(run.check("two_rim.check.source", 1, made["output"], {}))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+________ test_D03_source_shape_and_version_are_checked[unknown_schema] ________
+
+mutation = 'unknown_schema'
+
+    @pytest.mark.parametrize("mutation", ["extra_input_coordinate", "extra_normalized_coordinate", "unknown_schema"])
+    def test_D03_source_shape_and_version_are_checked(mutation):
+        reg = new_registry()
+        payload = normalize_source(**copy.deepcopy(BASE))
+        if mutation == "extra_input_coordinate":
+            payload["input"]["top"][0].append(99)
+        elif mutation == "extra_normalized_coordinate":
+            payload["normalized"]["top"][0].append("99")
+        else:
+            payload["schema"] = "two_rim.source/99"
+        reg.register_action(ActionSpec("review.source.malformed", 1, None, {}, "review-commit-37",
+                                       lambda s, p, seed: StateDraft("two_rim.source", payload, "exact")))
+        run = Run(reg)
+        made = run.apply("review.source.malformed", 1, {})
+        assert made["status"] == "succeeded"
+>       assert_not_all_pass(run.check("two_rim.check.source", 1, made["output"], {}))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+________________ test_D03_unknown_material_schema_cannot_pass _________________
+
+    def test_D03_unknown_material_schema_cannot_pass():
+        run, _, source, material = material_run(lambda m: m.update(schema="two_rim.material/99"))
+>       assert_not_all_pass(checked_material(run, source, material))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage2-review\test_source_boundary.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage2-review\test_source_boundary.py:67: in checked_material
+    source_claims = run.check("two_rim.check.source", 1, source, {})
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0', fn=<function check_material at 0x0000023E4E8EFEC0>, uses_context=True)}
+name = 'two_rim.check.source', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.source'
+
+glab\core\registry.py:191: RegistryError
+=========================== short test summary info ===========================
+FAILED review-cases/stage2-review/test_source_boundary.py::test_control_valid_material_remains_accepted
+FAILED review-cases/stage2-review/test_source_boundary.py::test_control_changed_vertex_is_detected
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[height]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D01_material_must_match_its_actual_source[xy_coordinates]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_face]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_hinge]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_rim_edge]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[cross_cap]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[misalign_cap_edges]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_input_coordinate]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[extra_normalized_coordinate]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_source_shape_and_version_are_checked[unknown_schema]
+FAILED review-cases/stage2-review/test_source_boundary.py::test_D03_unknown_material_schema_cannot_pass
+============================= 13 failed in 0.27s ==============================

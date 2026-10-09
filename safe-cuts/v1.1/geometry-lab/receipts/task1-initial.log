@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+_________________ ERROR collecting tests/core/test_records.py _________________
+ImportError while importing test module '<engine>\tests\core\test_records.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\core\test_records.py:6: in <module>
+    from glab.core.numbers import ExactInputError, format_exact, parse_exact
+E   ModuleNotFoundError: No module named 'glab.core.numbers'
+=========================== short test summary info ===========================
+ERROR tests/core/test_records.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.10s

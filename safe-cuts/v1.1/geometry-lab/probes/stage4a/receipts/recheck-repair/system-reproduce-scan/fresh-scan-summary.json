@@ -1,0 +1,124 @@
+{
+ "seams": {
+  "E0": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:81c4046ac5bf7afb4ac236d6e2d55eedf7cad175f76bbf34d92b1d61cbb718fe",
+   "verdict": "pass"
+  },
+  "E1": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:6df7913395bc763ad7e152b263ee4b90be8232775aa283ab2ab241d0283ac55c",
+   "verdict": "pass"
+  },
+  "E10": {
+   "max_bits": 64,
+   "methods": {
+    "interior_witness": 3,
+    "separating_axis": 42,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:57227d00351eeb74d7de7a02493abc179086cbdad82369e26d79ff47e769381f",
+   "verdict": "fail"
+  },
+  "E2": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:99ddb612bfb30ed30f30964ac12e5b2f22ba8670106fe0045de9dbad200151a2",
+   "verdict": "pass"
+  },
+  "E3": {
+   "max_bits": 64,
+   "methods": {
+    "interior_witness": 1,
+    "separating_axis": 44,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:d6519d763f3fae8d1f1655e3040f68e483d0c425fba246abde08a34c38b17b70",
+   "verdict": "fail"
+  },
+  "E4": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:9e67e86cd1d4f03ab64539a87f23a6571682f61c559f31771f3f91ee070f4c8f",
+   "verdict": "pass"
+  },
+  "E5": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:f1c322cc96a1bcd514f8eeb3e52de8e6ecf6b96c372dced06fed451e8c55f3eb",
+   "verdict": "pass"
+  },
+  "E6": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:44640c41b832fa20ff3815eed08f8c34125aac36ea2b862da83ee90d516cae43",
+   "verdict": "pass"
+  },
+  "E7": {
+   "max_bits": 64,
+   "methods": {
+    "separating_axis": 45,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:a00a7a40cff2c96a09fe086ea6ebabfbdda99966569571516bce133a22276c92",
+   "verdict": "pass"
+  },
+  "E8": {
+   "max_bits": 64,
+   "methods": {
+    "interior_witness": 3,
+    "separating_axis": 42,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:183f2630080cb31cfb0744886156591cd4ebbdb3b15dc91dcac7264b2be4526b",
+   "verdict": "fail"
+  },
+  "E9": {
+   "max_bits": 64,
+   "methods": {
+    "interior_witness": 4,
+    "separating_axis": 41,
+    "shared_hinge_exact": 10
+   },
+   "pairs": 55,
+   "subject_id": "sha256:03fc2de26452284914c0efc9ccf1f0b748fb1d343fa1dc41bff5a1c5bafe1e4f",
+   "verdict": "fail"
+  }
+ },
+ "total_pairs": 605,
+ "totals": {
+  "interior_witness": 11,
+  "separating_axis": 484,
+  "shared_hinge_exact": 110
+ }
+}

@@ -1,0 +1,52 @@
+........................................................................ [ 25%]
+........................................................................ [ 51%]
+................................................................FFFFFFFF [ 77%]
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF..........................          [100%]
+=========================== short test summary info ===========================
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_correct_correspondence_passes_with_all_claims
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_wrong_source_fails_only_the_correspondence_claim[height]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_wrong_source_fails_only_the_correspondence_claim[xy]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_reordered_presentation_with_equal_normalized_material_corresponds
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_material_without_a_source_parent_fails_correspondence
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_material_whose_parent_is_the_wrong_kind_fails_correspondence
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_direct_call_without_context_is_unknown_not_pass
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_correspondence_evidence_goes_stale_when_the_source_changes
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_correspondence_checks_save_load_and_replay
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_v1_checkers_are_no_longer_registered
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema0]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema1]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema2]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema3]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema4]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.record_schema5]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.incidence_and_rings0]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.incidence_and_rings1]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_invalid_declarations_and_cap_paths_fail[<lambda>-two_rim.material.incidence_and_rings2]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_schema_failure_makes_other_material_claims_unknown
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_valid_triangles_trapezoids_caps_and_shared_vertices_pass[params0]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_valid_triangles_trapezoids_caps_and_shared_vertices_pass[params1]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>0]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>1]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>2]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>3]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>4]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>5]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>6]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_source_shape_and_version_violations_fail_and_block_interpretation[<lambda>7]
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_valid_exact_input_spellings_are_accepted_as_given
+FAILED tests/two_rim/test_repairs_d01_d03.py::test_unknown_material_schema_cannot_pass
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_control_valid_material_remains_accepted
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_control_changed_vertex_is_detected
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D01_material_must_match_its_actual_source[height]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D01_material_must_match_its_actual_source[xy_coordinates]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_face]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_hinge]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[duplicate_rim_edge]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[cross_cap]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D02_lossy_containers_must_not_hide_invalid_incidence[misalign_cap_edges]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D03_source_shape_and_version_are_checked[extra_input_coordinate]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D03_source_shape_and_version_are_checked[extra_normalized_coordinate]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D03_source_shape_and_version_are_checked[unknown_schema]
+FAILED tests/two_rim/test_review_source_boundary_adapted.py::test_D03_unknown_material_schema_cannot_pass
+ERROR tests/core/test_dependency_context.py
+45 failed, 234 passed, 1 error in 4.02s

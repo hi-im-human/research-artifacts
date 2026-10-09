@@ -1,0 +1,1 @@
+Manually stopped the owned endpoint build while it was rebuilding the unchanged inherited SelectedNegativeFullDevelopment module. This is not a pass. The replacement endpoint will consume the checked negative full Safe theorem through the new shared original-source assembly. 2026-09-25T11:04:18.7887164-04:00

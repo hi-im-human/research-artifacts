@@ -1,0 +1,138 @@
+{
+ "all_identical": true,
+ "label": "maintained claim rows versus the accepted Stage 4A prototype (probes/stage4a, unchanged) on the same exact inputs",
+ "seams": {
+  "E0": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:8cb9b3ef9ba07c1dcc2824f84dc57bc6ac8fbcd3b0d53c058820484b8eea7c22",
+    "prototype": "sha256:8cb9b3ef9ba07c1dcc2824f84dc57bc6ac8fbcd3b0d53c058820484b8eea7c22"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:c96f91e39d9c98c8fc6d6636102d00233578109ac667a24c0545f0593ae289ed",
+    "prototype": "sha256:c96f91e39d9c98c8fc6d6636102d00233578109ac667a24c0545f0593ae289ed"
+   }
+  },
+  "E1": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:3479c157ba11d6de94a6b20aecfda01d4256e8b577421497f9df4353020f76be",
+    "prototype": "sha256:3479c157ba11d6de94a6b20aecfda01d4256e8b577421497f9df4353020f76be"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:d3113a963f9645cc13f64ab73531fadfe26a3ed7a688c4c1306bb96e7f13fb7c",
+    "prototype": "sha256:d3113a963f9645cc13f64ab73531fadfe26a3ed7a688c4c1306bb96e7f13fb7c"
+   }
+  },
+  "E10": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:0fdc3322d3c1fd25f000a33422be8d58b6aeba45fbebedc1173bae33ddd4def0",
+    "prototype": "sha256:0fdc3322d3c1fd25f000a33422be8d58b6aeba45fbebedc1173bae33ddd4def0"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:80bd8c3c4a8c082c635de6bf4da8da59b2ebb2390484a9bc98fd651dfdaabf73",
+    "prototype": "sha256:80bd8c3c4a8c082c635de6bf4da8da59b2ebb2390484a9bc98fd651dfdaabf73"
+   }
+  },
+  "E2": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:2f4fa7c2c2cb462f0c757c23e00d7a4a821e82750bea30404503607175149e1d",
+    "prototype": "sha256:2f4fa7c2c2cb462f0c757c23e00d7a4a821e82750bea30404503607175149e1d"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:93ffb5d7b690159cfdf10a998ee139d79d55834f0a619975c91342bb5f60a580",
+    "prototype": "sha256:93ffb5d7b690159cfdf10a998ee139d79d55834f0a619975c91342bb5f60a580"
+   }
+  },
+  "E3": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:cb4798b3e397b6b8c187cc82c2374453565b8807dbeb486946ba9efae1646eb1",
+    "prototype": "sha256:cb4798b3e397b6b8c187cc82c2374453565b8807dbeb486946ba9efae1646eb1"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:d9c4032e09cd145cbf24614a6b60a831787232b85b56a7b8f3e0778b54ab66ef",
+    "prototype": "sha256:d9c4032e09cd145cbf24614a6b60a831787232b85b56a7b8f3e0778b54ab66ef"
+   }
+  },
+  "E4": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:3974cd9665eddb48473de45b35c4488fa1d796118dbd2c107b752925d8c37dab",
+    "prototype": "sha256:3974cd9665eddb48473de45b35c4488fa1d796118dbd2c107b752925d8c37dab"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:5d7d07fe5ad76d7ac3fffb7817d57806a89c002f96222aee0e953a70acea6e08",
+    "prototype": "sha256:5d7d07fe5ad76d7ac3fffb7817d57806a89c002f96222aee0e953a70acea6e08"
+   }
+  },
+  "E5": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:a5409f8874844f42a9022a717ec02385f404e30dbec6ce3c505f6627d4bfd7bd",
+    "prototype": "sha256:a5409f8874844f42a9022a717ec02385f404e30dbec6ce3c505f6627d4bfd7bd"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:5cb53a50cea5a510b2dd6261401b0b850a27a1cee4a1b0adf5371b6890aa7183",
+    "prototype": "sha256:5cb53a50cea5a510b2dd6261401b0b850a27a1cee4a1b0adf5371b6890aa7183"
+   }
+  },
+  "E6": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:36bf23a9e20893bd0ed8960a99f646fd7cd15cc870a582fd5b9fa4e5860e0020",
+    "prototype": "sha256:36bf23a9e20893bd0ed8960a99f646fd7cd15cc870a582fd5b9fa4e5860e0020"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:c8fb5501e73b40422a90a29912d7d460ed0bb392c5e8a1975bdf3095a198dfac",
+    "prototype": "sha256:c8fb5501e73b40422a90a29912d7d460ed0bb392c5e8a1975bdf3095a198dfac"
+   }
+  },
+  "E7": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:230f6466b8212c5b4bdb2b993382a0a4a17abb35d2aad4a5450359c0c29e7a6a",
+    "prototype": "sha256:230f6466b8212c5b4bdb2b993382a0a4a17abb35d2aad4a5450359c0c29e7a6a"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:1991076ca92fe6b86c5a6f5823903414abf01e1b3607a4532aa0b152cb10170c",
+    "prototype": "sha256:1991076ca92fe6b86c5a6f5823903414abf01e1b3607a4532aa0b152cb10170c"
+   }
+  },
+  "E8": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:0f9aa9cd64a152c6320c212ba16d1d8b7305541e9975e2ab804e13374660612f",
+    "prototype": "sha256:0f9aa9cd64a152c6320c212ba16d1d8b7305541e9975e2ab804e13374660612f"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:2ce8a34e64ecafc23d9e8a268f6869caed3bc2b9b3626672f4910459550ff2c7",
+    "prototype": "sha256:2ce8a34e64ecafc23d9e8a268f6869caed3bc2b9b3626672f4910459550ff2c7"
+   }
+  },
+  "E9": {
+   "enclosure_rows": {
+    "identical": true,
+    "maintained": "sha256:53734482b0bf4a7a94935c474b535e8075f4dc2c4a0ebe910c2ba7768fb60e0e",
+    "prototype": "sha256:53734482b0bf4a7a94935c474b535e8075f4dc2c4a0ebe910c2ba7768fb60e0e"
+   },
+   "theorem_s_rows": {
+    "identical": true,
+    "maintained": "sha256:77f0d9d14c8ba1d988cb638c4640ef7dbeb3ffa5ee03782b0be835c930c44da0",
+    "prototype": "sha256:77f0d9d14c8ba1d988cb638c4640ef7dbeb3ffa5ee03782b0be835c930c44da0"
+   }
+  }
+ }
+}

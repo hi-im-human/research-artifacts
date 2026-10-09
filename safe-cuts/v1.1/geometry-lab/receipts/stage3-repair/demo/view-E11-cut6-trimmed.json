@@ -1,0 +1,808 @@
+{
+ "delta": "1/10000",
+ "derived": "display cache computed from the saved run's states; regenerate from the run file",
+ "evidence": [
+  {
+   "claim": "two_rim.trim.record_schema",
+   "coverage": "all",
+   "method": "exact_computation",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.trim.maps_identical_to_parent",
+   "coverage": "all",
+   "method": "exact_computation",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.trim.domain_is_exact_band",
+   "coverage": "all",
+   "method": "exact_computation",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.development.face_maps_rigid",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.development.no_reflected_face",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.development.nonempty_face_images",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.development.retained_hinges_and_glued_vertices_agree",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "pass"
+  },
+  {
+   "claim": "two_rim.development.face_interiors_disjoint_all_pairs",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "fail"
+  },
+  {
+   "claim": "two_rim.development.diagnostic.unglued_pairs_disjoint",
+   "coverage": "pairs_without_glued_material",
+   "method": "numerical_diagnostic",
+   "outcome": "fail"
+  },
+  {
+   "claim": "two_rim.development.diagnostic.float_representability",
+   "coverage": "all",
+   "method": "exact_computation",
+   "outcome": "fail"
+  },
+  {
+   "claim": "two_rim.development.diagnostic.circuit_holonomy",
+   "coverage": "all",
+   "method": "numerical_diagnostic",
+   "outcome": "pass"
+  }
+ ],
+ "face_order": [
+  "F9",
+  "F10",
+  "F0",
+  "F1",
+  "F2",
+  "F3",
+  "F4",
+  "F5",
+  "F6",
+  "F7",
+  "F8"
+ ],
+ "faces_3d": {
+  "F0": {
+   "boundary": [
+    "B5",
+    "A0",
+    "B6"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     16.93,
+     -51.38,
+     0.0
+    ],
+    [
+     -40.0,
+     -28.0,
+     0.0001
+    ],
+    [
+     -26.0,
+     -53.0,
+     0.0
+    ]
+   ]
+  },
+  "F1": {
+   "boundary": [
+    "B6",
+    "A0",
+    "B0"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     -26.0,
+     -53.0,
+     0.0
+    ],
+    [
+     -40.0,
+     -28.0,
+     0.0001
+    ],
+    [
+     -85.0,
+     60.0,
+     0.0
+    ]
+   ]
+  },
+  "F10": {
+   "boundary": [
+    "B5",
+    "A3",
+    "A0"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     16.93,
+     -51.38,
+     0.0
+    ],
+    [
+     31.0,
+     -11.0,
+     0.0001
+    ],
+    [
+     -40.0,
+     -28.0,
+     0.0001
+    ]
+   ]
+  },
+  "F2": {
+   "boundary": [
+    "B0",
+    "A0",
+    "A1"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     -85.0,
+     60.0,
+     0.0
+    ],
+    [
+     -40.0,
+     -28.0,
+     0.0001
+    ],
+    [
+     -15.0,
+     50.0,
+     0.0001
+    ]
+   ]
+  },
+  "F3": {
+   "boundary": [
+    "B0",
+    "A1",
+    "B1"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     -85.0,
+     60.0,
+     0.0
+    ],
+    [
+     -15.0,
+     50.0,
+     0.0001
+    ],
+    [
+     18.0,
+     91.0,
+     0.0
+    ]
+   ]
+  },
+  "F4": {
+   "boundary": [
+    "B1",
+    "A1",
+    "B2"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     18.0,
+     91.0,
+     0.0
+    ],
+    [
+     -15.0,
+     50.0,
+     0.0001
+    ],
+    [
+     60.0,
+     74.0,
+     0.0
+    ]
+   ]
+  },
+  "F5": {
+   "boundary": [
+    "B2",
+    "A1",
+    "A2"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     60.0,
+     74.0,
+     0.0
+    ],
+    [
+     -15.0,
+     50.0,
+     0.0001
+    ],
+    [
+     16.0,
+     27.0,
+     0.0001
+    ]
+   ]
+  },
+  "F6": {
+   "boundary": [
+    "B2",
+    "A2",
+    "A3"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     60.0,
+     74.0,
+     0.0
+    ],
+    [
+     16.0,
+     27.0,
+     0.0001
+    ],
+    [
+     31.0,
+     -11.0,
+     0.0001
+    ]
+   ]
+  },
+  "F7": {
+   "boundary": [
+    "B2",
+    "A3",
+    "B3"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     60.0,
+     74.0,
+     0.0
+    ],
+    [
+     31.0,
+     -11.0,
+     0.0001
+    ],
+    [
+     30.3,
+     -38.5,
+     0.0
+    ]
+   ]
+  },
+  "F8": {
+   "boundary": [
+    "B3",
+    "A3",
+    "B4"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     30.3,
+     -38.5,
+     0.0
+    ],
+    [
+     31.0,
+     -11.0,
+     0.0001
+    ],
+    [
+     22.56,
+     -49.93,
+     0.0
+    ]
+   ]
+  },
+  "F9": {
+   "boundary": [
+    "B4",
+    "A3",
+    "B5"
+   ],
+   "shape": "triangle",
+   "xyz": [
+    [
+     22.56,
+     -49.93,
+     0.0
+    ],
+    [
+     31.0,
+     -11.0,
+     0.0001
+    ],
+    [
+     16.93,
+     -51.38,
+     0.0
+    ]
+   ]
+  }
+ },
+ "height": "1/10000",
+ "material_identity": "sha256:41b968ea69e48758b3d1b12d9afdf6c56e7b3c180ce3bf0912146d0ae0ab5243",
+ "planar": {
+  "F0": {
+   "labels": [
+    "E0@lo",
+    "E0@hi",
+    "E1@hi",
+    "E1@lo"
+   ],
+   "xy": [
+    [
+     14.760056491835178,
+     17.793674404035436
+    ],
+    [
+     64.04989564558329,
+     -19.03900331553319
+    ],
+    [
+     64.0540933827335,
+     -19.039917151304977
+    ],
+    [
+     56.73323025673374,
+     8.656230521979353
+    ]
+   ]
+  },
+  "F1": {
+   "labels": [
+    "E1@lo",
+    "E1@hi",
+    "E2@hi",
+    "E2@lo"
+   ],
+   "xy": [
+    [
+     56.733230256733684,
+     8.656230521979342
+    ],
+    [
+     64.05409338273353,
+     -19.03991715130497
+    ],
+    [
+     64.05771066637233,
+     -19.052140704760347
+    ],
+    [
+     92.90244936100117,
+     -113.56708047836747
+    ]
+   ]
+  },
+  "F10": {
+   "labels": [
+    "E10@lo",
+    "E10@hi",
+    "E0@hi",
+    "E0@lo"
+   ],
+   "xy": [
+    [
+     14.752756869135405,
+     17.793798936926592
+    ],
+    [
+     -8.939031729433673,
+     -17.7937989369266
+    ],
+    [
+     64.04989564558329,
+     -19.0390033155332
+    ],
+    [
+     14.760056491835178,
+     17.793674404035443
+    ]
+   ]
+  },
+  "F2": {
+   "labels": [
+    "E2@lo",
+    "E2@hi",
+    "E3@hi",
+    "E3@lo"
+   ],
+   "xy": [
+    [
+     92.90244936100079,
+     -113.56708047836757
+    ],
+    [
+     64.05771066637229,
+     -19.05214070476037
+    ],
+    [
+     25.755144154101394,
+     -91.44393351073435
+    ],
+    [
+     92.89861872128557,
+     -113.5743203816385
+    ]
+   ]
+  },
+  "F3": {
+   "labels": [
+    "E3@lo",
+    "E3@hi",
+    "E4@hi",
+    "E4@lo"
+   ],
+   "xy": [
+    [
+     92.8986187212856,
+     -113.5743203816385
+    ],
+    [
+     25.75514415410141,
+     -91.44393351073435
+    ],
+    [
+     25.74445987299519,
+     -91.44517694840604
+    ],
+    [
+     -13.933508059779825,
+     -126.00745366067827
+    ]
+   ]
+  },
+  "F4": {
+   "labels": [
+    "E4@lo",
+    "E4@hi",
+    "E5@hi",
+    "E5@lo"
+   ],
+   "xy": [
+    [
+     -13.933508059779825,
+     -126.00745366067824
+    ],
+    [
+     25.744459872995186,
+     -91.44517694840603
+    ],
+    [
+     25.74062358957823,
+     -91.44276594663398
+    ],
+    [
+     -52.29250594593009,
+     -101.8998469420444
+    ]
+   ]
+  },
+  "F5": {
+   "labels": [
+    "E5@lo",
+    "E5@hi",
+    "E6@hi",
+    "E6@lo"
+   ],
+   "xy": [
+    [
+     -52.292505945930095,
+     -101.89984694204438
+    ],
+    [
+     25.740623589578227,
+     -91.442765946634
+    ],
+    [
+     -0.7369916426646306,
+     -63.360068310664246
+    ],
+    [
+     -52.29515397225595,
+     -101.89703839142571
+    ]
+   ]
+  },
+  "F6": {
+   "labels": [
+    "E6@lo",
+    "E6@hi",
+    "E7@hi",
+    "E7@lo"
+   ],
+   "xy": [
+    [
+     -52.29515397225594,
+     -101.89703839142572
+    ],
+    [
+     -0.7369916426646199,
+     -63.360068310664246
+    ],
+    [
+     -8.831380679746989,
+     -23.32074910058825
+    ],
+    [
+     -52.29596349211163,
+     -101.89303405907148
+    ]
+   ]
+  },
+  "F7": {
+   "labels": [
+    "E7@lo",
+    "E7@hi",
+    "E8@hi",
+    "E8@lo"
+   ],
+   "xy": [
+    [
+     -52.29596349211167,
+     -101.89303405907145
+    ],
+    [
+     -8.83138067974696,
+     -23.320749100588273
+    ],
+    [
+     -8.826481612008635,
+     -23.310195308127962
+    ],
+    [
+     -3.3101851766086696,
+     3.6343367515755247
+    ]
+   ]
+  },
+  "F8": {
+   "labels": [
+    "E8@lo",
+    "E8@hi",
+    "E9@hi",
+    "E9@lo"
+   ],
+   "xy": [
+    [
+     -3.3101851766087123,
+     3.634336751575546
+    ],
+    [
+     -8.826481612008653,
+     -23.310195308127945
+    ],
+    [
+     -8.82551895448005,
+     -23.309205957086803
+    ],
+    [
+     6.315427451942131,
+     13.526857811983135
+    ]
+   ]
+  },
+  "F9": {
+   "labels": [
+    "E9@lo",
+    "E9@hi",
+    "E10@hi",
+    "E10@lo"
+   ],
+   "xy": [
+    [
+     8.939613101947643,
+     17.793798936926592
+    ],
+    [
+     -8.93961310194764,
+     -17.7937989369266
+    ],
+    [
+     -8.939031729433669,
+     -17.7937989369266
+    ],
+    [
+     14.752756869135409,
+     17.793798936926585
+    ]
+   ]
+  }
+ },
+ "problem_pairs": [
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F9",
+    "F10"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "fail",
+   "pair": [
+    "F9",
+    "F7"
+   ],
+   "reason": "interior_overlap",
+   "shared": null
+  },
+  {
+   "outcome": "fail",
+   "pair": [
+    "F9",
+    "F8"
+   ],
+   "reason": "interior_overlap",
+   "shared": null
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F10",
+    "F0"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "fail",
+   "pair": [
+    "F10",
+    "F7"
+   ],
+   "reason": "interior_overlap",
+   "shared": null
+  },
+  {
+   "outcome": "fail",
+   "pair": [
+    "F10",
+    "F8"
+   ],
+   "reason": "interior_overlap",
+   "shared": null
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F0",
+    "F1"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F2",
+    "F3"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F4",
+    "F5"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F5",
+    "F6"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F6",
+    "F7"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  },
+  {
+   "outcome": "unknown",
+   "pair": [
+    "F7",
+    "F8"
+   ],
+   "reason": "near_contact_unresolved",
+   "shared": "retained_hinge"
+  }
+ ],
+ "schema": "geometry-lab.view/3",
+ "seam": {
+  "copies": [
+   [
+    [
+     8.939613101947643,
+     17.793798936926592
+    ],
+    [
+     -8.93961310194764,
+     -17.7937989369266
+    ]
+   ],
+   [
+    [
+     6.315427451942131,
+     13.526857811983135
+    ],
+    [
+     -8.82551895448005,
+     -23.309205957086803
+    ]
+   ]
+  ],
+  "entry_face": "F9",
+  "exit_face": "F8",
+  "id": "E9",
+  "xyz": [
+   [
+    22.56,
+    -49.93,
+    0.0
+   ],
+   [
+    31.0,
+    -11.0,
+    0.0001
+   ]
+  ]
+ },
+ "state_kind": "two_rim.trimmed_development",
+ "statuses": {
+  "local": "fail",
+  "source_linked": "fail"
+ },
+ "subject_state": "sha256:a10a382c05e3884971c6d42de3c8a60f0eb47e5fc4a387b48fcf6e1a0af84419"
+}

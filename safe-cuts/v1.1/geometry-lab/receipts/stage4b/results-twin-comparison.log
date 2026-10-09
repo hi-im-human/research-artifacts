@@ -1,0 +1,10 @@
+Twin run of tests/two_rim_ideal/write_stage4b_receipts.py: receipts/stage4b/results versus an independent second run (scratch directory), byte comparison
+identical  MANIFEST.json
+identical  e11-historical-comparison.json
+identical  e11-ideal-run.json
+identical  e11-ideal-search.json
+identical  e11-ideal-summary.json
+identical  e11-port-equivalence.json
+identical  e11-recheck-bundle.json
+identical  prisms.json
+DIFFERENT  timing.json

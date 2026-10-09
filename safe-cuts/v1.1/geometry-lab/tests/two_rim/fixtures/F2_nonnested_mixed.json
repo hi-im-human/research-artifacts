@@ -1,0 +1,7 @@
+{
+  "fixture": "F2_nonnested_mixed",
+  "provenance": "New documented fixture for this probe (no pinned nonnested fixture mixes triangles and trapezoids: the pinned hard fixture has only triangles, the pinned rectangles only trapezoids).",
+  "claimed_features": ["nonnested: neither rim's projection contains the other", "mixed original facets: triangles and trapezoids", "a rim vertex shared by three or more lateral faces"],
+  "features_established_by": "tests/test_source.py::test_fixture_features (exact containment tests, oracle facet shapes, vertex fan sizes)",
+  "params": {"top": [[0,0],[4,0],[0,4]], "bottom": [[2,-1],[5,-1],[5,2],[2,2]], "height": "2", "input_kind": "cyclic_convex_polygon"}
+}

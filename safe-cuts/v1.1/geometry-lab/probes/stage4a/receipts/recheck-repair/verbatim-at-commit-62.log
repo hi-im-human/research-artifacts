@@ -1,0 +1,35 @@
+..F............                                                          [100%]
+================================== FAILURES ===================================
+_________________ test_control_genuine_recheck_bundle_passes __________________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1776/test_control_genuine_recheck_b0')
+
+    def test_control_genuine_recheck_bundle_passes(bundle,tmp_path):
+        r = run_recheck(bundle,tmp_path)
+>       assert r['failures'] == 0
+E       assert 1 == 0
+
+test_stage4a_verbatim.py:79: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=========================== short test summary info ===========================
+FAILED test_stage4a_verbatim.py::test_control_genuine_recheck_bundle_passes
+1 failed, 14 passed in 4.80s

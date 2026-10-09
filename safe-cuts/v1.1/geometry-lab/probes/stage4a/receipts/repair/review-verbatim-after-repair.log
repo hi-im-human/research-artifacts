@@ -1,0 +1,130 @@
+..F............                                                          [100%]
+================================== FAILURES ===================================
+_________________ test_control_genuine_recheck_bundle_passes __________________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1773/test_control_genuine_recheck_b0')
+
+    def test_control_genuine_recheck_bundle_passes(bundle,tmp_path):
+        r = run_recheck(bundle,tmp_path)
+>       assert r['failures'] == 0
+E       assert 1 == 0
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:79: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=================================== PASSES ====================================
+______________ test_A03_zero_axis_cannot_replace_overlap_witness ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__________ test_A03_missing_all_pair_rows_is_not_a_completed_recheck __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+________ test_A03_truncated_vertex_lists_are_not_complete_box_coverage ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___________ test_A03_outcome_must_match_verified_certificate_method ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=========================== short test summary info ===========================
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_valid_square_is_source_linked
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_e9_contains_known_overlap
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1]
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0]
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2]
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1]
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2]
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A02_model_for_safe_seam_cannot_certify_unsafe_spec
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_wrong_source_with_full_evidence_is_refused
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A02_dropping_failed_prerequisite_does_not_make_it_pass
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_zero_axis_cannot_replace_overlap_witness
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_missing_all_pair_rows_is_not_a_completed_recheck
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_truncated_vertex_lists_are_not_complete_box_coverage
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_outcome_must_match_verified_certificate_method
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_genuine_recheck_bundle_passes
+1 failed, 14 passed in 3.24s

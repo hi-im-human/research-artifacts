@@ -1,0 +1,192 @@
+............                                                             [100%]
+=================================== PASSES ====================================
+___________________ test_control_genuine_maintained_bundle ____________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 3,
+ "axis_rows": 3,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 3,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__________ test_control_decided_interval_row_requires_its_box_level ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 4,
+ "rejected_seams": 1,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+____________ test_control_one_honest_unknown_is_not_a_safety_pass _____________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 2,
+ "axis_rows": 2,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 2,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 1,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_______ test_I01_default_policy_all_interval_rows_unknown_is_checkable ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 45,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[duplicate_valid] _
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[duplicate_corrupt] _
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[extra_invalid] _
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[contradictory_partition] _
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 2,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=========================== short test summary info ===========================
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_genuine_maintained_bundle
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_decided_interval_row_requires_its_box_level
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_one_honest_unknown_is_not_a_safety_pass
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_I01_default_policy_all_interval_rows_unknown_is_checkable
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[duplicate_valid]
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[duplicate_corrupt]
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[extra_invalid]
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_I02_every_supplied_side_record_and_partition_must_be_accounted_for[contradictory_partition]
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_wrong_expected_policy_prevents_source_linked_verdict
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_missing_prerequisites_prevents_source_linked_verdict
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_round_trip_replay_reproduces_maintained_ideal_run
+PASSED <review-scratch>\review-4b\test_stage4b_review.py::test_control_material_is_not_an_ideal_evidence_subject
+12 passed in 3.40s

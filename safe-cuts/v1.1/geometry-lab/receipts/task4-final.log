@@ -1,0 +1,37 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 29 items
+
+tests/core/test_runfile.py::test_round_trip_and_replay_reproduce PASSED  [  3%]
+tests/core/test_runfile.py::test_unanchored_load_is_never_authenticated PASSED [  6%]
+tests/core/test_runfile.py::test_loaded_evidence_is_not_verified_until_replayed PASSED [ 10%]
+tests/core/test_runfile.py::test_save_is_deterministic PASSED            [ 13%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-does not match its hash0] PASSED [ 17%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-does not match its hash1] PASSED [ 20%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-run digest0] PASSED [ 24%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-seq] PASSED [ 27%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-run digest1] PASSED [ 31%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-run digest2] PASSED [ 34%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-run digest3] PASSED [ 37%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-run digest4] PASSED [ 41%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-keys] PASSED [ 44%]
+tests/core/test_runfile.py::test_edits_break_internal_integrity[<lambda>-unsupported run schema] PASSED [ 48%]
+tests/core/test_runfile.py::test_missing_referenced_state_is_rejected_even_with_recomputed_digest PASSED [ 51%]
+tests/core/test_runfile.py::test_action_order_swap_with_renumbered_seq_still_fails PASSED [ 55%]
+tests/core/test_runfile.py::test_malformed_json_rejected[{"schema":"glab.run/1","schema":"glab.run/1"}-duplicate] PASSED [ 58%]
+tests/core/test_runfile.py::test_malformed_json_rejected[{"schema":"glab.run/1","x":NaN}-nonfinite] PASSED [ 62%]
+tests/core/test_runfile.py::test_malformed_json_rejected[not json-invalid JSON] PASSED [ 65%]
+tests/core/test_runfile.py::test_cyclic_or_dangling_state_graph_rejected PASSED [ 68%]
+tests/core/test_runfile.py::test_wholly_rewritten_run_fails_against_external_old_digest PASSED [ 72%]
+tests/core/test_runfile.py::test_evidence_only_edit_with_recomputed_digest_needs_the_anchor PASSED [ 75%]
+tests/core/test_runfile.py::test_loading_does_not_execute PASSED         [ 79%]
+tests/core/test_runfile.py::test_changed_implementation_same_revision_is_a_mismatch PASSED [ 82%]
+tests/core/test_runfile.py::test_changed_revision_is_not_run_not_a_pass PASSED [ 86%]
+tests/core/test_runfile.py::test_missing_action_makes_dependents_not_run PASSED [ 89%]
+tests/core/test_runfile.py::test_environment_mismatch_is_not_reproduced PASSED [ 93%]
+tests/core/test_import_boundaries.py::test_core_uses_only_stdlib_and_itself PASSED [ 96%]
+tests/core/test_import_boundaries.py::test_core_names_no_geometry_numeric_or_viewer_dependency PASSED [100%]
+
+============================= 29 passed in 0.19s ==============================

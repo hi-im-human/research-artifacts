@@ -1,0 +1,267 @@
+...FFFFFF.FFFFF                                                          [100%]
+================================== FAILURES ===================================
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1] ________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB62A190>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '-1'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:92: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB62A190>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '0'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:92: AssertionError
+_______ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2] ________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB62A190>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '1/2'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:92: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB62A190>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '1'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:92: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB62A190>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '2'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:92: AssertionError
+___________ test_A02_model_for_safe_seam_cannot_certify_unsafe_spec ___________
+
+e11 = Prepared(run=<glab.core.runfile.Run object at 0x00000162DB6340D0>, source='sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+
+    def test_A02_model_for_safe_seam_cannot_certify_unsafe_spec(e11):
+        s = load_subject(e11,'E9',E11_DELTA)
+        original_id = s.id
+        try:
+            s.model = load_subject(e11,'E4',E11_DELTA).model
+            c = ideal_certificate(s)
+        except (AttributeError,ValueError,TypeError,ArithmeticError):
+            return
+        # Rebuilding from immutable source inputs would also be acceptable.
+>       assert not (c['subject']['id'] == original_id and c['source_linked']
+                    and c['seam_verdict'] == 'pass'), c['subject']
+E       AssertionError: {'spec': {'kind': 'ideal_trimmed_development', 'definition': 'stage4a.ideal_development/1', 'material_state': 'sha256:...7b3c180ce3bf0912146d0ae0ab5243', ...}, 'id': 'sha256:03fc2de26452284914c0efc9ccf1f0b748fb1d343fa1dc41bff5a1c5bafe1e4f'}
+E       assert not ('sha256:03fc2...5a1c5bafe1e4f' == 'sha256:03fc2...5a1c5bafe1e4f'
+E         
+E         Skipping 60 identical leading characters in diff, use -v to show
+E           1c5bafe1e4f and True and 'pass' == 'pass'
+E         
+E           pass)
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:104: AssertionError
+_________ test_A02_dropping_failed_prerequisite_does_not_make_it_pass _________
+
+    def test_A02_dropping_failed_prerequisite_does_not_make_it_pass():
+        p=wrong_source_prepared()
+        assert any(r['claim']=='two_rim.material.matches_parent_source' and r['outcome']=='fail'
+                   for r in p.prerequisites['material'])
+        p.prerequisites['material']=[r for r in p.prerequisites['material']
+            if r['claim']!='two_rim.material.matches_parent_source']
+        c=ideal_certificate(load_subject(p,'E0','1/4'))
+>       assert not (c['source_linked'] and c['seam_verdict']=='pass')
+E       AssertionError: assert not (True and 'pass' == 'pass'
+E         
+E           pass)
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:136: AssertionError
+______________ test_A03_zero_axis_cannot_replace_overlap_witness ______________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1767/test_A03_zero_axis_cannot_repl0')
+
+    def test_A03_zero_axis_cannot_replace_overlap_witness(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for row in b['seams']['E9']['rows']:
+            if row.get('method')=='interior_witness':
+                row.update(method='separating_axis',outcome='pass',certificate={
+                    'method':'separating_axis','axis':['0','0'],'order':'P_below_Q',
+                    'axis_gap':'0','euclidean_gap_lower_bound':'0'})
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:147: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 45,
+ "axis_confirmed": 45,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+__________ test_A03_missing_all_pair_rows_is_not_a_completed_recheck __________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1767/test_A03_missing_all_pair_rows0')
+
+    def test_A03_missing_all_pair_rows_is_not_a_completed_recheck(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        b['seams']['E9']['rows']=[]
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:154: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 0,
+ "theorem_s_confirmed": 0,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 0,
+ "axis_confirmed": 0,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+________ test_A03_truncated_vertex_lists_are_not_complete_box_coverage ________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1767/test_A03_truncated_vertex_list0')
+
+    def test_A03_truncated_vertex_lists_are_not_complete_box_coverage(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for f in b['seams']['E9']['boxes']:
+            b['seams']['E9']['boxes'][f]=b['seams']['E9']['boxes'][f][:3]
+        # Preserve only exact-neighbor rows so malformed interval polygons are not indexed
+        # by an incidental witness failure. The box-coverage check must catch the truncation.
+        b['seams']['E9']['rows']=[r for r in b['seams']['E9']['rows'] if r['method']=='shared_hinge_exact']
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:165: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 66,
+ "coordinates_contained": 66,
+ "axis_rows": 0,
+ "axis_confirmed": 0,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+___________ test_A03_outcome_must_match_verified_certificate_method ___________
+
+bundle = {'delta': '1/10000', 'bits': 128, 'vertices': {'A0': ['-40', '-28', '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ...': ['B1', 'A1', 'B2'], ...}, {'id': 'F5', 'entry': 'E5', 'exit': 'E6', 'boundary': ['B2', 'A1', 'A2'], ...}, ...], ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1767/test_A03_outcome_must_match_ve0')
+
+    def test_A03_outcome_must_match_verified_certificate_method(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for row in b['seams']['E9']['rows']:
+            if row.get('method')=='interior_witness':
+                row['outcome']='pass'
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\review-cases\stage4a-review\test_stage4a_review.py:174: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 41,
+ "axis_confirmed": 41,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+=================================== PASSES ====================================
+_________________ test_control_genuine_recheck_bundle_passes __________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 41,
+ "axis_confirmed": 41,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+=========================== short test summary info ===========================
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_valid_square_is_source_linked
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_e9_contains_known_overlap
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_genuine_recheck_bundle_passes
+PASSED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_control_wrong_source_with_full_evidence_is_refused
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1]
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0]
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2]
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1]
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2]
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A02_model_for_safe_seam_cannot_certify_unsafe_spec
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A02_dropping_failed_prerequisite_does_not_make_it_pass
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_zero_axis_cannot_replace_overlap_witness
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_missing_all_pair_rows_is_not_a_completed_recheck
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_truncated_vertex_lists_are_not_complete_box_coverage
+FAILED probes/stage4a/review-cases/stage4a-review/test_stage4a_review.py::test_A03_outcome_must_match_verified_certificate_method
+11 failed, 4 passed in 1.61s

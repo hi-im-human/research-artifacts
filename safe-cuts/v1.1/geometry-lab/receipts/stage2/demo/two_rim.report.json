@@ -1,0 +1,431 @@
+{
+ "failed_attempt": {
+  "status": "failed",
+  "type": "SourceInputError"
+ },
+ "load": {
+  "anchor": "matched",
+  "authenticated": false,
+  "integrity": "internally_consistent"
+ },
+ "materials": {
+  "F2": {
+   "faces": 5,
+   "hinges": [
+    [
+     "E0",
+     "B0",
+     "A0"
+    ],
+    [
+     "E1",
+     "B1",
+     "A1"
+    ],
+    [
+     "E2",
+     "B2",
+     "A1"
+    ],
+    [
+     "E3",
+     "B2",
+     "A2"
+    ],
+    [
+     "E4",
+     "B3",
+     "A2"
+    ]
+   ],
+   "material_identity": "sha256:e3acc53e87e7c2494f8c7d917294d4e7789302d6ee5bdacd7105083bf1c1be64",
+   "material_state": "sha256:f20a41c6fc61e38095454cf5364474433587f6ba8a067ad6b7f9017f5d71cbd2",
+   "normalization": {
+    "bottom": {
+     "input_count": 4,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "counterclockwise",
+     "removed": [],
+     "reversed": true,
+     "start_input_index": 0
+    },
+    "top": {
+     "input_count": 3,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "counterclockwise",
+     "removed": [],
+     "reversed": true,
+     "start_input_index": 0
+    }
+   },
+   "source_state": "sha256:c9a0b53eaa1cc6f64230d702023cae60d8c80c3ea89366c9188efcf78d17ebb4",
+   "trapezoids": 2,
+   "triangles": 3
+  },
+  "F2_reversed_rotated": {
+   "faces": 5,
+   "hinges": [
+    [
+     "E0",
+     "B0",
+     "A0"
+    ],
+    [
+     "E1",
+     "B1",
+     "A1"
+    ],
+    [
+     "E2",
+     "B2",
+     "A1"
+    ],
+    [
+     "E3",
+     "B2",
+     "A2"
+    ],
+    [
+     "E4",
+     "B3",
+     "A2"
+    ]
+   ],
+   "material_identity": "sha256:e3acc53e87e7c2494f8c7d917294d4e7789302d6ee5bdacd7105083bf1c1be64",
+   "material_state": "sha256:ea3445cc9c6da099ec6459efd42cde7ed7f6923dbe996ec7a40be29d8843ffd2",
+   "normalization": {
+    "bottom": {
+     "input_count": 4,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "counterclockwise",
+     "removed": [],
+     "reversed": true,
+     "start_input_index": 2
+    },
+    "top": {
+     "input_count": 3,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "clockwise",
+     "removed": [],
+     "reversed": false,
+     "start_input_index": 2
+    }
+   },
+   "source_state": "sha256:b5070e786671aa83b83a1304e9cf2f020a9eb90537b36eac15b0c476e84eb470",
+   "trapezoids": 2,
+   "triangles": 3
+  },
+  "F3_perturbed_1e-20": {
+   "faces": 5,
+   "hinges": [
+    [
+     "E0",
+     "B0",
+     "A0"
+    ],
+    [
+     "E1",
+     "B1",
+     "A1"
+    ],
+    [
+     "E2",
+     "B1",
+     "A2"
+    ],
+    [
+     "E3",
+     "B2",
+     "A2"
+    ],
+    [
+     "E4",
+     "B3",
+     "A3"
+    ]
+   ],
+   "material_identity": "sha256:95cf0eb62275d92514db18b55e79937941fa26dbf37d5a5a1f7a185303b1d7f6",
+   "material_state": "sha256:fdadd31a86aa9236814f78a4c13baf1976ddfc90636f11811623cfd4d22c594e",
+   "normalization": {
+    "bottom": {
+     "input_count": 4,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "counterclockwise",
+     "removed": [],
+     "reversed": true,
+     "start_input_index": 0
+    },
+    "top": {
+     "input_count": 4,
+     "input_kind": "cyclic_boundary",
+     "input_orientation": "counterclockwise",
+     "removed": [],
+     "reversed": true,
+     "start_input_index": 0
+    }
+   },
+   "source_state": "sha256:d19b3ccdeb0896b8fd24145322acc132db148219ca8d644cb12dbf172cbf4008",
+   "trapezoids": 3,
+   "triangles": 2
+  },
+  "X_point_set_hull": {
+   "faces": 12,
+   "hinges": [
+    [
+     "E0",
+     "B0",
+     "A0"
+    ],
+    [
+     "E1",
+     "B0",
+     "A1"
+    ],
+    [
+     "E2",
+     "B1",
+     "A1"
+    ],
+    [
+     "E3",
+     "B1",
+     "A2"
+    ],
+    [
+     "E4",
+     "B2",
+     "A2"
+    ],
+    [
+     "E5",
+     "B2",
+     "A3"
+    ],
+    [
+     "E6",
+     "B3",
+     "A3"
+    ],
+    [
+     "E7",
+     "B4",
+     "A3"
+    ],
+    [
+     "E8",
+     "B4",
+     "A4"
+    ],
+    [
+     "E9",
+     "B4",
+     "A5"
+    ],
+    [
+     "E10",
+     "B0",
+     "A5"
+    ],
+    [
+     "E11",
+     "B0",
+     "A6"
+    ]
+   ],
+   "material_identity": "sha256:91e1ac10e55fe5f0e03a80496121154d6758341a4f0a1cb801106094cd4194a9",
+   "material_state": "sha256:90d6d5956f4c484a592034ae29b6984b13c8372ab38e2efe5b4619010bcfdb3c",
+   "normalization": {
+    "bottom": {
+     "hull_vertex_count": 5,
+     "input_count": 7,
+     "input_kind": "point_set_hull",
+     "removed": [
+      {
+       "input_index": 3,
+       "point": [
+        "54",
+        "-42"
+       ],
+       "reason": "interior"
+      },
+      {
+       "input_index": 5,
+       "point": [
+        "-51",
+        "38"
+       ],
+       "reason": "interior"
+      }
+     ]
+    },
+    "top": {
+     "hull_vertex_count": 7,
+     "input_count": 7,
+     "input_kind": "point_set_hull",
+     "removed": []
+    }
+   },
+   "source_state": "sha256:bf54f0adcd7c1b330a144ec808a7909a0516ad6e2861872d051c4e189798acc4",
+   "trapezoids": 0,
+   "triangles": 12
+  }
+ },
+ "perturbation_exact": true,
+ "presentation_check": {
+  "F2_vs_reversed_different_states": true,
+  "F2_vs_reversed_same_identity": true
+ },
+ "rejected_attempt": {
+  "message": "parameter 'top[1][1]' must be exact, got 0.5",
+  "status": "rejected"
+ },
+ "replay": {
+  "actions": [
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 0,
+    "version": 1
+   },
+   {
+    "name": "two_rim.material.build",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 1,
+    "version": 1
+   },
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 4,
+    "version": 1
+   },
+   {
+    "name": "two_rim.material.build",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 5,
+    "version": 1
+   },
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 8,
+    "version": 1
+   },
+   {
+    "name": "two_rim.material.build",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 9,
+    "version": 1
+   },
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 12,
+    "version": 1
+   },
+   {
+    "name": "two_rim.material.build",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 13,
+    "version": 1
+   },
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 16,
+    "version": 1
+   },
+   {
+    "name": "two_rim.source.normalize",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 17,
+    "version": 1
+   }
+  ],
+  "checks": [
+   {
+    "name": "two_rim.check.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 2,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.material",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 3,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 6,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.material",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 7,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 10,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.material",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 11,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 14,
+    "version": 1
+   },
+   {
+    "name": "two_rim.check.material",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 15,
+    "version": 1
+   }
+  ],
+  "environment_match": true,
+  "outcome": "reproduced",
+  "partial_comparison": {
+   "entries": 18,
+   "reproduced": 18
+  },
+  "run_digest_reproduced": true
+ },
+ "run_digest": "sha256:dfd846ded961098ac28f9b4c08a43bdc2d28b9e32ea977f260f9bfc59771add3",
+ "summary_after_replay": {
+  "outcome": "pass",
+  "requirements": 24,
+  "verified": true
+ },
+ "summary_as_loaded": {
+  "outcome": "pass",
+  "verified": false
+ }
+}

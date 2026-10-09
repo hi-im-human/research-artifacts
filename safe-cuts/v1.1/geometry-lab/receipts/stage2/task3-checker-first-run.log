@@ -1,0 +1,18 @@
+.F.F..........................................                           [100%]
+================================== FAILURES ===================================
+_________________ test_all_claims_pass_on_valid_inputs[case0] _________________
+tests\two_rim\test_checker.py:53: in test_all_claims_pass_on_valid_inputs
+    assert all(c.outcome == "pass" for c in claims), [(c.predicate, c.receipt) for c in claims if c.outcome != "pass"]
+E   AssertionError: [('two_rim.material.incidence_and_rings', {'faces': 5, 'hinges': 5, 'vertices': 7, 'ring_orientation_about_outward_normal': [1], ...})]
+E   assert False
+E    +  where False = all(<generator object test_all_claims_pass_on_valid_inputs.<locals>.<genexpr> at 0x000001B4AA10ACF0>)
+_________________ test_all_claims_pass_on_valid_inputs[case2] _________________
+tests\two_rim\test_checker.py:53: in test_all_claims_pass_on_valid_inputs
+    assert all(c.outcome == "pass" for c in claims), [(c.predicate, c.receipt) for c in claims if c.outcome != "pass"]
+E   AssertionError: [('two_rim.material.incidence_and_rings', {'faces': 5, 'hinges': 5, 'vertices': 8, 'ring_orientation_about_outward_normal': [1], ...})]
+E   assert False
+E    +  where False = all(<generator object test_all_claims_pass_on_valid_inputs.<locals>.<genexpr> at 0x000001B4AB9CEB50>)
+=========================== short test summary info ===========================
+FAILED tests/two_rim/test_checker.py::test_all_claims_pass_on_valid_inputs[case0]
+FAILED tests/two_rim/test_checker.py::test_all_claims_pass_on_valid_inputs[case2]
+2 failed, 44 passed in 0.18s

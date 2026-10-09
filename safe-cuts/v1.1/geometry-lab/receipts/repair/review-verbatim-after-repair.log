@@ -1,0 +1,26 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 10 items
+
+review-cases/stage1-review/test_review_regressions.py::test_control_normal_run_reproduces_full_digest PASSED [ 10%]
+review-cases/stage1-review/test_review_regressions.py::test_control_loading_does_not_verify_recorded_claim PASSED [ 20%]
+review-cases/stage1-review/test_review_regressions.py::test_R01_invalid_json_version_replay_cannot_claim_reproduced_with_different_digest PASSED [ 30%]
+review-cases/stage1-review/test_review_regressions.py::test_R01_changed_failure_message_cannot_claim_whole_run_reproduced PASSED [ 40%]
+review-cases/stage1-review/test_review_regressions.py::test_R02_checker_crash_is_retained_as_an_attempt PASSED [ 50%]
+review-cases/stage1-review/test_review_regressions.py::test_R02_zero_claim_check_is_retained_and_reexecuted PASSED [ 60%]
+review-cases/stage1-review/test_review_regressions.py::test_R03_checker_owned_receipt_cannot_mutate_retained_history PASSED [ 70%]
+review-cases/stage1-review/test_review_regressions.py::test_R03_mutating_loaded_public_record_cannot_bypass_integrity PASSED [ 80%]
+review-cases/stage1-review/test_review_regressions.py::test_R04_explicit_all_scope_requirement_rejects_sample_only_evidence PASSED [ 90%]
+review-cases/stage1-review/test_review_regressions.py::test_R05_successful_actions_cannot_reference_a_future_output FAILED [100%]
+
+================================== FAILURES ===================================
+________ test_R05_successful_actions_cannot_reference_a_future_output _________
+review-cases\stage1-review\test_review_regressions.py:182: in test_R05_successful_actions_cannot_reference_a_future_output
+    data["actions"].reverse()
+    ^^^^^^^^^^^^^^^
+E   KeyError: 'actions'
+=========================== short test summary info ===========================
+FAILED review-cases/stage1-review/test_review_regressions.py::test_R05_successful_actions_cannot_reference_a_future_output
+========================= 1 failed, 9 passed in 0.14s =========================

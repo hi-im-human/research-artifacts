@@ -1,0 +1,13 @@
+﻿Expected-failure mutation check
+Command: lake env lean MutationRejected.lean
+Exit code: 1
+
+<lean-project>\MutationRejected.lean:21:34: error: Application type mismatch: The argument
+  hAB
+has type
+  A ⊆ B
+but is expected to have type
+  A ⊆ interior B
+in the application
+  @section_strict_nesting E inst✝¹ inst✝ A B hB hAB
+

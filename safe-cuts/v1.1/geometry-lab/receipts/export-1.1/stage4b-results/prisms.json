@@ -1,0 +1,341 @@
+{
+ "cases": {
+  "nondyadic:E0@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E0@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E1@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E1@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E2@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E2@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E3@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "nondyadic:E3@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@1/10000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@1/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@1/4": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E0@499999999999999999999999999999/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@1/10000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@1/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@1/4": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E1@499999999999999999999999999999/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@1/10000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@1/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@1/4": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E2@499999999999999999999999999999/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@1/10000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@1/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@1/3": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@1/4": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@1/7": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  },
+  "square:E3@499999999999999999999999999999/1000000000000000000000000000000": {
+   "all_box_widths_zero": true,
+   "methods": [
+    "separating_axis"
+   ],
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "verdict": "pass"
+  }
+ },
+ "label": "Stage 4B maintained ideal lane (glab); verdicts concern the ideal trimmed development D only",
+ "nondyadic": {
+  "bottom": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    "2/3"
+   ],
+   [
+    "2/3",
+    "2/3"
+   ],
+   [
+    "2/3",
+    0
+   ]
+  ],
+  "height": "1/3",
+  "input_kind": "cyclic_boundary",
+  "top": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    "2/3"
+   ],
+   [
+    "2/3",
+    "2/3"
+   ],
+   [
+    "2/3",
+    0
+   ]
+  ]
+ },
+ "square": {
+  "bottom": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  "height": "3",
+  "input_kind": "cyclic_boundary",
+  "top": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ]
+ }
+}

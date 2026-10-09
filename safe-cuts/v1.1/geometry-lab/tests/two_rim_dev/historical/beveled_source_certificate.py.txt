@@ -1,0 +1,262 @@
+"""Independent exact audit certificate for an eleven-panel physical source.
+
+Refutes only: deleting the first and last developed panels always leaves
+an injective strip in the locally one-signed residual regime.
+This source has certified safe cuts and is not a counterexample to 7.15.
+
+No floating-point decision or optimization occurs in this verifier. The
+rational witness coordinates were proposed separately and are checked here.
+The production geometry/arithmetic modules are imported without modification.
+"""
+from __future__ import annotations
+import argparse
+import json
+import sys
+from fractions import Fraction as F
+from itertools import combinations
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT.parent / "<historical-folder>" / "verification" / "packet" / "code"
+if not BASE.is_dir():
+    raise RuntimeError("Missing unchanged position-sensitive verifier dependencies")
+sys.path.insert(0, str(BASE))
+from rational_intervals import I, vec, add, sub, mul, dot, norm, cross
+from angle_intervals import pi_interval
+from mixed_fixture_certificate import iv_unfold, angle_data, separating_axis, adjacent_opposite
+from normal_fan_inputs import hull2, supporting_facets, edge_normals, support, dot as exact_dot
+from cyclic_normal_splice import splice_cycles
+
+TOP = [(-40, -28), (31, -11), (16, 27), (-15, 50)]
+BOTTOM = [
+    (-85, 60), (-26, -53), (F(1693,100), F(-2569,50)),
+    (F(564,25), F(-4993,100)), (F(303,10), F(-77,2)),
+    (60,74), (18,91),
+]
+HEIGHT = DEPTH = F(1,10000)
+WITNESSES = {
+    0: ((0,10), (F(32066749,500000), F(48211,125000))),
+    5: ((2,10), (F(26833159,1000000), F(704099,1000000))),
+    6: ((1,9), (F(39037647,1000000), F(565877,1000000))),
+    7: ((0,8), (F(41901163,1000000), F(3723,8000))),
+}
+SAFE_CUTS = [1,2,3,4,8,9,10]
+
+
+def interval(x):
+    return {"lo": str(x.lo), "hi": str(x.hi)}
+
+
+def interval_vector(v):
+    return [interval(x) for x in v]
+
+
+def rational_points(points):
+    return [[str(x) for x in p] for p in points]
+
+
+def interior_margin(polygon, point):
+    point = vec(point)
+    dets = [cross(sub(polygon[(j+1)%4], polygon[j]), sub(point, polygon[j]))
+            for j in range(4)]
+    signs = [v.sign() for v in dets]
+    assert all(s == signs[0] != 0 for s in signs), "Strict interior witness rejected"
+    return min(min(abs(v.lo), abs(v.hi)) for v in dets)
+
+
+def normalized_height(polygon, point):
+    # An exact affine coordinate: lower edge has height DEPTH, upward
+    # hinge raises it by 1-2*DEPTH. All vectors are in this cut's one frame.
+    hinge = sub(polygon[1], polygon[0])
+    lower = sub(polygon[3], polygon[0])
+    coefficient = cross(sub(vec(point), polygon[0]), lower) / cross(hinge, lower)
+    return DEPTH + (1-2*DEPTH)*coefficient
+
+
+def certify():
+    top, bottom = hull2(TOP), hull2(BOTTOM)
+    assert len(top) == 4 and len(bottom) == 7
+    for poly in (top, bottom):
+        area2 = sum(poly[i][0]*poly[(i+1)%len(poly)][1] -
+                    poly[i][1]*poly[(i+1)%len(poly)][0] for i in range(len(poly)))
+        assert area2 > 0
+    cycle = splice_cycles(top[::-1], bottom[::-1])
+    edges = cycle.original_edges(HEIGHT)
+    n = len(edges)
+    assert n == 11
+    original = [(x,y,F(0)) for x,y in bottom] + [(x,y,HEIGHT) for x,y in top]
+    oracle = supporting_facets(original)
+    facets = cycle.facets(HEIGHT)
+    assert len(oracle) == 13 and len(facets) == 11
+    assert any(set(original[:len(bottom)]) == s for s in oracle.values())
+    assert any(set(original[len(bottom):]) == s for s in oracle.values())
+    assert len({frozenset(face) for face in facets}) == 11
+    assert all(any(set(face) == s for s in oracle.values()) for face in facets)
+    low = [tuple((1-DEPTH)*x+DEPTH*y for x,y in zip(p,q)) for p,q in edges]
+    high = [tuple(DEPTH*x+(1-DEPTH)*y for x,y in zip(p,q)) for p,q in edges]
+    assert all(p[2] == DEPTH*HEIGHT for p in low)
+    assert all(p[2] == (1-DEPTH)*HEIGHT for p in high)
+    assert 0 < low[0][2] < high[0][2] < HEIGHT
+    def contained(a,b):
+        return all(exact_dot(u,v) <= support(b,u) for u in edge_normals(b) for v in a)
+    assert not contained(top,bottom) and not contained(bottom,top)
+
+    q, delta, turns, nonacute = angle_data(low,high)
+    pi = pi_interval()
+    assert nonacute and all(x.hi < 0 for x in q)
+    assert all(exact_dot(
+        tuple(high[i-1][j]-high[i][j] for j in range(3)),
+        tuple(high[(i+1)%n][j]-high[i][j] for j in range(3))) <= 0
+        for i in range(n))
+    assert all(x.lo > 0 for x in turns)
+    dominant = -delta
+    largest = I(max((-x).lo for x in q), max((-x).hi for x in q))
+    residual = dominant-largest-pi
+    assert dominant.hi < 2*pi.lo and residual.lo > F(199,100)
+    assert all((dominant+x).lo > pi.hi for x in q)
+
+    layouts = {k: iv_unfold(low,high,k) for k in range(n)}
+    neighbors = 0
+    for polys in layouts.values():
+        for i in range(n-1):
+            adjacent_opposite(polys[i],polys[i+1])
+            neighbors += 1
+    overlap_receipts = []
+    for k,(pair,point) in WITNESSES.items():
+        polys = layouts[k]
+        margin = min(interior_margin(polys[i],point) for i in pair)
+        assert margin > F(1,50)
+        overlap_receipts.append({
+            "cut":k, "panel_positions":list(pair),
+            "original_face_indices":[(k+i)%n for i in pair],
+            "point":list(map(str,point)),
+            "determinant_margin_lower_bound":str(margin),
+        })
+    strict_count = 0
+    safe_receipts = []
+    for k in SAFE_CUTS:
+        gaps = []
+        for i,j in combinations(range(n),2):
+            if j == i+1:
+                continue
+            gaps.append(separating_axis(layouts[k][i],layouts[k][j]))
+            strict_count += 1
+        safe_receipts.append({"cut":k,"minimum_gap_lower_bound":str(min(gaps))})
+    assert sorted(SAFE_CUTS + list(WITNESSES)) == list(range(n))
+    assert neighbors == 110 and strict_count == 315
+
+    # Determine the entire baseline collision set, including all distant pairs.
+    baseline_separations = 0
+    for i,j in combinations(range(n),2):
+        if j == i+1 or (i,j) == (0,10):
+            continue
+        separating_axis(layouts[0][i],layouts[0][j])
+        baseline_separations += 1
+    assert baseline_separations == 44
+
+    # Cut 6: neither colliding panel is an end panel.
+    k = 6
+    pair, point = WITNESSES[k]
+    assert pair == (1,9) and 0 < pair[0] < pair[1] < n-1
+    h_first = normalized_height(layouts[k][pair[0]],point)
+    h_second = normalized_height(layouts[k][pair[1]],point)
+    for height in (h_first,h_second):
+        assert DEPTH < height.lo and height.hi < 1-DEPTH
+    assert h_first.hi < h_second.lo or h_second.hi < h_first.lo
+
+    # Full affine circuit in the cut-0 frame: H(x)=Q*x+t.
+    P = layouts[0]
+    translation = P[-1][3]
+    root_length = norm(sub(vec(high[0]),vec(low[0])))
+    u = mul(I.exact(1)/root_length,sub(P[-1][2],translation))
+    def rotate(v):
+        return (u[0]*v[0]-u[1]*v[1],u[1]*v[0]+u[0]*v[1])
+    def circuit(v):
+        return add(rotate(v),translation)
+    HP = [tuple(circuit(v) for v in poly) for poly in P]
+    # Align the cut-6 root once, retaining the translation of that root.
+    entry_length = norm(sub(vec(high[k]),vec(low[k])))
+    ek = mul(I.exact(1)/entry_length,sub(P[k][1],P[k][0]))
+    y = add(P[k][0],add(mul(point[0],ek),mul(point[1],(-ek[1],ek[0]))))
+    # The exact all-cut identity puts F7 in P7 and F4 in H(P4).
+    common_margin = min(interior_margin(P[7],y),interior_margin(HP[4],y))
+    assert common_margin > F(1,50)
+    # Therefore this same aligned collision blocks every cut in J_4,7.
+    stationary_blocked_cuts = list(range(5,8))
+
+    # Residual holonomy has a unique fixed point. Keep full translation.
+    one_minus = 1-u[0]
+    determinant = one_minus*one_minus+u[1]*u[1]
+    assert determinant.lo > 0
+    center = ((one_minus*translation[0]-u[1]*translation[1])/determinant,
+              (u[1]*translation[0]+one_minus*translation[1])/determinant)
+
+    rejected_boundary_control = False
+    try:
+        interior_margin(layouts[6][1],(F(0),F(0)))
+    except AssertionError:
+        rejected_boundary_control = True
+    assert rejected_boundary_control
+
+    actual_boundary_rejected = False
+    try:
+        interior_margin(layouts[6][1],layouts[6][1][0])
+    except AssertionError:
+        actual_boundary_rejected = True
+    assert actual_boundary_rejected
+
+    return {
+        "status":"Exact counterexample to safety after deleting both end panels; not to safe-cut existence",
+        "arithmetic":"Fraction/integer outward intervals; no floating acceptance decisions",
+        "top":rational_points(top),"bottom":rational_points(bottom),
+        "height":str(HEIGHT),"depth":str(DEPTH),
+        "lower_height":str(low[0][2]),"upper_height":str(high[0][2]),
+        "original_hinges":[rational_points(edge) for edge in edges],
+        "lateral_faces":n,"maximal_supporting_facets":len(oracle),
+        "nonnested":True,"nonacute":True,"all_q_strictly_negative":True,
+        "all_T_strictly_positive":True,
+        "q_intervals":[interval(x) for x in q],
+        "delta_interval":interval(delta),
+        "T_intervals":[interval(x) for x in turns],
+        "dominant_budget_interval":interval(dominant),
+        "largest_removed_turn_interval":interval(largest),
+        "D_minus_m_minus_pi_interval":interval(residual),
+        "unsafe_cuts":sorted(WITNESSES),"safe_cuts":SAFE_CUTS,
+        "overlap_receipts":overlap_receipts,"safe_receipts":safe_receipts,
+        "neighbor_checks":neighbors,"strict_nonadjacent_separations":strict_count,
+        "additional_baseline_separations":baseline_separations,
+        "baseline_collision_pairs":[[0,10]],
+        "baseline_candidate_interval":[1,10],
+        "interior_collision":{
+            "cut":6,"panel_positions":[1,9],"original_face_indices":[7,4],
+            "point":list(map(str,point)),
+            "first_normalized_height":interval(h_first),
+            "second_normalized_height":interval(h_second),
+            "common_cut0_frame_point":interval_vector(y),
+            "common_frame_determinant_margin_lower_bound":str(common_margin),
+            "cross_copy_pair":[4,7],"blocked_cuts":stationary_blocked_cuts,
+        },
+        "full_affine_circuit":{
+            "rotation_first_column":interval_vector(u),
+            "translation":interval_vector(translation),
+            "center":interval_vector(center),
+            "I_minus_Q_determinant":interval(determinant),
+        },
+        "wrong_point_rejected":rejected_boundary_control,
+        "actual_panel_boundary_rejected":actual_boundary_rejected,
+        "scope":"Finite exact Python certificate, not a Lean result or universal theorem",
+    }
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output",type=Path,required=True)
+    args = parser.parse_args()
+    result = certify()
+    args.output.parent.mkdir(parents=True,exist_ok=True)
+    args.output.write_bytes((json.dumps(result,indent=2)+"\n").encode("utf-8"))
+    print(json.dumps({k:result[k] for k in [
+        "status","lateral_faces","maximal_supporting_facets",
+        "all_q_strictly_negative","nonacute","safe_cuts","unsafe_cuts",
+        "neighbor_checks","strict_nonadjacent_separations",
+    ]},indent=2))

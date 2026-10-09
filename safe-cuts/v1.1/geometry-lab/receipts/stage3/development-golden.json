@@ -1,0 +1,25 @@
+{
+ "groups": {
+  "fixtures": {
+   "cases": 5,
+   "max_abs_linear_dev": 4.440892098500626e-16,
+   "max_abs_offset_dev": 8.526512829121202e-14,
+   "seams": 37
+  },
+  "random_200": {
+   "cases": 200,
+   "max_abs_linear_dev": 5.551115123125783e-16,
+   "max_abs_offset_dev": 7.105427357601002e-14,
+   "seams": 1622
+  },
+  "supplementary_50": {
+   "cases": 50,
+   "max_abs_linear_dev": 3.3306690738754696e-16,
+   "max_abs_offset_dev": 5.684341886080802e-14,
+   "seams": 234
+  }
+ },
+ "note": "golden agreement establishes implementation consistency with the historical floating diagnostic, not correctness or a proof",
+ "seed_random": 20260928,
+ "seed_supplementary": 20260929
+}

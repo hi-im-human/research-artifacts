@@ -1,0 +1,103 @@
+{
+ "label": "Stage 4B execution environments (actual versions); nothing installed into the maintained .venv",
+ "maintained_venv": {
+  "core_revision": "sha256:950d9a745cf7093da0bd55d15ec4eaa998f443fc7a07cd800683d5ce554121d4",
+  "implementation": "CPython",
+  "note": "used for every maintained test, the prototype controls, targets and A01/A02 tests, the receipt script and the replay",
+  "numpy": "2.4.4",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "pytest": "9.1.1",
+  "python": "3.11.9"
+ },
+ "mpmath_env": {
+  "all_hashed_files_match": true,
+  "distributions": {
+   "mpmath-1.3.0.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "89a0d9e219a4d35e0fc6c5de0466432675827849a1a8247f5c05d6504875f82c",
+    "verified": 92
+   }
+  },
+  "note": "RECORD re-verified before use; the re-checker CLI ran with -I -B",
+  "path": "scratchpad/venv-stage4a-mpmath (outside the repository)",
+  "python": "3.11.9 Windows-10-10.0.26200-SP0"
+ },
+ "review_env": {
+  "all_hashed_files_match": true,
+  "distributions": {
+   "colorama-0.4.6.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "b8a318806b11b502107880269dcf946b91a4415ab8712a4403c2c82c337d7247",
+    "verified": 17
+   },
+   "iniconfig-2.3.0.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "c45ba2251812769102e81d1ab5c932c7e81605f0a7aaa9dbb44dd2dd4b069d8b",
+    "verified": 10
+   },
+   "mpmath-1.3.0.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "89a0d9e219a4d35e0fc6c5de0466432675827849a1a8247f5c05d6504875f82c",
+    "verified": 92
+   },
+   "numpy-2.4.4.dist-info": {
+    "mismatched": 0,
+    "missing_other": 2,
+    "missing_pyc": 1,
+    "tree_sha256": "a5ce15246aba378d3c82322685ea3f6d6a410cdeee8f1a3dcf39dfe9e8913d12",
+    "verified": 1061
+   },
+   "packaging-26.3.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "7511e86ab2743e71bbeef56a798347b6592f870deb3a98d3714586855ba739ba",
+    "verified": 29
+   },
+   "pluggy-1.6.0.dist-info": {
+    "mismatched": 0,
+    "missing_other": 0,
+    "missing_pyc": 0,
+    "tree_sha256": "cb345cba394e01d3e792ea6ef84268b03a61f804a41c137666131b38fe8c6d7c",
+    "verified": 14
+   },
+   "pygments-2.21.0.dist-info": {
+    "mismatched": 0,
+    "missing_other": 1,
+    "missing_pyc": 0,
+    "tree_sha256": "57915ef7b7d238bd644ecab3f620331717292ca61705eb6920ac3670f0b5db12",
+    "verified": 349
+   },
+   "pytest-9.1.1.dist-info": {
+    "mismatched": 0,
+    "missing_other": 2,
+    "missing_pyc": 0,
+    "tree_sha256": "52d36c64aa49fe8a04f729aa56fdc88ab3ac9a084218f9b7ee14066513a269b8",
+    "verified": 90
+   }
+  },
+  "note": "RECORD re-verified before use; files absent from the copy are console .exe launchers and one numpy .pyc; run with -B and PYTEST_DISABLE_PLUGIN_AUTOLOAD=1",
+  "path": "scratchpad/venv-stage4a-review (outside the repository; copied distributions, no network)",
+  "python": "3.11.9 Windows-10-10.0.26200-SP0"
+ },
+ "revisions": {
+  "two_rim.check.ideal_trimmed_development@1": "sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d",
+  "two_rim.ideal.define@1": "sha256:caeef681b1d30d0cd5f646549f7621121644190c5ba293de4c6d75272a0a8cc5"
+ },
+ "scratch_copies_run": {
+  "files": {
+   "driver.py": "0d497e6d3b360aaabb6a9bccb727355176999cba",
+   "test_acceptance_and_bounds.py": "ce2187a594b911c70158cc3084610d87c951c298"
+  },
+  "from": "origin/main at commit-67",
+  "note": "System's commit-62 acceptance cases, extracted with git show into a scratch folder and run there against this engine; nothing written into the repository"
+ }
+}

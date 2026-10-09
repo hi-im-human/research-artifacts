@@ -1,0 +1,12 @@
+{
+ "E11-cut6-trimmed-band.obj": "sha256:beb9cf76de4df726c7efc0571834138563b45e6436bfeee3a0052ad1e37b8c99",
+ "E11-cut6-trimmed-planar.obj": "sha256:81c532ba1cd5d446f685c264d895fb6aadde2515f863b63f843fb0424e2b8417",
+ "E11-cut6-trimmed.svg": "sha256:47bee86e8976bcdb3b2a45d1a68e7939bbf818689a18ee2b25006ff71c8d7b90",
+ "demo.report.json": "sha256:40400ee32076b4a2691ff90708a2231566d2b3f6379fedfab95703f8240bc7d7",
+ "eleven-panel-comparison.json": "sha256:6b5dae7589f108f3a1af1222090ad79b9e5e9335cb597cf027e70050603773bc",
+ "retained-digest.txt": "sha256:86d81eacd172684680d4908d82316be9b95acf2151d193037d8ac1d461129d8b",
+ "search-E11.json": "sha256:b08366f012ed0f91d8dabcaa307c06be94303cff032ce6d0e97aba8e3ed9e530",
+ "search-F2.json": "sha256:e0af46ec2f3f88ef34cd4922fba169313a534a6fae8043c8a3c4521a664478a6",
+ "stage3.run.json": "sha256:1f580344eadf11cb68fe7c4efe371249342653c440e4acbc2abb8add6ad73646",
+ "view-E11-cut6-trimmed.json": "sha256:4aa74f35d1f02f4f64f4830ca57573f2ee44e390b41a09ea13c047b7fa2ef68d"
+}

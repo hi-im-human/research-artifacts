@@ -1,0 +1,23 @@
+import ConvexSectionNesting
+
+open Set
+
+namespace ConvexSectionNesting
+
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
+
+/-
+Intentional false mutation: replace the strict hypothesis `A ⊆ interior B` by `A ⊆ B`.
+This file is preserved with `.lean.fail` so the default project remains buildable. The recorded
+mutation check copies it to `MutationRejected.lean` and asks Lean to compile it; Lean rejects the
+attempt because `hAB` cannot discharge the required strict-interior hypothesis. The compiled
+`subset_base_not_enough` theorem in `ConvexSectionNesting.lean` proves this weakening is genuinely
+false, not merely inconvenient for this proof.
+-/
+theorem false_mutation
+    {A B : Set E} (hB : Convex ℝ B) (hAB : A ⊆ B)
+    {s t : ℝ} (hs0 : 0 ≤ s) (hst : s < t) (ht1 : t < 1) :
+    minkowskiSection A B t ⊆ interior (minkowskiSection A B s) := by
+  exact section_strict_nesting hB hAB hs0 hst ht1
+
+end ConvexSectionNesting

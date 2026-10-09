@@ -1,0 +1,40 @@
+{
+  "exported": "2026-09-25T11:17:24.394039-04:00",
+  "head": "commit-10",
+  "branch": "<private-branch>",
+  "toolchain": "leanprover/lean4:v4.34.0",
+  "mathlib_revision": "5ed2965256430c3649e86755f9576b54eca72435",
+  "config_sha256": {
+    "lakefile.toml": "cc1411afd9a94c4f80fe400327e495693809f16f003e89b307888054adc0af59",
+    "lean-toolchain": "8733782dc070a99b312039cda424f601b80f3be6f6f512627da5ba25adc27632",
+    "lake-manifest.json": "67b13cffbe7cdfe856f6945a3176f98d75b1c87ea544e5f9e1f43bf5968dc40f"
+  },
+  "required_successful_commands": [
+    "positive-material-source",
+    "positive-material-build",
+    "positive-full-safe-build-04",
+    "source-full-assembly",
+    "arbitrary-cut-full-build-02",
+    "positive-full-development",
+    "general-endpoint-sanity-02",
+    "frustum-sanities-02",
+    "default-build",
+    "baseline-registered-build",
+    "baseline-BandGeometryAssemblySanity",
+    "baseline-CommonSupportMergeSanity",
+    "baseline-FiniteWitnessClosureSanity",
+    "baseline-NormalFanSpliceSanity",
+    "baseline-OriginalFacetCertificatesSanity",
+    "baseline-PolygonSupportCompletenessSanity",
+    "baseline-SingleCutRecoverySanity",
+    "regression-historical",
+    "regression-position",
+    "regression-source-floating",
+    "regression-radial-window",
+    "regression-extremal",
+    "regression-folded-rf"
+  ],
+  "baseline_modules": 43,
+  "lean_source_count": 73,
+  "note": "Codex receipts. Fresh builds of named new modules; unchanged dependencies may be replayed. Historical negative packaging rebuild was aborted and is not in the public endpoint dependency graph."
+}

@@ -1,0 +1,88 @@
+{
+ "label": "throwaway Stage 4A review environment (outside the repository; maintained .venv untouched)",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "sources": {
+  "maintained_venv_copies": [
+   "numpy",
+   "numpy.libs",
+   "numpy-2.4.4.dist-info",
+   "_pytest",
+   "pytest",
+   "py.py",
+   "pytest-9.1.1.dist-info",
+   "pluggy",
+   "pluggy-1.6.0.dist-info",
+   "iniconfig",
+   "iniconfig-2.3.0.dist-info",
+   "packaging",
+   "packaging-26.3.dist-info",
+   "colorama",
+   "colorama-0.4.6.dist-info",
+   "pygments",
+   "pygments-2.21.0.dist-info"
+  ],
+  "user_site_copies": [
+   "mpmath",
+   "mpmath-1.3.0.dist-info"
+  ]
+ },
+ "network": false,
+ "record_verification": {
+  "colorama-0.4.6.dist-info": {
+   "verified": 17,
+   "mismatched_or_missing": 0,
+   "tree_sha256": "b8a318806b11b502107880269dcf946b91a4415ab8712a4403c2c82c337d7247"
+  },
+  "iniconfig-2.3.0.dist-info": {
+   "verified": 10,
+   "mismatched_or_missing": 0,
+   "tree_sha256": "c45ba2251812769102e81d1ab5c932c7e81605f0a7aaa9dbb44dd2dd4b069d8b"
+  },
+  "mpmath-1.3.0.dist-info": {
+   "verified": 92,
+   "mismatched_or_missing": 0,
+   "tree_sha256": "89a0d9e219a4d35e0fc6c5de0466432675827849a1a8247f5c05d6504875f82c"
+  },
+  "numpy-2.4.4.dist-info": {
+   "verified": 1061,
+   "mismatched_or_missing": 2,
+   "tree_sha256": "a5ce15246aba378d3c82322685ea3f6d6a410cdeee8f1a3dcf39dfe9e8913d12"
+  },
+  "packaging-26.3.dist-info": {
+   "verified": 29,
+   "mismatched_or_missing": 0,
+   "tree_sha256": "7511e86ab2743e71bbeef56a798347b6592f870deb3a98d3714586855ba739ba"
+  },
+  "pluggy-1.6.0.dist-info": {
+   "verified": 14,
+   "mismatched_or_missing": 0,
+   "tree_sha256": "cb345cba394e01d3e792ea6ef84268b03a61f804a41c137666131b38fe8c6d7c"
+  },
+  "pygments-2.21.0.dist-info": {
+   "verified": 349,
+   "mismatched_or_missing": 1,
+   "tree_sha256": "57915ef7b7d238bd644ecab3f620331717292ca61705eb6920ac3670f0b5db12"
+  },
+  "pytest-9.1.1.dist-info": {
+   "verified": 90,
+   "mismatched_or_missing": 2,
+   "tree_sha256": "52d36c64aa49fe8a04f729aa56fdc88ab3ac9a084218f9b7ee14066513a269b8"
+  }
+ },
+ "copied_pyc_files": 0,
+ "record_entries_not_present": {
+  "numpy-2.4.4.dist-info": [
+   "../../Scripts/f2py.exe",
+   "../../Scripts/numpy-config.exe",
+   "numpy/distutils/__pycache__/conv_template.cpython-311.pyc"
+  ],
+  "pygments-2.21.0.dist-info": [
+   "../../Scripts/pygmentize.exe"
+  ],
+  "pytest-9.1.1.dist-info": [
+   "../../Scripts/py.test.exe",
+   "../../Scripts/pytest.exe"
+  ]
+ },
+ "note": "mismatched_or_missing counts only absent entries: console-script launchers outside site-packages (not copied; tests run as python -m pytest) and one hashed numpy .pyc (bytecode deliberately excluded). No present file mismatched its RECORD hash. Run with -B; PYTEST_DISABLE_PLUGIN_AUTOLOAD=1."
+}

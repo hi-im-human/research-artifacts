@@ -1,0 +1,183 @@
+{
+ "delta": "1/10000",
+ "label": "isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued",
+ "schedule": [
+  16,
+  32,
+  64,
+  128,
+  256,
+  512
+ ],
+ "seams": {
+  "E0": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:2010e4c20217f4f850ea598e0ba8fb29f1038878f93b1577c68f9349a3b4de45",
+   "digest": "sha256:c04839437abd4d712299ae96516edd674003076f21c0d00bb18fb880a96d5c36",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E1": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:43f13fe499bb9dc8dc447b85dd8cc5859cfb23a852728010b7f29701bdbc1757",
+   "digest": "sha256:b4e395969c285b97bca0ad3141dad674824bb46c976480a8b38135ba7a604fb3",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E10": {
+   "axis_pass": 42,
+   "classification_digest": "sha256:69f4390e150e4fc52fa4b23529d5d0796c8fe208256e2cf16e1a6f370d9755cc",
+   "digest": "sha256:76c2b5753ded46d3a12ff136bfcc160a7846711f889e689ef21162b51d9143fb",
+   "max_bits_needed": 64,
+   "seam_verdict": "fail",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": [
+    [
+     "F10",
+     "F7"
+    ],
+    [
+     "F10",
+     "F8"
+    ],
+    [
+     "F10",
+     "F9"
+    ]
+   ]
+  },
+  "E2": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:9698ded12364b2c4f704b6795cad593e2d6e60e241db4c0864c0bbb098e7cac7",
+   "digest": "sha256:86186599e8a88c3e52e81cac6e020139ecbf0ddb3d232f05df8490fb1b910ab9",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E3": {
+   "axis_pass": 44,
+   "classification_digest": "sha256:b2502a95905e4267394759c66ae9c28ab6d33e6444a60e7f139f2bc5d37c310c",
+   "digest": "sha256:1f4568af4f7905438492de47807445ae41236a34aa13009982e8e406ce76bcad",
+   "max_bits_needed": 64,
+   "seam_verdict": "fail",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": [
+    [
+     "F3",
+     "F2"
+    ]
+   ]
+  },
+  "E4": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:55f3a47e6fbece813836007c06793dce0cc647a2a53e487f781c379f0623afbc",
+   "digest": "sha256:cc1d5fcac9e998c6d0c14c1643fdd6bf132befacec079807d57af03a1f8f4ba3",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E5": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:5438cbaa388e400ad1dda0696f5a9fb7603e04c2e0d4e977e90dc10705e767fb",
+   "digest": "sha256:eda12377f0fa5dfbafadae4af2aed3306b861b5a61044b5dd23a2db5767c8843",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E6": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:72068dccba21c3b493e7c1a1276dfe04f8bc9483fcd09eddbff72a4ca4d8c02d",
+   "digest": "sha256:7764d83f1d3d81128e740978bf69a7ee105775f72cca11d64e20468065be27d9",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E7": {
+   "axis_pass": 45,
+   "classification_digest": "sha256:a99b7d47becfe968fb5a71296a9db6079ff0180924fe4090f1ec5c6c4a0834cb",
+   "digest": "sha256:35e57482d7bcac06b1c6040275e49d0a452078b775ea3934f55849ef6a3d2f4b",
+   "max_bits_needed": 64,
+   "seam_verdict": "pass",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": []
+  },
+  "E8": {
+   "axis_pass": 42,
+   "classification_digest": "sha256:7573104fa4f24d4c9001bbd888d04541431205004b4eebc9d40b249c6df65977",
+   "digest": "sha256:b259dda0a31a97bc3e67c5d051bcb016c29f4a17fc1a7fedb149efece0ee5de2",
+   "max_bits_needed": 64,
+   "seam_verdict": "fail",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": [
+    [
+     "F8",
+     "F7"
+    ],
+    [
+     "F9",
+     "F7"
+    ],
+    [
+     "F10",
+     "F7"
+    ]
+   ]
+  },
+  "E9": {
+   "axis_pass": 41,
+   "classification_digest": "sha256:57b9701cffb8786bb61ea2ed159729b34fdc27e9bbee98af77d98667db0e42f7",
+   "digest": "sha256:b127f66aaae0397c1d184adff2c110ff13729df065a40c905dc0e4f6d3d8ab0b",
+   "max_bits_needed": 64,
+   "seam_verdict": "fail",
+   "shared_hinge_pass": 10,
+   "source_linked": true,
+   "unknown": [],
+   "witness_fail": [
+    [
+     "F9",
+     "F7"
+    ],
+    [
+     "F9",
+     "F8"
+    ],
+    [
+     "F10",
+     "F7"
+    ],
+    [
+     "F10",
+     "F8"
+    ]
+   ]
+  }
+ }
+}

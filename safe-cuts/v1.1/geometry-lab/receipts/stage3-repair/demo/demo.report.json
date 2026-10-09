@@ -1,0 +1,322 @@
+{
+ "F2_search": [
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E0",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E1",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E2",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E3",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E4",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  }
+ ],
+ "eleven_panel": [
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E3",
+   "current_trimmed_all_pairs": "fail",
+   "current_trimmed_local": "fail",
+   "current_trimmed_source_linked": "fail",
+   "historical_cut": 0,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E4",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 1,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E5",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 2,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E6",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 3,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E7",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 4,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E8",
+   "current_trimmed_all_pairs": "fail",
+   "current_trimmed_local": "fail",
+   "current_trimmed_source_linked": "fail",
+   "historical_cut": 5,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E9",
+   "current_trimmed_all_pairs": "fail",
+   "current_trimmed_local": "fail",
+   "current_trimmed_source_linked": "fail",
+   "historical_cut": 6,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E10",
+   "current_trimmed_all_pairs": "fail",
+   "current_trimmed_local": "fail",
+   "current_trimmed_source_linked": "fail",
+   "historical_cut": 7,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E0",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 8,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E1",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 9,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E2",
+   "current_trimmed_all_pairs": "unknown",
+   "current_trimmed_local": "unknown",
+   "current_trimmed_source_linked": "unknown",
+   "historical_cut": 10,
+   "historical_exact_class": "safe"
+  }
+ ],
+ "inspection_view": {
+  "problem_pairs": [
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F9",
+     "F10"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F9",
+     "F7"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F9",
+     "F8"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F10",
+     "F0"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F10",
+     "F7"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F10",
+     "F8"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F0",
+     "F1"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F2",
+     "F3"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F4",
+     "F5"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F5",
+     "F6"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F6",
+     "F7"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F7",
+     "F8"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   }
+  ],
+  "seam": "E9",
+  "subject": "sha256:a10a382c05e3884971c6d42de3c8a60f0eb47e5fc4a387b48fcf6e1a0af84419"
+ },
+ "load": {
+  "anchor": "matched",
+  "authenticated": false,
+  "integrity": "internally_consistent"
+ },
+ "prerequisites": {
+  "E11": {
+   "material": {
+    "claims": {
+     "two_rim.material.facets_match_supporting_plane_oracle": "pass",
+     "two_rim.material.identity_hash": "pass",
+     "two_rim.material.incidence_and_rings": "pass",
+     "two_rim.material.matches_parent_source": "pass",
+     "two_rim.material.record_schema": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+   },
+   "source": {
+    "claims": {
+     "two_rim.source.height_positive": "pass",
+     "two_rim.source.normalization_accounts_for_input": "pass",
+     "two_rim.source.record_schema": "pass",
+     "two_rim.source.rims_strictly_convex_clockwise": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+   }
+  },
+  "F2": {
+   "material": {
+    "claims": {
+     "two_rim.material.facets_match_supporting_plane_oracle": "pass",
+     "two_rim.material.identity_hash": "pass",
+     "two_rim.material.incidence_and_rings": "pass",
+     "two_rim.material.matches_parent_source": "pass",
+     "two_rim.material.record_schema": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:f20a41c6fc61e38095454cf5364474433587f6ba8a067ad6b7f9017f5d71cbd2"
+   },
+   "source": {
+    "claims": {
+     "two_rim.source.height_positive": "pass",
+     "two_rim.source.normalization_accounts_for_input": "pass",
+     "two_rim.source.record_schema": "pass",
+     "two_rim.source.rims_strictly_convex_clockwise": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:c9a0b53eaa1cc6f64230d702023cae60d8c80c3ea89366c9188efcf78d17ebb4"
+   }
+  }
+ },
+ "replay": {
+  "environment_match": true,
+  "outcome": "reproduced",
+  "partial_comparison": {
+   "entries": 104,
+   "reproduced": 104
+  },
+  "run_digest_reproduced": true
+ },
+ "run_digest": "sha256:9692a047eb1080ff284a35e3f928b0f9773a74f200d21c7b5ed957a3eeac47f0"
+}

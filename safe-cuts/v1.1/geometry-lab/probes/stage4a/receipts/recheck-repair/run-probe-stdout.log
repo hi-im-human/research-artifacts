@@ -1,0 +1,11 @@
+E0 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E1 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E2 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E3 fail shared 10 axis 44 fail [['F3', 'F2']] unknown 0 bits<= 64
+E4 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E5 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E6 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E7 pass shared 10 axis 45 fail [] unknown 0 bits<= 64
+E8 fail shared 10 axis 42 fail [['F8', 'F7'], ['F9', 'F7'], ['F10', 'F7']] unknown 0 bits<= 64
+E9 fail shared 10 axis 41 fail [['F9', 'F7'], ['F9', 'F8'], ['F10', 'F7'], ['F10', 'F8']] unknown 0 bits<= 64
+E10 fail shared 10 axis 42 fail [['F10', 'F7'], ['F10', 'F8'], ['F10', 'F9']] unknown 0 bits<= 64

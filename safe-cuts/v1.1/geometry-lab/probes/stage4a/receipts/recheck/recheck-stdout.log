@@ -1,0 +1,11 @@
+{
+ "theorem_s_rows": 110,
+ "theorem_s_confirmed": 110,
+ "coordinates_checked": 968,
+ "coordinates_contained": 968,
+ "axis_rows": 484,
+ "axis_confirmed": 484,
+ "witness_rows": 11,
+ "witness_confirmed": 11,
+ "failures": 0
+}

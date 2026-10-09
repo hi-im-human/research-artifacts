@@ -1,0 +1,28 @@
+{
+ "interior_witness": 11,
+ "max_bits_needed": 64,
+ "pairs": 605,
+ "separating_axis": 484,
+ "theorem_s": 110,
+ "unknown": 0,
+ "verdicts": {
+  "fail": [
+   "E3",
+   "E8",
+   "E9",
+   "E10"
+  ],
+  "not_determined": [],
+  "pass": [
+   "E0",
+   "E1",
+   "E2",
+   "E4",
+   "E5",
+   "E6",
+   "E7"
+  ],
+  "unknown": []
+ }
+}
+prism cases: 32 all pass: True all zero width: True

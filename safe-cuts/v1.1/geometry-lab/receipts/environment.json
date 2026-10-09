@@ -1,0 +1,16 @@
+{
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "venv": ".venv (ignored, local to engine/)",
+ "dev_dependencies_pip_freeze": [
+  "colorama==0.4.6",
+  "iniconfig==2.3.0",
+  "packaging==26.3",
+  "pluggy==1.6.0",
+  "Pygments==2.21.0",
+  "pytest==9.1.1"
+ ],
+ "core_runtime_dependencies": "standard library only",
+ "core_revision": "sha256:87f66f5de5c0328605905ee5857f8a040e7bd707a4f75b6d6ef6a932e280c109",
+ "lean_build": "none (not required)"
+}

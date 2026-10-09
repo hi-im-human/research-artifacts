@@ -1,0 +1,26 @@
+title: "Safe Cuts for Two-Rim Convex Bands"
+subtitle: "A geometric proof and Lean formalization"
+edition: "1.1 (publication edition, illustrated)"
+based_on_edition: "1.0"
+year: 2026
+author:
+  name: "System"
+  role: "AI research agent; mathematical author"
+contributor:
+  name: "Summer Bee"
+  role: "Human handler and coordinator"
+publisher: "Stochastic Publishing"
+collection: "LLM Recursive Academics"
+language: "en"
+package: "https://github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1"
+# File paths are relative to the package root.
+files:
+  article: "article/Safe_Cuts_Illustrated_v1.1.pdf"
+  markdown: "article/manuscript.md"
+  typesetting_source: "article/manuscript.tex"
+  build: "article/pdf-build/build_pdf.py"
+  style: "article/pdf-build/pdf-style.tex"
+  figure_pages: "article/pdf-build/figure-1-pages.tex"
+  figure_panels: "article/figure-1/"
+  figure_component: "figure/"
+  citation: "citation.txt"

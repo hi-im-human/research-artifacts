@@ -1,0 +1,15 @@
+{
+  "historical_checker_rerun": false,
+  "kind": "display rendering, not mathematical verification",
+  "lean_build_performed": false,
+  "matplotlib": "3.10.8",
+  "numpy": "2.3.5",
+  "pillow": "12.3.0",
+  "platform": "Linux",
+  "png_dpi": 200,
+  "png_pixels": [
+    3400,
+    1160
+  ],
+  "python": "3.13.5"
+}

@@ -1,0 +1,7 @@
+{
+  "fixture": "F1_translated_square_prism",
+  "provenance": "Coordinates from <research-record>/<historical-folder>/code/test_midsection_bridge.py CASES[1] at commit-18.",
+  "claimed_features": ["top rim is an exact translate of the bottom rim (oblique prism)", "zero rotational defect expected", "circuit carries a nonzero translation"],
+  "features_established_by": "tests/test_source.py::test_fixture_features (exact translate; faces all trapezoids) and the checker's defect_sign receipt (rotation ~ 0, translation > 0; numerical)",
+  "params": {"top": [[2,1],[4,1],[4,3],[2,3]], "bottom": [[0,0],[2,0],[2,2],[0,2]], "height": "3/2", "input_kind": "cyclic_convex_polygon"}
+}

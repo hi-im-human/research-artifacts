@@ -1,0 +1,16 @@
+
+test_affine_fixed_ray_formula (test_radial_window_certificate.RadialWindowTests.test_affine_fixed_ray_formula) ... ok
+test_full_original_source_not_just_one_trim (test_radial_window_certificate.RadialWindowTests.test_full_original_source_not_just_one_trim) ... ok
+test_no_pairwise_collision_oracle_in_acceptance (test_radial_window_certificate.RadialWindowTests.test_no_pairwise_collision_oracle_in_acceptance) ... ok
+test_not_a_scalar_largest_turn_rule (test_radial_window_certificate.RadialWindowTests.test_not_a_scalar_largest_turn_rule) ... ok
+test_omit_translation_is_rejected (test_radial_window_certificate.RadialWindowTests.test_omit_translation_is_rejected) ... ok
+test_original_triangles_not_replaced_by_quads (test_radial_window_certificate.RadialWindowTests.test_original_triangles_not_replaced_by_quads) ... ok
+test_same_center_satisfies_full_affine_map (test_radial_window_certificate.RadialWindowTests.test_same_center_satisfies_full_affine_map) ... ok
+test_selected_cuts (test_radial_window_certificate.RadialWindowTests.test_selected_cuts) ... ok
+test_source_and_radial_supports (test_radial_window_certificate.RadialWindowTests.test_source_and_radial_supports) ... ok
+test_width_boundary_not_accepted (test_radial_window_certificate.RadialWindowTests.test_width_boundary_not_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.275s
+
+OK

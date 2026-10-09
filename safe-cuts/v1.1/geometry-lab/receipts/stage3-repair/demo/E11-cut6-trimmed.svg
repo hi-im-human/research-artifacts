@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1280" font-family="sans-serif" font-size="12">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="20" y="28" font-size="17">Geometry Lab Stage 3 static inspection - two_rim.trimmed_development delta=1/10000 - seam E9</text>
+<text x="20" y="47" fill="#555">subject sha256:a10a382c05e38849... ; float64 placement of an exact source; numerical diagnostics only, not a certificate or a motion</text>
+<text x="840" y="28" font-size="13">local chain status: <tspan fill="#c62828">fail</tspan>; source-linked status: <tspan fill="#c62828">fail</tspan></text>
+<text x="20" y="66">Original band (display projection; height exaggerated) - seam in red</text>
+<polygon points="259.93,446.51 342.08,232.94 238.69,448.00" fill="#4e79a7" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="280.2" y="375.8" text-anchor="middle" font-size="11">F9</text>
+<polygon points="238.69,448.00 342.08,232.94 75.93,250.39" fill="#f28e2b" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="218.9" y="310.4" text-anchor="middle" font-size="11">F10</text>
+<polygon points="238.69,448.00 75.93,250.39 89.61,449.66" fill="#59a14f" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="134.7" y="382.7" text-anchor="middle" font-size="11">F0</text>
+<polygon points="89.61,449.66 75.93,250.39 42.40,333.69" fill="#b07aa1" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="69.3" y="344.6" text-anchor="middle" font-size="11">F1</text>
+<polygon points="42.40,333.69 75.93,250.39 268.18,170.34" fill="#76b7b2" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="128.8" y="251.5" text-anchor="middle" font-size="11">F2</text>
+<polygon points="42.40,333.69 268.18,170.34 437.18,301.88" fill="#edc948" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="249.3" y="268.6" text-anchor="middle" font-size="11">F3</text>
+<polygon points="437.18,301.88 268.18,170.34 557.60,319.32" fill="#9c755f" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="421.0" y="263.8" text-anchor="middle" font-size="11">F4</text>
+<polygon points="557.60,319.32 268.18,170.34 342.76,193.94" fill="#e15759" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="389.5" y="227.9" text-anchor="middle" font-size="11">F5</text>
+<polygon points="557.60,319.32 342.76,193.94 342.08,232.94" fill="#bab0ac" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="414.1" y="248.7" text-anchor="middle" font-size="11">F6</text>
+<polygon points="557.60,319.32 342.08,232.94 302.05,434.78" fill="#86bcb6" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="400.6" y="329.0" text-anchor="middle" font-size="11">F7</text>
+<polygon points="302.05,434.78 342.08,232.94 259.93,446.51" fill="#8cd17d" fill-opacity="0.30" stroke="#333" stroke-width="0.8"/>
+<text x="301.4" y="371.4" text-anchor="middle" font-size="11">F8</text>
+<line x1="259.93" y1="446.51" x2="342.08" y2="232.94" stroke="#d00" stroke-width="4"/>
+<text x="620" y="66">Planar candidate (exported images) - red lines: the two seam copies; red dashed outline: faces in a failing pair</text>
+<polygon points="905.10,89.20 850.20,198.49 850.20,198.49 922.95,89.20" fill="#4e79a7" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="922.95,89.20 850.20,198.49 1074.34,202.31 922.98,89.20" fill="#f28e2b" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="922.98,89.20 1074.34,202.31 1074.35,202.31 1051.87,117.26" fill="#59a14f" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="1051.87,117.26 1074.35,202.31 1074.37,202.35 1162.95,492.60" fill="#b07aa1" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="1162.95,492.60 1074.37,202.35 956.74,424.66 1162.93,492.62" fill="#76b7b2" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="1162.93,492.62 956.74,424.66 956.71,424.66 834.86,530.80" fill="#edc948" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="834.86,530.80 956.71,424.66 956.70,424.66 717.07,456.77" fill="#9c755f" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="717.07,456.77 956.70,424.66 875.39,338.42 717.06,456.76" fill="#e15759" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="717.06,456.76 875.39,338.42 850.53,215.46 717.05,456.75" fill="#bab0ac" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="717.05,456.75 850.53,215.46 850.55,215.43 867.49,132.68" fill="#86bcb6" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="867.49,132.68 850.55,215.43 850.55,215.42 897.04,102.30" fill="#8cd17d" fill-opacity="0.40" stroke="#222" stroke-width="0.8"/>
+<polygon points="905.10,89.20 850.20,198.49 850.20,198.49 922.95,89.20" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7,4"/>
+<polygon points="922.95,89.20 850.20,198.49 1074.34,202.31 922.98,89.20" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7,4"/>
+<polygon points="717.05,456.75 850.53,215.46 850.55,215.43 867.49,132.68" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7,4"/>
+<polygon points="867.49,132.68 850.55,215.43 850.55,215.42 897.04,102.30" fill="none" stroke="#c62828" stroke-width="2.5" stroke-dasharray="7,4"/>
+<text x="882.1" y="143.8" text-anchor="middle" font-size="12" font-weight="bold">F9</text>
+<text x="942.6" y="144.8" text-anchor="middle" font-size="12" font-weight="bold">F10</text>
+<text x="1030.9" y="152.8" text-anchor="middle" font-size="12" font-weight="bold">F0</text>
+<text x="1090.9" y="253.6" text-anchor="middle" font-size="12" font-weight="bold">F1</text>
+<text x="1089.2" y="403.1" text-anchor="middle" font-size="12" font-weight="bold">F2</text>
+<text x="977.8" y="468.2" text-anchor="middle" font-size="12" font-weight="bold">F3</text>
+<text x="866.3" y="459.2" text-anchor="middle" font-size="12" font-weight="bold">F4</text>
+<text x="816.6" y="419.1" text-anchor="middle" font-size="12" font-weight="bold">F5</text>
+<text x="790.0" y="366.8" text-anchor="middle" font-size="12" font-weight="bold">F6</text>
+<text x="821.4" y="255.1" text-anchor="middle" font-size="12" font-weight="bold">F7</text>
+<text x="866.4" y="166.5" text-anchor="middle" font-size="12" font-weight="bold">F8</text>
+<line x1="905.10" y1="89.20" x2="850.20" y2="198.49" stroke="#d00" stroke-width="3.5"/>
+<line x1="897.04" y1="102.30" x2="850.55" y2="215.42" stroke="#d00" stroke-width="3.5"/>
+<rect x="620" y="585" width="640" height="310" fill="none" stroke="#999"/>
+<text x="626" y="603">Zoom: faces in failing pairs (same exported images)</text>
+<polygon points="947.06,602.00 905.83,684.07 905.83,684.07 960.47,602.00" fill="#4e79a7" fill-opacity="0.35" stroke="#c62828" stroke-width="1.5"/>
+<polygon points="960.47,602.00 905.83,684.07 1074.15,686.94 960.48,602.00" fill="#f28e2b" fill-opacity="0.35" stroke="#c62828" stroke-width="1.5"/>
+<polygon points="805.85,878.00 906.08,696.81 906.09,696.79 918.81,634.65" fill="#86bcb6" fill-opacity="0.35" stroke="#c62828" stroke-width="1.5"/>
+<polygon points="918.81,634.65 906.09,696.79 906.10,696.78 941.01,611.84" fill="#8cd17d" fill-opacity="0.35" stroke="#c62828" stroke-width="1.5"/>
+<text x="929.8" y="643.0" text-anchor="middle" font-size="13" font-weight="bold">F9</text>
+<text x="975.2" y="643.8" text-anchor="middle" font-size="13" font-weight="bold">F10</text>
+<text x="884.2" y="726.6" text-anchor="middle" font-size="13" font-weight="bold">F7</text>
+<text x="918.0" y="660.0" text-anchor="middle" font-size="13" font-weight="bold">F8</text>
+<text x="20" y="925" font-size="14">Evidence for this state (outcome / method / coverage)</text>
+<rect x="20" y="936" width="12" height="12" fill="#2e7d32"/>
+<text x="38" y="947">two_rim.trim.record_schema: pass (exact_computation; all)</text>
+<rect x="660" y="936" width="12" height="12" fill="#2e7d32"/>
+<text x="678" y="947">two_rim.trim.maps_identical_to_parent: pass (exact_computation; all)</text>
+<rect x="20" y="955" width="12" height="12" fill="#2e7d32"/>
+<text x="38" y="966">two_rim.trim.domain_is_exact_band: pass (exact_computation; all)</text>
+<rect x="660" y="955" width="12" height="12" fill="#2e7d32"/>
+<text x="678" y="966">two_rim.development.face_maps_rigid: pass (numerical_diagnostic; all)</text>
+<rect x="20" y="974" width="12" height="12" fill="#2e7d32"/>
+<text x="38" y="985">two_rim.development.no_reflected_face: pass (numerical_diagnostic; all)</text>
+<rect x="660" y="974" width="12" height="12" fill="#2e7d32"/>
+<text x="678" y="985">two_rim.development.nonempty_face_images: pass (numerical_diagnostic; all)</text>
+<rect x="20" y="993" width="12" height="12" fill="#2e7d32"/>
+<text x="38" y="1004">two_rim.development.retained_hinges_and_glued_vertices_agree: pass (numerical_diagnostic; all)</text>
+<rect x="660" y="993" width="12" height="12" fill="#c62828"/>
+<text x="678" y="1004">two_rim.development.face_interiors_disjoint_all_pairs: fail (numerical_diagnostic; all)</text>
+<rect x="20" y="1012" width="12" height="12" fill="#c62828"/>
+<text x="38" y="1023">two_rim.development.diagnostic.unglued_pairs_disjoint: fail (numerical_diagnostic; pairs_without_glued_material)</text>
+<rect x="660" y="1012" width="12" height="12" fill="#c62828"/>
+<text x="678" y="1023">two_rim.development.diagnostic.float_representability: fail (exact_computation; all)</text>
+<rect x="20" y="1031" width="12" height="12" fill="#2e7d32"/>
+<text x="38" y="1042">two_rim.development.diagnostic.circuit_holonomy: pass (numerical_diagnostic; all)</text>
+<text x="20" y="1073" font-size="14">Non-passing face pairs: 4 fail, 8 unknown</text>
+<text x="20" y="1093" fill="#c62828">F9/F7: fail - interior_overlap</text>
+<text x="20" y="1110" fill="#c62828">F9/F8: fail - interior_overlap</text>
+<text x="20" y="1127" fill="#c62828">F10/F7: fail - interior_overlap</text>
+<text x="20" y="1144" fill="#c62828">F10/F8: fail - interior_overlap</text>
+<text x="20" y="1161" fill="#b26a00">F9/F10: unknown - near_contact_unresolved (shared retained_hinge)</text>
+<text x="20" y="1178" fill="#b26a00">F10/F0: unknown - near_contact_unresolved (shared retained_hinge)</text>
+<text x="20" y="1195" fill="#b26a00">F0/F1: unknown - near_contact_unresolved (shared retained_hinge)</text>
+<text x="20" y="1212" fill="#b26a00">F2/F3: unknown - near_contact_unresolved (shared retained_hinge)</text>
+</svg>

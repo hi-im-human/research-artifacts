@@ -1,0 +1,125 @@
+{
+ "label": "isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued",
+ "seams": {
+  "E0@1/10000": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:1f1db66a8fea6c725f0b43f575a8da7599a9bcbf483403ae3cc8f41ce9a9a9c0",
+   "digest": "sha256:0aeb07982f001f43e687aa0ee73035264989df7b6b412aba4b34e5021ab02ca4",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E0@1/4": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:d672379af2a087dd51f04e54d7f0e0b9c26893b9531c4d3bc188aab3a89475bb",
+   "digest": "sha256:fc2f8b85aafee9e1e4e869eeb8dd6c80fc2060633c02fa108d1ee8dd0ebfb2fd",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E1@1/10000": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:4f3f9698668adf14d61a0505aa4b7baab705b6c2caa4326b710b7037766923ea",
+   "digest": "sha256:9442fa501bd34221fa6648a1158bd8dfe0f9dbbf9f8d70a5ab2520c7bcead1f8",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E1@1/4": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:4f4167cd317d0d2c8964e642afb016e203c270d7096995c541a534d0faf125b5",
+   "digest": "sha256:673fe7614b4e010756b122d908c124088861a1300a3decd97a6923fb803524f0",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E2@1/10000": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:82f908f493e2b53a623b1cd9510d7441b3bda24d3422cd78836cb8b4866cd4e1",
+   "digest": "sha256:ad32f11de98c52a04012726cc840561dbf1f5b06c8a7d17a6fa0ff1237c2dc3a",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E2@1/4": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:3d24c07486e0620ed2bb2ad283a43cd32969371f00af97a9c0e9167a0f0a0474",
+   "digest": "sha256:d8b04c8e0144109710d5772f51071e8d13a5355280ebd95c881163f871c10dd5",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E3@1/10000": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:d0d3e79861e5f17fd29b4420d13e8f50b28c5aefa9cd9b4e8140cd920cf0e8aa",
+   "digest": "sha256:e2b0fa7f9efb5b81576d17263fa501a6290ac43ed33138a6fc23c91248ea5fd6",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  },
+  "E3@1/4": {
+   "all_box_widths_zero": true,
+   "classification_digest": "sha256:e2f0bef1137a33e4b11521b96a86dc2d250bc918e5891480f8a3e6e6751fd7d0",
+   "digest": "sha256:bed507f86e17c74d1d905b64eb40d197a3fd035335255f29e8ae80d56ad7604f",
+   "methods": [
+    "separating_axis",
+    "shared_hinge_exact"
+   ],
+   "seam_verdict": "pass"
+  }
+ },
+ "specimen": {
+  "bottom": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ],
+  "height": "3",
+  "input_kind": "cyclic_boundary",
+  "top": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    2,
+    0
+   ]
+  ]
+ }
+}

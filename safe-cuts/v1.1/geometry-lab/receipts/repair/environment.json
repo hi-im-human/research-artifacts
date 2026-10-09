@@ -1,0 +1,7 @@
+{
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "pytest": "9.1.1",
+ "core_revision": "sha256:0e86b0877fc1858221b174cb17d36342780f161c81c985695097930a1c6b2d23",
+ "core_runtime_dependencies": "standard library only"
+}

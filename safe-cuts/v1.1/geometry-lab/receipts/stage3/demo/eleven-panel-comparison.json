@@ -1,0 +1,243 @@
+{
+ "comparison": [
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E3",
+   "current_trimmed_all_pairs": "fail",
+   "current_unglued_pairs": "fail",
+   "historical_cut": 0,
+   "historical_exact_class": "unsafe",
+   "interior_overlaps": [
+    {
+     "overlap_area": 4.24609938844219,
+     "pair": [
+      "F3",
+      "F2"
+     ]
+    }
+   ]
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E4",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 1,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E5",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 2,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E6",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 3,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E7",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 4,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E8",
+   "current_trimmed_all_pairs": "fail",
+   "current_unglued_pairs": "fail",
+   "historical_cut": 5,
+   "historical_exact_class": "unsafe",
+   "interior_overlaps": [
+    {
+     "overlap_area": 7.0503471155712205,
+     "pair": [
+      "F8",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 0.9202851038351696,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033852,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    }
+   ]
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E9",
+   "current_trimmed_all_pairs": "fail",
+   "current_unglued_pairs": "fail",
+   "historical_cut": 6,
+   "historical_exact_class": "unsafe",
+   "interior_overlaps": [
+    {
+     "overlap_area": 0.9202851038351412,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 18.982904330610474,
+     "pair": [
+      "F9",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033994,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369158,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    }
+   ]
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E10",
+   "current_trimmed_all_pairs": "fail",
+   "current_unglued_pairs": "fail",
+   "historical_cut": 7,
+   "historical_exact_class": "unsafe",
+   "interior_overlaps": [
+    {
+     "overlap_area": 1.685917789103371,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369073,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 38.49439046691966,
+     "pair": [
+      "F10",
+      "F9"
+     ]
+    }
+   ]
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E0",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 8,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E1",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 9,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E2",
+   "current_trimmed_all_pairs": "unknown",
+   "current_unglued_pairs": "pass",
+   "historical_cut": 10,
+   "historical_exact_class": "safe",
+   "interior_overlaps": []
+  }
+ ],
+ "delta": "1/10000",
+ "historical_cut6": {
+  "faces": [
+   "F10",
+   "F7"
+  ],
+  "panel_positions": [
+   1,
+   9
+  ],
+  "point": [
+   "39037647/1000000",
+   "565877/1000000"
+  ],
+  "seam": "E9"
+ },
+ "mapping": {
+  "cuts": {
+   "0": "E3",
+   "1": "E4",
+   "10": "E2",
+   "2": "E5",
+   "3": "E6",
+   "4": "E7",
+   "5": "E8",
+   "6": "E9",
+   "7": "E10",
+   "8": "E0",
+   "9": "E1"
+  },
+  "faces": {
+   "0": "F3",
+   "1": "F4",
+   "10": "F2",
+   "2": "F5",
+   "3": "F6",
+   "4": "F7",
+   "5": "F8",
+   "6": "F9",
+   "7": "F10",
+   "8": "F0",
+   "9": "F1"
+  },
+  "hinges": {
+   "0": "E3",
+   "1": "E4",
+   "10": "E2",
+   "2": "E5",
+   "3": "E6",
+   "4": "E7",
+   "5": "E8",
+   "6": "E9",
+   "7": "E10",
+   "8": "E0",
+   "9": "E1"
+  },
+  "rotation_current_minus_historical": 3
+ },
+ "note": "historical classes are exact certificates for this specified ordinary trim only; current results are float64 numerical diagnostics"
+}

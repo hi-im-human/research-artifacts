@@ -1,0 +1,122 @@
+{
+ "label": "display transformations for safe-cuts-e4-e9-comparison",
+ "matplotlib": "3.10.8",
+ "panel_E4": {
+  "coordinates": "midpoints of recorded enclosure boxes (normalization N0), no rescaling",
+  "label_offsets_data_units": {
+   "F8": [
+    -16,
+    12
+   ],
+   "F9": [
+    8,
+    14
+   ]
+  },
+  "seam_copies": "thick lines at the first and last chain faces",
+  "x_range": [
+   -13.090039252037883,
+   139.75976368489796
+  ],
+  "x_y_scale": "equal",
+  "y_range": [
+   -63.58341937771588,
+   91.91494529753722
+  ]
+ },
+ "panel_E9": {
+  "coordinates": "midpoints of recorded enclosure boxes (normalization N0), no rescaling",
+  "inset": {
+   "magnification_vs_panel": 28.373,
+   "x_range": [
+    35.32890068792928,
+    41.1110919232395
+   ],
+   "x_y_scale": "equal",
+   "y_range": [
+    -2.3329028136107226,
+    3.449288421699504
+   ]
+  },
+  "inset_face_styles": {
+   "F10": {
+    "hatch": "////",
+    "ls": "-",
+    "lw": 1.8
+   },
+   "F7": {
+    "hatch": "\\\\",
+    "ls": "--",
+    "lw": 1.8
+   },
+   "F8": {
+    "hatch": null,
+    "ls": ":",
+    "lw": 1.6
+   },
+   "F9": {
+    "hatch": null,
+    "ls": "-.",
+    "lw": 1.2
+   }
+  },
+  "inset_faces_visible": [
+   "F10",
+   "F7",
+   "F8",
+   "F9"
+  ],
+  "label_offsets_data_units": {
+   "F8": [
+    10,
+    -11
+   ],
+   "F9": [
+    -8,
+    -11
+   ]
+  },
+  "overlap_region": {
+   "bbox_x": [
+    36.613832073553766,
+    39.826160537615
+   ],
+   "bbox_y": [
+    0.0005194956126882931,
+    1.1158661124760931
+   ],
+   "faces": [
+    "F10",
+    "F7"
+   ],
+   "method": "float clip of the displayed face polygons (display only; the certificate is the recorded interior witness)"
+  },
+  "seam_copies": "thick lines at the first and last chain faces",
+  "witness_point_exact": [
+   "766770701461313580227644633505475631977134716211310817741363082561909186010355926822918734678617307368061/19876638891682885343319161191050531379316803992598759880956302825462968903338534399538576652601353306112",
+   "5002541369403825266803630867638030706664622262051437427387671795847308289093076666276397943557309395653/9938319445841442671659580595525265689658401996299379940478151412731484451669267199769288326300676653056"
+  ],
+  "x_range": [
+   -13.290894862563905,
+   138.7645347197835
+  ],
+  "x_y_scale": "equal",
+  "y_range": [
+   -4.5894323370439025,
+   133.99814295650296
+  ]
+ },
+ "panel_a": {
+  "azim": -58,
+  "caps": "omitted (not part of the unfolded surface)",
+  "elev": 28,
+  "height_exaggeration": 300000,
+  "proj_type": "ortho",
+  "projection": "orthographic (matplotlib mplot3d proj_type='ortho')",
+  "seam_line_styles": {
+   "E4": "dashed",
+   "E9": "dash-dot"
+  },
+  "xy_scale": "equal (box aspect from data extents)"
+ }
+}

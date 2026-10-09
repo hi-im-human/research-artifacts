@@ -1,0 +1,37 @@
+import SelectedPositiveFullSafe
+
+-- Run one axiom query at a time; leave the remaining original diagnostics
+-- commented until this command finishes within its own bounded invocation.
+#print axioms SelectedPositiveRootPolarLift.selectedPositiveDirectMap_full_safe
+
+/- Remaining original axiom queries, to activate individually:
+#print axioms SelectedPositiveRootPolarLift.normalized_radialSupport
+#print axioms SelectedPositiveRootPolarLift.normalized_point
+#print axioms SelectedPositiveRootPolarLift.normalizedHeading_terminal
+#print axioms SelectedPositiveRootPolarLift.normalizedHeading_terminal_neg
+#print axioms SelectedPositiveRootPolarLift.normalizedForward_eq_direction
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_window
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_decomposition
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_hinge
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_strictAnti
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_image_Icc
+#print axioms SelectedPositiveRootPolarLift.normalized_virtualFinalHinge
+#print axioms SelectedPositiveRootPolarLift.pointPolarLift_terminal
+#print axioms SelectedPositiveRootPolarLift.longitudinalLiftSet_eq_Icc
+#print axioms SelectedPositiveRootPolarLift.rayHeightComponent_iff_positiveRay
+#print axioms SelectedPositiveRootPolarLift.rayHeightComponent_consecutive
+#print axioms SelectedPositiveRootPolarLift.alpha_det_trichotomy
+#print axioms SelectedPositiveRootPolarLift.rayHeightComponent_convex
+#print axioms SelectedPositiveRootPolarLift.rayHeightComponent_relativelyClosed
+#print axioms SelectedPositiveRootPolarLift.materialHit_point_unique
+#print axioms SelectedPositiveRootPolarLift.componentRadius_strict
+#print axioms SelectedPositiveRootPolarLift.materialHit_sameHeight_hinge
+#print axioms SelectedPositiveRootPolarLift.facing_of_mono
+#print axioms SelectedPositiveRootPolarLift.facing_of_anti
+#print axioms SelectedPositiveRootPolarLift.normalized_root_seam_inward
+#print axioms SelectedPositiveRootPolarLift.componentRadius_cross_strict
+#print axioms SelectedPositiveRootPolarLift.materialHit_point_ne_of_height_ne
+#print axioms SelectedPositiveRootPolarLift.materialHit_collision_classification
+#print axioms SelectedPositiveRootPolarLift.materialHit_distinct_faceInteriors_ne
+#print axioms SelectedPositiveRootPolarLift.crossComponent_seam_allPairs_ne
+-/

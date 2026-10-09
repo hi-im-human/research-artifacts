@@ -1,0 +1,111 @@
+{
+ "bundle_failures": [],
+ "contract": "stage4a.recheck_bundle/2",
+ "diagnostic_fields_not_verified": [
+  "bits",
+  "attempts",
+  "reason",
+  "shared_hinge.reason",
+  "shared_hinge (on unknown rows)"
+ ],
+ "environment": {
+  "iv_prec_bits": 400,
+  "mpmath": "1.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+ },
+ "label": "isolated Stage 4A prototype: independent re-check; not glab evidence",
+ "scope": {
+  "local_geometry_preconditions": "checked independently before geometry: unique IDs and references, chain and hinge incidence, nondegenerate hinges and normals, rings and hinges on their stated planes, outward orientation, strictly counterclockwise convex clipped rings",
+  "meaning_of_verified": "the bundle's certificates, bounds and declared verdicts were confirmed; it is not a safety statement - each seam's recomputed verdict on D is (pass, fail, or unknown, which is never a safety pass)",
+  "stage2_source_correspondence_and_run_evidence": "not re-verified here; established at in-Run certificate issuance"
+ },
+ "seams": {
+  "E0": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E1": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E10": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "fail",
+   "status": "verified"
+  },
+  "E2": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E3": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "fail",
+   "status": "verified"
+  },
+  "E4": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E5": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E6": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E7": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "pass",
+   "status": "verified"
+  },
+  "E8": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "fail",
+   "status": "verified"
+  },
+  "E9": {
+   "failures": [],
+   "local_preconditions": "checked",
+   "recomputed_verdict": "fail",
+   "status": "verified"
+  }
+ },
+ "totals": {
+  "axis_confirmed": 484,
+  "axis_rows": 484,
+  "coordinates_checked": 968,
+  "coordinates_contained": 968,
+  "euclidean_bounds_confirmed": 484,
+  "expected_pairs": 605,
+  "failed_seams": 0,
+  "failures": 0,
+  "rejected_seams": 0,
+  "rows_checked": 605,
+  "theorem_s_confirmed": 110,
+  "theorem_s_rows": 110,
+  "unknown_rows": 0,
+  "verified": true,
+  "verified_seams": 11,
+  "witness_bounds_confirmed": 11,
+  "witness_confirmed": 11,
+  "witness_rows": 11
+ }
+}

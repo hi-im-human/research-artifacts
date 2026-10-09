@@ -1,0 +1,4546 @@
+{
+ "aggregate_definition": {
+  "checkers": {
+   "cut": {
+    "name": "two_rim.check.cut",
+    "version": 1
+   },
+   "ideal": {
+    "name": "two_rim.check.ideal_trimmed_development",
+    "version": 1
+   },
+   "material": {
+    "name": "two_rim.check.material",
+    "version": 2
+   },
+   "source": {
+    "name": "two_rim.check.source",
+    "version": 2
+   }
+  },
+  "coverage": {
+   "default": "all",
+   "two_rim.ideal.remaining_pairs_interiors_disjoint": "pairs_not_decided_by_theorem_s",
+   "two_rim.ideal.retained_hinge_sides_opposite": "retained_hinge_pairs",
+   "two_rim.ideal.retained_neighbours_interiors_disjoint": "retained_hinge_pairs"
+  },
+  "methods": {
+   "default": "exact_computation",
+   "two_rim.ideal.remaining_pairs_interiors_disjoint": "rigorous_enclosure"
+  },
+  "name": "source_linked_ideal_trimmed_obligations",
+  "policy": "exact claims declare none; the claims in policy_claims must declare exactly the expected policy",
+  "policy_claims": [
+   "two_rim.ideal.retained_neighbours_interiors_disjoint",
+   "two_rim.ideal.remaining_pairs_interiors_disjoint"
+  ],
+  "requirements": {
+   "cut": [
+    "two_rim.cut.record_schema",
+    "two_rim.cut.material_copy_matches_parent",
+    "two_rim.cut.exactly_one_original_seam_open",
+    "two_rim.cut.face_coverage_complete_unique",
+    "two_rim.cut.glue_classes_match_cut_relation"
+   ],
+   "ideal": [
+    "two_rim.ideal.record_schema",
+    "two_rim.ideal.cut_copy_matches_parent",
+    "two_rim.ideal.delta_in_supported_domain",
+    "two_rim.ideal.local_premises",
+    "two_rim.ideal.retained_hinge_sides_opposite",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint",
+    "two_rim.ideal.pair_coverage_complete"
+   ],
+   "material": [
+    "two_rim.material.record_schema",
+    "two_rim.material.identity_hash",
+    "two_rim.material.facets_match_supporting_plane_oracle",
+    "two_rim.material.incidence_and_rings",
+    "two_rim.material.matches_parent_source"
+   ],
+   "source": [
+    "two_rim.source.record_schema",
+    "two_rim.source.height_positive",
+    "two_rim.source.rims_strictly_convex_clockwise",
+    "two_rim.source.normalization_accounts_for_input"
+   ]
+  },
+  "scope": "source-linked: the Stage 2 source and material bundles, the cut claims and every ideal claim, each on its own subject hash; the float development and trimmed totals are separate and unchanged",
+  "verdicts": {
+   "fail": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+   "not_determined": "no source-linked geometric verdict: required evidence is missing, stale, failing, from an unexpected checker or under another policy, or the input is unsupported; never an overlap and never a pass",
+   "pass": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+   "unknown": "valid current evidence that leaves at least one pair undecided; never a safety pass"
+  }
+ },
+ "delta": "1/10000",
+ "disclaimer": "finite scan of the original hinges on the ideal trimmed development D (exact inputs, Theorem S and rational-interval certificates); not the manuscript's extremal selector; a verdict concerns D only, never a float state; unknown or not_determined is not a refutation of any theorem",
+ "expected_policy": {
+  "analytic_dependencies": {
+   "contract": "engine/IDEAL-DEVELOPMENT-CONTRACT.md",
+   "contract_sha256_lf": "3f8f5180e5c1d27d201a2b2064a941702d270bb96281db7b30a364436d025d61",
+   "lemmas": [
+    "L1 orientation and side transfer",
+    "L2 existence and uniqueness of the oriented plane isometry",
+    "Theorem S: retained neighbours lie in opposite closed half-planes of their shared hinge line",
+    "separating-axis lemma",
+    "interior-witness lemma"
+   ],
+   "sources": {
+    "engine/STAGE-4A-DESIGN.md": "d06000f8818d8699c69e8ca01241951272aedbca",
+    "engine/probes/stage4a/L4-CORRESPONDENCE.md": "ed135840e9e2c7c2e26e42b0201142271c5de871"
+   },
+   "status": "reviewed written derivations (System, an AI reviewer); not machine-checked; not Lean results; not human peer review"
+  },
+  "arithmetic": "exact rational interval endpoints (Python int and fractions.Fraction); + - * exact; the reciprocal of an interval containing 0 is refused (zero_denominator)",
+  "budget": "per pair, stop at the first decision; after the last precision the pair is unknown (budget_exhausted); an arithmetic refusal is recorded and the next precision is tried (unknown with error:<kind> when none decides)",
+  "decision_rules": {
+   "fail": "a certified interior witness: both trimmed rings exactly strictly convex and counterclockwise about their normals, and every cross2(v_{i+1} - v_i, y - v_i) with a positive lower bound",
+   "otherwise": "unknown; never converted into pass or fail",
+   "pass": "a certified separating axis: max sup(d.P) <= min inf(d.Q), or symmetrically, on the enclosing boxes; boundary contact allowed"
+  },
+  "policy": "two_rim.ideal.evidence/1",
+  "precision_schedule": [
+   16,
+   32,
+   64,
+   128,
+   256,
+   512
+  ],
+  "reported_bounds": "axis_gap recomputed on the recorded boxes; euclidean_gap_lower_bound b with b >= 0 and b^2 (d.d) <= axis_gap^2; cross_lower_bound b with 0 < b <= the recomputed smallest lower bound; all exact, before recording",
+  "root_rule": "sqrt(a) for exact a = N/D >= 0: r = isqrt(N*D*4^P), lo = r/(D*2^P), hi = lo when r^2 = N*D*4^P else (r+1)/(D*2^P); lo^2 <= a <= hi^2 re-checked exactly",
+  "rounding": "absolute outward rounding to multiples of 2^-P of every intermediate interval that has width; zero-width values are kept exact",
+  "subject": "the ideal trimmed development D of one two_rim.ideal_trimmed_development state (definition two_rim.ideal_development/1); never a float state",
+  "trusted_base": "CPython int, fractions.Fraction, math.isqrt and glab.rigorous.ratint, with the written lemmas named in analytic_dependencies"
+ },
+ "label": "ideal_candidate_search",
+ "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+ "prerequisites": {
+  "material": {
+   "claims": {
+    "two_rim.material.facets_match_supporting_plane_oracle": "pass",
+    "two_rim.material.identity_hash": "pass",
+    "two_rim.material.incidence_and_rings": "pass",
+    "two_rim.material.matches_parent_source": "pass",
+    "two_rim.material.record_schema": "pass"
+   },
+   "status": "checked",
+   "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+  },
+  "source": {
+   "claims": {
+    "two_rim.source.height_positive": "pass",
+    "two_rim.source.normalization_accounts_for_input": "pass",
+    "two_rim.source.record_schema": "pass",
+    "two_rim.source.rims_strictly_convex_clockwise": "pass"
+   },
+   "status": "checked",
+   "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+  }
+ },
+ "results": [
+  {
+   "cut": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:c44247b2d6fe3c269e9273b04ed76747fe8aa9cb8f8a7a22b23d0efd1b49c510"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:d30d8aa43a934e3a144de296bd4c87e9188da0fd62613584e1d502a37eba548a"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:6aeba5be1315b102acdb80aca37cf0f59806966b82f90e3030be04310487fc8b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:aa88bec7574936305f4c69bb7f528eb5f0a8b6ed025fd8d9926cd79346af94b0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:11d4e6dc7c0e5a58b536919e09936f776391763b85df47b410cf964508960e63"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:8423ada0dcd14b4a9d1ecd8c29b02c6dd26d82cd4a2c93cfc497b3bd733f9f37"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:8e535ec4c68cd0be513c4abaf49cd233e60536ad3626d5495052a7df721445b7"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:2fbe88903358fee8f1ba2e851cb6618e4d7c825aafa7e9b9b4c3fad612e7c5b9"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:03fae6a058a90bb9357f89b1c5ff4b032cbf21e799d214f92097e0bfac2ce1ae"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:f20b5c6bb4c5d3b830e425f3a9fd89d534f366c90bcbf8047236754d05e25dfd"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:9da4dbd2c851a846e078a12c2746de51c50b7053615d01e6d99c526835232717"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:2495e24de21d931479b6b4bec54568d2933a947de72717036a001e5d887fbf53"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:3fb67e621a630aaa4ded5e826e4c7a371768bb4ec60255989c8d7f7c2f409f14"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:121aae42216fb6431fc7e46aaf9c4bf49a2d9df66c08b4e3b37f881d4110b3a0",
+     "ideal": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E0",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:01a6e5e847471f75b9588e932c46fadee8358899996334696049bc5b20e28549"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:c2256db3137f90d941f715d5e3461fb5679641701a425d6d8730c81cbd94a554"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:b61b111c6676beb27b6bfd800baa0d537056e906f1a6d6eb5db6112793e9730b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:c6ad7d49b9182071e299205a1ace7bbacef78928b7e962ae1e61714fe5e46e36"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:b5cbc63887af3709b6e7c8cec9bd58d9433d74e530cbf23aa4e03c712e2db8fc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:ee13bb8d0ea518dd679e4413f3aa28a96b9ddd89234e0afa216697f88db4e3f1"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:249666be579f905f7537981e8250dcbdef83b350a2232279df2a13d1a2e2bb50"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:b87f04ec1ea0cd60fdf8375061542dd6ce0a65e139a21ba944aea066d860d1d1"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:831c043a3165d06a8f811dc50fc1bb851cd80570f6f11cae4f9779e0e6b32b08"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:3a386d2197cc61aed2c825266de33b2901143b91c7ec8e698bd3a21a7026fd7d"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:7ccb8ee6acf9b8f3cb01c8b234586b7ebf424c86d1c5085d07affe1318285948"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:05f746a059bd275eb069d48a1838760b8ee677494ca4b6104afd3e2418bf9e18"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:25851684b92343f97aaeb50d96419321ae21f103955a8b5190cf29cccbea6f82"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:1cf7d9a4c5cd767ff5c3e785785314fb538074bc9c133903a786cf28c57b0e8c",
+     "ideal": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E1",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:b1d3a9416a3a3958b0cdcec6ee85ebce9ea23920b843c4c401b2e51431bac6bd"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:e5d1ce958dbe46bd520c163c816d6f80a6988b94955504e1aa50d6bd21297289"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:9f308087eb80441ba00695911b0a0143d0d84a97bf7e6fd7b7eaa64525670ef8"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:fc4111753ee20f2b3f32f642641ae77742d916737173824dc27595ed49825189"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:ad23326a4aac4ebf1808a3447cad80f634fa63b7ca8d827ad4ed13b1b0818878"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:ec16daee585ba27185ff3b835d27b308f002bb52b03895845008a970b0983dfc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:0c9bd7ca730d04b49b17d69b73aa5f8795655b2bf0ca88c608896f6068e737ff"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:2fa324491abce2d81c8c5749520ed663a646c78a2304ebc8ef7a09cbf9ef8847"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:6a313aa8290177ea93596a912b26de7926843194905202dc75c43e35471f750a"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:fb5e0a9bd65e00f97d84786eae4c58aa87add6d38dfd346fa14968084d13e2eb"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:c4ac093184fed6a389a98f057a3546ce3aee422772a12034512065f8adc5354e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:66ef86e7848bbe76d4bef19e5ad845f96f678804f24ebf0af383d7a7f2fe2993"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:c574fa3b8bba7053339fcdd403c32510de6d838a8e5b4c33f7d182308891396d"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:94316ead7b09e247582fb38444d3e8b1bc689f422c89ea756af1b7ae44a775ba",
+     "ideal": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E2",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+    "reasons": [],
+    "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352",
+    "verdict": "fail"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+     "reasons": [],
+     "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352",
+     "verdict": "fail"
+    },
+    "identity_problems": [],
+    "outcome": "fail",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:eb3904cfa1367de9e3b4295809aaae29d5efadbe48f37c298788647721ba0ec6"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:15ebfb9218c69aae8b80e930afe84c5f9c1f04b8ec6e733d0627dcacd7279e78"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:db516e7ce1bc067ed54d741ece0e451dc3bbe1bdf5b42b8a92f6ede69b43ba15"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:95e13278c75ee8b7a5bd9f930ee081d27a73310fd0f1f8622fa4c32fb800502c"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:f162c0da441e81b7c09e6b935db8679216ab8df30dace88f73ba234978a3233f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:81498d91c1a125d13d087dd841f808051a73c2bea1fc0d2e65a0129ab748f355"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:85f8e859aa441235556ceeeb6b3396b35d020d3e4dcb89c92381b5152b2f90ab"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:098b75d414f5557f8ff948d32dc28111890f5ab70c697b3c3c5107b9b377c867"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:b16914dbcacd953c0267ff292536c36ba313862f0707c2177fc8944eb6b013fe"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:0f4e140842bfe34ba3f0f1cdab5cf7efeb461a32db3230364e871f2f1f47cc16"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:38cde348d20af97ad0ade89e9a190995345ac094be49a8729461060ccb8c3899"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:0888b323a0d06b719ee72d6b5937c8feafde69dd497772b768d4eb045f922049"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "fail",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:8abc5c78b1d78998f614952a5bb197f306a9f2bb03df87a62aad40646c122c80"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:b3cc4e6df13e5c05398eb33335789454baca5534de467252323e8fdc2047b063",
+     "ideal": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E3",
+   "source_linked_ideal_trimmed_obligations": "fail"
+  },
+  {
+   "cut": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:52bb847b85bbc56ab40faf90626afac6edd6231d453e25808cef5c498d36b850"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:b3b5bf77d59b4dd88b478226052d00f41bb9646dd0231b513beaae942fa106c1"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:644f2fc3da22c94e16de9174e458e7b216ac72a270481002dab8274a7d945033"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:42e9bf2f91bd24c7ac1840e92689da73ee405b521a6670817ec37ddac872cc45"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:3b7def459c44d5d8a0220a2c986bb69f98a87becda9d851387e26d9d524e3c34"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:ab0b483730cebd38d7b11bb954d5f3c9ed4d1535812f0e1b0a25aa5be212720b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:17596b0eec2886845db20277348b581d2de90804a408106b9682dcd39f318486"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:c7b1f379313778382930524a7b045f67fadd7f22968567cae191914fa0e6b17f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:13c9121d67bc28ca37c173274f591ceb46b90f6aaf670316ba104feb6dd9edf2"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:73b5ed4c8f88b38d233948787ad984bb4e09123040613893f9c7a11cb023088c"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:559850c3d6d4022fd0e2e2177c4cb14f720e1de6fd66b85069d74d6ea98ae166"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:5a2a5d4c5f01db3b4aeb5c589c843e7dc657a4648f15ecf7957b7c68395432ba"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:f0b49f53948aab0f6de9fa31a50e1d12481b074c1f123ad5c55786a809cb09ac"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:590ba6e8a50cc6a18520a0c742ac4ff730cf3f6c3a9229acd394ced5d8379025",
+     "ideal": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E4",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:f744dd446c14e8239a73db0f58ba6197acb64fea217d769b2ed93e340d1d448d"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:0d52f18f1d0090c440495875fc21a5f979d33b95fac71ce704feaaf66be46cbe"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:f629b85ad1addb78138b124c156bba692f939622e5ae2807822f7d2bda44d6d8"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:066109aa491a305c281e08506cda6353a94cdf588ce10ba55c5e0504ead20f09"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:1262dcd3dd2ed15852dbd3d3585476588c6ba4ea557bc8ec7519d0dc4eb0064b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:49e13031d3c1c38200aa1c166344afe05dbcd15a27d193195c93222b8228f386"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:3f179edcbf7512af6b23d9d320d508babb970632067db35b9d5b78ddb15fbb99"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:6b1c3e3ffd4b06c24bb077027d1e28e4ba502012f33b9cd23e59c23c3fb43b34"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:409e1cbdad857ed9672a9eb8b74e5be3ffa274d97e8d45444534411824306888"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:17ac4173b81ebf9d6e84ac1c30bea7dec5f9bdc6e1444d4e78df7d4ea8ab8d7e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:8bdc0dd3da9e48668c1901387b30d5f9ceb5ad2d32215d53d771a806a3a9aa73"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:5345580ef792a6e403e73fa5ec888314a5a70c0ed0abe5dcf08feab51ff92567"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:edce4e9c8eaac1db5ebe58432a3919d1bb3e8527d92f3fdbfd588d6e451ba9d8"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:bddccffd1403b4de8c9690fae17a4020e859a10b09060859cd4794b081cca639",
+     "ideal": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E5",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:30ea2366e9c979753c801b60fea74c8f55610cb3b9a322b2cf1af80d4544b507"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:931f62e866713b893b1b513117f775e3196a752f006de3774c893ccae03a9513"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:a9a9e86e2f36d86d1f9031f16900f0ff16e02aaf3f8f5ada8f15854cc2766b15"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:34cf9418c1715ada2d3f790b5463311aa59a484f8f729c0190c57be87e4aa593"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:c7b8785771570f6de7a53eb307e05023a86e6861954f8f1b19f86625f56cafbc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:c9af3c83aba3f56b00e2e3007ca25ebceef17bff781168b415c1f56c111cbe24"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:8ea495c3557aa5cd0ee2510d051d4b75edb0a5d04bf1568cd77bf387a1f34daf"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:b7a36481ee2f4f0593f46d39b2a97cf1d27ce9b0f91ad222ec2c9b66b35461bf"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:38275ce0cc529135fa282dd549af006a4bbe55316292703329f0418100d22949"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:ef3e5948dc89bd466e190fedc762c07f83b4669cf936ca0eb9f61eaf5e66623e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:473cc9f9d82d3081c5eef8de9021be4c20758f4648fcaa6ae7a9ac5fe4bf51e4"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:75bf0800c330935fa39230c3d7b1437465bf383d60110a2cc4fad42961011962"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:acc18d892362af28b1e56e33b03678007fe2b7115660fcfb52b8be68f3df8cfd"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:cc4150084b1cd0ef61963bad5d5975c5353c9159a96ac6fd7468c6a9c2bc0c65",
+     "ideal": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E6",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+    "reasons": [],
+    "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a",
+    "verdict": "pass"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "every pair of D certified disjoint (Theorem S on the retained hinges, certified separating axes elsewhere), with complete current source, material, cut and ideal evidence from the expected checkers under the expected policy",
+     "reasons": [],
+     "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a",
+     "verdict": "pass"
+    },
+    "identity_problems": [],
+    "outcome": "pass",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:6c0cb0768ebf873e19bb7caaeefc8ed0b617424458cb7c4b5733e8af4b55beee"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:c76d06dd3d2afb3f0af5fbd9789ddf368781bc04e662bf99e9f6bfe9126e3bc9"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:22a7a59f3609f7aa9d185b144627f43b4123ac39170b460f3336380f486d5bce"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:d70e28c5d6dc4d3606b62b82c514038c087ad822f4a05ae4d2251c8592b19b29"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:48c1cd80eedbb0f6311d318a15f7c336fc1113f560a82014e65c9362a85c4b88"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:68faf66ebf71a7934014772f75c77b87e2ec74f223623a0c3808b035072b686e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:da658ad05f01dcf1f51163c4f0a31c457e757bfb02db83da0b0f88f5351d345d"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:20a5af23364be3b80fed6e294c8c9d4f0c12e6136e2d8fa823c6fb05686c6c13"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:9c1e57ed2dcce6be4c14a906d9acbd566b61f53507a3f0997aae77e978846bc8"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:4db0be1111ab428c3177d824d181e1b95006e7216d6e1039a826dc44d5659f6e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:c5428860e754e2de5e1bdfb595d9f4df49dbe17187e9a6d27fdccd13a09b7e93"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:69e30db4bd018df8a641536aca23207a26019a4293b6096c4e5519d214a8ec03"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:e777b25d7027c952ed5529c3634f045fc0033004ce3a2950978b4c71dde738f1"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:f5db7a39d7cac98211b0a35766b9bb1d8017c65326f057bd5945ab07edec2b1a",
+     "ideal": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E7",
+   "source_linked_ideal_trimmed_obligations": "pass"
+  },
+  {
+   "cut": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+    "reasons": [],
+    "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88",
+    "verdict": "fail"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+     "reasons": [],
+     "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88",
+     "verdict": "fail"
+    },
+    "identity_problems": [],
+    "outcome": "fail",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:30d962cc32a0d710207c2e4844278bf01aeae65923afd077991cc17f4e13bdca"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:5c955544389ada51c876e04646a903db6b14526a08cdd54fbebc44bc81c879c3"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:66ffc85fd0239e038132e9f7a254b3d63e4dac601e2925a096dfa6d76003003b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:b7cec5c0366aa701891cd73a7c977caa22f58956bdaffd8248578370fd8c2328"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:2a065df03d6dc1d37c2e733b47beedd0a2656c7102f835b3b4d0ef96f96ad0e5"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:42a7ce5d3ca02aae7efd50d97f386dbb6356468586b902ff8f35dedcb9bee8f7"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:d4eb9caae7687605b87030377487327e5e7e28ca5c48545aebbf95e1503bfbb2"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:bee3059d6558026eb0ff1d7fda8ee609c11b4a5f4f4ba2b5d7e34433d9f1baf5"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:7c8126f1167910c79f28824042d86bd0d111d3ddd8a76e10bf5bde90d5130ed3"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:9ff9529c14828d74ad9f95396eaa63e9ba1426bf2a0cdfbe15d2cd1185d0b27e"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:20dce6ef565bdddb5b22df5ee7f010424dfd0980e18f33973683687020439828"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:84ad7836da002abe77e3e08cb40fdc2265f956b292799117895b921513c2dd1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "fail",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:fe2b41c08d667d0755b1868cf1d109351412315fc784719fbc70554c911044ef"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:30bdf19852ecf521735aad3a85899e8d705f2542d875894b5ec1247dce472262",
+     "ideal": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E8",
+   "source_linked_ideal_trimmed_obligations": "fail"
+  },
+  {
+   "cut": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+    "reasons": [],
+    "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5",
+    "verdict": "fail"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+     "reasons": [],
+     "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5",
+     "verdict": "fail"
+    },
+    "identity_problems": [],
+    "outcome": "fail",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:f1d8e77758348758507af7115eb276a162c716f126898005bbe48704d0153f7b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:61ee1ce8e0acc11b39b3f16d9204bd887a7f721e1e8468504be434678bb11670"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:370c8a0f667a2030f3d406b77659d4a3dc83092d519c46b091d6c55afa6c5cbd"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:785cfb06fdc7170adbeda927e266cfce7a65502e7bd195d6f3bc28fc462202e9"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:365f5d2fe72405c20456f7ef6cb3370884e6d06282f230b646d763cc00d32e77"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:57cb5a8f9861b109308eca3bbaddd1802d10e9430d057f75229d7508ab40bc74"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:cf42f3889e68b87e78b26edae4a143205c788dee4256f76dd560afa91593a883"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:de4aec32623cc2ff23d5ab5988dae76b6709bdd6d73db6718f04679b5d0e0e47"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:1d75ff30070dac695c7422d7e4a0069e666c78a53d63b8c1ac65252cf0b0a9aa"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:9333f3b326d2a231360c5a284eec886a86f021bd5be30a69537fb8676686bc01"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:e20e86c5f020b9c19e1022512c95698f14cba77cc794d2bf116d0e9240d5aee2"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:5c592aab008774e24c86a5dee6196dc2554b9b209983ec5ee0d13039a1a7ecae"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "fail",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:b320c2bdf399f29826d022e401bf0d5c900c5cb8ba5c39d34468195efc8c34ea"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:1769a8e57e4b262ac1801ccd844ebf764069e4f30d349df31ae96da79f7f8f66",
+     "ideal": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E9",
+   "source_linked_ideal_trimmed_obligations": "fail"
+  },
+  {
+   "cut": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840",
+   "cut_claims": {
+    "two_rim.cut.exactly_one_original_seam_open": "pass",
+    "two_rim.cut.face_coverage_complete_unique": "pass",
+    "two_rim.cut.glue_classes_match_cut_relation": "pass",
+    "two_rim.cut.material_copy_matches_parent": "pass",
+    "two_rim.cut.record_schema": "pass"
+   },
+   "ideal": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280",
+   "ideal_claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "ideal_geometric_verdict": {
+    "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+    "reasons": [],
+    "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280",
+    "verdict": "fail"
+   },
+   "obligations": {
+    "aggregate": "source_linked_ideal_trimmed_obligations",
+    "ideal_geometric_verdict": {
+     "meaning": "a certified interior witness: two faces of D overlap, with every non-pair obligation current and passing",
+     "reasons": [],
+     "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280",
+     "verdict": "fail"
+    },
+    "identity_problems": [],
+    "outcome": "fail",
+    "requirements": [
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.record_schema",
+      "evidence": [
+       "sha256:26237ae764642af7d7f17de7fddd9f800a8ae2987aef597a547ef6fefb604263"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.height_positive",
+      "evidence": [
+       "sha256:376df2d506f16c1147ad9d30d5b0b4a42e95d5b293e2c24c66be85dc000b54bc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.rims_strictly_convex_clockwise",
+      "evidence": [
+       "sha256:3fde81aa151ca9caa4ebf2294ac3c67e7437bf4aa3ba2184bf6d47f78eae20db"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.source",
+      "checker_version": 2,
+      "claim": "two_rim.source.normalization_accounts_for_input",
+      "evidence": [
+       "sha256:b01057f26a87e3b1b0a9c283a705c4656ff0b3115dcd5edfce00fcc5a8f3c280"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "source",
+      "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.record_schema",
+      "evidence": [
+       "sha256:d84b65c20ee58d950d6f919d43d37c92aedc9783f024dce4e90b65c0e6a6cc1f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.identity_hash",
+      "evidence": [
+       "sha256:73466aca94bbd34f1ad26f0f99b5e9a254e90ce397d6f628399782307763f4f0"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.facets_match_supporting_plane_oracle",
+      "evidence": [
+       "sha256:2237068e183e18eae0b2a714b41d8409a09538ee423c4fbd5fbcb498e34a5579"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.incidence_and_rings",
+      "evidence": [
+       "sha256:6f318b717d18e701626a48141f2cda8a6aba19dd8cfd04135453367ee7bc3a2b"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.material",
+      "checker_version": 2,
+      "claim": "two_rim.material.matches_parent_source",
+      "evidence": [
+       "sha256:b4368fcdf012669930d483ff6206587fd70d5345f504df966b69e8dbb466866f"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "material",
+      "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.record_schema",
+      "evidence": [
+       "sha256:8a7bd9906f2a72ab0729857b9598cda4387557e2d22b4418eafa8fb98b255fc6"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.material_copy_matches_parent",
+      "evidence": [
+       "sha256:1edccfff7d24db087aae24f6ade11f8f2831a2b67beca7f167e98d433ef00124"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.exactly_one_original_seam_open",
+      "evidence": [
+       "sha256:d55883503047621ebaa8679c12a97858f0a8af41c8a68ddd9bf83fc82d27105a"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.face_coverage_complete_unique",
+      "evidence": [
+       "sha256:7c9fbd2df1e51669c3b47ebb79590b6d60ddf4e43a32d386ab81f14871a67c44"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840"
+     },
+     {
+      "checker": "two_rim.check.cut",
+      "checker_version": 1,
+      "claim": "two_rim.cut.glue_classes_match_cut_relation",
+      "evidence": [
+       "sha256:250bd83e7d27d4eeb5b652df949dd722fe2afc39cab05ebaa4825d08da12b056"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "cut",
+      "subject": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.record_schema",
+      "evidence": [
+       "sha256:0c38dc0f4c3df27a498a421ef859f96e6936e74f567a4f3da87875769d231408"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.cut_copy_matches_parent",
+      "evidence": [
+       "sha256:8e9870866a385678e2db272f68a548c8524f8663d42df1c15e0f9d796e431250"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.delta_in_supported_domain",
+      "evidence": [
+       "sha256:3c8f6c23306b8ee67e2a031a8ae34e8a3b9e927086d5211a32b63cefb51846cc"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.local_premises",
+      "evidence": [
+       "sha256:120d514a16f7e44690653fb6c9f08929d3df82d6e6e5de007471e2d1a7e03825"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_hinge_sides_opposite",
+      "evidence": [
+       "sha256:5f7d4da47103db77c68331e559a99d80d77ae7734d99214f702d4b10aa4d1569"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.retained_neighbours_interiors_disjoint",
+      "evidence": [
+       "sha256:facd67062be3d9f947f280f3f78bdfdbb0f7f57ce00442045d435e0e17ca1502"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "retained_hinge_pairs",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.remaining_pairs_interiors_disjoint",
+      "evidence": [
+       "sha256:c0c301e64eb6a06db970db8a9fe71c96b77b274f7a34b6dae56fcc671cb17e08"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "fail",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "pairs_not_decided_by_theorem_s",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     },
+     {
+      "checker": "two_rim.check.ideal_trimmed_development",
+      "checker_version": 1,
+      "claim": "two_rim.ideal.pair_coverage_complete",
+      "evidence": [
+       "sha256:2df03594f3faa9f11e9d6cfeadb042337aac5823e26dae989a8a7a933412aa47"
+      ],
+      "identity_problems": [],
+      "invalid": [],
+      "outcome": "pass",
+      "reason": "",
+      "reproduced": true,
+      "required_coverage": "all",
+      "role": "ideal",
+      "subject": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280"
+     }
+    ],
+    "subjects": {
+     "cut": "sha256:1cddf9ba31c4b8e0d063cd6e2bfdd2889d0f49e024e5ffa84f355f82685c2840",
+     "ideal": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280",
+     "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+     "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+    }
+   },
+   "seam": "E10",
+   "source_linked_ideal_trimmed_obligations": "fail"
+  }
+ ],
+ "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+}

@@ -1,0 +1,20 @@
+
+test_circle_wrap_is_shorter (test_folded_projection.FoldedProjectionTests.test_circle_wrap_is_shorter) ... ok
+test_endpoint_slope_one_excluded (test_folded_projection.FoldedProjectionTests.test_endpoint_slope_one_excluded) ... ok
+test_exact_node_bound_exhaustive (test_folded_projection.FoldedProjectionTests.test_exact_node_bound_exhaustive) ... ok
+test_global_sign_reversal (test_folded_projection.FoldedProjectionTests.test_global_sign_reversal) ... ok
+test_missing_closure_is_not_accepted (test_folded_projection.FoldedProjectionTests.test_missing_closure_is_not_accepted) ... ok
+test_missing_half_shift_is_not_periodic (test_folded_projection.FoldedProjectionTests.test_missing_half_shift_is_not_periodic) ... ok
+test_opposite_signs_and_total (test_folded_projection.FoldedProjectionTests.test_opposite_signs_and_total) ... ok
+test_periodic_absolute_value (test_folded_projection.FoldedProjectionTests.test_periodic_absolute_value) ... ok
+test_positive_projection_regular_controls (test_folded_projection.FoldedProjectionTests.test_positive_projection_regular_controls) ... ok
+test_wrong_total_turn_excluded (test_folded_projection.FoldedProjectionTests.test_wrong_total_turn_excluded) ... ok
+test_zero_lengths_allowed (test_folded_projection.FoldedProjectionTests.test_zero_lengths_allowed) ... ok
+test_zero_turn_boundary (test_folded_projection.FoldedProjectionTests.test_zero_turn_boundary) ... ok
+test_apparent_counterexample_is_rejected (test_rf_source.SourceCertificateTests.test_apparent_counterexample_is_rejected) ... ok
+test_true_residual_and_nonsingular_rotation (test_rf_source.SourceCertificateTests.test_true_residual_and_nonsingular_rotation) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.291s
+
+OK

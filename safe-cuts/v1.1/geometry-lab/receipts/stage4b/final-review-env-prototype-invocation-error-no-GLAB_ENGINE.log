@@ -1,0 +1,13 @@
+
+=================================== ERRORS ====================================
+_ ERROR collecting probes/stage4a/tests/review_env/test_review_stage4a_adapted.py _
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:25: in <module>
+    ENGINE = Path(os.environ['GLAB_ENGINE']).resolve()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen os>:679: in __getitem__
+    ???
+E   KeyError: 'GLAB_ENGINE'
+=========================== short test summary info ===========================
+ERROR probes/stage4a/tests/review_env/test_review_stage4a_adapted.py - KeyErr...
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.42s

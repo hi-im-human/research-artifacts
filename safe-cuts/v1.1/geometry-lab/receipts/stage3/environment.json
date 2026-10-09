@@ -1,0 +1,16 @@
+{
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "pytest": "9.1.1",
+ "numpy": "2.4.4",
+ "revisions": {
+  "core": "sha256:950d9a745cf7093da0bd55d15ec4eaa998f443fc7a07cd800683d5ce554121d4",
+  "two_rim_stage2_generator": "sha256:86cc1e9a2d1dbd5ee14fc0c02669c3d6266418ebad014c3307fc1c96c86ff03d",
+  "two_rim_stage3_generator": "sha256:b1cc40a32845cac4654db18b6457150fd25b788be37a965b71c85be85625ef43",
+  "source_material_checker_v2": "sha256:3ed63baa4a67aaf587f4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0",
+  "development_checker_v1": "sha256:0d93b30f2ae719c3eed0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa"
+ },
+ "core_runtime_dependencies": "standard library only",
+ "development_checker_dependency": "numpy==2.4.4 (engine/.venv, optional extra 'numeric')",
+ "lean_build": "none"
+}

@@ -1,0 +1,83 @@
+{
+ "classes": [
+  {
+   "comparison": "agree",
+   "historical_cut": 0,
+   "historical_exact_class": "unsafe",
+   "ideal_verdict": "fail",
+   "seam": "E3"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 1,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E4"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 2,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E5"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 3,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E6"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 4,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E7"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 5,
+   "historical_exact_class": "unsafe",
+   "ideal_verdict": "fail",
+   "seam": "E8"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 6,
+   "historical_exact_class": "unsafe",
+   "ideal_verdict": "fail",
+   "seam": "E9"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 7,
+   "historical_exact_class": "unsafe",
+   "ideal_verdict": "fail",
+   "seam": "E10"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 8,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E0"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 9,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E1"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 10,
+   "historical_exact_class": "safe",
+   "ideal_verdict": "pass",
+   "seam": "E2"
+  }
+ ],
+ "label": "historical classes read only after classification; agreement on this fixture is not a universal proof",
+ "mapping_rotation": 3
+}

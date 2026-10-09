@@ -1,0 +1,37 @@
+.................................                                        [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED tests/two_rim_dev/test_develop.py::test_development_payload_structure
+PASSED tests/two_rim_dev/test_develop.py::test_golden_against_pinned_bridge_for_every_seam[E11]
+PASSED tests/two_rim_dev/test_develop.py::test_golden_against_pinned_bridge_for_every_seam[F1_translated_square_prism]
+PASSED tests/two_rim_dev/test_develop.py::test_golden_against_pinned_bridge_for_every_seam[F2_nonnested_mixed]
+PASSED tests/two_rim_dev/test_develop.py::test_golden_against_pinned_bridge_for_every_seam[F3_near_degenerate_prism]
+PASSED tests/two_rim_dev/test_develop.py::test_golden_against_pinned_bridge_for_every_seam[X_pinned_hard_flat]
+PASSED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E0]
+PASSED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E1]
+PASSED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E2]
+PASSED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E3]
+PASSED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E4]
+PASSED tests/two_rim_dev/test_develop.py::test_every_pair_is_checked_including_retained_adjacent_contacts
+PASSED tests/two_rim_dev/test_develop.py::test_omitted_translation_keeps_faces_rigid_but_breaks_hinge_agreement
+PASSED tests/two_rim_dev/test_develop.py::test_damaged_transform_is_detected
+PASSED tests/two_rim_dev/test_develop.py::test_reflected_face_is_detected
+PASSED tests/two_rim_dev/test_develop.py::test_omitted_face_breaks_the_record
+PASSED tests/two_rim_dev/test_develop.py::test_nonadjacent_stacking_is_an_interior_overlap
+PASSED tests/two_rim_dev/test_develop.py::test_cut_copy_must_match_the_parent_cut
+PASSED tests/two_rim_dev/test_develop.py::test_changed_ancestor_invalidates_development_evidence
+PASSED tests/two_rim_dev/test_develop.py::test_holonomy_diagnostic_sign_policy
+PASSED tests/two_rim_dev/test_develop.py::test_no_claim_uses_rigorous_enclosure
+PASSED tests/two_rim_dev/test_trim.py::test_trim_reuses_identical_maps_and_exact_points
+PASSED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/4]
+PASSED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/100]
+PASSED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/3]
+PASSED tests/two_rim_dev/test_trim.py::test_invalid_delta_fails[0]
+PASSED tests/two_rim_dev/test_trim.py::test_invalid_delta_fails[1/2]
+PASSED tests/two_rim_dev/test_trim.py::test_invalid_delta_fails[-1/10]
+PASSED tests/two_rim_dev/test_trim.py::test_invalid_delta_fails[3/5]
+PASSED tests/two_rim_dev/test_trim.py::test_float_delta_rejected_and_trim_of_trim_refused
+PASSED tests/two_rim_dev/test_trim.py::test_rescaled_maps_are_not_the_same_maps
+PASSED tests/two_rim_dev/test_trim.py::test_wrong_trim_point_is_not_the_exact_band
+PASSED tests/two_rim_dev/test_trim.py::test_full_chain_saves_loads_and_replays
+33 passed in 0.67s

@@ -1,0 +1,152 @@
+{
+ "files": {
+  "e11-historical-comparison.json": {
+   "identical": true,
+   "differing_paths": [],
+   "n_paths": 0
+  },
+  "e11-ideal-run.json": {
+   "identical": false,
+   "differing_paths": [
+    "/environment/platform",
+    "/evidence[*]/checker_revision",
+    "/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/history[*]/checker_revision",
+    "/history[*]/evidence[*]",
+    "/identities/checkers/two_rim.check.ideal_trimmed_development@1",
+    "/run_digest"
+   ],
+   "n_paths": 12
+  },
+  "e11-ideal-search.json": {
+   "identical": false,
+   "differing_paths": [
+    "/expected_policy/analytic_dependencies/contract_sha256_lf",
+    "/expected_policy/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/expected_policy/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/results[*]/obligations/requirements[*]/evidence[*]"
+   ],
+   "n_paths": 4
+  },
+  "e11-ideal-summary.json": {
+   "identical": false,
+   "differing_paths": [
+    "/checker_revision",
+    "/expected_policy/analytic_dependencies/contract_sha256_lf",
+    "/expected_policy/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/expected_policy/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/run_digest"
+   ],
+   "n_paths": 5
+  },
+  "e11-port-equivalence.json": {
+   "identical": true,
+   "differing_paths": [],
+   "n_paths": 0
+  },
+  "e11-recheck-bundle.json": {
+   "identical": false,
+   "differing_paths": [
+    "/seams/E0/evidence[*]/checker_revision",
+    "/seams/E0/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E0/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E0/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E0/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E0/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E0/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E1/evidence[*]/checker_revision",
+    "/seams/E1/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E1/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E1/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E1/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E1/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E1/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E10/evidence[*]/checker_revision",
+    "/seams/E10/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E10/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E10/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E10/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E10/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E10/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E2/evidence[*]/checker_revision",
+    "/seams/E2/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E2/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E2/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E2/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E2/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E2/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E3/evidence[*]/checker_revision",
+    "/seams/E3/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E3/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E3/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E3/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E3/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E3/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E4/evidence[*]/checker_revision",
+    "/seams/E4/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E4/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E4/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E4/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E4/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E4/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E5/evidence[*]/checker_revision",
+    "/seams/E5/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E5/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E5/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E5/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E5/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E5/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E6/evidence[*]/checker_revision",
+    "/seams/E6/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E6/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E6/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E6/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E6/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E6/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E7/evidence[*]/checker_revision",
+    "/seams/E7/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E7/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E7/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E7/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E7/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E7/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E8/evidence[*]/checker_revision",
+    "/seams/E8/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E8/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E8/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E8/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E8/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E8/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E9/evidence[*]/checker_revision",
+    "/seams/E9/evidence[*]/receipt/analytic_dependency/contract_sha256_lf",
+    "/seams/E9/evidence[*]/receipt/analytic_dependency/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E9/evidence[*]/receipt/analytic_dependency/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md",
+    "/seams/E9/evidence[*]/tolerances/analytic_dependencies/contract_sha256_lf",
+    "/seams/E9/evidence[*]/tolerances/analytic_dependencies/sources/engine/STAGE-4A-DESIGN.md",
+    "/seams/E9/evidence[*]/tolerances/analytic_dependencies/sources/engine/probes/stage4a/L4-CORRESPONDENCE.md"
+   ],
+   "n_paths": 77
+  },
+  "prisms.json": {
+   "identical": true,
+   "differing_paths": [],
+   "n_paths": 0
+  }
+ },
+ "summary_seam_verdicts_identical": true,
+ "summary_keys": [
+  "action_revision",
+  "checker_revision",
+  "delta",
+  "expected_policy",
+  "label",
+  "run_digest",
+  "seams",
+  "totals"
+ ]
+}

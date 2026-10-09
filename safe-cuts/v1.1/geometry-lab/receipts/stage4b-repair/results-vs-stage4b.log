@@ -1,0 +1,10 @@
+receipts/stage4b-repair/results versus the Stage 4B results (receipts/stage4b/results), byte comparison; the maintained lane is unchanged by the repair
+identical  MANIFEST.json
+identical  e11-historical-comparison.json
+identical  e11-ideal-run.json
+identical  e11-ideal-search.json
+identical  e11-ideal-summary.json
+identical  e11-port-equivalence.json
+identical  e11-recheck-bundle.json
+identical  prisms.json
+DIFFERENT  timing.json

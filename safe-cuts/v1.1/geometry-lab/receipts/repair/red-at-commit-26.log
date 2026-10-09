@@ -1,0 +1,104 @@
+........................................................................ [ 50%]
+...........FF.FFFFF.F.F...FFFFFFFFF..FFFFFFFF........................... [100%]
+================================== FAILURES ===================================
+E   AssertionError: assert ('rejected' == 'rejected'
+      
+        rejected and 'True' is True)
+<engine>\tests\core\test_repairs.py:42: AssertionError: assert ('rejected' == 'rejected'
+E   assert ("{'k': {1, 2}}" == {'python_type': 'dict'})
+<engine>\tests\core\test_repairs.py:53: assert ("{'k': {1, 2}}" == {'python_type': 'dict'})
+E   AttributeError: 'Run' object has no attribute 'checks'
+<engine>\tests\core\test_repairs.py:85: AttributeError: 'Run' object has no attribute 'checks'
+E   AttributeError: 'Run' object has no attribute 'checks'
+<engine>\tests\core\test_repairs.py:99: AttributeError: 'Run' object has no attribute 'checks'
+E   AttributeError: 'Run' object has no attribute 'checks'
+<engine>\tests\core\test_repairs.py:112: AttributeError: 'Run' object has no attribute 'checks'
+E   AttributeError: 'Run' object has no attribute 'checks'
+<engine>\tests\core\test_repairs.py:135: AttributeError: 'Run' object has no attribute 'checks'
+E   AttributeError: 'Run' object has no attribute 'history'
+<engine>\tests\core\test_repairs.py:149: AttributeError: 'Run' object has no attribute 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:172: KeyError: 'history'
+E   AssertionError: assert 'pass' == 'unknown'
+      
+      - unknown
+      + pass
+<engine>\tests\core\test_repairs.py:200: AssertionError: assert 'pass' == 'unknown'
+E   Failed: DID NOT RAISE RunIntegrityError
+<engine>\tests\core\test_repairs.py:236: Failed: DID NOT RAISE RunIntegrityError
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:247: KeyError: 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:260: KeyError: 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:261: KeyError: 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:262: KeyError: 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:263: KeyError: 'history'
+E   KeyError: 'history'
+<engine>\tests\core\test_repairs.py:264: KeyError: 'history'
+E   AssertionError: Regex pattern did not match.
+      Expected regex: 'attempt'
+      Actual message: "evidence 0: evidence keys must be ['checker', 'checker_revision', 'checker_version', 'claim', 'coverage', 'dependencies', 'method', 'numeric_domain', 'outcome', 'params', 'receipt', 'representation', 'schema', 'seq', 'subject', 'tolerances']"
+<engine>\tests\core\test_repairs.py:273: AssertionError: Regex pattern did not match.
+E   Failed: DID NOT RAISE RunIntegrityError
+<engine>\tests\core\test_repairs.py:282: Failed: DID NOT RAISE RunIntegrityError
+E   AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, '...duced', ...}, {'seq': 1, 'action': 'review.add', 'version': 'True', 'result': 'reproduced', ...}], 'evidence': [], ...}
+    assert ('reproduced' != 'reproduced' or False)
+<engine>\tests\core\test_review_regressions_commit-26.py:77: AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, '...duced', ...}, {'seq': 1, 'action': 'review.add', 'version': 'True', 'result': 'reproduced', ...}], 'evidence': [], ...}
+E   AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, '...produced', ...}, {'seq': 1, 'action': 'review.error', 'version': 1, 'result': 'reproduced', ...}], 'evidence': [], ...}
+    assert ('reproduced' != 'reproduced' or False)
+<engine>\tests\core\test_review_regressions_commit-26.py:93: AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, '...produced', ...}, {'seq': 1, 'action': 'review.error', 'version': 1, 'result': 'reproduced', ...}], 'evidence': [], ...}
+E   AssertionError: The crashed check left no record in the run.
+    assert 'sha256:9060b3420df4ededcfc59787fbe289d96bcb02bc524c393cb70d5509823b059a' != 'sha256:9060b3420df4ededcfc59787fbe289d96bcb02bc524c393cb70d5509823b059a'
+     +  where 'sha256:9060b3420df4ededcfc59787fbe289d96bcb02bc524c393cb70d5509823b059a' = digest()
+     +    where digest = <glab.core.runfile.Run object at 0x0000021BE4EF0610>.digest
+<engine>\tests\core\test_review_regressions_commit-26.py:110: AssertionError: The crashed check left no record in the run.
+E   AssertionError: A completed zero-claim check vanished from the history.
+    assert 'sha256:bc4588efdd82d6b9a71d6bd150c630a14148d055ab78de5cd5d3c3ebf748f812' != 'sha256:bc4588efdd82d6b9a71d6bd150c630a14148d055ab78de5cd5d3c3ebf748f812'
+     +  where 'sha256:bc4588efdd82d6b9a71d6bd150c630a14148d055ab78de5cd5d3c3ebf748f812' = digest()
+     +    where digest = <glab.core.runfile.Run object at 0x0000021BE4517B10>.digest
+<engine>\tests\core\test_review_regressions_commit-26.py:122: AssertionError: A completed zero-claim check vanished from the history.
+E   AssertionError: The callback still owns mutable objects inside the retained evidence.
+    assert [{'schema': '...bd4e17', ...}] == [{'schema': '...bd4e17', ...}]
+      
+      At index 0 diff: {'schema': 'glab.evidence/1', 'seq': 0, 'claim': 'review.p', 'subject': 'sha256:83fd82b3fc67196d80f889b891b8bfe9b40e2251db3928abccdcb5de09bd4e17', 'dependencies': ['sha256:83fd82b3fc67196d80f889b891b8bfe9b40e2251db3928abccdcb5de09bd4e17'], 'outcome': 'pass', 'method': 'exact_computation', 'numeric_domain': 'integers', 'representation': 'exact', 'checker': 'review.check', 'checker_version': 1, 'checker_revision': 'checker-v1', 'params': {}, 'tolerances': {'absolute': '1'}, 'coverage': 'all', 'receipt': {'nested': {'observations': [1, 2]}}} != {'schema': ...
+      
+      ...Full output truncated (2 lines hidden), use '-vv' to show
+<engine>\tests\core\test_review_regressions_commit-26.py:142: AssertionError: The callback still owns mutable objects inside the retained evidence.
+E   AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, 'result': 'reproduced', ...}], 'evidence': [], ...}
+    assert ('reproduced' != 'reproduced' or False)
+<engine>\tests\core\test_review_regressions_commit-26.py:160: AssertionError: {'outcome': 'reproduced', 'environment_match': True, 'actions': [{'seq': 0, 'action': 'review.source', 'version': 1, 'result': 'reproduced', ...}], 'evidence': [], ...}
+E   TypeError: Requirement.__init__() got an unexpected keyword argument 'coverage'
+<engine>\tests\core\test_review_regressions_commit-26.py:173: TypeError: Requirement.__init__() got an unexpected keyword argument 'coverage'
+E   Failed: DID NOT RAISE RunIntegrityError
+<engine>\tests\core\test_review_regressions_commit-26.py:188: Failed: DID NOT RAISE RunIntegrityError
+=========================== short test summary info ===========================
+FAILED tests/core/test_repairs.py::test_rejected_bool_version_is_stored_as_json_bool_and_replays
+FAILED tests/core/test_repairs.py::test_unrepresentable_input_is_described_not_evaluated
+FAILED tests/core/test_repairs.py::test_failed_checker_attempt_is_recorded_raised_and_does_not_negate_earlier_evidence
+FAILED tests/core/test_repairs.py::test_rejected_check_attempts_are_recorded_then_raised
+FAILED tests/core/test_repairs.py::test_malformed_and_formal_outputs_are_failed_attempts
+FAILED tests/core/test_repairs.py::test_zero_claim_and_multi_claim_checks_replay_as_whole_attempts
+FAILED tests/core/test_repairs.py::test_history_interleaves_actions_and_checks
+FAILED tests/core/test_repairs.py::test_loaded_record_and_store_are_fresh_copies_of_one_snapshot
+FAILED tests/core/test_repairs.py::test_partial_coverage_needs_an_explicit_matching_requirement
+FAILED tests/core/test_repairs.py::test_orphan_state_rejected - Failed: DID N...
+FAILED tests/core/test_repairs.py::test_check_before_its_subject_exists_rejected
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-seq]
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-version0]
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-version1]
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-seed]
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-revision]
+FAILED tests/core/test_repairs.py::test_primitive_fields_are_validated[<lambda>-attempt]
+FAILED tests/core/test_repairs.py::test_stage1_v1_run_file_is_rejected_clearly
+FAILED tests/core/test_review_regressions_commit-26.py::test_R01_invalid_json_version_replay_cannot_claim_reproduced_with_different_digest
+FAILED tests/core/test_review_regressions_commit-26.py::test_R01_changed_failure_message_cannot_claim_whole_run_reproduced
+FAILED tests/core/test_review_regressions_commit-26.py::test_R02_checker_crash_is_retained_as_an_attempt
+FAILED tests/core/test_review_regressions_commit-26.py::test_R02_zero_claim_check_is_retained_and_reexecuted
+FAILED tests/core/test_review_regressions_commit-26.py::test_R03_checker_owned_receipt_cannot_mutate_retained_history
+FAILED tests/core/test_review_regressions_commit-26.py::test_R03_mutating_loaded_public_record_cannot_bypass_integrity
+FAILED tests/core/test_review_regressions_commit-26.py::test_R04_explicit_all_scope_requirement_rejects_sample_only_evidence
+FAILED tests/core/test_review_regressions_commit-26.py::test_R05_successful_actions_cannot_reference_a_future_output
+26 failed, 118 passed in 0.47s

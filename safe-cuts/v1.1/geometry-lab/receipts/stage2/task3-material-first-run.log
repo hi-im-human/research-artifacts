@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+_______________ ERROR collecting tests/two_rim/test_checker.py ________________
+ImportError while importing test module '<engine>\tests\two_rim\test_checker.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim\test_checker.py:8: in <module>
+    from glab.check.two_rim_source import check_material, check_source
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_source'
+=========================== short test summary info ===========================
+ERROR tests/two_rim/test_checker.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.11s

@@ -1,0 +1,15 @@
+...........                                                              [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_square_local_geometry_and_replay
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_e11_documented_current_seams_and_overlap_pair
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_dropped_translation_is_not_accepted
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S01_source_linked_search_cannot_omit_source_correspondence
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S01_trim_summary_keeps_failed_parent_copy_obligation
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_changed_map_convention_is_not_a_supported_schema
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[height_parameter]
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[boolean_coordinate]
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[numeric_coordinate]
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S03_principal_angle_is_not_the_lifted_total_turn_sign
+PASSED tests/two_rim_dev/test_review_stage3_adapted.py::test_S04_numerical_tolerance_is_in_the_core_policy_field
+11 passed in 1.77s

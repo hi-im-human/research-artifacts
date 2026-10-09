@@ -1,0 +1,2 @@
+# Hashed probe receipts are stored byte-exact (LF).
+receipts/** -text

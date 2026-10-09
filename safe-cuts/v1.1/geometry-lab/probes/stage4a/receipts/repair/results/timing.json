@@ -1,0 +1,17 @@
+{
+ "label": "isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued; wall-clock, not reproducible",
+ "seconds_per_seam_full_schedule": {
+  "E0": 1.449271099991165,
+  "E1": 1.7681472999975085,
+  "E2": 0.6955198999494314,
+  "E3": 0.7353533999994397,
+  "E4": 0.6846971000777557,
+  "E5": 0.7045821999199688,
+  "E6": 0.7007490999531001,
+  "E7": 0.7701976000098512,
+  "E8": 0.7165443000849336,
+  "E9": 0.7575183999724686,
+  "E10": 1.742715899948962
+ },
+ "total_seconds": 10.725296299904585
+}

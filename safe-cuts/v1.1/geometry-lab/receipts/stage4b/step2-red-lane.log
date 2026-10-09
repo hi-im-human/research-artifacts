@@ -1,0 +1,82 @@
+
+=================================== ERRORS ====================================
+_________ ERROR collecting tests/two_rim_ideal/test_checker_claims.py _________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_checker_claims.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_checker_claims.py:6: in <module>
+    from glab.check import ideal_geometry
+E   ImportError: cannot import name 'ideal_geometry' from 'glab.check' (<engine>\glab\check\__init__.py)
+____ ERROR collecting tests/two_rim_ideal/test_classification_controls.py _____
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_classification_controls.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_classification_controls.py:11: in <module>
+    from glab.check.ideal_geometry import (SCHEDULE, classify_pair, classify_seam, decide_boxes, enclose,
+E   ModuleNotFoundError: No module named 'glab.check.ideal_geometry'
+_______ ERROR collecting tests/two_rim_ideal/test_define_and_schema.py ________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_define_and_schema.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_define_and_schema.py:4: in <module>
+    from glab.check.two_rim_ideal import IDEAL_CLAIMS, IDEAL_POLICY
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_ideal'
+___________ ERROR collecting tests/two_rim_ideal/test_e11_ideal.py ____________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_e11_ideal.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_e11_ideal.py:11: in <module>
+    from glab.check.two_rim_ideal import IDEAL_CLAIMS
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_ideal'
+______ ERROR collecting tests/two_rim_ideal/test_geometry_provenance.py _______
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_geometry_provenance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_geometry_provenance.py:7: in <module>
+    from glab.check.two_rim_ideal import ANALYTIC_DEPENDENCY, IDEAL_CHECKER_REVISION, IDEAL_POLICY
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_ideal'
+__________ ERROR collecting tests/two_rim_ideal/test_prism_exact.py ___________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_prism_exact.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_prism_exact.py:6: in <module>
+    from glab.check.two_rim_ideal import IDEAL_CLAIMS
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_ideal'
+________ ERROR collecting tests/two_rim_ideal/test_state_mutations.py _________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_state_mutations.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_state_mutations.py:4: in <module>
+    from glab.check.two_rim_ideal import IDEAL_CLAIMS
+E   ModuleNotFoundError: No module named 'glab.check.two_rim_ideal'
+=========================== short test summary info ===========================
+ERROR tests/two_rim_ideal/test_checker_claims.py
+ERROR tests/two_rim_ideal/test_classification_controls.py
+ERROR tests/two_rim_ideal/test_define_and_schema.py
+ERROR tests/two_rim_ideal/test_e11_ideal.py
+ERROR tests/two_rim_ideal/test_geometry_provenance.py
+ERROR tests/two_rim_ideal/test_prism_exact.py
+ERROR tests/two_rim_ideal/test_state_mutations.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 7 errors during collection !!!!!!!!!!!!!!!!!!!
+7 errors in 0.20s

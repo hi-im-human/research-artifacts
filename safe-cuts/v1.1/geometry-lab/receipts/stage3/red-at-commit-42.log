@@ -1,0 +1,12 @@
+........................................................................ [ 25%]
+........................................................................ [ 50%]
+........................................................................ [ 75%]
+........................................................................ [100%]
+=========================== short test summary info ===========================
+ERROR tests/two_rim_dev/test_cut.py
+ERROR tests/two_rim_dev/test_develop.py
+ERROR tests/two_rim_dev/test_eleven_panel.py
+ERROR tests/two_rim_dev/test_overlap_policy.py
+ERROR tests/two_rim_dev/test_trim.py
+ERROR tests/two_rim_dev/test_view_and_boundaries.py
+288 passed, 6 errors in 4.83s

@@ -1,0 +1,663 @@
+.........................................                                [100%]
+=================================== PASSES ====================================
+_______________________ test_genuine_bundle_is_verified _______________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[axis_order] __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[axis_zero] ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_________ test_single_fault_is_rejected_with_its_reason[box_coverage] _________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______ test_single_fault_is_rejected_with_its_reason[box_coverage_extra] ______
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[box_shape] ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____ test_single_fault_is_rejected_with_its_reason[box_shape_coordinate] _____
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+________ test_single_fault_is_rejected_with_its_reason[bundle_schema] _________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_______ test_single_fault_is_rejected_with_its_reason[interval_bounds] ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+________ test_single_fault_is_rejected_with_its_reason[method_outcome] ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 45,
+ "axis_rows": 45,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_____ test_single_fault_is_rejected_with_its_reason[noncanonical_number] ______
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+________ test_single_fault_is_rejected_with_its_reason[pair_coverage] _________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 109,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+________ test_single_fault_is_rejected_with_its_reason[pair_duplicate] ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+___________ test_single_fault_is_rejected_with_its_reason[pair_ids] ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 2,
+ "rejected_seams": 1,
+ "rows_checked": 109,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[pair_order] __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 2,
+ "rejected_seams": 1,
+ "rows_checked": 109,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______ test_single_fault_is_rejected_with_its_reason[shared_hinge_pair] _______
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 2,
+ "rejected_seams": 1,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[state_hash] __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__________ test_single_fault_is_rejected_with_its_reason[subject_id] __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 3,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+___________ test_single_fault_is_rejected_with_its_reason[verdict] ____________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 1,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_________ test_parent_link_forgery_with_consistent_hashes_is_rejected _________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____ test_delta_changed_with_a_consistent_id_fails_geometry_not_silently _____
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 91,
+ "expected_pairs": 110,
+ "failed_seams": 1,
+ "failures": 96,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_______________ test_honest_unknown_row_is_counted_not_rejected _______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 85,
+ "axis_rows": 85,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 1,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______________ test_unknown_row_must_change_the_declared_verdict ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 85,
+ "axis_rows": 85,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 1,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 1,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+____________________ test_exit_code_reflects_verification _____________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 109,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____ test_verbatim_style_unbound_bundle_is_rejected_for_the_binding_only _____
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 0,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_________________ test_control_genuine_recheck_bundle_passes __________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+______________ test_A03_zero_axis_cannot_replace_overlap_witness ______________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 4,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__________ test_A03_missing_all_pair_rows_is_not_a_completed_recheck __________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+________ test_A03_truncated_vertex_lists_are_not_complete_box_coverage ________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 12,
+ "rejected_seams": 1,
+ "rows_checked": 10,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___________ test_A03_outcome_must_match_verified_certificate_method ___________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 4,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_genuine_bundle_is_verified
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[axis_order]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[axis_zero]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_coverage]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_coverage_extra]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_shape]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_shape_coordinate]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[bundle_schema]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[interval_bounds]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[method_outcome]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[noncanonical_number]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_coverage]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_duplicate]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_ids]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_order]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[shared_hinge_pair]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[state_hash]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[subject_id]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[verdict]
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_parent_link_forgery_with_consistent_hashes_is_rejected
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_delta_changed_with_a_consistent_id_fails_geometry_not_silently
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_honest_unknown_row_is_counted_not_rejected
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_unknown_row_must_change_the_declared_verdict
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_exit_code_reflects_verification
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_verbatim_style_unbound_bundle_is_rejected_for_the_binding_only
+PASSED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_recheck_constants_match_the_probe_definitions
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_valid_square_is_source_linked
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_e9_contains_known_overlap
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_genuine_recheck_bundle_passes
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1]
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0]
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2]
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1]
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2]
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A02_model_for_safe_seam_cannot_certify_unsafe_spec
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_wrong_source_with_full_evidence_is_refused
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A02_dropping_failed_prerequisite_does_not_make_it_pass
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_zero_axis_cannot_replace_overlap_witness
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_missing_all_pair_rows_is_not_a_completed_recheck
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_truncated_vertex_lists_are_not_complete_box_coverage
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_outcome_must_match_verified_certificate_method
+41 passed in 14.95s

@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+________________ ERROR collecting tests/core/test_evidence.py _________________
+ImportError while importing test module '<engine>\tests\core\test_evidence.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\core\test_evidence.py:6: in <module>
+    from glab.core.evidence import (EvidenceError, OUTCOMES, Requirement, evidence_id, make_evidence,
+E   ModuleNotFoundError: No module named 'glab.core.evidence'
+=========================== short test summary info ===========================
+ERROR tests/core/test_evidence.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.10s

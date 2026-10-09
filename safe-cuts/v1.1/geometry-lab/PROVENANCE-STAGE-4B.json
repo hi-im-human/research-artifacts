@@ -1,0 +1,138 @@
+{
+ "export_derivative_1_1": {
+  "rc1_pins_replaced": {
+   "L4-CORRESPONDENCE.md": "347f966f839825d4b249acdcf2c4a6943145ad3e",
+   "STAGE-4A-DESIGN.md": "c4452e4e27faec834559e9b391e02819496a9b67",
+   "checker_revision": "sha256:787d5a8424e7d268c188067360593a48a2c85df6dd3fb77a75516bb61fa56280",
+   "checker_sha256_lf": "75212b8c12e263e8521d96783d74fcdbf15f7565ef839ac7a9b5d7101909a0dc",
+   "contract_sha256_lf": "0164bf164c4981ceb2d02e534938dc070c4a9f011953d61675f097fdc354b8b2"
+  },
+  "statement": "This record pins the sanitized publication edition 1.1 export copies. Changed relative to release candidate 1.1-rc1, whose pins are listed below: historical research-folder locations in STAGE-4A-DESIGN.md and probes/stage4a/L4-CORRESPONDENCE.md were replaced by a placeholder; the export notes of the three analytic documents name this edition; checker.py carries the new pins and comment. Mathematics unchanged. export_derivative_1_1_rc1 is kept unchanged as the record of the unpublished candidate and its run in receipts/export-1.1-rc1/; the evidence run for these bytes is in receipts/export-1.1/."
+ },
+ "export_derivative_1_1_rc1": {
+  "historical_pins_replaced": {
+   "L4-CORRESPONDENCE.md": "ed135840e9e2c7c2e26e42b0201142271c5de871",
+   "STAGE-4A-DESIGN.md": "d06000f8818d8699c69e8ca01241951272aedbca",
+   "checker_revision": "sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d",
+   "checker_sha256_lf": "ed771104a2d6f70f7dd62eb58e25ab72252ac5f9208d84e7e624193ae283d20b",
+   "contract_sha256_lf": "3f8f5180e5c1d27d201a2b2064a941702d270bb96281db7b30a364436d025d61",
+   "probes/stage4a/recheck_mpmath.py": "cb483479bae2bf18896547b9fd42c53c7e61ebc2"
+  },
+  "statement": "This record pins the sanitized 1.1-rc1 export copies. Changed relative to the historical record: the three analytic documents (export notes and placeholders only; mathematics unchanged), checker.py (derivative pins and one comment), and the comment in probes/stage4a/recheck_mpmath.py. The historical record and originals are retained privately; the historical receipts under receipts/stage4b*/ keep their original identifiers."
+ },
+ "files_affecting_arithmetic_or_claims_sha256_lf": {
+  "IDEAL-DEVELOPMENT-CONTRACT.md": "714efae50c2309ae89d1aeb0fd34958dc9857f1317bf53d45af564bc815dda61",
+  "glab/ideal_check/checker.py": "faba07cf4b0d3a66f6bbd0dcefdd22f07ae9fb3f6bb57bf5c6c252dfb59c5df6",
+  "glab/ideal_check/geometry.py": "ca7f3f4aa8132a937112e30bda2b121eaeda2a5632e29b12cc883096bb1fa628",
+  "glab/rigorous/ratint.py": "f427e168432dd69d9b9d63ca384896e46776923927f05847d205ffdc86e45c68",
+  "glab/two_rim/ideal_actions.py": "15377b7ffc4eaa8d79ff3e862567303ac7a8298b27f2f39bf87b486a7ca8f274",
+  "glab/two_rim/ideal_search.py": "c1119a4f2f56a44a0a3d1a253d1fcdcffd6b82fd363f5777f14df155356eec4f",
+  "tests/two_rim_ideal_recheck/recheck_ideal_mpmath.py": "ede462cae596b362a9fe08838fb483cbb9d32e71ef2ccac20edd3ee59add21b8"
+ },
+ "label": "Stage 4B provenance: what was ported from which blob, and the files that affect arithmetic or claim semantics",
+ "policy": {
+  "contract_sha256_lf": "714efae50c2309ae89d1aeb0fd34958dc9857f1317bf53d45af564bc815dda61",
+  "id": "two_rim.ideal.evidence/1"
+ },
+ "ports": {
+  "IDEAL-DEVELOPMENT-CONTRACT.md": {
+   "from": [
+    "STAGE-4A-DESIGN.md sections 2.1-2.3, 4, 5.1, 5.4",
+    "probes/stage4a/L4-CORRESPONDENCE.md by blob"
+   ],
+   "how": "text carried and condensed; L4 summarized and referenced by blob"
+  },
+  "glab/ideal_check/geometry.py": {
+   "adapted": [
+    "classify_seam"
+   ],
+   "from": [
+    "probes/stage4a/ideal.py",
+    "probes/stage4a/classify.py"
+   ],
+   "new": [
+    "local_premises",
+    "verify_certificate"
+   ],
+   "not_ported": [
+    "Subject",
+    "load_subject",
+    "require_supported_delta",
+    "preconditions",
+    "applies_to",
+    "ISOLATED_LABEL"
+   ],
+   "unchanged_functions": [
+    "sub",
+    "dot",
+    "cross",
+    "FrozenDict",
+    "freeze",
+    "thaw",
+    "ExactModel",
+    "model_from_payloads",
+    "face_checks",
+    "_face_ok",
+    "shared_hinge_decision",
+    "enclose",
+    "SCHEDULE",
+    "_mid",
+    "_dot",
+    "_signed_area2",
+    "certify_separation",
+    "_clip",
+    "certify_witness",
+    "point_in_both",
+    "decide_boxes",
+    "_Enclosures",
+    "classify_pair",
+    "seam_total",
+    "to_json"
+   ]
+  },
+  "glab/rigorous/ratint.py": {
+   "from": "probes/stage4a/ratint.py",
+   "how": "code unchanged; module docstring rewritten (AST-checked)"
+  },
+  "glab/two_rim/ideal_search.py": {
+   "from": "probes/stage4a/binding.py",
+   "how": "the prerequisite rule re-implemented on the core Requirement/summarize API"
+  },
+  "tests/two_rim_ideal_recheck/recheck_ideal_mpmath.py": {
+   "from": "probes/stage4a/recheck_mpmath.py",
+   "how": "committed verbatim (commit-75), then adapted only in its binding layer (commit-77); verification core AST-checked"
+  }
+ },
+ "repairs": {
+  "stage4b-repair I01/I02": {
+   "changed": {
+    "tests/two_rim_ideal_recheck/recheck_ideal_mpmath.py": {
+     "previous_sha256_lf": "af1ea40cf10f5881cd980d81970807c8aface1a1cb3b016389c7afe5b2ff529b",
+     "sha256_lf": "ede462cae596b362a9fe08838fb483cbb9d32e71ef2ccac20edd3ee59add21b8"
+    }
+   },
+   "handback": "commit-80 (reviews/stage4b-commit-79)",
+   "reviewed_head": "commit-79",
+   "unchanged": "every other pin in this record, including the contract, the policy and the checker revision"
+  }
+ },
+ "revisions": {
+  "two_rim.check.ideal_trimmed_development@1": "sha256:92c57eebaf14857b41fe4f85425d7aac2fd90e2bd9dc21989393589874bf1d74",
+  "two_rim.ideal.define@1": "sha256:caeef681b1d30d0cd5f646549f7621121644190c5ba293de4c6d75272a0a8cc5"
+ },
+ "source_blobs": {
+  "STAGE-4A-DESIGN.md": "bb32b132469d0dfe5098f9d0d76ddde5113cc49d",
+  "probes/stage4a/L4-CORRESPONDENCE.md": "e60cb7f1bdcb4589084e7716adc0ca7dd727b012",
+  "probes/stage4a/binding.py": "8f76e87a4d5659a41a34b22957c57ef67b9b2af0",
+  "probes/stage4a/classify.py": "c82b587308f5f342703797c0e637097b9f5f5dd2",
+  "probes/stage4a/ideal.py": "de3cae446f2e9a21ac206d34c5e8d333c26dca39",
+  "probes/stage4a/ratint.py": "b4f5c150a1ef528d76de02d53c0e228c6b27c183",
+  "probes/stage4a/recheck_mpmath.py": "d1518045d736128bd1b2335684527fe04aab67ce",
+  "probes/stage4a/tests/controls/test_c1_c3_arithmetic.py": "349a31f7f38ce6c0073fd4d848e37895d8ac202c",
+  "probes/stage4a/tests/controls/test_c4_c6_c7_specimens.py": "e5cf8fb3c5d2e622caadbc74d6503c5a4b5fb0d6",
+  "probes/stage4a/tests/controls/test_c5_synthetic_pairs.py": "97b900628abba5629bcf351008a26b86f025a5e3",
+  "probes/stage4a/tests/review_env/test_a03_recheck_contract.py": "b5cbb7cb74b18ac322ea3c5736461b47757b6478",
+  "probes/stage4a/tests/review_env/test_r01_r02_recheck.py": "af11a53e57f7e2a09343d6cb56ff008117f6e3f3"
+ },
+ "worker_head_ported_from": "commit-66"
+}

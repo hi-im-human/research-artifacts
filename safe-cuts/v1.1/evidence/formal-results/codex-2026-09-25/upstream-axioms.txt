@@ -1,0 +1,185 @@
+info: FixedBaselineCyclicConjugacy.lean:468:0: 'PhysicalMixedTurnSource.baselineAlignment_directDevelopedMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselineCyclicConjugacy.lean:469:0: 'PhysicalMixedTurnSource.baseline_directDevelopedMap_fullCircuit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselineCyclicConjugacy.lean:470:0: 'PhysicalMixedTurnSource.baselineAlignment_fullCircuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselineCyclicConjugacy.lean:471:0: 'PhysicalMixedTurnSource.baselineAlignment_circuitPole' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselineCyclicConjugacy.lean:472:0: 'PhysicalMixedTurnSource.baseline_physical_negative_RF' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselineCyclicConjugacy.lean:473:0: 'PhysicalMixedTurnSource.baseline_physical_positive_RF' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:910:0: 'FixedBaselinePolarTrace.material_point_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:911:0: 'FixedBaselinePolarTrace.polar_compatible_at_hinge' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:912:0: 'FixedBaselinePolarTrace.finite_sameSheet_fixedRay_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:913:0: 'FixedBaselinePolarTrace.fixedRay_transition_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:914:0: 'FixedBaselinePolarTrace.global_finite_sameSheet_fixedRay_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:915:0: 'FixedBaselinePolarTrace.mem_orderedEligiblePieces_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:916:0: 'FixedBaselinePolarTrace.orderedEligiblePieces_omission_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:917:0: 'FixedBaselinePolarTrace.radialHinge_connects_adjacent_pieces' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:918:0: 'FixedBaselinePolarTrace.finite_connected_piece_radius_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:919:0: 'FixedBaselinePolarTrace.finite_connected_piece_fixedRay_allPairs_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:920:0: 'FixedBaselinePolarTrace.twoComponent_radius_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:921:0: 'FixedBaselinePolarTrace.twoComponent_fixedRay_allPairs_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:922:0: 'FixedBaselinePolarTrace.radiallyInward_atMostTwoHeightComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:923:0: 'FixedBaselinePolarTrace.radiallyInward_twoComponent_cut' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:924:0: 'FixedBaselinePolarTrace.baseline_material_point_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:925:0: 'FixedBaselinePolarTrace.physical_hinge_compatibility' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:926:0: 'FixedBaselinePolarTrace.rootSeam_zero_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:927:0: 'FixedBaselinePolarTrace.rootSeam_one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:928:0: 'FixedBaselinePolarTrace.facing_lower_endpoints_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:929:0: 'FixedBaselinePolarTrace.facing_upper_endpoints_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:930:0: 'FixedBaselinePolarTrace.terminalSeam_zero_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:931:0: 'FixedBaselinePolarTrace.terminalSeam_one_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:932:0: 'FixedBaselinePolarTrace.root_lt_terminal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:933:0: 'FixedBaselinePolarTrace.terminal_lt_root_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:934:0: 'FixedBaselinePolarTrace.facingSeamPair_literal' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:935:0: 'FixedBaselinePolarTrace.fullCircuit_crossGap_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:936:0: 'FixedBaselinePolarTrace.fullCircuit_orders_two_trace_components' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTrace.lean:937:0: 'FixedBaselinePolarTrace.fullCircuit_crossGap_allPairs_ne' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1382:0: 'RadialOriginalSeam.exists_fixed_eventual_retainedUpper_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1383:0: 'RadialOriginalSeam.fixedRetainedUpperChoice_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1384:0: 'RadialOriginalSeam.radiallyInward_of_weak_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1385:0: 'RadialOriginalSeam.extremal_corner_hinge_dot_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1386:0: 'RadialOriginalSeam.weak_endpoint_of_eventual_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1387:0: 'RadialOriginalSeam.selectedNegativeSeam_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1388:0: 'RadialOriginalSeam.selectedPositiveSeam_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1389:0: 'RadialOriginalSeam.sourceHinge_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1390:0: 'RadialOriginalSeam.selectedNegativeSeam_radiallyInward_of_dot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1391:0: 'RadialOriginalSeam.selectedNegativeSeam_weak_endpoint_dot' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1392:0: 'RadialOriginalSeam.selectedNegativeSeam_radiallyInward' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1393:0: 'RadialOriginalSeam.selectedNegativeSeam_radius_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeam.lean:1394:0: 'RadialOriginalSeam.selectedNegativeSeam_crossGap_allPairs_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1395:0: 'RadialOriginalSeam.selectedPositiveSeam_normalized_weak_endpoint_dot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1396:0: 'RadialOriginalSeam.selectedPositiveSeam_normalized_radiallyInward' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1397:0: 'RadialOriginalSeam.selectedPositiveNormalizedSeamCurve_radiallyInward' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1398:0: 'RadialOriginalSeam.selectedPositiveNormalizedTerminalSeam_normSq_sub' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeam.lean:1399:0: 'RadialOriginalSeam.selectedPositiveSeam_crossGap_allPairs_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: ArbitraryCutDirectMap.lean:106:0: 'GeneralTwoRimUnfolding.selectedNegativeDirectMap_heightTrim_image' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:78:0: 'RadialOriginalSeam.exists_fixed_eventual_retainedUpper_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:79:0: 'RadialOriginalSeam.selectedNegativeSeam_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:80:0: 'RadialOriginalSeam.selectedPositiveSeam_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:81:0: 'RadialOriginalSeam.selectedPositiveSeam_normalized_weak_endpoint_dot' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:82:0: 'RadialOriginalSeam.selectedPositiveNormalizedSeamCurve_radiallyInward' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: RadialOriginalSeamSanity.lean:83:0: 'RadialOriginalSeam.selectedPositiveSeam_crossGap_allPairs_ne' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:41:0: 'FoldedTurnProjection.projection_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:42:0: 'PhysicalMixedTurnSource.circuitPole_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:43:0: 'PhysicalMixedTurnSource.upper_projection_sum_eq_circuit' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:44:0: 'PhysicalMixedTurnSource.physical_negative_RF' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:45:0: 'PhysicalMixedTurnSource.physical_positive_RF' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:46:0: 'RadialExtremalSafety.exists_eventual_quadratic_max' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: GeneralTwoRimUnfoldingSanity.lean:47:0: 'GeneralTwoRimUnfolding.exists_sameCutSameMaps_of_delta_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:199:0: 'FixedBaselinePolarTrace.material_point_polar' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:200:0: 'FixedBaselinePolarTrace.finite_sameSheet_fixedRay_order' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:201:0: 'FixedBaselinePolarTrace.fixedRay_transition_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:202:0: 'FixedBaselinePolarTrace.radiallyInward_atMostTwoHeightComponents' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:203:0: 'FixedBaselinePolarTrace.root_lt_terminal_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+info: FixedBaselinePolarTraceSanity.lean:204:0: 'FixedBaselinePolarTrace.terminal_lt_root_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

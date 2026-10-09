@@ -1,0 +1,20 @@
+
+test_actual_nonnested_body (test_extremal_seam.ExactSourceTests.test_actual_nonnested_body) ... ok
+test_new_seam_and_independent_control (test_extremal_seam.ExactSourceTests.test_new_seam_and_independent_control) ... ok
+test_old_methods_both_fail (test_extremal_seam.ExactSourceTests.test_old_methods_both_fail) ... ok
+test_omitted_translation_rejected (test_extremal_seam.ExactSourceTests.test_omitted_translation_rejected) ... ok
+test_original_triangles_and_full_inward_seam (test_extremal_seam.ExactSourceTests.test_original_triangles_and_full_inward_seam) ... ok
+test_wrong_maximizer_rejected (test_extremal_seam.ExactSourceTests.test_wrong_maximizer_rejected) ... ok
+test_full_hinge_limit_boundary (test_extremal_seam.ExtremalSeamTests.test_full_hinge_limit_boundary) ... ok
+test_local_maximum_inward (test_extremal_seam.ExtremalSeamTests.test_local_maximum_inward) ... ok
+test_radial_seam_single_interval (test_extremal_seam.ExtremalSeamTests.test_radial_seam_single_interval) ... ok
+test_reverse_hinge_rejected (test_extremal_seam.ExtremalSeamTests.test_reverse_hinge_rejected) ... ok
+test_reverse_seam_two_intervals (test_extremal_seam.ExtremalSeamTests.test_reverse_seam_two_intervals) ... ok
+test_wide_seam_two_intervals (test_extremal_seam.ExtremalSeamTests.test_wide_seam_two_intervals) ... ok
+test_wrong_vertex_rejected (test_extremal_seam.ExtremalSeamTests.test_wrong_vertex_rejected) ... ok
+test_zero_hinge_rejected (test_extremal_seam.ExtremalSeamTests.test_zero_hinge_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.719s
+
+OK

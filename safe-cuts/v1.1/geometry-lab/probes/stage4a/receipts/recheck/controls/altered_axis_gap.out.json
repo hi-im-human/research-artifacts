@@ -1,0 +1,35 @@
+{
+ "environment": {
+  "iv_prec_bits": 400,
+  "mpmath": "1.3.0",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+ },
+ "label": "isolated Stage 4A prototype: independent re-check; not glab evidence",
+ "seams": {
+  "E9": {
+   "axis_confirmed": 40,
+   "axis_rows": 41,
+   "coordinates_checked": 88,
+   "coordinates_contained": 88,
+   "failures": [
+    "F9/F0 axis certificate not confirmed"
+   ],
+   "theorem_s_confirmed": 10,
+   "theorem_s_rows": 10,
+   "witness_confirmed": 4,
+   "witness_rows": 4
+  }
+ },
+ "totals": {
+  "axis_confirmed": 40,
+  "axis_rows": 41,
+  "coordinates_checked": 88,
+  "coordinates_contained": 88,
+  "failures": 1,
+  "theorem_s_confirmed": 10,
+  "theorem_s_rows": 10,
+  "witness_confirmed": 4,
+  "witness_rows": 4
+ }
+}

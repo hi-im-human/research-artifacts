@@ -1,0 +1,80 @@
+{
+ "rows": [
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 1,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 3,
+    "separated": 6
+   },
+   "seam": "E0",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 2,
+    "separated": 6
+   },
+   "seam": "E1",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 2,
+    "separated": 6
+   },
+   "seam": "E2",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 0,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 4,
+    "separated": 6
+   },
+   "seam": "E3",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 1,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 3,
+    "separated": 6
+   },
+   "seam": "E4",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  }
+ ],
+ "search": {
+  "delta": "1/4",
+  "disclaimer": "finite scan of every original hinge with independent numerical checks; not the manuscript's extremal selector; unknown or fail is not a refutation of any theorem",
+  "label": "enumerated_candidate_search",
+  "material": "sha256:f20a41c6fc61e38095454cf5364474433587f6ba8a067ad6b7f9017f5d71cbd2"
+ }
+}

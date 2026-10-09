@@ -1,0 +1,26 @@
+
+=================================== ERRORS ====================================
+_______ ERROR collecting probes/stage4a/tests/repair/test_a01_domain.py _______
+ImportError while importing test module '<engine>\probes\stage4a\tests\repair\test_a01_domain.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+probes\stage4a\tests\repair\test_a01_domain.py:15: in <module>
+    from probes.stage4a.ideal import FrozenDict, UnsupportedSubject, load_subject, model_from_payloads
+E   ImportError: cannot import name 'FrozenDict' from 'probes.stage4a.ideal' (<engine>\probes\stage4a\ideal.py)
+______ ERROR collecting probes/stage4a/tests/repair/test_a02_binding.py _______
+ImportError while importing test module '<engine>\probes\stage4a\tests\repair\test_a02_binding.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+probes\stage4a\tests\repair\test_a02_binding.py:12: in <module>
+    from probes.stage4a.ideal import FrozenDict, load_subject
+E   ImportError: cannot import name 'FrozenDict' from 'probes.stage4a.ideal' (<engine>\probes\stage4a\ideal.py)
+=========================== short test summary info ===========================
+ERROR probes/stage4a/tests/repair/test_a01_domain.py
+ERROR probes/stage4a/tests/repair/test_a02_binding.py
+2 errors in 0.13s

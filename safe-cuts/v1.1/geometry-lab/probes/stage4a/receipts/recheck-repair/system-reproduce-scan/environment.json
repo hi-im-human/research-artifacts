@@ -1,0 +1,10 @@
+{
+ "mpmath": "1.3.0",
+ "mpmath_record_audit_rerun": false,
+ "numpy": "2.4.4",
+ "platform": "Windows-10-10.0.26200-SP0",
+ "pytest": "9.1.1",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "scope": "selected source reconstruction; fresh bundles, not archived Windows manifests",
+ "worker_windows_environment_reproduced": false
+}

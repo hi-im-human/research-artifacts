@@ -1,0 +1,14 @@
+
+test_chart_coordinates_are_rigid (test_midsection_bridge.BridgeTests.test_chart_coordinates_are_rigid) ... ok
+test_every_developed_family_field (test_midsection_bridge.BridgeTests.test_every_developed_family_field) ... ok
+test_full_plane_metric_and_all_hinge_lines (test_midsection_bridge.BridgeTests.test_full_plane_metric_and_all_hinge_lines) ... ok
+test_independent_unfolding_global_alignment (test_midsection_bridge.BridgeTests.test_independent_unfolding_global_alignment) ... ok
+test_intrinsic_turn_sign_and_budget (test_midsection_bridge.BridgeTests.test_intrinsic_turn_sign_and_budget) ... ok
+test_mixed_condition_selects_same_cut_at_every_depth (test_midsection_bridge.BridgeTests.test_mixed_condition_selects_same_cut_at_every_depth) ... ok
+test_seam_translation_is_retained (test_midsection_bridge.BridgeTests.test_seam_translation_is_retained) ... ok
+test_triangular_full_facets_are_not_excluded (test_midsection_bridge.BridgeTests.test_triangular_full_facets_are_not_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.161s
+
+OK

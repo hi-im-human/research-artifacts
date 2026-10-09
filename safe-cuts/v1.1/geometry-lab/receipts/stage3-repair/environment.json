@@ -1,0 +1,57 @@
+{
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "pytest": "9.1.1",
+ "numpy": "2.4.4",
+ "revisions": {
+  "core": "sha256:950d9a745cf7093da0bd55d15ec4eaa998f443fc7a07cd800683d5ce554121d4",
+  "two_rim_stage2_generator": "sha256:86cc1e9a2d1dbd5ee14fc0c02669c3d6266418ebad014c3307fc1c96c86ff03d",
+  "two_rim_stage3_generator": "sha256:b1cc40a32845cac4654db18b6457150fd25b788be37a965b71c85be85625ef43",
+  "source_material_checker_v2": "sha256:3ed63baa4a67aaf587f4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0",
+  "development_checkers_cut_v1_development_v2_trimmed_v2": "sha256:c67e6f524cd39bd71d5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7"
+ },
+ "numerical_tolerance_policy": {
+  "policy": "two_rim.development.numerical/1",
+  "status": "heuristic tolerance, not a rigorous error bound",
+  "scale_rule": "scale = max(1, largest absolute float64 coordinate among material points and face images)",
+  "length_tolerance": {
+   "units": "length",
+   "relative": 1e-09,
+   "rule": "tau = relative * scale",
+   "applies_to": [
+    "glued point agreement",
+    "pair separation depth (SAT)"
+   ]
+  },
+  "rigidity_threshold": {
+   "units": "dimensionless",
+   "value": 1e-08,
+   "applies_to": [
+    "relative squared-distance error",
+    "Gram matrix deviation"
+   ]
+  },
+  "area_threshold": {
+   "units": "area",
+   "rule": "tau * scale",
+   "applies_to": [
+    "nonempty face images"
+   ]
+  },
+  "angle_threshold": {
+   "units": "radian",
+   "value": 1e-09,
+   "applies_to": [
+    "holonomy branch margin",
+    "holonomy sign",
+    "rotation agreement modulo 2pi"
+   ]
+  }
+ },
+ "unchanged_since_commit-47": [
+  "core",
+  "two_rim_stage2_generator",
+  "two_rim_stage3_generator",
+  "source_material_checker_v2"
+ ]
+}

@@ -1,0 +1,13 @@
+{
+ "label": "isolated Stage 4A prototype: throwaway re-check environment (outside the repository and outside the maintained .venv)",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "platform": "Windows-10-10.0.26200-SP0",
+ "flags": "-I -B (isolated mode, no bytecode writes)",
+ "mpmath": "1.3.0",
+ "mpmath_source": "copied without network from the already-present user site-packages (Python 3.11, SymPy dependency)",
+ "record_hashed_files_verified": 92,
+ "record_mismatches": 0,
+ "compiled_pyc_present": 0,
+ "hashed_tree_sha256": "89a0d9e219a4d35e0fc6c5de0466432675827849a1a8247f5c05d6504875f82c",
+ "maintained_venv_touched": false
+}

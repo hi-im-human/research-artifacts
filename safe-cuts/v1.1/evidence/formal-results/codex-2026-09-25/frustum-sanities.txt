@@ -1,0 +1,29 @@
+Built GeneralTwoRimFrustumSanity (18s)
+warning: GeneralTwoRimFrustumSanity.lean:121:6: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: GeneralTwoRimFrustumSanity.lean:162:49: This simp argument is unused:
+  inner
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [squareStep3, EuclideanSpace.norm_eq, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: GeneralTwoRimFrustumSanity.lean:268:0: 'GeneralTwoRimFrustumSanity.frustum_delta_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimFrustumSanity.lean:269:0: 'GeneralTwoRimFrustumSanity.frustum_not_tmixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimFrustumSanity.lean:270:0: 'GeneralTwoRimFrustumSanity.frustum_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimFrustumSanity.lean:271:0: 'GeneralTwoRimFrustumSanity.frustum_selected_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8979/8980] Built GeneralTwoRimReversedFrustumSanity (15s)
+warning: GeneralTwoRimReversedFrustumSanity.lean:98:6: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+warning: GeneralTwoRimReversedFrustumSanity.lean:139:49: This simp argument is unused:
+  inner
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [squareStep3, EuclideanSpace.norm_eq, Fin.sum_univ_three]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: GeneralTwoRimReversedFrustumSanity.lean:247:0: 'GeneralTwoRimReversedFrustumSanity.frustum_delta_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimReversedFrustumSanity.lean:248:0: 'GeneralTwoRimReversedFrustumSanity.frustum_not_tmixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimReversedFrustumSanity.lean:249:0: 'GeneralTwoRimReversedFrustumSanity.frustum_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: GeneralTwoRimReversedFrustumSanity.lean:250:0: 'GeneralTwoRimReversedFrustumSanity.frustum_selected_negative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Build completed successfully (8980 jobs).

@@ -1,0 +1,34 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 26 items
+
+tests/two_rim/test_source.py::test_payload_shape_and_conventions PASSED  [  3%]
+tests/two_rim/test_source.py::test_cyclic_ccw_is_reversed_to_clockwise_from_the_minimum PASSED [  7%]
+tests/two_rim/test_source.py::test_cyclic_presentations_normalize_identically PASSED [ 11%]
+tests/two_rim/test_source.py::test_exact_spellings_normalize_to_canonical_strings PASSED [ 15%]
+tests/two_rim/test_source.py::test_tiny_perturbation_stays_exact PASSED  [ 19%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad0-exactly two coordinates] PASSED [ 23%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad1-exactly two coordinates] PASSED [ 26%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad2-exactly two coordinates] PASSED [ 30%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad3-list of points] PASSED [ 34%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad4-at least 3] PASSED [ 38%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad5-at least 3] PASSED [ 42%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad6-exact] PASSED [ 46%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad7-exact] PASSED [ 50%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad8-height must be positive] PASSED [ 53%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad9-height must be positive] PASSED [ 57%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad10-exact] PASSED [ 61%]
+tests/two_rim/test_source.py::test_invalid_inputs_fail_clearly[bad11-input_kind] PASSED [ 65%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top0-not strictly convex] PASSED [ 69%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top1-repeats a point] PASSED [ 73%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top2-not strictly convex] PASSED [ 76%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top3-not strictly convex] PASSED [ 80%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top4-not a simple] PASSED [ 84%]
+tests/two_rim/test_source.py::test_malformed_cyclic_input_is_never_repaired[top5-empty interior] PASSED [ 88%]
+tests/two_rim/test_source.py::test_point_set_hull_records_every_removed_point PASSED [ 92%]
+tests/two_rim/test_source.py::test_point_set_hull_needs_positive_area PASSED [ 96%]
+tests/two_rim/test_source.py::test_inputs_are_not_mutated PASSED         [100%]
+
+============================= 26 passed in 0.03s ==============================

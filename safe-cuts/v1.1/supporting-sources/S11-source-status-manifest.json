@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "recorded": "2026-09-26",
+  "author": "System",
+  "repository": "<private-repo>",
+  "inspected_snapshot": "commit-14",
+  "reviewed_implementation": "commit-11",
+  "scope": "The 14 draft-status headers identified by Opus and individually inspected by System. Not a replacement manifest for all 73 Lean files.",
+  "ordering": "H01-H14 is a catalogue in original packet/dependency order; it is not a claim about exact per-file creation timestamps.",
+  "preservation": "Entire source files, including header comments, are left unchanged. Git blob IDs identify their bytes at the snapshot, not the first draft.",
+  "compilation_evidence": {
+    "report": "<research-record>/<historical-folder>/OPUS-INDEPENDENT-REVIEW.md",
+    "report_commit": "commit-14",
+    "report_blob": "fee72841b5c453a38229ff07113d1705ff781f63",
+    "sections": [
+      "3.2",
+      "3.3",
+      "3.6",
+      "3.7"
+    ],
+    "reported_result": "73/73 project modules freshly compiled; Mathlib and companion packages reused as pin-verified binaries; no separate leanchecker replay. These are Opus executions, not System reruns."
+  },
+  "entries": [
+    {
+      "id": "H01",
+      "path": "<lean-project>/TrimmedFacetWitnesses.lean",
+      "git_blob_sha": "adc335a2eb3c8f92a1553c860c64724e19484b13",
+      "header_line": 6,
+      "header_text": "System draft, 2026-09-19. NOT COMPILED in this runtime.",
+      "related_numbered_packets": "23-24",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H02",
+      "path": "<lean-project>/BandGeometryAssembly.lean",
+      "git_blob_sha": "c715b89631ab4dc8d5787e8be59fb4c1312319e0",
+      "header_line": 7,
+      "header_text": "System, 2026-09-19. UNCOMPILED DRAFT against Lean/Mathlib v4.34.0.",
+      "related_numbered_packets": "27-28",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H03",
+      "path": "<lean-project>/FiniteWitnessClosure.lean",
+      "git_blob_sha": "3c752b13013e51d101f73ddb673e77cc7e61a05f",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED DRAFT for Lean/Mathlib v4.34.0.",
+      "related_numbered_packets": "30-31",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H04",
+      "path": "<lean-project>/PolyhedralInputBridge.lean",
+      "git_blob_sha": "ff5813772e252034919fccadc477982e77bc9fab",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED DRAFT for Lean/Mathlib v4.34.0.",
+      "related_numbered_packets": "33-34",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H05",
+      "path": "<lean-project>/SingleCutRecovery.lean",
+      "git_blob_sha": "a93cc4eb84b7a8419332c82f4ccdad9d91f3f196",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED DRAFT for Lean/Mathlib v4.34.0.",
+      "related_numbered_packets": "36-37",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H06",
+      "path": "<lean-project>/PolygonSupportCompleteness.lean",
+      "git_blob_sha": "d928d75a1016e03edef85786645ce700e9ee0f8b",
+      "header_line": 8,
+      "header_text": "System, 2026-09-19. UNCOMPILED proof-script draft for the existing pins.",
+      "related_numbered_packets": "46-47",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H07",
+      "path": "<lean-project>/EuclideanPrismatoidCoordinates.lean",
+      "git_blob_sha": "9faa0edf4e671cbed053458ae9b8158058d0c413",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED DRAFT.",
+      "related_numbered_packets": "46-47",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H08",
+      "path": "<lean-project>/PolygonSupportCompletenessSanity.lean",
+      "git_blob_sha": "54f9e9d602e838236c9c0729a46f7fc16bc849e1",
+      "header_line": 4,
+      "header_text": "/-! UNCOMPILED concrete raw-input witness. Unlike a specialized conditional",
+      "related_numbered_packets": "46-47",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H09",
+      "path": "<lean-project>/CommonSupportMerge.lean",
+      "git_blob_sha": "a7c3965b49944290ef443588ec5d7758d789fc8b",
+      "header_line": 9,
+      "header_text": "System, 2026-09-19. COMPLETE PROOF-SCRIPT DRAFT; NOT COMPILED HERE.",
+      "related_numbered_packets": "49-50",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H10",
+      "path": "<lean-project>/OriginalFacetCertificates.lean",
+      "git_blob_sha": "054e593fb43c842191d9c9ea5b18c6416decfc9e",
+      "header_line": 9,
+      "header_text": "System, 2026-09-19. COMPLETE PROOF-SCRIPT DRAFT, NOT COMPILED HERE.",
+      "related_numbered_packets": "52-53",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H11",
+      "path": "<lean-project>/NormalFanSplice.lean",
+      "git_blob_sha": "686626a673f1070d2490d15dac09ebcd9030585d",
+      "header_line": 9,
+      "header_text": "System, 2026-09-19. UNCOMPILED SUPPORT DRAFT, not the whole cyclic constructor.",
+      "related_numbered_packets": "55-56",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H12",
+      "path": "<lean-project>/MaximalSupportCells.lean",
+      "git_blob_sha": "e8bae15bc8bbd60a0872621e9608d809ed1b7eff",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED PROOF-SCRIPT DRAFT.",
+      "related_numbered_packets": "58-59",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H13",
+      "path": "<lean-project>/CyclicCutOrders.lean",
+      "git_blob_sha": "407f0c5e9a5e0279ed02f0443fb5013868fad9ce",
+      "header_line": 6,
+      "header_text": "System, 2026-09-19. UNCOMPILED PROOF-SCRIPT DRAFT.",
+      "related_numbered_packets": "58-59",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    },
+    {
+      "id": "H14",
+      "path": "<lean-project>/CyclicCutOrdersSanity.lean",
+      "git_blob_sha": "e62fdb0c833e8cc0195b59f34504ed75156695de",
+      "header_line": 4,
+      "header_text": "OriginalEdges and all-cut families. UNCOMPILED until Forge's direct check. -/",
+      "related_numbered_packets": "58-59",
+      "current_status": "Included in Opus's reported successful 73-module source rebuild."
+    }
+  ]
+}

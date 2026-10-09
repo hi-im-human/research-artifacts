@@ -1,0 +1,424 @@
+{
+ "rows": [
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 3,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 7,
+    "separated": 45
+   },
+   "seam": "E0",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 5,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 5,
+    "separated": 45
+   },
+   "seam": "E1",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 1,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 9,
+    "separated": 45
+   },
+   "seam": "E2",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "fail",
+   "full_local": "fail",
+   "full_source_linked": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 4.24609938844219,
+     "pair": [
+      "F3",
+      "F2"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 1,
+    "near_contact_unresolved": 8,
+    "separated": 44
+   },
+   "seam": "E3",
+   "trimmed_all_pairs": "fail",
+   "trimmed_local": "fail",
+   "trimmed_source_linked": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 8,
+    "separated": 45
+   },
+   "seam": "E4",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 6,
+    "separated": 45
+   },
+   "seam": "E5",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 6,
+    "separated": 45
+   },
+   "seam": "E6",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "full_local": "unknown",
+   "full_source_linked": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 5,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 5,
+    "separated": 45
+   },
+   "seam": "E7",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_local": "unknown",
+   "trimmed_source_linked": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "fail",
+   "full_local": "fail",
+   "full_source_linked": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 7.0503471155712205,
+     "pair": [
+      "F8",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 0.9202851038351696,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033852,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 3,
+    "interior_overlap": 3,
+    "near_contact_unresolved": 7,
+    "separated": 42
+   },
+   "seam": "E8",
+   "trimmed_all_pairs": "fail",
+   "trimmed_local": "fail",
+   "trimmed_source_linked": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "fail",
+   "full_local": "fail",
+   "full_source_linked": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 0.9202851038351412,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 18.982904330610474,
+     "pair": [
+      "F9",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033994,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369158,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 4,
+    "near_contact_unresolved": 8,
+    "separated": 41
+   },
+   "seam": "E9",
+   "trimmed_all_pairs": "fail",
+   "trimmed_local": "fail",
+   "trimmed_source_linked": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "fail",
+   "full_local": "fail",
+   "full_source_linked": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 1.685917789103371,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369073,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 38.49439046691966,
+     "pair": [
+      "F10",
+      "F9"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 3,
+    "near_contact_unresolved": 6,
+    "separated": 42
+   },
+   "seam": "E10",
+   "trimmed_all_pairs": "fail",
+   "trimmed_local": "fail",
+   "trimmed_source_linked": "fail",
+   "trimmed_unglued_pairs": "fail"
+  }
+ ],
+ "search": {
+  "aggregate_definitions": {
+   "full_obligations": {
+    "requirements": {
+     "cut": [
+      "two_rim.cut.record_schema",
+      "two_rim.cut.material_copy_matches_parent",
+      "two_rim.cut.exactly_one_original_seam_open",
+      "two_rim.cut.face_coverage_complete_unique",
+      "two_rim.cut.glue_classes_match_cut_relation"
+     ],
+     "development": [
+      "two_rim.development.record_schema",
+      "two_rim.development.cut_copy_matches_parent",
+      "two_rim.development.face_maps_rigid",
+      "two_rim.development.no_reflected_face",
+      "two_rim.development.nonempty_face_images",
+      "two_rim.development.retained_hinges_and_glued_vertices_agree",
+      "two_rim.development.face_interiors_disjoint_all_pairs"
+     ]
+    },
+    "scope": "local: cut and full development; no source correspondence"
+   },
+   "source_linked_full_obligations": {
+    "requirements": {
+     "cut": [
+      "two_rim.cut.record_schema",
+      "two_rim.cut.material_copy_matches_parent",
+      "two_rim.cut.exactly_one_original_seam_open",
+      "two_rim.cut.face_coverage_complete_unique",
+      "two_rim.cut.glue_classes_match_cut_relation"
+     ],
+     "development": [
+      "two_rim.development.record_schema",
+      "two_rim.development.cut_copy_matches_parent",
+      "two_rim.development.face_maps_rigid",
+      "two_rim.development.no_reflected_face",
+      "two_rim.development.nonempty_face_images",
+      "two_rim.development.retained_hinges_and_glued_vertices_agree",
+      "two_rim.development.face_interiors_disjoint_all_pairs"
+     ],
+     "material": [
+      "two_rim.material.record_schema",
+      "two_rim.material.identity_hash",
+      "two_rim.material.facets_match_supporting_plane_oracle",
+      "two_rim.material.incidence_and_rings",
+      "two_rim.material.matches_parent_source"
+     ],
+     "source": [
+      "two_rim.source.record_schema",
+      "two_rim.source.height_positive",
+      "two_rim.source.rims_strictly_convex_clockwise",
+      "two_rim.source.normalization_accounts_for_input"
+     ]
+    },
+    "scope": "source-linked: source and material bundles plus the local full total"
+   },
+   "source_linked_trimmed_obligations": {
+    "requirements": {
+     "cut": [
+      "two_rim.cut.record_schema",
+      "two_rim.cut.material_copy_matches_parent",
+      "two_rim.cut.exactly_one_original_seam_open",
+      "two_rim.cut.face_coverage_complete_unique",
+      "two_rim.cut.glue_classes_match_cut_relation"
+     ],
+     "development": [
+      "two_rim.development.record_schema",
+      "two_rim.development.cut_copy_matches_parent"
+     ],
+     "material": [
+      "two_rim.material.record_schema",
+      "two_rim.material.identity_hash",
+      "two_rim.material.facets_match_supporting_plane_oracle",
+      "two_rim.material.incidence_and_rings",
+      "two_rim.material.matches_parent_source"
+     ],
+     "source": [
+      "two_rim.source.record_schema",
+      "two_rim.source.height_positive",
+      "two_rim.source.rims_strictly_convex_clockwise",
+      "two_rim.source.normalization_accounts_for_input"
+     ],
+     "trimmed": [
+      "two_rim.trim.record_schema",
+      "two_rim.trim.maps_identical_to_parent",
+      "two_rim.trim.domain_is_exact_band",
+      "two_rim.development.face_maps_rigid",
+      "two_rim.development.no_reflected_face",
+      "two_rim.development.nonempty_face_images",
+      "two_rim.development.retained_hinges_and_glued_vertices_agree",
+      "two_rim.development.face_interiors_disjoint_all_pairs"
+     ]
+    },
+    "scope": "source-linked: source and material bundles plus the local trimmed total (never the full-domain numerical verdicts)"
+   },
+   "trimmed_obligations": {
+    "requirements": {
+     "cut": [
+      "two_rim.cut.record_schema",
+      "two_rim.cut.material_copy_matches_parent",
+      "two_rim.cut.exactly_one_original_seam_open",
+      "two_rim.cut.face_coverage_complete_unique",
+      "two_rim.cut.glue_classes_match_cut_relation"
+     ],
+     "development": [
+      "two_rim.development.record_schema",
+      "two_rim.development.cut_copy_matches_parent"
+     ],
+     "trimmed": [
+      "two_rim.trim.record_schema",
+      "two_rim.trim.maps_identical_to_parent",
+      "two_rim.trim.domain_is_exact_band",
+      "two_rim.development.face_maps_rigid",
+      "two_rim.development.no_reflected_face",
+      "two_rim.development.nonempty_face_images",
+      "two_rim.development.retained_hinges_and_glued_vertices_agree",
+      "two_rim.development.face_interiors_disjoint_all_pairs"
+     ]
+    },
+    "scope": "local: cut, the development's exact record/copy claims, and the trimmed domain; no source correspondence"
+   }
+  },
+  "delta": "1/10000",
+  "disclaimer": "finite scan of every original hinge with independent numerical checks; not the manuscript's extremal selector; unknown or fail is not a refutation of any theorem",
+  "label": "enumerated_candidate_search",
+  "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521",
+  "prerequisites": {
+   "material": {
+    "claims": {
+     "two_rim.material.facets_match_supporting_plane_oracle": "pass",
+     "two_rim.material.identity_hash": "pass",
+     "two_rim.material.incidence_and_rings": "pass",
+     "two_rim.material.matches_parent_source": "pass",
+     "two_rim.material.record_schema": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+   },
+   "source": {
+    "claims": {
+     "two_rim.source.height_positive": "pass",
+     "two_rim.source.normalization_accounts_for_input": "pass",
+     "two_rim.source.record_schema": "pass",
+     "two_rim.source.rims_strictly_convex_clockwise": "pass"
+    },
+    "status": "checked",
+    "subject": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+   }
+  },
+  "source": "sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7ae8155806cc9f8b57340656ba2c2"
+ }
+}

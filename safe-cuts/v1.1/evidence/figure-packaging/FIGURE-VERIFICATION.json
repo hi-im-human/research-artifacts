@@ -1,0 +1,40 @@
+{
+  "all_11_files_identical_on_rebuild": true,
+  "all_changed_pixels_confined_to_footer": true,
+  "archive_bytes": 414022,
+  "archive_entries": 11,
+  "archive_sha256": "9a91ad32e1cc660a134a900d7f4361d2cc70698a922fa0ad9dd2618210667ed1",
+  "changed_pixels": 21143,
+  "checksum_entries_verified": 10,
+  "historical_certificates_rechecked": false,
+  "mutated_input_rejected": true,
+  "new_lean_build": false,
+  "nonempty_output_rejected": true,
+  "original_data_git_blob": "1a0edce1388dd3a45fe309558b923b8e077f2314",
+  "original_renderer_git_blob": "2c494999a7501169e302fe89aee080dca57395a4",
+  "pixel_change_bounding_box": [
+    524,
+    1127,
+    2877,
+    1147
+  ],
+  "png_has_exif": false,
+  "png_metadata": {
+    "Software": "render_figure.py",
+    "dpi": [
+      199.9996,
+      199.9996
+    ]
+  },
+  "render_log_unchanged": true,
+  "scientific_json_payload_unchanged": true,
+  "scope": "figure component packaging only; not full publication or mathematical verification",
+  "self_review_by_packaging_author": true,
+  "svg_labels_checked": true,
+  "svg_references_internal_and_resolved": true,
+  "unit_tests": {
+    "baseline_failures": 2,
+    "final_failures": 0,
+    "final_tests": 4
+  }
+}

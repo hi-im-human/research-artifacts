@@ -1,0 +1,3 @@
+# Byte-exact historical copies (verified by Git blob id in tests); test-only, never imported by production code.
+pinned_bridge/** -text
+historical/** -text

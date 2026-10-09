@@ -1,0 +1,746 @@
+F..FF.FFFFFFFFFFFFFFF.                                                   [100%]
+================================== FAILURES ===================================
+___________ test_genuine_bundle_still_verifies_and_states_its_scope ___________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_genuine_bundle_still_veri0')
+
+    def test_genuine_bundle_still_verifies_and_states_its_scope(genuine, tmp_path):
+        totals, report = run(genuine, tmp_path)
+        assert totals["verified"] is True and totals["failures"] == 0
+>       scope = report["scope"]
+                ^^^^^^^^^^^^^^^
+E       KeyError: 'scope'
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:54: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____________ test_inflated_witness_bound_is_rejected[just_above] _____________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_inflated_witness_bound_is0')
+inflate = 'just_above'
+
+    @pytest.mark.parametrize("inflate", ["just_above", "huge"])
+    def test_inflated_witness_bound_is_rejected(genuine, tmp_path, inflate):
+        b = copy.deepcopy(genuine)
+        row, m = _witness_minimum(b, "E9")
+        row["certificate"]["cross_lower_bound"] = str(m + F(1, 10**40)) if inflate == "just_above" else "10" + "0" * 30
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "witness_bound" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:84: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+________________ test_inflated_witness_bound_is_rejected[huge] ________________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_inflated_witness_bound_is1')
+inflate = 'huge'
+
+    @pytest.mark.parametrize("inflate", ["just_above", "huge"])
+    def test_inflated_witness_bound_is_rejected(genuine, tmp_path, inflate):
+        b = copy.deepcopy(genuine)
+        row, m = _witness_minimum(b, "E9")
+        row["certificate"]["cross_lower_bound"] = str(m + F(1, 10**40)) if inflate == "just_above" else "10" + "0" * 30
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "witness_bound" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:84: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_________ test_euclidean_bound_just_above_the_exact_limit_is_rejected _________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_euclidean_bound_just_abov0')
+
+    def test_euclidean_bound_just_above_the_exact_limit_is_rejected(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        row = _first(b, "E4", "separating_axis")
+        d, g = _axis_limit(row)
+        dd = d[0] * d[0] + d[1] * d[1]
+        # exact: N = floor(t * 10^80) with t = g^2/(d.d); b = (isqrt(N) + 1)/10^40 satisfies b^2 > t by about 10^-40
+        t = g * g / dd
+        n = (t.numerator * 10**80) // t.denominator
+        root = F(isqrt(n) + 1, 10**40)
+        assert root * root * dd > g * g and (root - F(2, 10**40)) ** 2 * dd <= g * g
+        row["certificate"]["euclidean_gap_lower_bound"] = str(root)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "euclidean_gap_bound" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:113: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+____________________ test_huge_euclidean_bound_is_rejected ____________________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_huge_euclidean_bound_is_r0')
+
+    def test_huge_euclidean_bound_is_rejected(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        _first(b, "E4", "separating_axis")["certificate"]["euclidean_gap_lower_bound"] = "1" + "0" * 30
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "euclidean_gap_bound" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:120: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+__ test_malformed_euclidean_bound_is_rejected[-1-euclidean_gap_bound_shape] ___
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_malformed_euclidean_bound0')
+value = '-1', code = 'euclidean_gap_bound_shape'
+
+    @pytest.mark.parametrize("value, code", [("-1", "euclidean_gap_bound_shape"), ("2/4", "noncanonical_number"),
+                                             (None, "euclidean_gap_bound_shape")])
+    def test_malformed_euclidean_bound_is_rejected(genuine, tmp_path, value, code):
+        b = copy.deepcopy(genuine)
+        cert = _first(b, "E4", "separating_axis")["certificate"]
+        if value is None:
+            del cert["euclidean_gap_lower_bound"]
+        else:
+            cert["euclidean_gap_lower_bound"] = value
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and code in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:133: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____ test_malformed_euclidean_bound_is_rejected[2/4-noncanonical_number] _____
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_malformed_euclidean_bound1')
+value = '2/4', code = 'noncanonical_number'
+
+    @pytest.mark.parametrize("value, code", [("-1", "euclidean_gap_bound_shape"), ("2/4", "noncanonical_number"),
+                                             (None, "euclidean_gap_bound_shape")])
+    def test_malformed_euclidean_bound_is_rejected(genuine, tmp_path, value, code):
+        b = copy.deepcopy(genuine)
+        cert = _first(b, "E4", "separating_axis")["certificate"]
+        if value is None:
+            del cert["euclidean_gap_lower_bound"]
+        else:
+            cert["euclidean_gap_lower_bound"] = value
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and code in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:133: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_malformed_euclidean_bound_is_rejected[None-euclidean_gap_bound_shape] __
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_malformed_euclidean_bound2')
+value = None, code = 'euclidean_gap_bound_shape'
+
+    @pytest.mark.parametrize("value, code", [("-1", "euclidean_gap_bound_shape"), ("2/4", "noncanonical_number"),
+                                             (None, "euclidean_gap_bound_shape")])
+    def test_malformed_euclidean_bound_is_rejected(genuine, tmp_path, value, code):
+        b = copy.deepcopy(genuine)
+        cert = _first(b, "E4", "separating_axis")["certificate"]
+        if value is None:
+            del cert["euclidean_gap_lower_bound"]
+        else:
+            cert["euclidean_gap_lower_bound"] = value
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and code in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:133: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_________ test_unrecognized_certificate_field_is_rejected_not_ignored _________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_unrecognized_certificate_0')
+
+    def test_unrecognized_certificate_field_is_rejected_not_ignored(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        _first(b, "E4", "separating_axis")["certificate"]["certified_area"] = "5"
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "unrecognized_field" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:140: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____________ test_positions_and_shared_hinge_record_are_verified _____________
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_positions_and_shared_hing0')
+
+    def test_positions_and_shared_hinge_record_are_verified(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        _first(b, "E4", "separating_axis")["positions"] = [0, 1]
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "positions" in reasons(report)
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:147: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[hinge_degenerate] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe0')
+code = 'hinge_degenerate'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+        assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+>       assert code in reasons(report), (code, sorted(reasons(report)))
+E       AssertionError: ('hinge_degenerate', ['malformed'])
+E       assert 'hinge_degenerate' in {'malformed'}
+E        +  where {'malformed'} = reasons({'bundle_failures': [], 'contract': 'stage4a.recheck_bundle/2', 'environment': {'iv_prec_bits': 400, 'mpmath': '1.3.0'...2) [MSC v.1938 64 bit (AMD64)]'}, 'label': 'isolated Stage 4A prototype: independent re-check; not glab evidence', ...})
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:231: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[identity_ambiguous] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe1')
+code = 'identity_ambiguous'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+E       AssertionError: identity_ambiguous
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:230: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[incidence] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe2')
+code = 'incidence'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+E       AssertionError: incidence
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:230: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[normal_zero] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe3')
+code = 'normal_zero'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+        assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+>       assert code in reasons(report), (code, sorted(reasons(report)))
+E       AssertionError: ('normal_zero', ['malformed'])
+E       assert 'normal_zero' in {'malformed'}
+E        +  where {'malformed'} = reasons({'bundle_failures': [], 'contract': 'stage4a.recheck_bundle/2', 'environment': {'iv_prec_bits': 400, 'mpmath': '1.3.0'...2) [MSC v.1938 64 bit (AMD64)]'}, 'label': 'isolated Stage 4A prototype: independent re-check; not glab evidence', ...})
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:231: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[orientation_not_outward] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe4')
+code = 'orientation_not_outward'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+E       AssertionError: orientation_not_outward
+E       assert (False is False and 'failed' == 'rejected'
+E         
+E         - rejected
+E         + failed)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:230: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 20,
+ "expected_pairs": 55,
+ "failed_seams": 1,
+ "failures": 70,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 8,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[reference_missing] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe5')
+code = 'reference_missing'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+        assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+>       assert code in reasons(report), (code, sorted(reasons(report)))
+E       AssertionError: ('reference_missing', ['malformed'])
+E       assert 'reference_missing' in {'malformed'}
+E        +  where {'malformed'} = reasons({'bundle_failures': [], 'contract': 'stage4a.recheck_bundle/2', 'environment': {'iv_prec_bits': 400, 'mpmath': '1.3.0'...2) [MSC v.1938 64 bit (AMD64)]'}, 'label': 'isolated Stage 4A prototype: independent re-check; not glab evidence', ...})
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:231: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[ring_not_on_plane] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe6')
+code = 'ring_not_on_plane'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+E       AssertionError: ring_not_on_plane
+E       assert (True is False)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:230: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_ test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[trimmed_ring_not_convex_ccw] _
+
+genuine = {'schema': 'stage4a.recheck_bundle/2', 'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure...occurrences': ['F4@B1', 'F4@A1', 'F4@B2', 'F5@B2', 'F5@A1', 'F5@A2', ...], ...}, 'representation': 'exact', ...}}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1777/test_self_consistently_rehashe7')
+code = 'trimmed_ring_not_convex_ccw'
+
+    @pytest.mark.parametrize("code", sorted(R02_CASES))
+    def test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry(genuine, tmp_path, code):
+        b = rebind(genuine, "E9", R02_CASES[code])
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and report["seams"]["E9"]["status"] == "rejected", code
+E       AssertionError: trimmed_ring_not_convex_ccw
+E       assert (False is False and 'failed' == 'rejected'
+E         
+E         - rejected
+E         + failed)
+
+probes\stage4a\tests\review_env\test_r01_r02_recheck.py:230: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 80,
+ "expected_pairs": 55,
+ "failed_seams": 1,
+ "failures": 11,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 7,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+=================================== PASSES ====================================
+_____________ test_witness_bound_at_the_recomputed_value_verifies _____________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_____________________ test_smaller_witness_bound_verifies _____________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+____________ test_probe_recorded_and_zero_euclidean_bounds_verify _____________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 86,
+ "axis_rows": 86,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "expected_pairs": 110,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 110,
+ "theorem_s_confirmed": 20,
+ "theorem_s_rows": 20,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 2,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+_________________ test_rehash_without_mutation_still_verifies _________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 41,
+ "axis_rows": 41,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 10,
+ "theorem_s_rows": 10,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_confirmed": 4,
+ "witness_rows": 4
+}
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_witness_bound_at_the_recomputed_value_verifies
+PASSED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_smaller_witness_bound_verifies
+PASSED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_probe_recorded_and_zero_euclidean_bounds_verify
+PASSED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_rehash_without_mutation_still_verifies
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_genuine_bundle_still_verifies_and_states_its_scope
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_inflated_witness_bound_is_rejected[just_above]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_inflated_witness_bound_is_rejected[huge]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_euclidean_bound_just_above_the_exact_limit_is_rejected
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_huge_euclidean_bound_is_rejected
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_malformed_euclidean_bound_is_rejected[-1-euclidean_gap_bound_shape]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_malformed_euclidean_bound_is_rejected[2/4-noncanonical_number]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_malformed_euclidean_bound_is_rejected[None-euclidean_gap_bound_shape]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_unrecognized_certificate_field_is_rejected_not_ignored
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_positions_and_shared_hinge_record_are_verified
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[hinge_degenerate]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[identity_ambiguous]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[incidence]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[normal_zero]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[orientation_not_outward]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[reference_missing]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[ring_not_on_plane]
+FAILED probes/stage4a/tests/review_env/test_r01_r02_recheck.py::test_self_consistently_rehashed_bad_geometry_is_rejected_before_geometry[trimmed_ring_not_convex_ccw]
+18 failed, 4 passed in 6.23s

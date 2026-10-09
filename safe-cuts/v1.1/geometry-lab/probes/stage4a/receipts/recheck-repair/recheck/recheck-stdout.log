@@ -1,0 +1,20 @@
+{
+ "axis_confirmed": 484,
+ "axis_rows": 484,
+ "coordinates_checked": 968,
+ "coordinates_contained": 968,
+ "euclidean_bounds_confirmed": 484,
+ "expected_pairs": 605,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 605,
+ "theorem_s_confirmed": 110,
+ "theorem_s_rows": 110,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 11,
+ "witness_bounds_confirmed": 11,
+ "witness_confirmed": 11,
+ "witness_rows": 11
+}

@@ -1,0 +1,19 @@
+run_digest sha256:6120b3e0ca22315996dcfab7e49718302bf4828070eb239e2ed3208dc9c97d92
+load {'integrity': 'internally_consistent', 'anchor': 'matched', 'authenticated': False}
+replay {'outcome': 'reproduced', 'environment_match': True, 'run_digest_reproduced': True, 'partial_comparison': {'entries': 100, 'reproduced': 100}}
+  {'historical_cut': 0, 'current_seam': 'E3', 'historical_exact_class': 'unsafe', 'current_trimmed_all_pairs': 'fail', 'comparison': 'agree (overlap detected)'}
+  {'historical_cut': 1, 'current_seam': 'E4', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 2, 'current_seam': 'E5', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 3, 'current_seam': 'E6', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 4, 'current_seam': 'E7', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 5, 'current_seam': 'E8', 'historical_exact_class': 'unsafe', 'current_trimmed_all_pairs': 'fail', 'comparison': 'agree (overlap detected)'}
+  {'historical_cut': 6, 'current_seam': 'E9', 'historical_exact_class': 'unsafe', 'current_trimmed_all_pairs': 'fail', 'comparison': 'agree (overlap detected)'}
+  {'historical_cut': 7, 'current_seam': 'E10', 'historical_exact_class': 'unsafe', 'current_trimmed_all_pairs': 'fail', 'comparison': 'agree (overlap detected)'}
+  {'historical_cut': 8, 'current_seam': 'E0', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 9, 'current_seam': 'E1', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  {'historical_cut': 10, 'current_seam': 'E2', 'historical_exact_class': 'safe', 'current_trimmed_all_pairs': 'unknown', 'comparison': 'not contradicted (unresolved near-contact)'}
+  F2 {'seam': 'E0', 'trimmed_all_pairs': 'unknown', 'trimmed_unglued_pairs': 'pass', 'full_all_pairs': 'unknown'}
+  F2 {'seam': 'E1', 'trimmed_all_pairs': 'unknown', 'trimmed_unglued_pairs': 'pass', 'full_all_pairs': 'unknown'}
+  F2 {'seam': 'E2', 'trimmed_all_pairs': 'unknown', 'trimmed_unglued_pairs': 'pass', 'full_all_pairs': 'unknown'}
+  F2 {'seam': 'E3', 'trimmed_all_pairs': 'unknown', 'trimmed_unglued_pairs': 'pass', 'full_all_pairs': 'unknown'}
+  F2 {'seam': 'E4', 'trimmed_all_pairs': 'unknown', 'trimmed_unglued_pairs': 'pass', 'full_all_pairs': 'unknown'}

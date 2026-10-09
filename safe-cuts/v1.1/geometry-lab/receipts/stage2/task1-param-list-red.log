@@ -1,0 +1,8 @@
+
+=================================== ERRORS ====================================
+_______________ ERROR collecting tests/core/test_param_list.py ________________
+E   AttributeError: type object 'Param' has no attribute 'list'
+=========================== short test summary info ===========================
+ERROR tests/core/test_param_list.py - AttributeError: type object 'Param' has...
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.14s

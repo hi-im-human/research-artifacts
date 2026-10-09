@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+_____________ ERROR collecting tests/two_rim_ideal/test_ratint.py _____________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_ratint.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_ratint.py:13: in <module>
+    from glab.rigorous.ratint import Interval, IntervalError, rsqrt, sqrt_enclosure
+E   ModuleNotFoundError: No module named 'glab.rigorous'
+=========================== short test summary info ===========================
+ERROR tests/two_rim_ideal/test_ratint.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.16s

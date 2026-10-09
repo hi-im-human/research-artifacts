@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 2 items
+
+review-cases/stage1-repair-review/test_rejection_order.py::test_rejected_parameter_order_replays_without_record_drift[action] PASSED [ 50%]
+review-cases/stage1-repair-review/test_rejection_order.py::test_rejected_parameter_order_replays_without_record_drift[check] PASSED [100%]
+
+============================== 2 passed in 0.06s ==============================

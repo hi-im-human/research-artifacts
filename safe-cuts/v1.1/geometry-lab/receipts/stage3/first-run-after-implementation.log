@@ -1,0 +1,29 @@
+.............................................................F           [100%]
+================================== FAILURES ===================================
+E   assert ('PhysicalBridge' not in '"""Register... only)."""\n'
+      
+      'PhysicalBridge' is contained here:
+        ection 4. PhysicalBridge is never imported; the construction reads the stored Stage 2 material
+      ?           ++++++++++++++
+        (exact coordinates converted to float64) and never re-hulls the source.
+        
+          chart psi_i  : rows [nu_i, -xi_i], origin M_i (midpoint of hinge E_i)...
+      
+      ...Full output truncated (626 lines hidden), use '-vv' to show)
+<engine>\tests\two_rim_dev\test_view_and_boundaries.py:69: assert ('PhysicalBridge' not in '"""Register... only)."""\n'
+============================== warnings summary ===============================
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+tests/two_rim_dev/test_eleven_panel.py::test_historical_witness_point_is_interior_to_both_mapped_faces
+  <engine>\tests\two_rim_dev\test_eleven_panel.py:74: DeprecationWarning: Arrays of 2-dimensional vectors are deprecated. Use arrays of 3-dimensional vectors instead. (deprecated in NumPy 2.0)
+    crosses = [np.cross(ring[(i + 1) % 4] - ring[i], y - ring[i]) for i in range(4)]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/two_rim_dev/test_view_and_boundaries.py::test_development_generator_is_stdlib_and_core_only
+1 failed, 61 passed, 8 warnings in 1.53s

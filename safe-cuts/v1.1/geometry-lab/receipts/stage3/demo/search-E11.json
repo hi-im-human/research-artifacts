@@ -1,0 +1,245 @@
+{
+ "rows": [
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 3,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 7,
+    "separated": 45
+   },
+   "seam": "E0",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 5,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 5,
+    "separated": 45
+   },
+   "seam": "E1",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 1,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 9,
+    "separated": 45
+   },
+   "seam": "E2",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 4.24609938844219,
+     "pair": [
+      "F3",
+      "F2"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 1,
+    "near_contact_unresolved": 8,
+    "separated": 44
+   },
+   "seam": "E3",
+   "trimmed_all_pairs": "fail",
+   "trimmed_obligations": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 8,
+    "separated": 45
+   },
+   "seam": "E4",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 6,
+    "separated": 45
+   },
+   "seam": "E5",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 6,
+    "separated": 45
+   },
+   "seam": "E6",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "interior_overlaps": [],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 5,
+    "interior_overlap": 0,
+    "near_contact_unresolved": 5,
+    "separated": 45
+   },
+   "seam": "E7",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_obligations": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 7.0503471155712205,
+     "pair": [
+      "F8",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 0.9202851038351696,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033852,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 3,
+    "interior_overlap": 3,
+    "near_contact_unresolved": 7,
+    "separated": 42
+   },
+   "seam": "E8",
+   "trimmed_all_pairs": "fail",
+   "trimmed_obligations": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 0.9202851038351412,
+     "pair": [
+      "F9",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 18.982904330610474,
+     "pair": [
+      "F9",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 1.6859177891033994,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369158,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 2,
+    "interior_overlap": 4,
+    "near_contact_unresolved": 8,
+    "separated": 41
+   },
+   "seam": "E9",
+   "trimmed_all_pairs": "fail",
+   "trimmed_obligations": "fail",
+   "trimmed_unglued_pairs": "fail"
+  },
+  {
+   "full_all_pairs": "fail",
+   "interior_overlaps": [
+    {
+     "overlap_area": 1.685917789103371,
+     "pair": [
+      "F10",
+      "F7"
+     ]
+    },
+    {
+     "overlap_area": 9.487101643369073,
+     "pair": [
+      "F10",
+      "F8"
+     ]
+    },
+    {
+     "overlap_area": 38.49439046691966,
+     "pair": [
+      "F10",
+      "F9"
+     ]
+    }
+   ],
+   "pair_counts": {
+    "boundary_contact_or_gap_exact_on_represented_coordinates": 4,
+    "interior_overlap": 3,
+    "near_contact_unresolved": 6,
+    "separated": 42
+   },
+   "seam": "E10",
+   "trimmed_all_pairs": "fail",
+   "trimmed_obligations": "fail",
+   "trimmed_unglued_pairs": "fail"
+  }
+ ],
+ "search": {
+  "delta": "1/10000",
+  "disclaimer": "finite scan of every original hinge with independent numerical checks; not the manuscript's extremal selector; unknown or fail is not a refutation of any theorem",
+  "label": "enumerated_candidate_search",
+  "material": "sha256:712c7c8742c902022bb3c18fbbd0cf7d30b9836a6bccfa87394096d14c697521"
+ }
+}

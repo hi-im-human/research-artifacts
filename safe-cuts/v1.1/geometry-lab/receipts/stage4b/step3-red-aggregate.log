@@ -1,0 +1,49 @@
+
+=================================== ERRORS ====================================
+____ ERROR collecting tests/two_rim_ideal/test_aggregate_prerequisites.py _____
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_aggregate_prerequisites.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_aggregate_prerequisites.py:13: in <module>
+    from glab.two_rim import ideal_search
+E   ImportError: cannot import name 'ideal_search' from 'glab.two_rim' (<engine>\glab\two_rim\__init__.py)
+____________ ERROR collecting tests/two_rim_ideal/test_firewall.py ____________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_firewall.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_firewall.py:10: in <module>
+    from glab.two_rim.ideal_search import ideal_candidate_search
+E   ModuleNotFoundError: No module named 'glab.two_rim.ideal_search'
+______ ERROR collecting tests/two_rim_ideal/test_receipt_determinism.py _______
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_receipt_determinism.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_receipt_determinism.py:4: in <module>
+    from glab.two_rim.ideal_search import ideal_candidate_search
+E   ModuleNotFoundError: No module named 'glab.two_rim.ideal_search'
+_________ ERROR collecting tests/two_rim_ideal/test_replay_policy.py __________
+ImportError while importing test module '<engine>\tests\two_rim_ideal\test_replay_policy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_ideal\test_replay_policy.py:9: in <module>
+    from glab.two_rim.ideal_search import ideal_candidate_search, loaded_ideal_obligations
+E   ModuleNotFoundError: No module named 'glab.two_rim.ideal_search'
+=========================== short test summary info ===========================
+ERROR tests/two_rim_ideal/test_aggregate_prerequisites.py
+ERROR tests/two_rim_ideal/test_firewall.py
+ERROR tests/two_rim_ideal/test_receipt_determinism.py
+ERROR tests/two_rim_ideal/test_replay_policy.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 4 errors during collection !!!!!!!!!!!!!!!!!!!
+4 errors in 0.30s

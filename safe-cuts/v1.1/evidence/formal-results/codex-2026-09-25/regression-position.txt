@@ -1,0 +1,29 @@
+
+test_atan_one_is_quarter_pi (test_angle_intervals.AngleIntervalTests.test_atan_one_is_quarter_pi) ... ok
+test_pi_and_monotonicity (test_angle_intervals.AngleIntervalTests.test_pi_and_monotonicity) ... ok
+test_reciprocal_identity (test_angle_intervals.AngleIntervalTests.test_reciprocal_identity) ... ok
+test_zero_and_odd (test_angle_intervals.AngleIntervalTests.test_zero_and_odd) ... ok
+test_all_cut_profile_agrees_with_direct_development (test_cut_comparison.CutComparisonTests.test_all_cut_profile_agrees_with_direct_development) ... ok
+test_all_stationary_panels_identical (test_cut_comparison.CutComparisonTests.test_all_stationary_panels_identical) ... ok
+test_holonomy_rotation (test_cut_comparison.CutComparisonTests.test_holonomy_rotation) ... ok
+test_known_nine_face_diagnostic (test_cut_comparison.CutComparisonTests.test_known_nine_face_diagnostic) ... ok
+test_prism_translation_is_not_zero (test_cut_comparison.CutComparisonTests.test_prism_translation_is_not_zero) ... ok
+test_profile_crosscheck_40_seeded_bands (test_cut_comparison.CutComparisonTests.test_profile_crosscheck_40_seeded_bands) ... ok
+test_turn_identity_and_rim_reversal (test_cut_comparison.CutComparisonTests.test_turn_identity_and_rim_reversal) ... ok
+test_mixed_safe_without_common_forward_direction (test_hard_mixed_fixture.HardMixedFixtureTests.test_mixed_safe_without_common_forward_direction) ... ok
+test_actual_mixed_case (test_mixed_fixture.MixedFixtureTests.test_actual_mixed_case) ... ok
+test_depth_guard (test_ordinary_band_probe.ProbeChecks.test_depth_guard) ... ok
+test_gram_exact (test_ordinary_band_probe.ProbeChecks.test_gram_exact) ... ok
+test_local_angles_and_pair_complement (test_ordinary_band_probe.ProbeChecks.test_local_angles_and_pair_complement) ... ok
+test_metric_and_gluing (test_ordinary_band_probe.ProbeChecks.test_metric_and_gluing) ... ok
+test_sat_touch_and_overlap (test_ordinary_band_probe.ProbeChecks.test_sat_touch_and_overlap) ... ok
+test_vertical_prism (test_ordinary_band_probe.ProbeChecks.test_vertical_prism) ... ok
+test_division_guard (test_rational_intervals.Intervals.test_division_guard) ... ok
+test_operations (test_rational_intervals.Intervals.test_operations) ... ok
+test_sqrt (test_rational_intervals.Intervals.test_sqrt) ... ok
+test_sqrt_guard (test_rational_intervals.Intervals.test_sqrt_guard) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 2.183s
+
+OK

@@ -1,0 +1,2 @@
+# Hashed receipts are stored byte-exact (LF); no root Git settings changed.
+receipts/** -text

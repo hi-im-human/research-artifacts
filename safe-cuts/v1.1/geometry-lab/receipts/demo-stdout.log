@@ -1,0 +1,6 @@
+run_digest sha256:5b2fc3c21c782e3091520f4381dbea9d4f54f5b28fe439f51efdfe4e62625b81
+load {'integrity': 'internally_consistent', 'anchor': 'matched', 'authenticated': False}
+failed attempt failed ZeroDivisionError
+summary as loaded {'outcome': 'unknown', 'verified': False}
+replay reproduced digest reproduced: True
+summary after replay {'outcome': 'unknown', 'verified': False}

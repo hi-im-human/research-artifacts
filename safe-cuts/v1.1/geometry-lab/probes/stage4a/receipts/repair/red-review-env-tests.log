@@ -1,0 +1,998 @@
+FFFFFFFFFFFFFFFFFFFFFFFFF...FFFFFF.FFFFF                                 [100%]
+================================== FAILURES ===================================
+_______________________ test_genuine_bundle_is_verified _______________________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_genuine_bundle_is_verifie0')
+
+    def test_genuine_bundle_is_verified(genuine, tmp_path):
+        totals, report = run(genuine, tmp_path)
+>       assert totals["verified"] is True and totals["failures"] == 0
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:43: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+__________ test_single_fault_is_rejected_with_its_reason[axis_order] __________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_0')
+name = 'axis_order'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+__________ test_single_fault_is_rejected_with_its_reason[axis_zero] ___________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_1')
+name = 'axis_zero'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+_________ test_single_fault_is_rejected_with_its_reason[box_coverage] _________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_2')
+name = 'box_coverage'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+>       totals, report = run(b, tmp_path)
+                         ^^^^^^^^^^^^^^^^
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:32: in run
+    totals = rc.main(str(inp), str(out))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+bundle_path = 'C:\\Users\\<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_single_fault_is_rejected_2\\in.json'
+out_path = 'C:\\Users\\<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_single_fault_is_rejected_2\\out.json'
+
+    def main(bundle_path, out_path):
+        iv.prec = PREC
+        bundle = json.loads(open(bundle_path, encoding="ascii").read())
+        data = Data(bundle)
+        report = {"label": "isolated Stage 4A prototype: independent re-check; not glab evidence",
+                  "environment": {"python": sys.version, "platform": platform.platform(), "mpmath": mpmath.__version__,
+                                  "iv_prec_bits": PREC},
+                  "seams": {}}
+        for seam, S in bundle["seams"].items():
+            chain = S["chain"]
+            res = {"theorem_s_rows": 0, "theorem_s_confirmed": 0, "coordinates_checked": 0,
+                   "coordinates_contained": 0, "axis_rows": 0, "axis_confirmed": 0, "witness_rows": 0,
+                   "witness_confirmed": 0, "failures": []}
+            probe = {f: parse_box(b) for f, b in S["boxes"].items()}
+            mine = own_enclosure(data, chain)
+            for f in chain:
+>               for (px, py), (mx, my) in zip(probe[f], mine[f]):
+                                              ^^^^^^^^
+E               KeyError: 'F5'
+
+probes\stage4a\recheck_mpmath.py:193: KeyError
+______ test_single_fault_is_rejected_with_its_reason[box_coverage_extra] ______
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_3')
+name = 'box_coverage_extra'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+__________ test_single_fault_is_rejected_with_its_reason[box_shape] ___________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_4')
+name = 'box_shape'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 174,
+ "coordinates_contained": 174,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+_____ test_single_fault_is_rejected_with_its_reason[box_shape_coordinate] _____
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_5')
+name = 'box_shape_coordinate'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+>       totals, report = run(b, tmp_path)
+                         ^^^^^^^^^^^^^^^^
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:32: in run
+    totals = rc.main(str(inp), str(out))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+probes\stage4a\recheck_mpmath.py:190: in main
+    probe = {f: parse_box(b) for f, b in S["boxes"].items()}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+probes\stage4a\recheck_mpmath.py:190: in <dictcomp>
+    probe = {f: parse_box(b) for f, b in S["boxes"].items()}
+                ^^^^^^^^^^^^
+probes\stage4a\recheck_mpmath.py:143: in parse_box
+    return [((Q(x[0]), Q(x[1])), (Q(y[0]), Q(y[1]))) for x, y in pb]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+.0 = <list_iterator object at 0x000001D0C7445630>
+
+>   return [((Q(x[0]), Q(x[1])), (Q(y[0]), Q(y[1]))) for x, y in pb]
+                                                         ^^^^
+E   ValueError: too many values to unpack (expected 2)
+
+probes\stage4a\recheck_mpmath.py:143: ValueError
+________ test_single_fault_is_rejected_with_its_reason[bundle_schema] _________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_6')
+name = 'bundle_schema'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+>       _mutations()[name](b)
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+
+    def unbound(b):
+>       del b["schema"]
+            ^^^^^^^^^^^
+E       KeyError: 'schema'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:112: KeyError
+_______ test_single_fault_is_rejected_with_its_reason[interval_bounds] ________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_7')
+name = 'interval_bounds'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 175,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+________ test_single_fault_is_rejected_with_its_reason[method_outcome] ________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_8')
+name = 'method_outcome'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+_____ test_single_fault_is_rejected_with_its_reason[noncanonical_number] ______
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_9')
+name = 'noncanonical_number'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+________ test_single_fault_is_rejected_with_its_reason[pair_coverage] _________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_10')
+name = 'pair_coverage'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 85,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+________ test_single_fault_is_rejected_with_its_reason[pair_duplicate] ________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_11')
+name = 'pair_duplicate'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 87,
+ "axis_confirmed": 87,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+___________ test_single_fault_is_rejected_with_its_reason[pair_ids] ___________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_12')
+name = 'pair_ids'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+>       totals, report = run(b, tmp_path)
+                         ^^^^^^^^^^^^^^^^
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:32: in run
+    totals = rc.main(str(inp), str(out))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+bundle_path = 'C:\\Users\\<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_single_fault_is_rejected_12\\in.json'
+out_path = 'C:\\Users\\<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_single_fault_is_rejected_12\\out.json'
+
+    def main(bundle_path, out_path):
+        iv.prec = PREC
+        bundle = json.loads(open(bundle_path, encoding="ascii").read())
+        data = Data(bundle)
+        report = {"label": "isolated Stage 4A prototype: independent re-check; not glab evidence",
+                  "environment": {"python": sys.version, "platform": platform.platform(), "mpmath": mpmath.__version__,
+                                  "iv_prec_bits": PREC},
+                  "seams": {}}
+        for seam, S in bundle["seams"].items():
+            chain = S["chain"]
+            res = {"theorem_s_rows": 0, "theorem_s_confirmed": 0, "coordinates_checked": 0,
+                   "coordinates_contained": 0, "axis_rows": 0, "axis_confirmed": 0, "witness_rows": 0,
+                   "witness_confirmed": 0, "failures": []}
+            probe = {f: parse_box(b) for f, b in S["boxes"].items()}
+            mine = own_enclosure(data, chain)
+            for f in chain:
+                for (px, py), (mx, my) in zip(probe[f], mine[f]):
+                    for (plo, phi), m in (((px[0], px[1]), mx), ((py[0], py[1]), my)):
+                        mlo, mhi = endpoints(m)
+                        res["coordinates_checked"] += 1
+                        if plo <= mlo and mhi <= phi:
+                            res["coordinates_contained"] += 1
+                        else:
+                            res["failures"].append(f"{f}: mpmath box not inside probe box")
+            for row in S["rows"]:
+                m = row.get("method")
+                a, b = row["pair"]
+                if m == "shared_hinge_exact":
+                    res["theorem_s_rows"] += 1
+                    ok, why = theorem_s(data, chain, row)
+                    res["theorem_s_confirmed"] += ok
+                    if not ok:
+                        res["failures"].append(f"{a}/{b} Theorem S: {why}")
+                elif m == "separating_axis":
+                    res["axis_rows"] += 1
+>                   ok, _ = axis_ok(probe[a], probe[b], row["certificate"])
+                                              ^^^^^^^^
+E                   KeyError: 'F99'
+
+probes\stage4a\recheck_mpmath.py:212: KeyError
+__________ test_single_fault_is_rejected_with_its_reason[pair_order] __________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_13')
+name = 'pair_order'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+______ test_single_fault_is_rejected_with_its_reason[shared_hinge_pair] _______
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_14')
+name = 'shared_hinge_pair'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 21,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 85,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+__________ test_single_fault_is_rejected_with_its_reason[state_hash] __________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_15')
+name = 'state_hash'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+>       _mutations()[name](b)
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+
+    def state_altered(b):
+>       cut = b["seams"]["E4"]["subject"]["spec"]["cut_state"]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'subject'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:108: KeyError
+__________ test_single_fault_is_rejected_with_its_reason[subject_id] __________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_16')
+name = 'subject_id'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+>       _mutations()[name](b)
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+b = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+
+    def spec_altered(b):
+>       b["seams"]["E4"]["subject"]["spec"]["seam"] = "E5"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'subject'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:105: KeyError
+___________ test_single_fault_is_rejected_with_its_reason[verdict] ____________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_single_fault_is_rejected_17')
+name = 'verdict'
+
+    @pytest.mark.parametrize("name", sorted(_mutations()))
+    def test_single_fault_is_rejected_with_its_reason(genuine, tmp_path, name):
+        b = copy.deepcopy(genuine)
+        _mutations()[name](b)
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:131: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+_________ test_parent_link_forgery_with_consistent_hashes_is_rejected _________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_parent_link_forgery_with_0')
+
+    def test_parent_link_forgery_with_consistent_hashes_is_rejected(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        seam = b["seams"]["E4"]
+>       spec = seam["subject"]["spec"]
+               ^^^^^^^^^^^^^^^
+E       KeyError: 'subject'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:138: KeyError
+_____ test_delta_changed_with_a_consistent_id_fails_geometry_not_silently _____
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_delta_changed_with_a_cons0')
+
+    def test_delta_changed_with_a_consistent_id_fails_geometry_not_silently(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        seam = b["seams"]["E4"]
+>       seam["subject"]["spec"]["delta"] = "1/5000"
+        ^^^^^^^^^^^^^^^
+E       KeyError: 'subject'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:152: KeyError
+_______________ test_honest_unknown_row_is_counted_not_rejected _______________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_honest_unknown_row_is_cou0')
+
+    def test_honest_unknown_row_is_counted_not_rejected(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        row = _first(b, "E4", "separating_axis")
+        for k in ("method", "certificate", "bits"):
+            row.pop(k, None)
+        row["outcome"] = "unknown"
+        b["seams"]["E4"]["verdict_on_D"] = "unknown"
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is True and totals["failures"] == 0 and totals["unknown_rows"] == 1
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:167: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 85,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+______________ test_unknown_row_must_change_the_declared_verdict ______________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_unknown_row_must_change_t0')
+
+    def test_unknown_row_must_change_the_declared_verdict(genuine, tmp_path):
+        b = copy.deepcopy(genuine)
+        row = _first(b, "E4", "separating_axis")
+        for k in ("method", "certificate", "bits"):
+            row.pop(k, None)
+        row["outcome"] = "unknown"                                  # declared verdict left as pass
+        totals, report = run(b, tmp_path)
+>       assert totals["verified"] is False and "verdict" in reasons(report)
+               ^^^^^^^^^^^^^^^^^^
+E       KeyError: 'verified'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:178: KeyError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 85,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 1
+}
+____________________ test_exit_code_reflects_verification _____________________
+
+genuine = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_exit_code_reflects_verifi0')
+
+    def test_exit_code_reflects_verification(genuine, tmp_path):
+        good, bad = tmp_path / "good.json", tmp_path / "bad.json"
+        good.write_text(json.dumps(genuine), encoding="ascii")
+        b = copy.deepcopy(genuine)
+        b["seams"]["E4"]["rows"].pop(3)
+        bad.write_text(json.dumps(b), encoding="ascii")
+        script = HERE / "recheck_mpmath.py"
+        ok = subprocess.run([sys.executable, "-B", str(script), str(good), str(tmp_path / "g.out.json")])
+        ko = subprocess.run([sys.executable, "-B", str(script), str(bad), str(tmp_path / "b.out.json")])
+>       assert ok.returncode == 0 and ko.returncode != 0
+E       AssertionError: assert (0 == 0 and 0 != 0)
+E        +  where 0 = CompletedProcess(args=['<review-scratch>...<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_exit_code_reflects_verifi0\\g.out.json'], returncode=0).returncode
+E        +  and   0 = CompletedProcess(args=['<review-scratch>...<user>\\AppData\\Local\\Temp\\pytest-of-<user>\\pytest-1768\\test_exit_code_reflects_verifi0\\b.out.json'], returncode=0).returncode
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:190: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 86,
+ "axis_confirmed": 86,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+{
+ "theorem_s_rows": 20,
+ "theorem_s_confirmed": 20,
+ "coordinates_checked": 176,
+ "coordinates_contained": 176,
+ "axis_rows": 85,
+ "axis_confirmed": 85,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+_____________ test_recheck_constants_match_the_probe_definitions ______________
+
+    def test_recheck_constants_match_the_probe_definitions():
+        from probes.stage4a.ideal import DEFINITION, NORMALIZATION, ORIENTATION
+>       assert (rc.DEFINITION, rc.ORIENTATION, rc.NORMALIZATION) == (DEFINITION, ORIENTATION, NORMALIZATION)
+                ^^^^^^^^^^^^^
+E       AttributeError: module 'probes.stage4a.recheck_mpmath' has no attribute 'DEFINITION'
+
+probes\stage4a\tests\review_env\test_a03_recheck_contract.py:195: AttributeError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1] ________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA89BE50>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '-1'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:93: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA89BE50>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '0'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:93: AssertionError
+_______ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2] ________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA89BE50>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '1/2'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:93: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA89BE50>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '1'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:93: AssertionError
+________ test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2] _________
+
+square = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA89BE50>, source='sha256:4de36d6850911dc56b46c3a63bb9b556ee3e...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+delta = '2'
+
+    @pytest.mark.parametrize('delta',['-1','0','1/2','1','2'])
+    def test_A01_out_of_domain_delta_cannot_receive_ideal_verdict(square,delta):
+        try:
+            s = load_subject(square,'E0',delta)
+            c = ideal_certificate(s,schedule=(64,))
+        except (ValueError,TypeError,ArithmeticError):
+            return  # Explicit refusal is acceptable, not a mathematical failure verdict.
+>       assert c['seam_verdict'] not in ('pass','fail'), c['seam_verdict']
+E       AssertionError: pass
+E       assert 'pass' not in ('pass', 'fail')
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:93: AssertionError
+___________ test_A02_model_for_safe_seam_cannot_certify_unsafe_spec ___________
+
+e11 = Prepared(run=<glab.core.runfile.Run object at 0x000001D0FA87C3D0>, source='sha256:4b6e8ba23ce2b838d91edaaf809da7f744e7...pass', 'checker': 'two_rim.check.cut', 'checker_version': 1, 'method': 'exact_computation', 'validation': 'current'}]})
+
+    def test_A02_model_for_safe_seam_cannot_certify_unsafe_spec(e11):
+        s = load_subject(e11,'E9',E11_DELTA)
+        original_id = s.id
+        try:
+            s.model = load_subject(e11,'E4',E11_DELTA).model
+            c = ideal_certificate(s)
+        except (AttributeError,ValueError,TypeError,ArithmeticError):
+            return
+        # Rebuilding from immutable source inputs would also be acceptable.
+>       assert not (c['subject']['id'] == original_id and c['source_linked']
+                    and c['seam_verdict'] == 'pass'), c['subject']
+E       AssertionError: {'spec': {'kind': 'ideal_trimmed_development', 'definition': 'stage4a.ideal_development/1', 'material_state': 'sha256:...7b3c180ce3bf0912146d0ae0ab5243', ...}, 'id': 'sha256:03fc2de26452284914c0efc9ccf1f0b748fb1d343fa1dc41bff5a1c5bafe1e4f'}
+E       assert not ('sha256:03fc2...5a1c5bafe1e4f' == 'sha256:03fc2...5a1c5bafe1e4f'
+E         
+E         Skipping 60 identical leading characters in diff, use -v to show
+E           1c5bafe1e4f and True and 'pass' == 'pass'
+E         
+E           pass)
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:105: AssertionError
+_________ test_A02_dropping_failed_prerequisite_does_not_make_it_pass _________
+
+    def test_A02_dropping_failed_prerequisite_does_not_make_it_pass():
+        p=wrong_source_prepared()
+        assert any(r['claim']=='two_rim.material.matches_parent_source' and r['outcome']=='fail'
+                   for r in p.prerequisites['material'])
+        p.prerequisites['material']=[r for r in p.prerequisites['material']
+            if r['claim']!='two_rim.material.matches_parent_source']
+        c=ideal_certificate(load_subject(p,'E0','1/4'))
+>       assert not (c['source_linked'] and c['seam_verdict']=='pass')
+E       AssertionError: assert not (True and 'pass' == 'pass'
+E         
+E           pass)
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:137: AssertionError
+______________ test_A03_zero_axis_cannot_replace_overlap_witness ______________
+
+bundle = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_A03_zero_axis_cannot_repl0')
+
+    def test_A03_zero_axis_cannot_replace_overlap_witness(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for row in b['seams']['E9']['rows']:
+            if row.get('method')=='interior_witness':
+                row.update(method='separating_axis',outcome='pass',certificate={
+                    'method':'separating_axis','axis':['0','0'],'order':'P_below_Q',
+                    'axis_gap':'0','euclidean_gap_lower_bound':'0'})
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:148: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 45,
+ "axis_confirmed": 45,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+__________ test_A03_missing_all_pair_rows_is_not_a_completed_recheck __________
+
+bundle = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_A03_missing_all_pair_rows0')
+
+    def test_A03_missing_all_pair_rows_is_not_a_completed_recheck(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        b['seams']['E9']['rows']=[]
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:155: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 0,
+ "theorem_s_confirmed": 0,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 0,
+ "axis_confirmed": 0,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+________ test_A03_truncated_vertex_lists_are_not_complete_box_coverage ________
+
+bundle = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_A03_truncated_vertex_list0')
+
+    def test_A03_truncated_vertex_lists_are_not_complete_box_coverage(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for f in b['seams']['E9']['boxes']:
+            b['seams']['E9']['boxes'][f]=b['seams']['E9']['boxes'][f][:3]
+        # Preserve only exact-neighbor rows so malformed interval polygons are not indexed
+        # by an incidental witness failure. The box-coverage check must catch the truncation.
+        b['seams']['E9']['rows']=[r for r in b['seams']['E9']['rows'] if r['method']=='shared_hinge_exact']
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:166: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 66,
+ "coordinates_contained": 66,
+ "axis_rows": 0,
+ "axis_confirmed": 0,
+ "witness_rows": 0,
+ "witness_confirmed": 0,
+ "failures": 0
+}
+___________ test_A03_outcome_must_match_verified_certificate_method ___________
+
+bundle = {'label': 'isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued', 'delta..., '1/10000'], 'A1': ['-15', '50', '1/10000'], 'A2': ['16', '27', '1/10000'], 'A3': ['31', '-11', '1/10000'], ...}, ...}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1768/test_A03_outcome_must_match_ve0')
+
+    def test_A03_outcome_must_match_verified_certificate_method(bundle,tmp_path):
+        b=copy.deepcopy(bundle)
+        for row in b['seams']['E9']['rows']:
+            if row.get('method')=='interior_witness':
+                row['outcome']='pass'
+        r=run_recheck(b,tmp_path)
+>       assert r['failures'] > 0
+E       assert 0 > 0
+
+probes\stage4a\tests\review_env\test_review_stage4a_adapted.py:175: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 41,
+ "axis_confirmed": 41,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+=================================== PASSES ====================================
+_________________ test_control_genuine_recheck_bundle_passes __________________
+---------------------------- Captured stdout call -----------------------------
+{
+ "theorem_s_rows": 10,
+ "theorem_s_confirmed": 10,
+ "coordinates_checked": 88,
+ "coordinates_contained": 88,
+ "axis_rows": 41,
+ "axis_confirmed": 41,
+ "witness_rows": 4,
+ "witness_confirmed": 4,
+ "failures": 0
+}
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_valid_square_is_source_linked
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_e9_contains_known_overlap
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_genuine_recheck_bundle_passes
+PASSED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_control_wrong_source_with_full_evidence_is_refused
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_genuine_bundle_is_verified
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[axis_order]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[axis_zero]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_coverage]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_coverage_extra]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_shape]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[box_shape_coordinate]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[bundle_schema]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[interval_bounds]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[method_outcome]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[noncanonical_number]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_coverage]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_duplicate]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_ids]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[pair_order]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[shared_hinge_pair]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[state_hash]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[subject_id]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_single_fault_is_rejected_with_its_reason[verdict]
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_parent_link_forgery_with_consistent_hashes_is_rejected
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_delta_changed_with_a_consistent_id_fails_geometry_not_silently
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_honest_unknown_row_is_counted_not_rejected
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_unknown_row_must_change_the_declared_verdict
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_exit_code_reflects_verification
+FAILED probes/stage4a/tests/review_env/test_a03_recheck_contract.py::test_recheck_constants_match_the_probe_definitions
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[-1]
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[0]
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1/2]
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[1]
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A01_out_of_domain_delta_cannot_receive_ideal_verdict[2]
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A02_model_for_safe_seam_cannot_certify_unsafe_spec
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A02_dropping_failed_prerequisite_does_not_make_it_pass
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_zero_axis_cannot_replace_overlap_witness
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_missing_all_pair_rows_is_not_a_completed_recheck
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_truncated_vertex_lists_are_not_complete_box_coverage
+FAILED probes/stage4a/tests/review_env/test_review_stage4a_adapted.py::test_A03_outcome_must_match_verified_certificate_method
+36 failed, 4 passed in 5.96s

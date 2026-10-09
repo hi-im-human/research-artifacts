@@ -1,0 +1,40 @@
+F.F.FF.................................................................. [ 47%]
+.................FF..................................................... [ 94%]
+........                                                                 [100%]
+================================== FAILURES ===================================
+E   assert "'a'" in "unexpected parameter 'z' for follow.add v1"
+<engine>\tests\core\test_c01_controls.py:22: assert "'a'" in "unexpected parameter 'z' for follow.add v1"
+E   assert "'a'" in "unexpected parameter 'z' for follow.check v1"
+<engine>\tests\core\test_c01_controls.py:22: assert "'a'" in "unexpected parameter 'z' for follow.check v1"
+E   AssertionError: assert 'sha256:63a25...3f2c8274633e5' == 'sha256:da5ec...d0281ad51242c'
+      
+      - sha256:da5ec57f869660d21d1adb38c3f930d40ceb35a7a7d5023ed5ed0281ad51242c
+      + sha256:63a25653b7d98404dbfe903d566f7da1df5def7a6b21831e23c3f2c8274633e5
+<engine>\tests\core\test_c01_controls.py:35: AssertionError: assert 'sha256:63a25...3f2c8274633e5' == 'sha256:da5ec...d0281ad51242c'
+E   assert "unexpected p... 'z' for x v1" == "unexpected p... 'a' for x v1"
+      
+      - unexpected parameter 'a' for x v1
+      ?                       ^
+      + unexpected parameter 'z' for x v1
+      ?                       ^
+<engine>\tests\core\test_c01_controls.py:46: assert "unexpected p... 'z' for x v1" == "unexpected p... 'a' for x v1"
+E   AssertionError: {'outcome': 'mismatch', 'environment_match': True, 'run_digest_reproduced': False, 'partial_comparison': {'entries': 2, 'reproduced': 1}, ...}
+    assert 'mismatch' == 'reproduced'
+      
+      - reproduced
+      + mismatch
+<engine>\tests\core\test_rejection_order_c01.py:37: AssertionError: {'outcome': 'mismatch', 'environment_match': True, 'run_digest_reproduced': False, 'partial_comparison': {'entries': 2, 'reproduced': 1}, ...}
+E   AssertionError: {'outcome': 'mismatch', 'environment_match': True, 'run_digest_reproduced': False, 'partial_comparison': {'entries': 2, 'reproduced': 1}, ...}
+    assert 'mismatch' == 'reproduced'
+      
+      - reproduced
+      + mismatch
+<engine>\tests\core\test_rejection_order_c01.py:37: AssertionError: {'outcome': 'mismatch', 'environment_match': True, 'run_digest_reproduced': False, 'partial_comparison': {'entries': 2, 'reproduced': 1}, ...}
+=========================== short test summary info ===========================
+FAILED tests/core/test_c01_controls.py::test_both_insertion_orders_record_the_same_rejection_and_replay[action-params0]
+FAILED tests/core/test_c01_controls.py::test_both_insertion_orders_record_the_same_rejection_and_replay[check-params0]
+FAILED tests/core/test_c01_controls.py::test_insertion_orders_give_identical_digests
+FAILED tests/core/test_c01_controls.py::test_validate_params_is_order_independent
+FAILED tests/core/test_rejection_order_c01.py::test_rejected_parameter_order_replays_without_record_drift[action]
+FAILED tests/core/test_rejection_order_c01.py::test_rejected_parameter_order_replays_without_record_drift[check]
+6 failed, 146 passed in 0.48s

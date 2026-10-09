@@ -1,0 +1,15 @@
+run_digest sha256:67cbe5c598ff9b3320f75929acc7f2448e2b6fd2d0a426935c41196188c2b991
+  0 glab.action/2 demo.int.source v1 succeeded  
+  1 glab.action/2 demo.int.add v1 succeeded  
+  2 glab.action/2 demo.int.add vTrue rejected {'stage': 'validation', 'type': 'RegistryError'} 
+  3 glab.action/2 demo.int.divide v1 failed {'stage': 'execution', 'type': 'ZeroDivisionError'} 
+  4 glab.check/1 demo.check.even v1 completed  evidence=1
+  5 glab.check/1 demo.check.profile v1 completed  evidence=2
+  6 glab.check/1 demo.check.notes v1 completed  evidence=0
+  7 glab.check/1 demo.check.fragile v1 failed {'stage': 'execution', 'type': 'OverflowError'} evidence=0
+evidence [('demo.even', 'pass'), ('demo.nonnegative', 'pass'), ('demo.prime', 'unknown')]
+load {'integrity': 'internally_consistent', 'anchor': 'matched', 'authenticated': False}
+external anchor {'forged_rewrite_unanchored_load': 'internally_consistent', 'forged_rewrite_against_retained_digest': 'rejected: run digest does not match the externally retained digest'}
+summary as loaded {'outcome': 'unknown', 'verified': False}
+replay reproduced | digest reproduced: True | partial: {'entries': 8, 'reproduced': 8}
+summary after replay {'outcome': 'unknown', 'verified': False}

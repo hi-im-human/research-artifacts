@@ -1,0 +1,12 @@
+{
+ "anchor": "matched",
+ "environment_match": true,
+ "file": "receipts/stage4b/results/e11-ideal-run.json",
+ "integrity": "internally_consistent",
+ "outcome": "reproduced",
+ "partial_comparison": {
+  "entries": 48,
+  "reproduced": 48
+ },
+ "run_digest_reproduced": true
+}

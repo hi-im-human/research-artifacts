@@ -1,0 +1,2499 @@
+........................................................................ [ 18%]
+........................................................................ [ 37%]
+........................................................................ [ 55%]
+........................................................................ [ 74%]
+...................FFFFFFFFFFFFFFF............FFFFFFFFFFFFFFFFFFFFFFFFFF [ 92%]
+FFFFFFFFFFF.FFF.....FFFF....                                             [100%]
+=================================== ERRORS ====================================
+______ ERROR collecting tests/two_rim_dev/test_repair_s01_aggregates.py _______
+ImportError while importing test module '<engine>\tests\two_rim_dev\test_repair_s01_aggregates.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_dev\test_repair_s01_aggregates.py:11: in <module>
+    from glab.two_rim.search import (DEVELOPMENT_OBLIGATIONS, MATERIAL_OBLIGATIONS, SOURCE_OBLIGATIONS,
+E   ImportError: cannot import name 'MATERIAL_OBLIGATIONS' from 'glab.two_rim.search' (<engine>\glab\two_rim\search.py)
+_______ ERROR collecting tests/two_rim_dev/test_repair_s03_holonomy.py ________
+ImportError while importing test module '<engine>\tests\two_rim_dev\test_repair_s03_holonomy.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_dev\test_repair_s03_holonomy.py:6: in <module>
+    from glab.check.two_rim_development import DIAGNOSTICS, lifted_turn_summary
+E   ImportError: cannot import name 'lifted_turn_summary' from 'glab.check.two_rim_development' (<engine>\glab\check\two_rim_development.py)
+______ ERROR collecting tests/two_rim_dev/test_repair_s04_tolerances.py _______
+ImportError while importing test module '<engine>\tests\two_rim_dev\test_repair_s04_tolerances.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\<user>\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\two_rim_dev\test_repair_s04_tolerances.py:4: in <module>
+    from glab.check.two_rim_development import (CUT_CLAIMS, DEV_EXACT, DIAGNOSTICS, NUMERICAL,
+E   ImportError: cannot import name 'NUMERICAL_TOLERANCE_POLICY' from 'glab.check.two_rim_development' (<engine>\glab\check\two_rim_development.py)
+================================== FAILURES ===================================
+______________________ test_valid_development_claims[E0] ______________________
+
+seam = 'E0'
+
+    @pytest.mark.parametrize("seam", ["E0", "E1", "E2", "E3", "E4"])
+    def test_valid_development_claims(seam):
+        run = new_run()
+        d = developed(run, MIXED, seam=seam)
+>       res = outcomes(dev_claims(run, d["development"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________________ test_valid_development_claims[E1] ______________________
+
+seam = 'E1'
+
+    @pytest.mark.parametrize("seam", ["E0", "E1", "E2", "E3", "E4"])
+    def test_valid_development_claims(seam):
+        run = new_run()
+        d = developed(run, MIXED, seam=seam)
+>       res = outcomes(dev_claims(run, d["development"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________________ test_valid_development_claims[E2] ______________________
+
+seam = 'E2'
+
+    @pytest.mark.parametrize("seam", ["E0", "E1", "E2", "E3", "E4"])
+    def test_valid_development_claims(seam):
+        run = new_run()
+        d = developed(run, MIXED, seam=seam)
+>       res = outcomes(dev_claims(run, d["development"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________________ test_valid_development_claims[E3] ______________________
+
+seam = 'E3'
+
+    @pytest.mark.parametrize("seam", ["E0", "E1", "E2", "E3", "E4"])
+    def test_valid_development_claims(seam):
+        run = new_run()
+        d = developed(run, MIXED, seam=seam)
+>       res = outcomes(dev_claims(run, d["development"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________________ test_valid_development_claims[E4] ______________________
+
+seam = 'E4'
+
+    @pytest.mark.parametrize("seam", ["E0", "E1", "E2", "E3", "E4"])
+    def test_valid_development_claims(seam):
+        run = new_run()
+        d = developed(run, MIXED, seam=seam)
+>       res = outcomes(dev_claims(run, d["development"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_______ test_every_pair_is_checked_including_retained_adjacent_contacts _______
+
+    def test_every_pair_is_checked_including_retained_adjacent_contacts():
+        run = new_run()
+        d = developed(run, MIXED, seam="E0")
+>       ev = next(e for e in dev_claims(run, d["development"]) if e["claim"] == PAIRS)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+____ test_omitted_translation_keeps_faces_rigid_but_breaks_hinge_agreement ____
+
+    def test_omitted_translation_keeps_faces_rigid_but_breaks_hinge_agreement():
+        def drop_translation(p):
+            charts = chart_data(p["cut"]["material"])
+            rot = np.eye(2)
+            n = len(charts["faces"])
+            order = p["cut"]["face_order"]
+            k = charts["faces"].index(order[0])
+            for j in range(n):
+                i = (k + j) % n
+                lin = rot @ np.array(charts["chart"][i])
+                p["maps"][j]["linear"] = lin.tolist()
+                p["maps"][j]["offset"] = (-(lin @ np.array(charts["mid"][i]))).tolist()
+                c, s = np.cos(charts["q"][(i + 1) % n]), np.sin(charts["q"][(i + 1) % n])
+                rot = rot @ np.array([[c, -s], [s, c]])
+        run, d = _faulty(drop_translation)
+>       res = outcomes(dev_claims(run, d))
+                       ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_____________________ test_damaged_transform_is_detected ______________________
+
+    def test_damaged_transform_is_detected():
+        run, d = _faulty(lambda p: p["maps"][2]["linear"][0].__setitem__(0, p["maps"][2]["linear"][0][0] * 1.001))
+>       assert outcomes(dev_claims(run, d))[RIGID] == "fail"
+                        ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_______________________ test_reflected_face_is_detected _______________________
+
+    def test_reflected_face_is_detected():
+        def reflect(p):
+            m = p["maps"][3]
+            m["linear"][1] = [-x for x in m["linear"][1]]
+            m["offset"][1] = -m["offset"][1]
+        run, d = _faulty(reflect)
+>       res = outcomes(dev_claims(run, d))
+                       ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_____________________ test_omitted_face_breaks_the_record _____________________
+
+    def test_omitted_face_breaks_the_record():
+        run, d = _faulty(lambda p: p["maps"].pop())
+>       res = outcomes(dev_claims(run, d))
+                       ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:138: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________ test_nonadjacent_stacking_is_an_interior_overlap _______________
+
+    def test_nonadjacent_stacking_is_an_interior_overlap():
+        def stack(p):
+            a, b = p["maps"][0], p["maps"][2]
+            b["linear"], b["offset"] = copy.deepcopy(a["linear"]), copy.deepcopy(a["offset"])
+        run, d = _faulty(stack, params=fixture("F1_translated_square_prism"))
+>       ev = next(e for e in dev_claims(run, d) if e["claim"] == PAIRS)
+                             ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+___________________ test_cut_copy_must_match_the_parent_cut ___________________
+
+    def test_cut_copy_must_match_the_parent_cut():
+        run, d = _faulty(lambda p: p["cut"].update(seam="E3"))
+>       assert outcomes(dev_claims(run, d))[DEV + "cut_copy_matches_parent"] == "fail"
+                        ^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+___________ test_changed_ancestor_invalidates_development_evidence ____________
+
+    def test_changed_ancestor_invalidates_development_evidence():
+        run = new_run()
+        d = developed(run, MIXED, seam="E0")
+>       ev = dev_claims(run, d["development"])[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:160: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+____________________ test_holonomy_diagnostic_sign_policy _____________________
+
+    def test_holonomy_diagnostic_sign_policy():
+        run = new_run()
+        prism = developed(run, fixture("F1_translated_square_prism"), seam="E0")
+        mixed = developed(run, MIXED, seam="E0")
+        hol = DEV + "diagnostic.circuit_holonomy"
+>       p_ev = next(e for e in dev_claims(run, prism["development"]) if e["claim"] == hol)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+____________________ test_no_claim_uses_rigorous_enclosure ____________________
+
+    def test_no_claim_uses_rigorous_enclosure():
+        run = new_run()
+        d = developed(run, MIXED, seam="E0", delta="1/4")
+>       evs = dev_claims(run, d["development"]) + run.check("two_rim.check.trimmed_development", 2, d["trimmed"], {})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_develop.py:182: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_develop.py:26: in dev_claims
+    return run.check("two_rim.check.development", 2, h, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__ test_unsupported_development_records_are_not_all_green[subtracted_offset] __
+
+mutate = <function <lambda> at 0x00000233691FF100>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+____ test_unsupported_development_records_are_not_all_green[sum_q_string] _____
+
+mutate = <function <lambda> at 0x00000233691FF1A0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______ test_unsupported_development_records_are_not_all_green[sum_q_nan] ______
+
+mutate = <function <lambda> at 0x00000233691FF240>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+___ test_unsupported_development_records_are_not_all_green[turns_q_length] ____
+
+mutate = <function <lambda> at 0x00000233691FF2E0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_development_records_are_not_all_green[generator_missing_key] _
+
+mutate = <function <lambda> at 0x00000233691FF380>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_development_records_are_not_all_green[generator_extra_key] _
+
+mutate = <function <lambda> at 0x00000233691FF420>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_development_records_are_not_all_green[generator_not_object] _
+
+mutate = <function <lambda> at 0x00000233691FF4C0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+___ test_unsupported_development_records_are_not_all_green[cut_not_object] ____
+
+mutate = <function <lambda> at 0x00000233691FECA0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_____ test_unsupported_development_records_are_not_all_green[bool_in_map] _____
+
+mutate = <function <lambda> at 0x00000233691FF560>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(map_convention="image = linear @ [x, y, z] - offset"),
+        lambda p: p["generator"].update(sum_q="-6.2"),
+        lambda p: p["generator"].update(sum_q=float("nan")),
+        lambda p: p["generator"].update(turns_q=p["generator"]["turns_q"][:-1]),
+        lambda p: p["generator"].pop("port_of"),
+        lambda p: p["generator"].update(extra=1),
+        lambda p: p.update(generator=[]),
+        lambda p: p.update(cut="not an object"),
+        lambda p: p["maps"][0]["linear"][0].__setitem__(0, True),
+    ], ids=["subtracted_offset", "sum_q_string", "sum_q_nan", "turns_q_length", "generator_missing_key",
+            "generator_extra_key", "generator_not_object", "cut_not_object", "bool_in_map"])
+    def test_unsupported_development_records_are_not_all_green(mutate):
+        run, d = _run_with(mutate_dev=mutate)
+>       out = dev_out(run, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[height_parameter] _
+
+mutate = <function <lambda> at 0x00000233691FF7E0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[bool_coordinate] _
+
+mutate = <function <lambda> at 0x00000233691FF880>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[float_coordinate] _
+
+mutate = <function <lambda> at 0x00000233691FF920>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[int_coordinate] __
+
+mutate = <function <lambda> at 0x00000233691FF9C0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[two_coordinates] _
+
+mutate = <function <lambda> at 0x00000233691FFA60>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[four_coordinates] _
+
+mutate = <function <lambda> at 0x00000233691FFB00>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[extra_point_key] _
+
+mutate = <function <lambda> at 0x00000233691FFBA0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_____ test_unsupported_or_malformed_trim_records_fail_the_schema[float_t] _____
+
+mutate = <function <lambda> at 0x00000233691FFC40>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+____ test_unsupported_or_malformed_trim_records_fail_the_schema[int_hinge] ____
+
+mutate = <function <lambda> at 0x00000233691FFCE0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[point_not_object] _
+
+mutate = <function <lambda> at 0x00000233691FFD80>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[noncanonical_coordinate] _
+
+mutate = <function <lambda> at 0x00000233691FFE20>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_unsupported_or_malformed_trim_records_fail_the_schema[noncanonical_t] __
+
+mutate = <function <lambda> at 0x00000233691FFEC0>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+__ test_unsupported_or_malformed_trim_records_fail_the_schema[leading_space] __
+
+mutate = <function <lambda> at 0x00000233691FFF60>
+
+    @pytest.mark.parametrize("mutate", [
+        lambda p: p.update(height_parameter="absolute z, not normalized height"),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, False),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0.0),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, 0),
+        lambda p: _first_point(p)["xyz"].pop(),
+        lambda p: _first_point(p)["xyz"].append("0"),
+        lambda p: _first_point(p).update(extra="x"),
+        lambda p: _first_point(p).update(t=0.25),
+        lambda p: _first_point(p).update(hinge=0),
+        lambda p: p["trim_points"].update({sorted(p["trim_points"])[0]: ["0", "0", "0"]}),
+        lambda p: _first_point(p)["xyz"].__setitem__(2, _noncanonical(_first_point(p)["xyz"][2])),
+        lambda p: _first_point(p).update(t=_noncanonical(_first_point(p)["t"])),
+        lambda p: _first_point(p)["xyz"].__setitem__(0, " " + _first_point(p)["xyz"][0]),
+    ], ids=["height_parameter", "bool_coordinate", "float_coordinate", "int_coordinate", "two_coordinates",
+            "four_coordinates", "extra_point_key", "float_t", "int_hinge", "point_not_object", "noncanonical_coordinate",
+            "noncanonical_t", "leading_space"])
+    def test_unsupported_or_malformed_trim_records_fail_the_schema(mutate):
+        run, d = _run_with(mutate_trim=mutate)
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+__ test_canonical_but_wrong_trim_point_is_a_valid_record_that_fails_the_band __
+
+    def test_canonical_but_wrong_trim_point_is_a_valid_record_that_fails_the_band():
+        run, d = _run_with(mutate_trim=lambda p: _first_point(p)["xyz"].__setitem__(2, "1/7"))
+>       out = trim_out(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:43: in trim_out
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_valid_canonical_records_with_negative_and_fractional_coordinates_pass_the_schemas _
+
+    def test_valid_canonical_records_with_negative_and_fractional_coordinates_pass_the_schemas():
+        run = Run(registry())
+        d = developed(run, E11, seam="E9", delta="1/10000")
+        run2, t = run, d["trimmed"]
+        payload = run2.get(t)["payload"]
+        spellings = [c for pt in payload["trim_points"].values() for c in pt["xyz"]]
+        assert any(c.startswith("-") and "/" in c for c in spellings)
+>       dev = dev_out(run2, d["development"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_repair_s02_schema.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_repair_s02_schema.py:39: in dev_out
+    return outcomes(run.check("two_rim.check.development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_____________ test_view_carries_local_and_source_linked_statuses ______________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1749/test_view_carries_local_and_so0')
+
+    def test_view_carries_local_and_source_linked_statuses(tmp_path):
+        run = new_run()
+        _, m = material(run, fixture("F2_nonnested_mixed"))
+        row = enumerated_candidate_search(run, m, "1/4")["results"][1]
+        p = tmp_path / "run.json"
+        loaded = load_run(p, expected_digest=run.save(p))
+>       statuses = {"local": row["trimmed_obligations"], "source_linked": row["source_linked_trimmed_obligations"]}
+                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'source_linked_trimmed_obligations'
+
+tests\two_rim_dev\test_repair_view.py:15: KeyError
+_____________________ test_view_without_statuses_says_so ______________________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1749/test_view_without_statuses_say0')
+
+    def test_view_without_statuses_says_so(tmp_path):
+        run = new_run()
+        _, m = material(run, fixture("F2_nonnested_mixed"))
+        row = enumerated_candidate_search(run, m, "1/4")["results"][0]
+        p = tmp_path / "run.json"
+        loaded = load_run(p, expected_digest=run.save(p))
+        view = view_data(loaded, row["trimmed"])
+>       assert view["statuses"] is None
+               ^^^^^^^^^^^^^^^^
+E       KeyError: 'statuses'
+
+tests\two_rim_dev\test_repair_view.py:29: KeyError
+________________ test_control_square_local_geometry_and_replay ________________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1749/test_control_square_local_geom0')
+
+    def test_control_square_local_geometry_and_replay(tmp_path):
+        r = registry()
+        run, s, m = source_material(r)
+>       scan = local_scan(run, m, '1/4')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_review_stage3_adapted.py:105: in local_scan
+    run.check('two_rim.check.development',2,d,{})
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_________ test_control_e11_documented_current_seams_and_overlap_pair __________
+
+    def test_control_e11_documented_current_seams_and_overlap_pair():
+        run, s, m = source_material(registry(), E11)
+>       scan = local_scan(run, m, '1/10000')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:127: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_review_stage3_adapted.py:105: in local_scan
+    run.check('two_rim.check.development',2,d,{})
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________ test_control_dropped_translation_is_not_accepted _______________
+
+    def test_control_dropped_translation_is_not_accepted():
+        def remove_offsets(p):
+            for m in p['maps']:
+                m['offset'] = [0.0, 0.0]
+        run,s,m = source_material(registry(remove_offsets))
+        c,d = cut_dev(run,m)
+>       ev = by_claim(run.check('two_rim.check.development',2,d,{}))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:145: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_______ test_S01_source_linked_search_cannot_omit_source_correspondence _______
+
+    def test_S01_source_linked_search_cannot_omit_source_correspondence():
+        r=registry()
+        r.register_action(ActionSpec('review.wrong.material',1,'two_rim.source',{},'review-1',
+            lambda st,p,seed: StateDraft('two_rim.material',build_material(normalize_source(**dict(BASE,height='4'))),'exact')))
+        run,s,m=source_material(r,builder='review.wrong.material')
+        assert run.get(s)['payload']['normalized']['height'] != run.get(m)['payload']['height']
+        # Missing source/material evidence must not be reported as a complete source-linked pass.
+        # Rejection for unavailable prerequisite checkers is acceptable at this boundary.
+        try:
+            rows=enumerated_candidate_search(run,m,'1/4')['results']
+        except RegistryError as exc:
+            assert 'checker' in str(exc).lower()
+            return
+>       assert rows and all(source_linked(row,'full') != 'pass' and source_linked(row,'trimmed') != 'pass' for row in rows)
+E       AssertionError: assert ([{'seam': 'E0', 'cut': 'sha256:f4588c49384669354d95c16b7d1d0dde5ed773bc3681a3f9f4b398df370296f0', 'development': 'sha2...218189f53db9f734217be5ad4', 'trimmed': 'sha256:b00210e5cb2cb217036c4970a23f6df5e62d401eb2b670556378131c0b3e23ed', ...}] and False)
+E        +  where False = all(<generator object test_S01_source_linked_search_cannot_omit_source_correspondence.<locals>.<genexpr> at 0x0000023369315A80>)
+
+tests\two_rim_dev\test_review_stage3_adapted.py:169: AssertionError
+__________ test_S01_trim_summary_keeps_failed_parent_copy_obligation __________
+
+    def test_S01_trim_summary_keeps_failed_parent_copy_obligation():
+        def change_copy(p):
+            p['cut']['schema'] = 'two_rim.cut/99'
+        run,s,m=source_material(registry(change_copy, with_stage2=True))
+        rows=enumerated_candidate_search(run,m,'1/4')['results']
+        assert all(row['full_claims']['two_rim.development.cut_copy_matches_parent'] == 'fail' for row in rows)
+>       assert all(source_linked(row,'trimmed') != 'pass' for row in rows)
+E       assert False
+E        +  where False = all(<generator object test_S01_trim_summary_keeps_failed_parent_copy_obligation.<locals>.<genexpr> at 0x0000023369317840>)
+
+tests\two_rim_dev\test_review_stage3_adapted.py:178: AssertionError
+__________ test_S02_changed_map_convention_is_not_a_supported_schema __________
+
+    def test_S02_changed_map_convention_is_not_a_supported_schema():
+        run,s,m=source_material(registry(lambda p:p.update(map_convention='image = linear @ [x, y, z] - offset')))
+        c,d=cut_dev(run,m)
+>       ev=by_claim(run.check('two_rim.check.development',2,d,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__ test_S02_trim_interpretation_and_exact_number_contract[height_parameter] ___
+
+mutation = 'height_parameter'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',2,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_S02_trim_interpretation_and_exact_number_contract[boolean_coordinate] __
+
+mutation = 'boolean_coordinate'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',2,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_S02_trim_interpretation_and_exact_number_contract[numeric_coordinate] __
+
+mutation = 'numeric_coordinate'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',2,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:201: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_________ test_S03_principal_angle_is_not_the_lifted_total_turn_sign __________
+
+    def test_S03_principal_angle_is_not_the_lifted_total_turn_sign():
+        run,s,m=source_material(registry(),E11);c,d=cut_dev(run,m,'E9')
+>       ev=by_claim(run.check('two_rim.check.development',2,d,{}))[DIAGNOSTICS[2]]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:207: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__________ test_S04_numerical_tolerance_is_in_the_core_policy_field ___________
+
+    def test_S04_numerical_tolerance_is_in_the_core_policy_field():
+        run,s,m=source_material(registry());c,d=cut_dev(run,m)
+>       evs=run.check('two_rim.check.development',2,d,{})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_review_stage3_adapted.py:216: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...d0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_trimmed at 0x000002336714C900>, uses_context=True)}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+________________ test_trimmed_claims_pass_for_valid_trims[1/4] ________________
+
+delta = '1/4'
+
+    @pytest.mark.parametrize("delta", ["1/4", "1/100", "1/3"])
+    def test_trimmed_claims_pass_for_valid_trims(delta):
+        run = new_run()
+        d = developed(run, MIXED, seam="E0", delta=delta)
+>       res = trim_claims(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_trim.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_trim.py:16: in trim_claims
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_______________ test_trimmed_claims_pass_for_valid_trims[1/100] _______________
+
+delta = '1/100'
+
+    @pytest.mark.parametrize("delta", ["1/4", "1/100", "1/3"])
+    def test_trimmed_claims_pass_for_valid_trims(delta):
+        run = new_run()
+        d = developed(run, MIXED, seam="E0", delta=delta)
+>       res = trim_claims(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_trim.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_trim.py:16: in trim_claims
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+________________ test_trimmed_claims_pass_for_valid_trims[1/3] ________________
+
+delta = '1/3'
+
+    @pytest.mark.parametrize("delta", ["1/4", "1/100", "1/3"])
+    def test_trimmed_claims_pass_for_valid_trims(delta):
+        run = new_run()
+        d = developed(run, MIXED, seam="E0", delta=delta)
+>       res = trim_claims(run, d["trimmed"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_trim.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_trim.py:16: in trim_claims
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+__________________ test_rescaled_maps_are_not_the_same_maps ___________________
+
+    def test_rescaled_maps_are_not_the_same_maps():
+        def rescale(p):
+            p["maps"][0]["linear"] = [[x * 0.5 for x in row] for row in p["maps"][0]["linear"]]
+        run, t = _faulty_trim(rescale)
+>       res = trim_claims(run, t)
+              ^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_trim.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_trim.py:16: in trim_claims
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_________________ test_wrong_trim_point_is_not_the_exact_band _________________
+
+    def test_wrong_trim_point_is_not_the_exact_band():
+        run, t = _faulty_trim(lambda p: p["trim_points"]["E0@lo"].update(xyz=["0", "0", "0"]))
+>       assert trim_claims(run, t)[TRIM + "domain_is_exact_band"] == "fail"
+               ^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_trim.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\two_rim_dev\test_trim.py:16: in trim_claims
+    return outcomes(run.check("two_rim.check.trimmed_development", 2, h, {}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+___________________ test_full_chain_saves_loads_and_replays ___________________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1749/test_full_chain_saves_loads_an0')
+
+    def test_full_chain_saves_loads_and_replays(tmp_path):
+        reg = registry()
+        run = Run(reg)
+        d = developed(run, MIXED, seam="E3", delta="1/5")
+        run.check("two_rim.check.cut", 1, d["cut"], {})
+>       run.check("two_rim.check.development", 2, d["development"], {})
+
+tests\two_rim_dev\test_trim.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__________ test_view_is_built_from_a_saved_run_and_renders_polygons ___________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1749/test_view_is_built_from_a_save0')
+
+    def test_view_is_built_from_a_saved_run_and_renders_polygons(tmp_path):
+        run = new_run()
+        d = developed(run, fixture("F2_nonnested_mixed"), seam="E1", delta="1/4")
+>       ev = run.check("two_rim.check.trimmed_development", 2, d["trimmed"], {})
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\two_rim_dev\test_view_and_boundaries.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.source', 2): CheckerSpec(name='two_rim.check.source', version=2, accepts='two_rim.source', params={},...31ee576aaf066fb24b6a4e76c731163d869aa', fn=<function check_development at 0x000002336714C860>, uses_context=True), ...}
+name = 'two_rim.check.trimmed_development', version = 2, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 2 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+=========================== short test summary info ===========================
+FAILED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E0]
+FAILED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E1]
+FAILED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E2]
+FAILED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E3]
+FAILED tests/two_rim_dev/test_develop.py::test_valid_development_claims[E4]
+FAILED tests/two_rim_dev/test_develop.py::test_every_pair_is_checked_including_retained_adjacent_contacts
+FAILED tests/two_rim_dev/test_develop.py::test_omitted_translation_keeps_faces_rigid_but_breaks_hinge_agreement
+FAILED tests/two_rim_dev/test_develop.py::test_damaged_transform_is_detected
+FAILED tests/two_rim_dev/test_develop.py::test_reflected_face_is_detected - g...
+FAILED tests/two_rim_dev/test_develop.py::test_omitted_face_breaks_the_record
+FAILED tests/two_rim_dev/test_develop.py::test_nonadjacent_stacking_is_an_interior_overlap
+FAILED tests/two_rim_dev/test_develop.py::test_cut_copy_must_match_the_parent_cut
+FAILED tests/two_rim_dev/test_develop.py::test_changed_ancestor_invalidates_development_evidence
+FAILED tests/two_rim_dev/test_develop.py::test_holonomy_diagnostic_sign_policy
+FAILED tests/two_rim_dev/test_develop.py::test_no_claim_uses_rigorous_enclosure
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[subtracted_offset]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[sum_q_string]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[sum_q_nan]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[turns_q_length]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[generator_missing_key]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[generator_extra_key]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[generator_not_object]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[cut_not_object]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_development_records_are_not_all_green[bool_in_map]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[height_parameter]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[bool_coordinate]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[float_coordinate]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[int_coordinate]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[two_coordinates]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[four_coordinates]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[extra_point_key]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[float_t]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[int_hinge]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[point_not_object]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[noncanonical_coordinate]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[noncanonical_t]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_unsupported_or_malformed_trim_records_fail_the_schema[leading_space]
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_canonical_but_wrong_trim_point_is_a_valid_record_that_fails_the_band
+FAILED tests/two_rim_dev/test_repair_s02_schema.py::test_valid_canonical_records_with_negative_and_fractional_coordinates_pass_the_schemas
+FAILED tests/two_rim_dev/test_repair_view.py::test_view_carries_local_and_source_linked_statuses
+FAILED tests/two_rim_dev/test_repair_view.py::test_view_without_statuses_says_so
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_square_local_geometry_and_replay
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_e11_documented_current_seams_and_overlap_pair
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_control_dropped_translation_is_not_accepted
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S01_source_linked_search_cannot_omit_source_correspondence
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S01_trim_summary_keeps_failed_parent_copy_obligation
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_changed_map_convention_is_not_a_supported_schema
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[height_parameter]
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[boolean_coordinate]
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S02_trim_interpretation_and_exact_number_contract[numeric_coordinate]
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S03_principal_angle_is_not_the_lifted_total_turn_sign
+FAILED tests/two_rim_dev/test_review_stage3_adapted.py::test_S04_numerical_tolerance_is_in_the_core_policy_field
+FAILED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/4]
+FAILED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/100]
+FAILED tests/two_rim_dev/test_trim.py::test_trimmed_claims_pass_for_valid_trims[1/3]
+FAILED tests/two_rim_dev/test_trim.py::test_rescaled_maps_are_not_the_same_maps
+FAILED tests/two_rim_dev/test_trim.py::test_wrong_trim_point_is_not_the_exact_band
+FAILED tests/two_rim_dev/test_trim.py::test_full_chain_saves_loads_and_replays
+FAILED tests/two_rim_dev/test_view_and_boundaries.py::test_view_is_built_from_a_saved_run_and_renders_polygons
+ERROR tests/two_rim_dev/test_repair_s01_aggregates.py
+ERROR tests/two_rim_dev/test_repair_s03_holonomy.py
+ERROR tests/two_rim_dev/test_repair_s04_tolerances.py
+59 failed, 329 passed, 3 errors in 8.43s

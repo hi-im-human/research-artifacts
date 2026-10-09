@@ -1,0 +1,2 @@
+# Store and check out every file byte-exact (no line-ending conversion); SHA256SUMS covers exact bytes.
+* -text

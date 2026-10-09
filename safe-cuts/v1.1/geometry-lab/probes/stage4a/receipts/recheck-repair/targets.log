@@ -1,0 +1,11 @@
+.......                                                                  [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t1_retained_neighbour_contact_is_decided_exactly
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t2_robust_separation_is_certified_by_an_axis
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t3_known_overlap_is_certified_by_an_interior_witness
+PASSED probes/stage4a/tests/targets/test_targets.py::test_float_placement_is_a_diagnostic_near_the_ideal_enclosure
+PASSED probes/stage4a/tests/targets/test_targets.py::test_square_prism_is_decided_on_the_exact_path
+PASSED probes/stage4a/tests/targets/test_targets.py::test_scan_decides_every_pair_of_every_seam
+PASSED probes/stage4a/tests/targets/test_targets.py::test_historical_reference_after_classification
+7 passed in 6.53s

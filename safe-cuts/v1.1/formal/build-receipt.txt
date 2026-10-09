@@ -1,0 +1,15 @@
+﻿Convex-section nesting build receipt
+Checked UTC: 2026-09-18T08:17:14.8598227Z
+Lean: Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)
+Lake: Lake version 5.0.0-src+293d5d0 (Lean version 4.34.0)
+Mathlib tag: v4.34.0
+Mathlib commit: 5ed2965256430c3649e86755f9576b54eca72435
+
+Command: lake build ConvexSectionNesting
+Exit code: 0
+
+ℹ [8924/8925] Replayed ConvexSectionNesting
+info: ConvexSectionNesting.lean:90:0: 'ConvexSectionNesting.section_strict_nesting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConvexSectionNesting.lean:91:0: 'ConvexSectionNesting.truncated_section_strict_nesting' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ConvexSectionNesting.lean:92:0: 'ConvexSectionNesting.subset_base_not_enough' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (8925 jobs).

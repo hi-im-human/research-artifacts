@@ -1,0 +1,242 @@
+{
+ "F2_search": [
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E0",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E1",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E2",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E3",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  },
+  {
+   "full_all_pairs": "unknown",
+   "seam": "E4",
+   "trimmed_all_pairs": "unknown",
+   "trimmed_unglued_pairs": "pass"
+  }
+ ],
+ "eleven_panel": [
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E3",
+   "current_trimmed_all_pairs": "fail",
+   "historical_cut": 0,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E4",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 1,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E5",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 2,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E6",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 3,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E7",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 4,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E8",
+   "current_trimmed_all_pairs": "fail",
+   "historical_cut": 5,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E9",
+   "current_trimmed_all_pairs": "fail",
+   "historical_cut": 6,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "agree (overlap detected)",
+   "current_seam": "E10",
+   "current_trimmed_all_pairs": "fail",
+   "historical_cut": 7,
+   "historical_exact_class": "unsafe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E0",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 8,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E1",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 9,
+   "historical_exact_class": "safe"
+  },
+  {
+   "comparison": "not contradicted (unresolved near-contact)",
+   "current_seam": "E2",
+   "current_trimmed_all_pairs": "unknown",
+   "historical_cut": 10,
+   "historical_exact_class": "safe"
+  }
+ ],
+ "inspection_view": {
+  "problem_pairs": [
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F9",
+     "F10"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F9",
+     "F7"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F9",
+     "F8"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F10",
+     "F0"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F10",
+     "F7"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "fail",
+    "pair": [
+     "F10",
+     "F8"
+    ],
+    "reason": "interior_overlap",
+    "shared": null
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F0",
+     "F1"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F2",
+     "F3"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F4",
+     "F5"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F5",
+     "F6"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F6",
+     "F7"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   },
+   {
+    "outcome": "unknown",
+    "pair": [
+     "F7",
+     "F8"
+    ],
+    "reason": "near_contact_unresolved",
+    "shared": "retained_hinge"
+   }
+  ],
+  "seam": "E9",
+  "subject": "sha256:a10a382c05e3884971c6d42de3c8a60f0eb47e5fc4a387b48fcf6e1a0af84419"
+ },
+ "load": {
+  "anchor": "matched",
+  "authenticated": false,
+  "integrity": "internally_consistent"
+ },
+ "replay": {
+  "environment_match": true,
+  "outcome": "reproduced",
+  "partial_comparison": {
+   "entries": 100,
+   "reproduced": 100
+  },
+  "run_digest_reproduced": true
+ },
+ "run_digest": "sha256:6120b3e0ca22315996dcfab7e49718302bf4828070eb239e2ed3208dc9c97d92"
+}

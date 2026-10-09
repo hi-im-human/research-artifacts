@@ -1,0 +1,3 @@
+# Byte-exact copies of pinned originals and fixtures (verified by Git blob id in tests).
+pinned/** -text
+fixtures/** -text

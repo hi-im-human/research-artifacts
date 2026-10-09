@@ -1,0 +1,93 @@
+{
+ "failed_attempt": {
+  "failure": {
+   "message": "Fraction(1, 0)",
+   "stage": "execution",
+   "type": "ZeroDivisionError"
+  },
+  "seq": 2,
+  "status": "failed"
+ },
+ "load": {
+  "anchor": "matched",
+  "authenticated": false,
+  "integrity": "internally_consistent"
+ },
+ "replay": {
+  "actions": [
+   {
+    "action": "demo.int.source",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 0,
+    "version": 1
+   },
+   {
+    "action": "demo.int.add",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 1,
+    "version": 1
+   },
+   {
+    "action": "demo.int.divide",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 2,
+    "version": 1
+   }
+  ],
+  "environment_match": true,
+  "evidence": [
+   {
+    "checker": "demo.check.even",
+    "claim": "demo.even",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 0
+   },
+   {
+    "checker": "demo.check.prime_small",
+    "claim": "demo.prime",
+    "reason": "",
+    "result": "reproduced",
+    "seq": 1
+   }
+  ],
+  "outcome": "reproduced",
+  "run_digest_reproduced": true
+ },
+ "run_digest": "sha256:5b2fc3c21c782e3091520f4381dbea9d4f54f5b28fe439f51efdfe4e62625b81",
+ "summary_after_replay": {
+  "outcome": "unknown",
+  "requirements": [
+   {
+    "claim": "demo.even",
+    "evidence": [
+     "sha256:99d2f083c226e3fb5e7a8fb4a8e713b99e85d6d2f5d779c5bf654be8b2873ef4"
+    ],
+    "invalid": [],
+    "outcome": "pass",
+    "reason": "",
+    "reproduced": true,
+    "subject": "sha256:5d5aab24ee876f9f7b48cb30ba4f16ba5c8537fbc0090a99062f7c40f9fb98a0"
+   },
+   {
+    "claim": "demo.prime",
+    "evidence": [
+     "sha256:2d1dd3c70192b175dac4fbcc3be7b4d8c8253c1cdc6d7921b62f2fb688cd8699"
+    ],
+    "invalid": [],
+    "outcome": "unknown",
+    "reason": "",
+    "reproduced": true,
+    "subject": "sha256:5d5aab24ee876f9f7b48cb30ba4f16ba5c8537fbc0090a99062f7c40f9fb98a0"
+   }
+  ],
+  "verified": false
+ },
+ "summary_as_loaded": {
+  "outcome": "unknown",
+  "verified": false
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "glab_revisions": {
+  "core": "sha256:950d9a745cf7093da0bd55d15ec4eaa998f443fc7a07cd800683d5ce554121d4",
+  "development_checker": "sha256:c67e6f524cd39bd71d5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7",
+  "stage3_generator": "sha256:b1cc40a32845cac4654db18b6457150fd25b788be37a965b71c85be85625ef43"
+ },
+ "label": "isolated Stage 4A prototype: probe environment (maintained .venv used read-only; nothing installed)",
+ "maintained_venv_packages": {
+  "Pygments": "2.21.0",
+  "colorama": "0.4.6",
+  "iniconfig": "2.3.0",
+  "numpy": "2.4.4",
+  "packaging": "26.3",
+  "pip": "24.0",
+  "pluggy": "1.6.0",
+  "pytest": "9.1.1",
+  "setuptools": "65.5.0"
+ },
+ "platform": "Windows-10-10.0.26200-SP0",
+ "probe_decision_path_dependencies": "standard library only (fractions, math.isqrt); glab imported read-only to build states",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+}

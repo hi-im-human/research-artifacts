@@ -1,0 +1,487 @@
+F..FFFFFFFFFFF...                                                        [100%]
+================================== FAILURES ===================================
+________ test_all_unknown_record_is_verified_with_no_enclosure_claimed ________
+
+flat = ({'seam': 'E4', 'cut': 'sha256:db9d12841a86906df718fccd4ad7ec4241399f997e67622232d73d1c97fc8114', 'ideal': 'sha256:e0e...ision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}})
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_all_unknown_record_is_ver0')
+
+    def test_all_unknown_record_is_verified_with_no_enclosure_claimed(flat, tmp_path):
+        row, b = flat
+        assert row["ideal_geometric_verdict"]["verdict"] == "unknown"
+        rem = _claim(b, "E4", REMAINING)
+        assert rem["receipt"]["enclosures"] == {} and rem["tolerances"] == IDEAL_POLICY
+        totals, report = run_rc(b, tmp_path)
+>       assert totals["verified"] is True and totals["failures"] == 0
+E       assert (False is True)
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:68: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 55,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 55,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[partition_coverage] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part0')
+name = 'partition_coverage'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('partition_coverage', ['pair_coverage'])
+E       assert 'partition_coverage' in {'pair_coverage'}
+E        +  where 'partition_coverage' = <built-in method get of dict object at 0x000001F8FFAC2F00>('partition_coverage', 'partition_coverage')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'pair_coverage'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 5,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[partition_disagrees] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part1')
+name = 'partition_disagrees'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('partition_disagrees', ['pair_coverage'])
+E       assert 'partition_disagrees' in {'pair_coverage'}
+E        +  where 'partition_disagrees' = <built-in method get of dict object at 0x000001F8FFAC2F00>('partition_disagrees', 'partition_disagrees')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'pair_coverage'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 5,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[partition_duplicate] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part2')
+name = 'partition_duplicate'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('partition_duplicate', ['pair_duplicate'])
+E       assert 'partition_duplicate' in {'pair_duplicate'}
+E        +  where 'partition_duplicate' = <built-in method get of dict object at 0x000001F8FFAC2F00>('partition_duplicate', 'partition_duplicate')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'pair_duplicate'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[partition_overlap] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part3')
+name = 'partition_overlap'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+E       AssertionError: partition_overlap
+E       assert (True is False)
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:155: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 3,
+ "axis_rows": 3,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 3,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___ test_each_side_record_and_partition_fault_has_its_reason[side_coverage] ___
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part4')
+name = 'side_coverage'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('side_coverage', ['theorem_s_record'])
+E       assert 'side_coverage' in {'theorem_s_record'}
+E        +  where 'side_coverage' = <built-in method get of dict object at 0x000001F8FFAC2F00>('side_coverage', 'side_coverage')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'theorem_s_record'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__ test_each_side_record_and_partition_fault_has_its_reason[side_duplicate] ___
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part5')
+name = 'side_duplicate'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+E       AssertionError: side_duplicate
+E       assert (True is False)
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:155: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 3,
+ "axis_rows": 3,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 3,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[side_duplicate_corrupt] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part6')
+name = 'side_duplicate_corrupt'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+E       AssertionError: side_duplicate_corrupt
+E       assert (True is False)
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:155: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 3,
+ "axis_rows": 3,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 3,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___ test_each_side_record_and_partition_fault_has_its_reason[side_outcome] ____
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part7')
+name = 'side_outcome'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('side_outcome', ['shared_hinge_record'])
+E       assert 'side_outcome' in {'shared_hinge_record'}
+E        +  where 'side_outcome' = <built-in method get of dict object at 0x000001F8FFAC2F00>('side_outcome', 'side_outcome')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'shared_hinge_record'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+___ test_each_side_record_and_partition_fault_has_its_reason[side_pair_ids] ___
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part8')
+name = 'side_pair_ids'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+>       assert totals["verified"] is False and totals["failures"] > 0, name
+E       AssertionError: side_pair_ids
+E       assert (True is False)
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:155: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 3,
+ "axis_rows": 3,
+ "coordinates_checked": 32,
+ "coordinates_contained": 32,
+ "euclidean_bounds_confirmed": 3,
+ "expected_pairs": 6,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 6,
+ "theorem_s_confirmed": 3,
+ "theorem_s_rows": 3,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 1,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+__ test_each_side_record_and_partition_fault_has_its_reason[side_pair_order] __
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part9')
+name = 'side_pair_order'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('side_pair_order', ['theorem_s_record'])
+E       assert 'side_pair_order' in {'theorem_s_record'}
+E        +  where 'side_pair_order' = <built-in method get of dict object at 0x000001F8FFAC2F00>('side_pair_order', 'side_pair_order')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'theorem_s_record'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+_ test_each_side_record_and_partition_fault_has_its_reason[side_pair_order_nonconsecutive] _
+
+square = {'schema': 'two_rim.ideal.recheck_bundle/1', 'label': 'maintained ideal lane: stored states and ideal-checker evidence...vision': 'sha256:9afbe78b6b33ca27d013e475a00c8b073adf92c3bc773628c219ec1b349dde1d', 'checker_version': 1, ...}, ...]}}}
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1809/test_each_side_record_and_part10')
+name = 'side_pair_order_nonconsecutive'
+
+    @pytest.mark.parametrize("name", sorted(FAULTS))
+    def test_each_side_record_and_partition_fault_has_its_reason(square, tmp_path, name):
+        b = copy.deepcopy(square)
+        FAULTS[name](b)
+        totals, report = run_rc(b, tmp_path)
+        assert totals["verified"] is False and totals["failures"] > 0, name
+>       assert EXPECTED.get(name, name) in reasons(report), (name, sorted(reasons(report)))
+E       AssertionError: ('side_pair_order_nonconsecutive', ['theorem_s_record'])
+E       assert 'side_pair_order' in {'theorem_s_record'}
+E        +  where 'side_pair_order' = <built-in method get of dict object at 0x000001F8FFAC2F00>('side_pair_order_nonconsecutive', 'side_pair_order_nonconsecutive')
+E        +    where <built-in method get of dict object at 0x000001F8FFAC2F00> = {'side_duplicate_corrupt': 'side_duplicate', 'side_pair_order_nonconsecutive': 'side_pair_order'}.get
+E        +  and   {'theorem_s_record'} = reasons({'bundle_failures': [], 'contract': 'two_rim.ideal.recheck_bundle/1', 'diagnostic_fields_not_verified': ['attempts', '...10-10.0.26200-SP0', 'python': '3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]'}, ...})
+
+tests\two_rim_ideal_recheck\test_repair_i01_i02.py:156: AssertionError
+---------------------------- Captured stdout call -----------------------------
+{
+ "axis_confirmed": 0,
+ "axis_rows": 0,
+ "coordinates_checked": 0,
+ "coordinates_contained": 0,
+ "euclidean_bounds_confirmed": 0,
+ "expected_pairs": 0,
+ "failed_seams": 0,
+ "failures": 1,
+ "rejected_seams": 1,
+ "rows_checked": 0,
+ "theorem_s_confirmed": 0,
+ "theorem_s_rows": 0,
+ "unknown_rows": 0,
+ "verified": false,
+ "verified_seams": 0,
+ "witness_bounds_confirmed": 0,
+ "witness_confirmed": 0,
+ "witness_rows": 0
+}
+=========================== short test summary info ===========================
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_all_unknown_record_is_verified_with_no_enclosure_claimed
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[partition_coverage]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[partition_disagrees]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[partition_duplicate]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[partition_overlap]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_coverage]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_duplicate]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_duplicate_corrupt]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_outcome]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_pair_ids]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_pair_order]
+FAILED tests/two_rim_ideal_recheck/test_repair_i01_i02.py::test_each_side_record_and_partition_fault_has_its_reason[side_pair_order_nonconsecutive]
+12 failed, 5 passed in 4.00s

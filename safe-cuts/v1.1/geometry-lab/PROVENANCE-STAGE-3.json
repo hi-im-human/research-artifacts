@@ -1,0 +1,64 @@
+{
+ "schema": "geometry-lab.provenance/3",
+ "stage": "Stage 3 static development",
+ "repository": "<private-repo>",
+ "frozen_proof_and_formulas_pin": "commit-11",
+ "author_provenance_note": "The Stage 3 handoff attributes the eleven-panel exact review to Codex Forge. Git commit author at commit-11 is 'Human'; Git metadata is recorded as metadata, not as intellectual authorship. The Stage 3 port, checker, search, view and tests were written by a Claude Code session (Claude Opus 5.5) outside the project's agent team.",
+ "formulas": {
+  "maintained": "glab/two_rim/develop.py (chart_data, develop_static)",
+  "ported_from": "<research-record>/<historical-folder>/code/midsection_bridge.py",
+  "original_blob": "cce8c34f29e6a8b970dc8db53db9713da659fc25",
+  "reviewed_against": "DRAFT-02 section 4 (charts psi_i, turns q_i, transitions T_i, composition W_{k,j})",
+  "changes": "plain-Python float64 (math) instead of NumPy; reads the stored Stage 2 material instead of re-hulling the source; same operation order; PhysicalBridge never imported",
+  "original_path_at_pin": "<research-record>/<historical-folder>/code/midsection_bridge.py"
+ },
+ "golden_test_copies": [
+  {
+   "path": "tests/two_rim_dev/pinned_bridge/code/midsection_bridge.py",
+   "blob": "cce8c34f29e6a8b970dc8db53db9713da659fc25",
+   "source_at_pin": "<research-record>/<historical-folder>/code/midsection_bridge.py"
+  },
+  {
+   "path": "tests/two_rim_dev/pinned_bridge/baseline/code/normal_fan_inputs.py",
+   "blob": "5445ec10af581ae031cb386d1732de4a81dffee9",
+   "source_at_pin": "<research-record>/<historical-folder>/code/normal_fan_inputs.py",
+   "note": "identical blob also present in the verification packets of two other historical folders; placed under pinned_bridge/baseline/code because the bridge searches <root>/baseline/code first"
+  },
+  {
+   "path": "tests/two_rim_dev/pinned_bridge/baseline/code/cyclic_normal_splice.py",
+   "blob": "314b1938fb80416a5c867a0e9db7807ed3e9133a",
+   "source_at_pin": "<research-record>/<historical-folder>/code/cyclic_normal_splice.py",
+   "note": "identical blob also present in the verification packets of two other historical folders; placed under pinned_bridge/baseline/code because the bridge searches <root>/baseline/code first"
+  },
+  {
+   "verification": "each blob recomputed with git hash-object --no-filters and matched against git ls-tree commit-11 before commit; bridge_support.py re-verifies bytes at load"
+  }
+ ],
+ "golden_loading": "tests/two_rim_dev/bridge_support.py execs the unmodified module by path and restores sys.path and sys.modules afterwards; test-only",
+ "eleven_panel": {
+  "source_record": "<research-record>/<historical-folder>/CODEX-FORGE-RETURN.md at commit-11 (named in SYSTEM-TO-CLAUDE-STAGE-3.md)",
+  "certificate_json": {
+   "path": "tests/two_rim_dev/historical/beveled_source_certificate.json",
+   "blob": "c571469284a97f9cd2df75b1f047bda3c0bcc7fc",
+   "source_at_pin": "<research-record>/<historical-folder>/review/beveled_source_certificate.json",
+   "also_at_pin": "<research-record>/<historical-folder>/results/beveled_source_certificate.json"
+  },
+  "verifier": {
+   "path": "tests/two_rim_dev/historical/beveled_source_certificate.py.txt",
+   "blob": "2471d2d11ee2f8ae9ec3f0717f99d35d90a2e2aa",
+   "note": "reference only; stored with .txt so it is never collected or executed",
+   "source_at_pin": "<research-record>/<historical-folder>/review/beveled_source_certificate.py"
+  },
+  "mapping_artifact": "ELEVEN-PANEL-MAPPING.md",
+  "comparison_receipt": "receipts/stage3/demo/eleven-panel-comparison.json",
+  "production_use": "none: no production module imports or embeds historical labels (tested)"
+ },
+ "revisions": {
+  "core": "sha256:950d9a745cf7093da0bd55d15ec4eaa998f443fc7a07cd800683d5ce554121d4",
+  "two_rim_stage2_generator": "sha256:86cc1e9a2d1dbd5ee14fc0c02669c3d6266418ebad014c3307fc1c96c86ff03d",
+  "two_rim_stage3_generator": "sha256:b1cc40a32845cac4654db18b6457150fd25b788be37a965b71c85be85625ef43",
+  "source_material_checker_v2": "sha256:3ed63baa4a67aaf587f4062c76957c2d451cc4460a616cfb6d2decb543c4e8a0",
+  "development_checker_v1": "sha256:0d93b30f2ae719c3eed0f8dab9031ee576aaf066fb24b6a4e76c731163d869aa"
+ },
+ "license_note": "The repository has no LICENSE file; all copies are internal to the same repository."
+}

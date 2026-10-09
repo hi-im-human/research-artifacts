@@ -1,0 +1,40 @@
+{
+ "source": "figure/out/safe-cuts-e4-e9-comparison.png",
+ "source_sha256": "ae53ede5ed9a8e2f91807d1ff7c18c0c387e7dd1d727f3a52996dc45c1b5e47c",
+ "source_pixels": [
+  3400,
+  1160
+ ],
+ "dpi": 200,
+ "operation": "crop only (no scaling)",
+ "outputs": {
+  "figure-1-panels-a-b.png": {
+   "box": [
+    140,
+    50,
+    1742,
+    1035
+   ],
+   "pixels": [
+    1602,
+    985
+   ],
+   "sha256": "532bb2571d92194f6d06d4c2bf081ba91aa6fd5fc68632471cc37cf0c9214ccb",
+   "bytes": 162794
+  },
+  "figure-1-panels-c-d.png": {
+   "box": [
+    1742,
+    50,
+    3390,
+    1035
+   ],
+   "pixels": [
+    1648,
+    985
+   ],
+   "sha256": "412bf3ddea94fabbec85079839ead12c005a386da92d3406061eb4ab8a030c93",
+   "bytes": 175498
+  }
+ }
+}

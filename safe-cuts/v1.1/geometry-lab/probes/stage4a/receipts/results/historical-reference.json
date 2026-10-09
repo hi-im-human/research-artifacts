@@ -1,0 +1,142 @@
+{
+ "classes": [
+  {
+   "comparison": "agree",
+   "historical_cut": 0,
+   "historical_exact_class": "unsafe",
+   "ideal_D_verdict": "fail",
+   "seam": "E3"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 1,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E4"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 2,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E5"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 3,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E6"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 4,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E7"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 5,
+   "historical_exact_class": "unsafe",
+   "ideal_D_verdict": "fail",
+   "seam": "E8"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 6,
+   "historical_exact_class": "unsafe",
+   "ideal_D_verdict": "fail",
+   "seam": "E9"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 7,
+   "historical_exact_class": "unsafe",
+   "ideal_D_verdict": "fail",
+   "seam": "E10"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 8,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E0"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 9,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E1"
+  },
+  {
+   "comparison": "agree",
+   "historical_cut": 10,
+   "historical_exact_class": "safe",
+   "ideal_D_verdict": "pass",
+   "seam": "E2"
+  }
+ ],
+ "historical_witness_points": [
+  {
+   "certified_inside_both_faces_of_D": true,
+   "cross_lower_bound": "3784104849584827306322287033663297372454735317766507890465394691820194204045223/113078212145816597093331040047546785012958969400039613319782796882727665664000000",
+   "faces": [
+    "F3",
+    "F2"
+   ],
+   "historical_cut": 0,
+   "point": [
+    "32066749/500000",
+    "48211/125000"
+   ],
+   "seam": "E3"
+  },
+  {
+   "certified_inside_both_faces_of_D": true,
+   "cross_lower_bound": "2414665836686573340527021280862225896249676424506934582870517262403086818619989/113078212145816597093331040047546785012958969400039613319782796882727665664000000",
+   "faces": [
+    "F10",
+    "F7"
+   ],
+   "historical_cut": 5,
+   "point": [
+    "26833159/1000000",
+    "704099/1000000"
+   ],
+   "seam": "E8"
+  },
+  {
+   "certified_inside_both_faces_of_D": true,
+   "cross_lower_bound": "38634641496634838130845594606545993754463695671146995505461179973906683546320411/1809251394333065553493296640760748560207343510400633813116524750123642650624000000",
+   "faces": [
+    "F10",
+    "F7"
+   ],
+   "historical_cut": 6,
+   "point": [
+    "39037647/1000000",
+    "565877/1000000"
+   ],
+   "seam": "E9"
+  },
+  {
+   "certified_inside_both_faces_of_D": true,
+   "cross_lower_bound": "19317320121243776921356554847957570789878587257613441718461801203473834908212893/904625697166532776746648320380374280103671755200316906558262375061821325312000000",
+   "faces": [
+    "F10",
+    "F7"
+   ],
+   "historical_cut": 7,
+   "point": [
+    "41901163/1000000",
+    "3723/8000"
+   ],
+   "seam": "E10"
+  }
+ ],
+ "label": "isolated Stage 4A prototype; not glab evidence; no rigorous_enclosure or formal_proof claim issued",
+ "mapping_rotation": 3,
+ "note": "historical classes and witness points are read only after classification; agreement on this fixture is not a universal proof"
+}

@@ -1,0 +1,118 @@
+{
+  "method": "exact symbolic simplification with SymPy",
+  "sympy_version": "1.14.0",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "not_checked": [
+    "geometric realization",
+    "global nonoverlap",
+    "inequality hypotheses",
+    "Lean compilation",
+    "dependency rebuild",
+    "novelty"
+  ],
+  "checks": [
+    {
+      "name": "Gram scalar expansion",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Full rotation half-angle identity",
+      "passed": true,
+      "residuals": [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Exact trigonometric matrix identity; excludes no q by itself."
+    },
+    {
+      "name": "Quarter-turn determinant sign",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Full-hinge squared-radius difference",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Inward-cone Cramer decomposition",
+      "passed": true,
+      "residuals": [
+        "0",
+        "0"
+      ],
+      "scope": "Rational identity requiring det(f,e) != 0."
+    },
+    {
+      "name": "Straight-seam angular determinant",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Trimmed upper squared radius",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Ray radial coefficient",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    },
+    {
+      "name": "Ray horizontal coefficient",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Rational identity requiring det(v,e) != 0."
+    },
+    {
+      "name": "Cartesian trace slope",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Rational identity requiring e_x != 0."
+    },
+    {
+      "name": "Positive-case full panel transport",
+      "passed": true,
+      "residuals": [
+        "0",
+        "0"
+      ],
+      "scope": "One reflection and rim reversal; lambda != 0, positive in geometry."
+    },
+    {
+      "name": "Positive-case coherent determinant",
+      "passed": true,
+      "residuals": [
+        "0"
+      ],
+      "scope": "Polynomial/rational identity; geometric hypotheses checked in prose."
+    }
+  ]
+}

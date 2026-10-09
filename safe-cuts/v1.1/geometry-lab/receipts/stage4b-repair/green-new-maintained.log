@@ -1,0 +1,7 @@
+........................................................................ [ 33%]
+........................................................................ [ 67%]
+....................................................................     [100%]
+=========================== short test summary info ===========================
+SKIPPED [1] tests\two_rim_ideal_recheck\test_recheck_ideal.py:17: could not import 'mpmath': No module named 'mpmath'
+SKIPPED [1] tests\two_rim_ideal_recheck\test_repair_i01_i02.py:12: could not import 'mpmath': No module named 'mpmath'
+212 passed, 2 skipped in 32.14s

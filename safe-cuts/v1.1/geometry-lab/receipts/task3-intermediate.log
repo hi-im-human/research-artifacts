@@ -1,0 +1,144 @@
+......FFF.F..F.......................................................... [ 88%]
+.........                                                                [100%]
+================================== FAILURES ===================================
+_______________ test_tolerance_policy_change_invalidates_reuse ________________
+
+    def test_tolerance_policy_change_invalidates_reuse():
+        run = new_run()
+        f = run.apply("toy.int.halve_float", 1, {}, src(run, "3"))["output"]
+>       (ev,) = run.check("toy.check.not_integer", 1, f, {"tol": "1/1000"})
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\core\test_evidence.py:92: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:60: in check
+    claims = spec.fn(state, copy.deepcopy(params))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+state = {'kind': 'toy.float', 'parent': 'sha256:6ec4a47c9590c61961128a971aa939c5eae3921f97332110261e0dfbd3708688', 'payload': {'value': 1.5}, 'representation': 'approximate', ...}
+params = {'tol': '1/1000'}
+
+    def _float_near_int(state, params):
+        """A tolerance check on an approximate state: near an integer boundary it must say unknown."""
+        x, tol = state["payload"]["value"], params["tol"]
+        frac = abs(x - round(x))
+>       outcome = "pass" if frac > float(tol) else "unknown"
+                                   ^^^^^^^^^^
+E       ValueError: could not convert string to float: '1/1000'
+
+tests\core\toy.py:55: ValueError
+_____ test_rounded_representation_is_not_evidence_about_its_exact_source ______
+
+    def test_rounded_representation_is_not_evidence_about_its_exact_source():
+        run = new_run()
+        exact = src(run, "3")
+        rounded = run.apply("toy.int.halve_float", 1, {}, exact)["output"]
+>       (ev,) = run.check("toy.check.not_integer", 1, rounded, {"tol": "1/1000"})
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\core\test_evidence.py:103: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:60: in check
+    claims = spec.fn(state, copy.deepcopy(params))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+state = {'kind': 'toy.float', 'parent': 'sha256:6ec4a47c9590c61961128a971aa939c5eae3921f97332110261e0dfbd3708688', 'payload': {'value': 1.5}, 'representation': 'approximate', ...}
+params = {'tol': '1/1000'}
+
+    def _float_near_int(state, params):
+        """A tolerance check on an approximate state: near an integer boundary it must say unknown."""
+        x, tol = state["payload"]["value"], params["tol"]
+        frac = abs(x - round(x))
+>       outcome = "pass" if frac > float(tol) else "unknown"
+                                   ^^^^^^^^^^
+E       ValueError: could not convert string to float: '1/1000'
+
+tests\core\toy.py:55: ValueError
+__________ test_numerical_pass_does_not_satisfy_an_exact_requirement __________
+
+    def test_numerical_pass_does_not_satisfy_an_exact_requirement():
+        run = new_run()
+        rounded = run.apply("toy.int.halve_float", 1, {}, src(run, "3"))["output"]
+>       run.check("toy.check.not_integer", 1, rounded, {"tol": "1/1000"})
+
+tests\core\test_evidence.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:60: in check
+    claims = spec.fn(state, copy.deepcopy(params))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+state = {'kind': 'toy.float', 'parent': 'sha256:6ec4a47c9590c61961128a971aa939c5eae3921f97332110261e0dfbd3708688', 'payload': {'value': 1.5}, 'representation': 'approximate', ...}
+params = {'tol': '1/1000'}
+
+    def _float_near_int(state, params):
+        """A tolerance check on an approximate state: near an integer boundary it must say unknown."""
+        x, tol = state["payload"]["value"], params["tol"]
+        frac = abs(x - round(x))
+>       outcome = "pass" if frac > float(tol) else "unknown"
+                                   ^^^^^^^^^^
+E       ValueError: could not convert string to float: '1/1000'
+
+tests\core\toy.py:55: ValueError
+_________________ test_near_integer_float_is_unknown_not_pass _________________
+
+    def test_near_integer_float_is_unknown_not_pass():
+        run = new_run()
+        f = run.apply("toy.int.halve_float", 1, {}, src(run, "2000001/1000000"))["output"]
+>       (ev,) = run.check("toy.check.not_integer", 1, f, {"tol": "1/1000"})
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\core\test_evidence.py:144: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:60: in check
+    claims = spec.fn(state, copy.deepcopy(params))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+state = {'kind': 'toy.float', 'parent': 'sha256:51cc08ae8d586a320ad4442e72e8fb52caf0e430a4004ffaf06f20792d0e1f61', 'payload': {'value': 1.0000005}, 'representation': 'approximate', ...}
+params = {'tol': '1/1000'}
+
+    def _float_near_int(state, params):
+        """A tolerance check on an approximate state: near an integer boundary it must say unknown."""
+        x, tol = state["payload"]["value"], params["tol"]
+        frac = abs(x - round(x))
+>       outcome = "pass" if frac > float(tol) else "unknown"
+                                   ^^^^^^^^^^
+E       ValueError: could not convert string to float: '1/1000'
+
+tests\core\toy.py:55: ValueError
+__________________ test_requirement_parameters_bind_evidence __________________
+
+    def test_requirement_parameters_bind_evidence():
+        run = new_run()
+        f = run.apply("toy.int.halve_float", 1, {}, src(run, "3"))["output"]
+>       run.check("toy.check.not_integer", 1, f, {"tol": "1/1000"})
+
+tests\core\test_evidence.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:60: in check
+    claims = spec.fn(state, copy.deepcopy(params))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+state = {'kind': 'toy.float', 'parent': 'sha256:6ec4a47c9590c61961128a971aa939c5eae3921f97332110261e0dfbd3708688', 'payload': {'value': 1.5}, 'representation': 'approximate', ...}
+params = {'tol': '1/1000'}
+
+    def _float_near_int(state, params):
+        """A tolerance check on an approximate state: near an integer boundary it must say unknown."""
+        x, tol = state["payload"]["value"], params["tol"]
+        frac = abs(x - round(x))
+>       outcome = "pass" if frac > float(tol) else "unknown"
+                                   ^^^^^^^^^^
+E       ValueError: could not convert string to float: '1/1000'
+
+tests\core\toy.py:55: ValueError
+=========================== short test summary info ===========================
+FAILED tests/core/test_evidence.py::test_tolerance_policy_change_invalidates_reuse
+FAILED tests/core/test_evidence.py::test_rounded_representation_is_not_evidence_about_its_exact_source
+FAILED tests/core/test_evidence.py::test_numerical_pass_does_not_satisfy_an_exact_requirement
+FAILED tests/core/test_evidence.py::test_near_integer_float_is_unknown_not_pass
+FAILED tests/core/test_evidence.py::test_requirement_parameters_bind_evidence
+5 failed, 76 passed in 0.16s

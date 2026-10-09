@@ -1,0 +1,74 @@
+{
+ "fixture": "X_pinned_hard_flat",
+ "provenance": "Point sets and height copied from <research-record>/<historical-folder>/verification/packet/results/hard_mixed_fixture_input.json (blob c1a180b6c5688edc8e63c59d06aa99ae87cdff61). Its pinned depth/cut fields are not used.",
+ "claimed_features": [
+  "point-set input requiring an explicit hull",
+  "very flat body (h = 1/10000)",
+  "nonnested"
+ ],
+ "features_established_by": "search receipts only (supplementary fixture)",
+ "params": {
+  "top": [
+   [
+    -1,
+    -78
+   ],
+   [
+    -82,
+    14
+   ],
+   [
+    41,
+    47
+   ],
+   [
+    73,
+    -88
+   ],
+   [
+    -83,
+    33
+   ],
+   [
+    -24,
+    54
+   ],
+   [
+    98,
+    3
+   ]
+  ],
+  "bottom": [
+   [
+    63,
+    -70
+   ],
+   [
+    58,
+    55
+   ],
+   [
+    82,
+    4
+   ],
+   [
+    54,
+    -42
+   ],
+   [
+    -33,
+    65
+   ],
+   [
+    -51,
+    38
+   ],
+   [
+    -82,
+    55
+   ]
+  ],
+  "height": "1/10000",
+  "input_kind": "point_set_hull"
+ }
+}

@@ -1,0 +1,10 @@
+{
+ "os": "Windows-10-10.0.26200-SP0",
+ "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+ "pytest": "9.1.1",
+ "core_revision": "sha256:5513854eb1efb91eabc1183b0dc5a376aa4c60ac714895a1b7158c9cf850e9ca",
+ "two_rim_revision": "sha256:86cc1e9a2d1dbd5ee14fc0c02669c3d6266418ebad014c3307fc1c96c86ff03d",
+ "checker_revision": "sha256:ae6b8a207805a8f7dc6e5aeaed2120bac4ea9d4088deaaec906b66208c230f84",
+ "runtime_dependencies": "standard library only",
+ "lean_build": "none"
+}

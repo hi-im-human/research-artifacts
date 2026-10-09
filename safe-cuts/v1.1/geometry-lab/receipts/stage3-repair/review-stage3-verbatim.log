@@ -1,0 +1,346 @@
+FFF..FFFFFF                                                              [100%]
+================================== FAILURES ===================================
+________________ test_control_square_local_geometry_and_replay ________________
+
+tmp_path = WindowsPath('C:/Users/<user>/AppData/Local/Temp/pytest-of-<user>/pytest-1760/test_control_square_local_geom0')
+
+    def test_control_square_local_geometry_and_replay(tmp_path):
+        r = registry()
+        run, s, m = source_material(r)
+>       scan = local_scan(run, m, '1/4')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage3-review\test_stage3_regressions.py:88: in local_scan
+    run.check('two_rim.check.development',1,d,{})
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+_________ test_control_e11_documented_current_seams_and_overlap_pair __________
+
+    def test_control_e11_documented_current_seams_and_overlap_pair():
+        run, s, m = source_material(registry(), E11)
+>       scan = local_scan(run, m, '1/10000')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:110: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+review-cases\stage3-review\test_stage3_regressions.py:88: in local_scan
+    run.check('two_rim.check.development',1,d,{})
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+______________ test_control_dropped_translation_is_not_accepted _______________
+
+    def test_control_dropped_translation_is_not_accepted():
+        def remove_offsets(p):
+            for m in p['maps']:
+                m['offset'] = [0.0, 0.0]
+        run,s,m = source_material(registry(remove_offsets))
+        c,d = cut_dev(run,m)
+>       ev = by_claim(run.check('two_rim.check.development',1,d,{}))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__________ test_S02_changed_map_convention_is_not_a_supported_schema __________
+
+    def test_S02_changed_map_convention_is_not_a_supported_schema():
+        run,s,m=source_material(registry(lambda p:p.update(map_convention='image = linear @ [x, y, z] - offset')))
+        c,d=cut_dev(run,m)
+>       ev=by_claim(run.check('two_rim.check.development',1,d,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:167: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__ test_S02_trim_interpretation_and_exact_number_contract[height_parameter] ___
+
+mutation = 'height_parameter'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',1,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_S02_trim_interpretation_and_exact_number_contract[boolean_coordinate] __
+
+mutation = 'boolean_coordinate'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',1,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_ test_S02_trim_interpretation_and_exact_number_contract[numeric_coordinate] __
+
+mutation = 'numeric_coordinate'
+
+    @pytest.mark.parametrize('mutation', ['height_parameter','boolean_coordinate','numeric_coordinate'])
+    def test_S02_trim_interpretation_and_exact_number_contract(mutation):
+        r=registry();run,s,m=source_material(r);c,d=cut_dev(run,m)
+        def builder(st,p,seed):
+            trim=apply_trim(st['payload'],'1/4')
+            if mutation=='height_parameter':
+                trim['height_parameter']='absolute z, not normalized height'
+            else:
+                point=next(v for v in trim['trim_points'].values() if v['xyz'][0]=='0')
+                point['xyz'][0]=False if mutation=='boolean_coordinate' else 0.0
+            return StateDraft('two_rim.trimmed_development',trim,'mixed')
+        r.register_action(ActionSpec('review.trim',1,'two_rim.development',{},'review-1',builder))
+        t=run.apply('review.trim',1,{},d)['output']
+>       ev=by_claim(run.check('two_rim.check.trimmed_development',1,t,{}))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:184: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.trimmed_development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.trimmed_development'
+
+glab\core\registry.py:191: RegistryError
+_________ test_S03_principal_angle_is_not_the_lifted_total_turn_sign __________
+
+    def test_S03_principal_angle_is_not_the_lifted_total_turn_sign():
+        run,s,m=source_material(registry(),E11);c,d=cut_dev(run,m,'E9')
+>       ev=by_claim(run.check('two_rim.check.development',1,d,{}))[DIAGNOSTICS[2]]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:190: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+__________ test_S04_numerical_tolerance_is_in_the_core_policy_field ___________
+
+    def test_S04_numerical_tolerance_is_in_the_core_policy_field():
+        run,s,m=source_material(registry());c,d=cut_dev(run,m)
+>       evs=run.check('two_rim.check.development',1,d,{})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+review-cases\stage3-review\test_stage3_regressions.py:199: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+glab\core\runfile.py:207: in check
+    spec = self._registry.checker(name, version)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+glab\core\registry.py:198: in checker
+    return self._lookup(self._checkers, name, version, "checker")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+table = {('two_rim.check.cut', 1): CheckerSpec(name='two_rim.check.cut', version=1, accepts='two_rim.cut', params={}, revision...5c4a345075b23d8c7cbbd0fe458e0a23df1686ac0135a7', fn=<function check_trimmed at 0x00000255FEE471A0>, uses_context=True)}
+name = 'two_rim.check.development', version = 1, kind = 'checker'
+
+    @staticmethod
+    def _lookup(table, name, version, kind):
+        check_version(version)
+        if not isinstance(name, str) or not any(n == name for n, _ in table):
+            raise RegistryError(f"unknown {kind} {name!r}")
+        spec = table.get((name, version))
+        if spec is None:
+>           raise RegistryError(f"unknown version {version} of {kind} {name!r}")
+E           glab.core.registry.RegistryError: unknown version 1 of checker 'two_rim.check.development'
+
+glab\core\registry.py:191: RegistryError
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED review-cases/stage3-review/test_stage3_regressions.py::test_S01_source_linked_search_cannot_omit_source_correspondence
+PASSED review-cases/stage3-review/test_stage3_regressions.py::test_S01_trim_summary_keeps_failed_parent_copy_obligation
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_control_square_local_geometry_and_replay
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_control_e11_documented_current_seams_and_overlap_pair
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_control_dropped_translation_is_not_accepted
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S02_changed_map_convention_is_not_a_supported_schema
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S02_trim_interpretation_and_exact_number_contract[height_parameter]
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S02_trim_interpretation_and_exact_number_contract[boolean_coordinate]
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S02_trim_interpretation_and_exact_number_contract[numeric_coordinate]
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S03_principal_angle_is_not_the_lifted_total_turn_sign
+FAILED review-cases/stage3-review/test_stage3_regressions.py::test_S04_numerical_tolerance_is_in_the_core_policy_field
+9 failed, 2 passed in 0.80s

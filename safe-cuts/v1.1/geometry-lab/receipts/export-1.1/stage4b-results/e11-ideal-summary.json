@@ -1,0 +1,431 @@
+{
+ "action_revision": "sha256:caeef681b1d30d0cd5f646549f7621121644190c5ba293de4c6d75272a0a8cc5",
+ "checker_revision": "sha256:92c57eebaf14857b41fe4f85425d7aac2fd90e2bd9dc21989393589874bf1d74",
+ "delta": "1/10000",
+ "expected_policy": {
+  "analytic_dependencies": {
+   "contract": "engine/IDEAL-DEVELOPMENT-CONTRACT.md",
+   "contract_sha256_lf": "714efae50c2309ae89d1aeb0fd34958dc9857f1317bf53d45af564bc815dda61",
+   "lemmas": [
+    "L1 orientation and side transfer",
+    "L2 existence and uniqueness of the oriented plane isometry",
+    "Theorem S: retained neighbours lie in opposite closed half-planes of their shared hinge line",
+    "separating-axis lemma",
+    "interior-witness lemma"
+   ],
+   "sources": {
+    "engine/STAGE-4A-DESIGN.md": "bb32b132469d0dfe5098f9d0d76ddde5113cc49d",
+    "engine/probes/stage4a/L4-CORRESPONDENCE.md": "e60cb7f1bdcb4589084e7716adc0ca7dd727b012"
+   },
+   "status": "reviewed written derivations (System, an AI reviewer); not machine-checked; not Lean results; not human peer review"
+  },
+  "arithmetic": "exact rational interval endpoints (Python int and fractions.Fraction); + - * exact; the reciprocal of an interval containing 0 is refused (zero_denominator)",
+  "budget": "per pair, stop at the first decision; after the last precision the pair is unknown (budget_exhausted); an arithmetic refusal is recorded and the next precision is tried (unknown with error:<kind> when none decides)",
+  "decision_rules": {
+   "fail": "a certified interior witness: both trimmed rings exactly strictly convex and counterclockwise about their normals, and every cross2(v_{i+1} - v_i, y - v_i) with a positive lower bound",
+   "otherwise": "unknown; never converted into pass or fail",
+   "pass": "a certified separating axis: max sup(d.P) <= min inf(d.Q), or symmetrically, on the enclosing boxes; boundary contact allowed"
+  },
+  "policy": "two_rim.ideal.evidence/1",
+  "precision_schedule": [
+   16,
+   32,
+   64,
+   128,
+   256,
+   512
+  ],
+  "reported_bounds": "axis_gap recomputed on the recorded boxes; euclidean_gap_lower_bound b with b >= 0 and b^2 (d.d) <= axis_gap^2; cross_lower_bound b with 0 < b <= the recomputed smallest lower bound; all exact, before recording",
+  "root_rule": "sqrt(a) for exact a = N/D >= 0: r = isqrt(N*D*4^P), lo = r/(D*2^P), hi = lo when r^2 = N*D*4^P else (r+1)/(D*2^P); lo^2 <= a <= hi^2 re-checked exactly",
+  "rounding": "absolute outward rounding to multiples of 2^-P of every intermediate interval that has width; zero-width values are kept exact",
+  "subject": "the ideal trimmed development D of one two_rim.ideal_trimmed_development state (definition two_rim.ideal_development/1); never a float state",
+  "trusted_base": "CPython int, fractions.Fraction, math.isqrt and glab.rigorous.ratint, with the written lemmas named in analytic_dependencies"
+ },
+ "label": "Stage 4B maintained ideal lane (glab); verdicts concern the ideal trimmed development D only",
+ "run_digest": "sha256:27f86253f30e834c139eee294dafcb08257504487a2b2c920cf656e6b0af96f3",
+ "seams": {
+  "E0": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:5759eb1481b7e87af029595855447f0a8e11c787f6133d883e189da43b70b930",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E1": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:72cef62f701875fe347656db3751e167090602b2c5d078155d3993cc2dd86b2b",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E10": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 3,
+    "separating_axis": 42,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "fail",
+   "ideal_state": "sha256:71348dc04eb8ba53aa3a5489f4e1140271711c4c60cd6f45806dc03e62784280",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "fail",
+   "theorem_s_pairs": 10,
+   "witness_pairs": [
+    [
+     "F10",
+     "F7"
+    ],
+    [
+     "F10",
+     "F8"
+    ],
+    [
+     "F10",
+     "F9"
+    ]
+   ]
+  },
+  "E2": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:2c4ff43d168cfe85ec1520ff79e42632a19a36238ffdd70fe326daa0946070c7",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E3": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 1,
+    "separating_axis": 44,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "fail",
+   "ideal_state": "sha256:b17537b3b425af469cf4ba8e1c1c9b0e3760ff6c3e3e83a0021789d6fef76352",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "fail",
+   "theorem_s_pairs": 10,
+   "witness_pairs": [
+    [
+     "F3",
+     "F2"
+    ]
+   ]
+  },
+  "E4": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:6181476a15ebc3d0ca95d3f2e83558d8d2a3e59dca6f7174c40435ee93e2527e",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E5": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:80e42400471d65f00fd33a91d16a6722d49223a5a9ad54fd75f8f419dff007e8",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E6": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:83cc6d17cb98fee02b79ef549d51e9c2cd337ad2ea3efd3d4988ec08945bcc7b",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E7": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "pass",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 0,
+    "separating_axis": 45,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "pass",
+   "ideal_state": "sha256:3bffc91451e8ca5a921728b334a3adfe558f306d41ff6590bd30e004a48fd12a",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "pass",
+   "theorem_s_pairs": 10,
+   "witness_pairs": []
+  },
+  "E8": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 3,
+    "separating_axis": 42,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "fail",
+   "ideal_state": "sha256:e120818b7324bc1b04d733efe77d7902cef54a1a174788da6c6acf449a993e88",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "fail",
+   "theorem_s_pairs": 10,
+   "witness_pairs": [
+    [
+     "F8",
+     "F7"
+    ],
+    [
+     "F9",
+     "F7"
+    ],
+    [
+     "F10",
+     "F7"
+    ]
+   ]
+  },
+  "E9": {
+   "attempted_precisions": [
+    16,
+    32,
+    64
+   ],
+   "claims": {
+    "two_rim.ideal.cut_copy_matches_parent": "pass",
+    "two_rim.ideal.delta_in_supported_domain": "pass",
+    "two_rim.ideal.local_premises": "pass",
+    "two_rim.ideal.pair_coverage_complete": "pass",
+    "two_rim.ideal.record_schema": "pass",
+    "two_rim.ideal.remaining_pairs_interiors_disjoint": "fail",
+    "two_rim.ideal.retained_hinge_sides_opposite": "pass",
+    "two_rim.ideal.retained_neighbours_interiors_disjoint": "pass"
+   },
+   "counts": {
+    "interior_witness": 4,
+    "separating_axis": 41,
+    "unknown": 0
+   },
+   "ideal_geometric_verdict": "fail",
+   "ideal_state": "sha256:1ec14ea20501ca179ee4bd16f50e6575e45f5d46d283d7e93be50a2661f036d5",
+   "max_bits_needed": 64,
+   "source_linked_ideal_trimmed_obligations": "fail",
+   "theorem_s_pairs": 10,
+   "witness_pairs": [
+    [
+     "F9",
+     "F7"
+    ],
+    [
+     "F9",
+     "F8"
+    ],
+    [
+     "F10",
+     "F7"
+    ],
+    [
+     "F10",
+     "F8"
+    ]
+   ]
+  }
+ },
+ "totals": {
+  "interior_witness": 11,
+  "max_bits_needed": 64,
+  "pairs": 605,
+  "separating_axis": 484,
+  "theorem_s": 110,
+  "unknown": 0,
+  "verdicts": {
+   "fail": [
+    "E3",
+    "E8",
+    "E9",
+    "E10"
+   ],
+   "not_determined": [],
+   "pass": [
+    "E0",
+    "E1",
+    "E2",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ],
+   "unknown": []
+  }
+ }
+}

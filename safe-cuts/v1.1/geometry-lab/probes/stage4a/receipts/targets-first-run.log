@@ -1,0 +1,24 @@
+....F..                                                                  [100%]
+================================== FAILURES ===================================
+_______________ test_square_prism_is_decided_on_the_exact_path ________________
+
+    def test_square_prism_is_decided_on_the_exact_path():
+        res = square_prism()["seams"]
+        assert len(res) == 8
+        for key, s in res.items():
+            assert s["seam_verdict"] == "pass", key
+>           assert s["all_box_widths_zero"], key
+E           AssertionError: E0@1/4
+E           assert False
+
+probes\stage4a\tests\targets\test_targets.py:58: AssertionError
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t1_retained_neighbour_contact_is_decided_exactly
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t2_robust_separation_is_certified_by_an_axis
+PASSED probes/stage4a/tests/targets/test_targets.py::test_t3_known_overlap_is_certified_by_an_interior_witness
+PASSED probes/stage4a/tests/targets/test_targets.py::test_float_placement_is_a_diagnostic_near_the_ideal_enclosure
+PASSED probes/stage4a/tests/targets/test_targets.py::test_scan_decides_every_pair_of_every_seam
+PASSED probes/stage4a/tests/targets/test_targets.py::test_historical_reference_after_classification
+FAILED probes/stage4a/tests/targets/test_targets.py::test_square_prism_is_decided_on_the_exact_path
+1 failed, 6 passed in 3.91s

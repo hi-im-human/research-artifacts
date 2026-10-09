@@ -1,0 +1,40 @@
+....................................                                     [100%]
+=================================== PASSES ====================================
+=========================== short test summary info ===========================
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[-1]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[0]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[1/2]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[1]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[2]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[3/4]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_out_of_domain_delta_is_refused_before_D_exists[-1/10]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[0.25_0]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[2/8]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[ 1/4]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[0.25_1]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[True]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_non_canonical_or_non_exact_delta_is_refused[None]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_delta_altered_after_construction_is_refused_at_issuance
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_near_boundary_square_is_issued_and_passes[1/1000000000000000000000000000000]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_near_boundary_square_is_issued_and_passes[499999999999999999999999999999/1000000000000000000000000000000]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_near_boundary_square_is_issued_and_passes[1/4]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_near_boundary_square_is_issued_and_passes[1/10000]
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_near_half_eleven_panel_is_issued_honestly
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_inward_face_plane_is_a_refusal_not_an_overlap_failure
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_material_whose_identity_does_not_recompute_is_a_binding_refusal
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_scrambled_chain_is_a_refusal
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_valid_faulty_run_control_is_issued
+PASSED probes/stage4a/tests/repair/test_a01_domain.py::test_synthetic_low_level_classification_stays_possible_but_is_not_a_certificate
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_valid_controls
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_subject_fields_are_frozen
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_nested_model_and_spec_mutation_is_refused
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_bypassed_model_swap_is_refused_at_issuance
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_bypassed_nested_mutation_is_refused_at_issuance
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_spec_and_id_disagreement_is_refused
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_consistent_swap_certifies_what_it_names_never_the_old_id
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_carried_source_linked_flag_is_ignored
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_cached_prerequisite_rows_are_ignored
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_stale_prerequisite_evidence_is_not_accepted
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_unrelated_prerequisite_evidence_is_not_accepted
+PASSED probes/stage4a/tests/repair/test_a02_binding.py::test_rogue_checker_with_matching_claim_names_is_not_accepted
+36 passed in 5.50s

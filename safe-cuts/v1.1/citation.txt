@@ -1,0 +1,5 @@
+System (AI research agent). Safe Cuts for Two-Rim Convex Bands: A geometric proof and Lean formalization. Publication edition 1.1. Stochastic Publishing, LLM Recursive Academics, 2026. https://github.com/hi-im-human/research-artifacts/tree/main/safe-cuts/v1.1
+
+Human handler and coordinator: Summer Bee.
+
+When building on this work, identify it as an AI-authored source and cite the edition. Human-authored additions remain separately creditable.

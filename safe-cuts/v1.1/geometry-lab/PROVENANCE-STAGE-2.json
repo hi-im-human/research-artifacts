@@ -1,0 +1,67 @@
+{
+ "schema": "geometry-lab.provenance/2",
+ "stage": "Stage 2 exact source-geometry port",
+ "repository": "<private-repo>",
+ "observatory_baseline": "commit-17",
+ "frozen_lean_implementation": "commit-11 (not rebuilt, not read in this stage)",
+ "author_provenance_note": "Original helper files carry no named author; their Git commit author field is 'Human'. Git account metadata is not treated as intellectual authorship. The port and checker were written by the Claude Code session agent (Claude Opus 5.5).",
+ "license_note": "The repository has no LICENSE file; these are internal ports within the same repository.",
+ "ported": [
+  {
+   "maintained": "glab/two_rim/source.py::hull2",
+   "original": "<research-record>/<historical-folder>/verification/packet/code/normal_fan_inputs.py::hull2",
+   "original_blob": "5445ec10af581ae031cb386d1732de4a81dffee9",
+   "changes": "Takes parsed Fraction pairs; raises SourceInputError instead of ValueError; same monotone chain, same '<= 0' pop rule (removes straight-through boundary points). Unused helpers (build_band, supporting_facets, section_hull, ...) not ported."
+  },
+  {
+   "maintained": "glab/two_rim/material.py::splice_cycles (+ _primitive, _raw_normals, _check_raw_polygon, _maximizers, _blend)",
+   "original": "<research-record>/<historical-folder>/verification/packet/code/cyclic_normal_splice.py::splice_cycles (+ normal_fan_inputs.primitive/cross2/dot)",
+   "original_blob": "314b1938fb80416a5c867a0e9db7807ed3e9133a",
+   "changes": "Plain dict result {'rays','support_pairs'} instead of SplicedCycle/SpliceBlock dataclasses; Fraction pairs in; SpliceError(ArithmeticError) for internal failures; original_edges/facets replaced by build_material, which adds stable IDs, rings, rim edges, caps and Proposition 3.1 planes. Insertion and ordering logic unchanged."
+  }
+ ],
+ "not_ported": [
+  "midsection_bridge.py (floating PhysicalBridge; explicitly out of scope)",
+  "the assessment probe's sys.path vendor layout",
+  "the assessment probe's supporting-plane oracle (the new checker's oracle was written again, independently, in glab/check/two_rim_source.py)"
+ ],
+ "golden_copies": [
+  {
+   "path": "tests/two_rim/pinned/normal_fan_inputs.py",
+   "blob": "5445ec10af581ae031cb386d1732de4a81dffee9",
+   "source_commit": "commit-17"
+  },
+  {
+   "path": "tests/two_rim/pinned/cyclic_normal_splice.py",
+   "blob": "314b1938fb80416a5c867a0e9db7807ed3e9133a",
+   "source_commit": "commit-17"
+  }
+ ],
+ "golden_loading": "importlib.util.spec_from_file_location by path; temporary sys.modules entry for the name the splice imports; no sys.path edits; nothing written to historical directories",
+ "fixtures": [
+  {
+   "path": "tests/two_rim/fixtures/F1_translated_square_prism.json",
+   "blob": "7bd126aabf1edf6dd58dd2b4a8f2c3156128e980",
+   "source": "<geometry-lab-project>/assessment/prototype/fixtures/F1_translated_square_prism.json at commit-19"
+  },
+  {
+   "path": "tests/two_rim/fixtures/F2_nonnested_mixed.json",
+   "blob": "2b6cf505d945712f8f220b6812e48c658f4e1315",
+   "source": "<geometry-lab-project>/assessment/prototype/fixtures/F2_nonnested_mixed.json at commit-19"
+  },
+  {
+   "path": "tests/two_rim/fixtures/F3_near_degenerate_prism.json",
+   "blob": "ba932ca4e1b1652367801947a177c55da3f55c24",
+   "source": "<geometry-lab-project>/assessment/prototype/fixtures/F3_near_degenerate_prism.json at commit-19"
+  },
+  {
+   "path": "tests/two_rim/fixtures/X_pinned_hard_flat.json",
+   "blob": "fe5cc37814fdbeba98fd71b8af054b035373596c",
+   "source": "<geometry-lab-project>/assessment/prototype/fixtures/X_pinned_hard_flat.json at commit-19"
+  }
+ ],
+ "fixture_kind_rename": {
+  "cyclic_convex_polygon": "cyclic_boundary",
+  "point_set_hull": "point_set_hull"
+ }
+}

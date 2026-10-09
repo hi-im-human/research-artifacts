@@ -1,0 +1,1 @@
+Manually stopped by Codex to isolate the same-ray declaration before another full assembly attempt. No declaration progress or Safe success was emitted. This is an aborted diagnostic, not a proof rejection or pass.

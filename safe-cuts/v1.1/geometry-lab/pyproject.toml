@@ -1,0 +1,15 @@
+[project]
+name = "glab"
+version = "0.1.0.dev0"
+description = "Geometry Lab engine core (Stage 1): records, registered actions, evidence, run integrity and replay"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+numeric = ["numpy==2.4.4"]  # Stage 3 development checker only; glab.core stays standard-library only
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-p no:cacheprovider"

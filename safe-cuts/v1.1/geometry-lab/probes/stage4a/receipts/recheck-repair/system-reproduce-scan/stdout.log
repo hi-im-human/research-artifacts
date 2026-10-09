@@ -1,0 +1,25 @@
+{
+ "axis_confirmed": 484,
+ "axis_rows": 484,
+ "coordinates_checked": 968,
+ "coordinates_contained": 968,
+ "euclidean_bounds_confirmed": 484,
+ "expected_pairs": 605,
+ "failed_seams": 0,
+ "failures": 0,
+ "rejected_seams": 0,
+ "rows_checked": 605,
+ "theorem_s_confirmed": 110,
+ "theorem_s_rows": 110,
+ "unknown_rows": 0,
+ "verified": true,
+ "verified_seams": 11,
+ "witness_bounds_confirmed": 11,
+ "witness_confirmed": 11,
+ "witness_rows": 11
+}
+Fresh scan: 605 decided; methods {'shared_hinge_exact': 110, 'separating_axis': 484, 'interior_witness': 11}
+Fresh square: 8 cases, exact boxes and pass
+T1 interval-only: unknown
+T2 gap bound: 81.91344982068752
+T3 margin: 0.021844957672050493

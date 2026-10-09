@@ -1,0 +1,232 @@
+name = "convex-section-nesting"
+version = "0.1.0"
+defaultTargets = ["ConvexSectionNesting"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.34.0"
+
+[[lean_lib]]
+name = "ConvexSectionNesting"
+
+[[lean_lib]]
+name = "HingeExtensionUniqueness"
+
+# Explicit draft target; the existing default build is unchanged.
+[[lean_lib]]
+name = "FaceChainRestriction"
+
+# Build the already-checked witness module as an imported dependency.
+[[lean_lib]]
+name = "TrimmedFacetWitnesses"
+
+# Explicit assembled draft target. Pins and default target stay unchanged.
+[[lean_lib]]
+name = "BandGeometryAssembly"
+
+# Explicit downstream closure draft; no default or version-pin change.
+[[lean_lib]]
+name = "FiniteWitnessClosure"
+
+# Explicit original-body input bridge draft; pins/default unchanged.
+[[lean_lib]]
+name = "PolyhedralInputBridge"
+
+# Recover the full layout and every uncut supporting edge; default/pins unchanged.
+[[lean_lib]]
+name = "SingleCutRecovery"
+
+# Explicit universal merged-normal geometry target; defaults/pins unchanged.
+[[lean_lib]]
+name = "MergedNormalPrismatoid"
+
+# Planar reverse containment and support faces; existing raw fields unchanged.
+[[lean_lib]]
+name = "PolygonSupportCompleteness"
+
+# Physical Euclidean coordinates, not the default max-norm product.
+[[lean_lib]]
+name = "EuclideanPrismatoidCoordinates"
+
+# Two-polygon common support and exact Euclidean body; defaults/pins unchanged.
+[[lean_lib]]
+name = "CommonSupportMerge"
+
+# Construct original Euclidean face certificates and shared edges.
+[[lean_lib]]
+name = "OriginalFacetCertificates"
+
+# Internally computed scalar splice; defaults and pins remain unchanged.
+[[lean_lib]]
+name = "NormalFanSplice"
+
+# Exact common cells and exhaustive strict-height material adjacency.
+[[lean_lib]]
+name = "MaximalSupportCells"
+
+# Geometric cyclic successor, original edges and every single-cut order.
+[[lean_lib]]
+name = "CyclicCutOrders"
+
+[[lean_lib]]
+name = "CyclicCutOrdersSanity"
+
+# Explicit external nested-band application; defaults and pins unchanged.
+[[lean_lib]]
+name = "NestedBandExternalApplication"
+
+# Explicit cut-open quotient and continuous development; defaults/pins unchanged.
+[[lean_lib]]
+name = "CutSurfaceQuotient"
+
+# Reconstruct raw polygons from ordinary finite hulls; defaults/pins unchanged.
+[[lean_lib]]
+name = "PolygonSetReconstruction"
+
+# Actual unordered redundant-cloud constructor sanity; explicit only.
+[[lean_lib]]
+name = "PolygonSetReconstructionSanity"
+
+# Conditional general annular closed-band reduction; explicit targets only.
+[[lean_lib]]
+name = "GeneralBandClosedApplication"
+
+[[lean_lib]]
+name = "GeneralBandClosedApplicationSanity"
+
+# Mixed-turn positional mechanism; explicit only, defaults and pins unchanged.
+[[lean_lib]]
+name = "MixedTurnSafeCut"
+
+[[lean_lib]]
+name = "MixedTurnSafeCutSanity"
+
+# Reusable strict local turning facts for reduced convex polygons.
+[[lean_lib]]
+name = "ConvexPolygonTurning"
+
+# Physical intrinsic-turn source definitions; explicit only, defaults/pins unchanged.
+[[lean_lib]]
+name = "PhysicalMixedTurnSource"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnSourceSanity"
+
+# Exact oblique/right-prism physical source fixtures; explicit only.
+[[lean_lib]]
+name = "PhysicalMixedTurnSourceSanityFixtures"
+
+# Endpoint transport for proof-selected cyclic OriginalEdge witnesses.
+[[lean_lib]]
+name = "PhysicalMixedTurnEndpointTransport"
+
+# Physical facet charts and complete source-to-development bridge.
+[[lean_lib]]
+name = "PhysicalMixedTurnGeometry"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnDevelopment"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnTransport"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnLayout"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnState"
+
+[[lean_lib]]
+name = "PhysicalMixedTurnBridge"
+
+# General two-rim theorem modules; additive explicit targets only.
+[[lean_lib]]
+name = "FoldedTurnProjection"
+
+[[lean_lib]]
+name = "PhysicalRadialSupport"
+
+[[lean_lib]]
+name = "FixedBaselineCyclicConjugacy"
+
+[[lean_lib]]
+name = "RadialExtremalSafety"
+
+[[lean_lib]]
+name = "FixedBaselinePolarRayGeometry"
+
+[[lean_lib]]
+name = "FixedBaselinePolarTrace"
+
+[[lean_lib]]
+name = "FixedBaselinePolarTraceSanity"
+
+[[lean_lib]]
+name = "RadialOriginalSeam"
+
+[[lean_lib]]
+name = "RadialOriginalSeamSanity"
+
+[[lean_lib]]
+name = "ArbitraryCutDirectMap"
+
+[[lean_lib]]
+name = "GeneralTwoRimUnfolding"
+
+[[lean_lib]]
+name = "GeneralTwoRimUnfoldingSanity"
+
+[[lean_lib]]
+name = "SelectedNegativeRootPolar"
+
+[[lean_lib]]
+name = "SelectedNegativeRootPolarLift"
+
+[[lean_lib]]
+name = "SelectedPositiveRootPolarLift"
+
+[[lean_lib]]
+name = "SelectedPositiveImageBoundary"
+
+[[lean_lib]]
+name = "SelectedPositiveFullSafe"
+
+[[lean_lib]]
+name = "SelectedRootInteriorWitness"
+
+[[lean_lib]]
+name = "SelectedNegativeHingeGluing"
+
+[[lean_lib]]
+name = "SelectedNegativeFullDevelopment"
+
+[[lean_lib]]
+name = "SelectedPositiveMaterialHit"
+
+[[lean_lib]]
+name = "SelectedPositiveFullSafeSanity"
+
+[[lean_lib]]
+name = "ArbitraryCutFullDevelopment"
+
+[[lean_lib]]
+name = "SelectedPositiveFullDevelopment"
+
+[[lean_lib]]
+name = "GeneralTwoRimEndpoint"
+
+[[lean_lib]]
+name = "GeneralTwoRimEndpointSanity"
+
+[[lean_lib]]
+name = "GeneralTwoRimFrustumSanity"
+
+[[lean_lib]]
+name = "SourceFullDevelopmentAssembly"
+
+[[lean_lib]]
+name = "GeneralTwoRimReversedFrustumSanity"
+
+[[lean_lib]]
+name = "SelectedNegativeDirectDevelopment"

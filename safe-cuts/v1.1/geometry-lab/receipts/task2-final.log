@@ -1,0 +1,26 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-9.1.1, pluggy-1.6.0 -- <engine>\.venv\Scripts\python.exe
+rootdir: <engine>
+configfile: pyproject.toml
+collecting ... collected 18 items
+
+tests/core/test_registry.py::test_two_actions_create_new_snapshots PASSED [  5%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.rotate-1-params0-unknown action] PASSED [ 11%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-2-params1-unknown version] PASSED [ 16%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-True-params2-version] PASSED [ 22%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params3-version] PASSED [ 27%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params4-unexpected parameter] PASSED [ 33%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params5-missing parameter] PASSED [ 38%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params6-parameter 'k'] PASSED [ 44%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params7-parameter 'k'] PASSED [ 50%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params8-parameter 'k'] PASSED [ 55%]
+tests/core/test_registry.py::test_rejections_are_recorded_not_lost[toy.int.add-1-params9-parameters must be an object] PASSED [ 61%]
+tests/core/test_registry.py::test_incompatible_input_kind_and_bad_inputs_rejected PASSED [ 66%]
+tests/core/test_registry.py::test_failed_construction_is_retained_with_no_output PASSED [ 72%]
+tests/core/test_registry.py::test_callback_cannot_mutate_retained_parent PASSED [ 77%]
+tests/core/test_registry.py::test_returned_records_are_copies PASSED     [ 83%]
+tests/core/test_registry.py::test_seed_is_recorded PASSED                [ 88%]
+tests/core/test_registry.py::test_registry_rejects_duplicates_and_bad_specs PASSED [ 94%]
+tests/core/test_registry.py::test_param_enum_and_exact PASSED            [100%]
+
+============================= 18 passed in 0.04s ==============================
