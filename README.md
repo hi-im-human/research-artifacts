@@ -2,24 +2,36 @@
 
 **AI-led and AI-written research, published by Stochastic Publishing.**
 
-This repository holds primary and secondary research artifacts: papers, source code, formal proofs, data, and the working records that accompany them.
+This public collection holds research artifacts: papers, source code, formal proofs, data, and the working records needed to examine them. Research is published as **exact, versioned editions**, not silently overwritten drafts.
 
-## Collection status
+## Research publications
 
-| Work | Edition | Folder |
-|---|---|---|
-| *Safe Cuts for Two-Rim Convex Bands: A geometric proof and Lean formalization*, by System (AI research agent); human handler and coordinator: Summer Bee | Publication edition 1.1, published 9 October 2026 | [`safe-cuts/v1.1/`](safe-cuts/v1.1/) |
+| Work | Edition | Full research package | Immutable release |
+|---|---|---|---|
+| *Safe Cuts for Two-Rim Convex Bands: A geometric proof and Lean formalization*, by System (AI research agent), with Summer Bee as human coordinator | v1.1 · published 9 October 2026 | [safe-cuts/v1.1/](safe-cuts/v1.1/) | [safe-cuts-v1.1](https://github.com/hi-im-human/research-artifacts/releases/tag/safe-cuts-v1.1) |
 
-Each edition folder is a byte-exact publication copy with its own README, license notice, `INVENTORY.tsv` and `SHA256SUMS`. Its README states what was checked and by whom; for Safe Cuts, no human specialist review is recorded.
+**Review status:** Safe Cuts has documented Lean builds and AI review; **no human specialist review of the completed proof is recorded**.
 
-## What accompanies a research artifact
+## Our publication standard
 
-Each work identifies its authors and contributors, the exact source version, its assessment status, and the material needed to inspect or reproduce its claims. Working development remains in its source repository; this collection holds publication copies.
+[**Research Publication Standard · v1.0**](standards/research-publication/v1.0/)
 
-Where included, a history pack is a snapshot of the relevant working area as it existed, not a rewritten success story. Failed attempts, abandoned approaches and original review records remain in their existing structure. The snapshot identifies its source and states whether anything was changed or excluded for publication, including sanitation.
+The standards package includes a readable publication policy, an agent-readable **SKILL.md**, a checklist, reuse terms, and file checksums. It describes what we require to publish exact research artifacts responsibly, including **immutable GitHub Releases and standalone ZIP attachments**.
 
-Reader checks should use established tools and services, not require a validator maintained by this collection. Each edition will distinguish file integrity, release identity, reproducibility, formal verification and external review. None of those labels alone certifies every claim in a work.
+**What is required:** real artifacts, honest authorship, scoped evidence, reproducibility where applicable, privacy/rights review, inventory and checksums, exact human approval, and a verified immutable release.
 
-Planned releases use versioned artifacts and GitHub's immutable-release mechanism. That is a publication method, not a claim that any release or attestation already exists.
+**What is optional:** OpenTimestamps, outside archives, DOIs, additional specialist reviews, independent backups and other witnesses. Optional features are reported as completed only when their actual evidence is available.
 
-Rights and reuse terms will be stated for each artifact; no collection-wide license is assigned by this README.
+### Reading or using the skill
+
+The skill file is a **portable set of instructions** for an AI agent, not a credential grant, installed automation or claim of independent behavioral validation. It prepares and checks candidates privately; the human publication steward controls the public release.
+
+## How to inspect research in this collection
+
+Each publication's README identifies its claim and limits, contributors, review state, actual files and reproduction instructions. Read any source map and evidence records in their declared scope. Each edition includes a complete inventory and SHA-256 checksums; compare actual files to the inventory and verify the checksums. Reproduction and independent review are different from file integrity.
+
+Each published edition also has an **immutable GitHub Release** with its own tag and complete ZIP asset. A tag refers to an **entire Git commit**; the separately attached ZIP gives a convenient download of one individual research edition. Later commits on main do not change earlier immutable releases.
+
+Working research remains in private workspaces. Public packages disclose changes made for privacy without silently replacing historical evidence. Corrections create new editions; later review and notice records remain linked to the original version rather than rewriting it.
+
+Rights and reuse are stated by individual work. This collection README does not apply a blanket license to all published material.

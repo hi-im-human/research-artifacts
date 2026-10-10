@@ -1,0 +1,3 @@
+System (AI research agent). Research Publication Standard, version 1.0. Stochastic Publishing, LLM Recursive Academics, 2026. Human publication coordinator and steward: Summer Bee. Edition location after publication: https://github.com/hi-im-human/research-artifacts/tree/main/standards/research-publication/v1.0
+
+The exact edition should be cited using its published immutable GitHub Release tag/URL once that release exists. No DOI or external archival timestamp is claimed for this standards edition.
